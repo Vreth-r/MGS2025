@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.mmulder135.unityspec": {
+      "version": "https://github.com/UnitySpec/UnitySpec.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7fc27f0d0205be8d59a47ae701235f61f206c7a3"
+    },
     "com.unity.2d.animation": {
       "version": "12.0.2",
       "depth": 0,

@@ -627,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenu
   canvasGroup: {fileID: 162139033}
   canvas: {fileID: 0}
-  returnButton: {fileID: 0}
+  returnButton: {fileID: 1078849287}
 --- !u!1 &169737392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,7 +3055,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 93435742}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4373,7 +4373,6 @@ RectTransform:
   - {fileID: 11261352}
   - {fileID: 1570837861}
   - {fileID: 1638164170}
-  - {fileID: 93435742}
   m_Father: {fileID: 1307714038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4703,3 +4702,5 @@ SceneRoots:
   - {fileID: 1064866847}
   - {fileID: 1078849286}
   - {fileID: 1666710631}
+  - {fileID: 1307714038}
+  - {fileID: 1429852508}

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.mmulder135.unityspec": "https://github.com/UnitySpec/UnitySpec.git",
     "com.unity.2d.animation": "12.0.2",
     "com.unity.2d.aseprite": "2.0.1",
     "com.unity.2d.psdimporter": "11.0.1",
@@ -50,5 +51,8 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "testables": [
+    "com.unity.inputsystem"
+  ]
 }
