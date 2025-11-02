@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 7f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator animator;
@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Enable();
         inputActions.Player.Attack.performed += OnAttackPerformed;
         inputActions.Player.Attack.canceled += OnAttackCanceled;
-        
     }
 
     void OnDisable()
@@ -72,5 +71,18 @@ public class PlayerController : MonoBehaviour
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {
         isAttacking = false;
+    }
+
+    // Detect collision with enemy and call TakeHit if attacking
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isAttacking && collision.gameObject.CompareTag("Enemy"))
+        {
+            EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.TakeHit();
+            }
+        }
     }
 }
