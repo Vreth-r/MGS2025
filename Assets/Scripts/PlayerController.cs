@@ -82,6 +82,13 @@ public class PlayerController : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeHit();
+                
+                BeatMapper beatMapper = FindFirstObjectByType<BeatMapper>();
+                if (beatMapper != null && beatMapper.musicPlayer != null && beatMapper.musicPlayer.audioSource != null)
+                {
+                    float songTimestamp = beatMapper.musicPlayer.audioSource.time;
+                    beatMapper.IsBeatHit(songTimestamp);
+                }
             }
         }
     }

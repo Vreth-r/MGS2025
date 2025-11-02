@@ -4,18 +4,22 @@ using System.IO;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public string musicDirectory = "Assets/Music"; // Set your music folder path here
+    public string musicDirectory = "Assets/Audio/Music"; // Set your music folder path here
     public AudioSource audioSource;
+    [Range(0f, 1f)]
+    public float musicVolume = 0.33f;
 
     void Start()
     {
         if (audioSource == null)
             audioSource = GetComponent<AudioSource>();
 
+        audioSource.volume = musicVolume; // Set volume from public variable
+
         // Load all .wav or .mp3 files from the directory
-        string[] files = Directory.GetFiles(musicDirectory, "*.wav");
+        string[] files = Directory.GetFiles(musicDirectory, "*.mp3");
         if (files.Length == 0)
-            files = Directory.GetFiles(musicDirectory, "*.mp3");
+            files = Directory.GetFiles(musicDirectory, "*.wav");
 
         if (files.Length > 0)
         {
