@@ -4,6 +4,8 @@ using System.IO;
 
 public class MusicPlayer : MonoBehaviour
 {
+    public static MusicPlayer Instance;
+
     public string musicDirectory = "Assets/Audio/Music"; // Set your music folder path here
     public AudioSource audioSource;
     [Range(0f, 1f)]

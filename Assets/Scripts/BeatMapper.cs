@@ -23,15 +23,7 @@ public class BeatMapper : MonoBehaviour
 
     void Start()
     {
-        if (playerTransform == null)
-            playerTransform = FindFirstObjectByType<PlayerController>()?.transform;
-
         Debug.Log("Initializing BeatMapper...");
-        if (musicPlayer == null)
-        {
-            Debug.Log("Finding MusicPlayer in scene...");
-            musicPlayer = FindFirstObjectByType<MusicPlayer>();
-        }
 
         if (musicPlayer?.audioSource?.clip == null)
         {

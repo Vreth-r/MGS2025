@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     private InputSystem_Actions inputActions;
     private bool isAttacking = false;
 
+    public BeatMapper beatMapper;
+
+    public ScoreSystem scoreSystem;
+
     void Awake()
     {
         // This new class must be generated from the Input System and matches your class name
@@ -73,7 +77,6 @@ public class PlayerController : MonoBehaviour
         isAttacking = false;
     }
 
-    // Detect collision with enemy and call TakeHit if attacking
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isAttacking && collision.gameObject.CompareTag("Enemy"))
@@ -82,12 +85,12 @@ public class PlayerController : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeHit();
-                
-                BeatMapper beatMapper = FindFirstObjectByType<BeatMapper>();
+
                 if (beatMapper != null && beatMapper.musicPlayer != null && beatMapper.musicPlayer.audioSource != null)
                 {
                     float songTimestamp = beatMapper.musicPlayer.audioSource.time;
-                    beatMapper.IsBeatHit(songTimestamp);
+                    bool beatHit = beatMapper.IsBeatHit(songTimestamp);
+                    scoreSystem.RegisterBeatHit(beatHit);
                 }
             }
         }
