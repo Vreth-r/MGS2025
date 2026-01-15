@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6987937677106906419}
   - component: {fileID: 4312028700849298963}
+  - component: {fileID: 4933891506722231359}
   m_Layer: 0
   m_Name: Lane
   m_TagString: Untagged
@@ -97,6 +98,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4933891506722231359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549548626057526605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38a63c797670474996946277d5d9063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::LanePrefabController
+  laneIndex: 0
+  spawnLeft: {fileID: 2511289026375083075}
+  spawnRight: {fileID: 333817665680574082}
+  specialZone: {fileID: 6460192091137750498}
 --- !u!1 &692781378576964178
 GameObject:
   m_ObjectHideFlags: 0

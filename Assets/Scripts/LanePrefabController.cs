@@ -1,0 +1,61 @@
+using UnityEngine;
+
+public class LanePrefabController : MonoBehaviour
+{
+    public int laneIndex; // technically an ID
+
+    // note spawn coords (inspector)
+    public Transform spawnLeft;
+    public Transform spawnRight;
+
+    // hit zone during gameplay, insert zone during editing (inspector)
+    public Transform specialZone;
+
+    /// <summary>
+    /// Start() is called ONCE on object enable.
+    /// It is called BEFORE any Update() calls
+    /// It is called AFTER the Awake() call
+    /// Fun fact, has an overload for enumeration!
+    /// </summary>
+    void Start()
+    {
+        // ill give you a description in the comment this time but going forward its gonna look like: HandleLanePress() -> OnLanePressed [subscription]
+        InputManager.Instance.OnLanePressed += HandleLanePress; // subscribes HandleLanePress() (method in this script) to OnLanePressed Event
+        //InputManager.Instance.OnLaneReleased += HandleLaneRelease;
+    }
+
+    /// <summary>
+    /// OnDestroy() is called when the object is removed from a scene, including when its scene is unloaded (important for later).
+    /// </summary>
+    private void OnDestroy()
+    {
+        InputManager.Instance.OnLanePressed -= HandleLanePress; // unsubs (see Start())
+    }
+
+    /// <summary>
+    /// HandleLanePress(int) is called whenever a key is pressed BY THE INPUTMANAGER USING EVENTS.
+    /// See the InputManager for more info!
+    /// </summary>
+    /// <param name="lane">The lane that got proced</param>
+    private void HandleLanePress(int lane)
+    {
+        bool justHit = false;
+        if (lane != laneIndex) return; // fuck off if its not the lane we care about [checkCond]
+
+        // Detect closest note in hit zone
+        foreach (Transform child in transform) // for every note
+        {
+            if (child.TryGetComponent<NoteBase>(out var note) && note.IsInHitZone(specialZone)) // if the note is not nothing (it happens) and the note thinks its in the hitzone
+            {
+                justHit = true;
+                note.OnKeyPressed(); // tell the note it hath been pressed
+                note.ResolveNote();
+                break; // dont need to check the rest, semantically (and design wise) it is impossible for two notes to be in the same place.
+            }
+        }
+        if (!justHit)
+        {
+            ScoreManager.Instance.AddScore(1f); //miss
+        }
+    }
+}
