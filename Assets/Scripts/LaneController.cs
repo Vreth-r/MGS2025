@@ -4,12 +4,14 @@ using UnityEngine;
 /// A LaneController manages it's lane, including note spawning and hit registration.
 /// Multi instance (non singleton)
 /// </summary>
-public class LaneController : MonoBehaviour
+public class LaneController : MonoBehaviour, ILaneController
 {
     public int laneIndex; // technically an ID
+    public int Index { get => laneIndex; }
     //public GameObject notePrefab; // prefab (inspector) [hook] {artifact}
     public Transform spawnPoint; // note spawn coords (inspector)
     public Transform hitZone; // note hit coords (GM)
+    public Transform Zone { get => hitZone; }
     public float noteSpeed = 5f; // the speed at which notes move because accesibility.
     // yk they never talk about MY accesibility needs of not giving a fuck about this
 

@@ -72,11 +72,11 @@ public class AnimationManager : MonoBehaviour
     {
 
         if (resetcounter <= resetmax) // just to not skyrocket the value when afk
-            resetcounter += 1*Time.deltaTime*60;
+            resetcounter += 1 * Time.deltaTime * 60;
 
         //Check what lane hurt is in, runs for that
-        for (int i = hurtlanes.Count-1 ;i >= 0; i--)
-        {      
+        for (int i = hurtlanes.Count - 1; i >= 0; i--)
+        {
             //runs if (P1 & 0,1,2)  (P2 & 2, 3 ,4)  (isDuo)   (lane is -1 [see below])  ---   maybe rewrite if possible
             if (((isPlayer1 == (hurtlanes[i] <= 2)) || isDuo || hurtlanes[i] == -1) && transform.position != offscreen)
             {
@@ -85,7 +85,7 @@ public class AnimationManager : MonoBehaviour
                 if (hurtlanes[i] == 2)  //lets both Ps be hurt if in lane 2 (needs to be run twice)
                     hurtlanes.Add(-1);
                 hurtlanes.Remove(hurtlanes[i]);
-                }
+            }
         }
         //Apply stalling for all sprites while hurt
         if (hurtActive > 0)
@@ -113,7 +113,7 @@ public class AnimationManager : MonoBehaviour
     //newPos: Update where character is
     public void NewPos(int lane)
     {
-        
+
         //Lane Placement Changer
         if (lane == 2)
         {
@@ -166,9 +166,9 @@ public class AnimationManager : MonoBehaviour
 
     }// END OF NEWPOS()
 
-    public static void Missed(LaneController lane)
+    public static void Missed(ILaneController lane)
     {
-        hurtlanes.Add(lane.laneIndex);
+        hurtlanes.Add(lane.Index);
 
     }
 

@@ -1,7 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LanePrefabController : MonoBehaviour
+public interface ILaneController
+{
+    public int Index { get; }
+    public Transform Zone { get; }
+}
+
+public class LanePrefabController : MonoBehaviour, ILaneController
 {
     public enum Side
     {
@@ -10,6 +16,7 @@ public class LanePrefabController : MonoBehaviour
     }
 
     public int laneIndex; // technically an ID
+    public int Index { get => laneIndex; }
 
     // note spawn coords (inspector)
     public Transform spawnLeft;
@@ -17,6 +24,7 @@ public class LanePrefabController : MonoBehaviour
 
     // hit zone during gameplay, insert zone during editing (inspector)
     public Transform specialZone;
+    public Transform Zone { get => specialZone; }
 
     // Note prefabs (inspector)
     public GameObject deadNotePrefab;
@@ -83,6 +91,33 @@ public class LanePrefabController : MonoBehaviour
             }
         }
         Offset += step;
+    }
+
+    /// <summary>
+    /// SpawnNote(), spawns a note!
+    /// Spawns note from prefab based on note type.
+    /// </summary>
+    public void SpawnNote(BeatmapData.NoteData data, Side side, out GameObject noteObj)
+    {
+        if (!notePrefabs.TryGetValue(data.type, out GameObject prefab))
+        {
+            Debug.LogWarning($"Unknown note type '{data.type}': skip that shit");
+        }
+
+        // instantiate that shit
+        noteObj = Instantiate(
+            prefab,
+            (side == Side.Left ? spawnLeft : spawnRight).position,
+            Quaternion.identity,
+            transform
+        ); // instantiate note prefab
+
+        // see if the attatched script is either a NoteBase or a child class of NoteBase
+        // THIS IS ONE OF THE FEW TIMES INHERITANCE IS USEFUL OUTSIDE OF WRITING API SOFTWARE.
+        if (noteObj.TryGetComponent<NoteBase>(out var note))
+        {
+            note.Initialize(this, 0, data);
+        }
     }
 
     /// <summary>

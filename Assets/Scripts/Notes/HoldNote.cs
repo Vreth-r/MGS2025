@@ -36,7 +36,7 @@ public class HoldNote : NoteBase
 
     public override void OnKeyPressed()
     {
-        if (!hasStarted && IsInHitZone(lane.hitZone))
+        if (!hasStarted && IsInHitZone(lane.Zone))
         {
             isHolding = true;
             hasStarted = true;
@@ -53,7 +53,7 @@ public class HoldNote : NoteBase
 
         if (hasStarted && isHolding)
         {
-            if (InputManager.Instance.IsLaneHeld(lane.laneIndex))
+            if (InputManager.Instance.IsLaneHeld(lane.Index))
             {
                 holdTimer += Time.deltaTime;
 
