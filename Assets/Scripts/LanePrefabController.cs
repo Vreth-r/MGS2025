@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LanePrefabController : MonoBehaviour
@@ -10,6 +11,28 @@ public class LanePrefabController : MonoBehaviour
 
     // hit zone during gameplay, insert zone during editing (inspector)
     public Transform specialZone;
+
+    // Note prefabs (inspector)
+    public GameObject deadNotePrefab;
+    public GameObject holdNotePrefab;
+    public GameObject tapNotePrefab;
+
+    private Dictionary<string, GameObject> notePrefabs;
+
+    /// <summary>
+    /// Awake() is a Monobehavior method, it is run before the first frame after object load and all Start() methods.
+    /// </summary>
+    void Awake()
+    {
+        notePrefabs = new Dictionary<string, GameObject>
+        {
+            {"Tap", tapNotePrefab },
+            {"Hold", holdNotePrefab },
+            {"Dead", deadNotePrefab }
+        }; // this is a rare instance of hardcoding being ok do to for non dynamic references.
+        // the reason why i am storing them in prefabs is because it allows for custom behavior and visual options.
+        // you can do it with code yeah but theres a fine line between game programming and programming a game yk. TLDR, use the engine features they save time.
+    }
 
     /// <summary>
     /// Start() is called ONCE on object enable.

@@ -114,6 +114,9 @@ MonoBehaviour:
   spawnLeft: {fileID: 2511289026375083075}
   spawnRight: {fileID: 333817665680574082}
   specialZone: {fileID: 6460192091137750498}
+  deadNotePrefab: {fileID: 5200638745532964819, guid: 286f60411db448a48aecf20ee47950a5, type: 3}
+  holdNotePrefab: {fileID: 5200638745532964819, guid: c2fa55dc3ffae0d41ab4742c7b2b602e, type: 3}
+  tapNotePrefab: {fileID: 5200638745532964819, guid: 5092948592fb29f4093674817df3e82b, type: 3}
 --- !u!1 &692781378576964178
 GameObject:
   m_ObjectHideFlags: 0
