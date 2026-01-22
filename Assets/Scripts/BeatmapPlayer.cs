@@ -11,7 +11,7 @@ public class BeatmapPlayer
 {
     // listen, comments get to a point.
     private BeatmapData beatmap; // the beatmap to run (GM)
-    private LaneController[] lanes; // lanes (GM)
+    private LanePrefabController[] lanes; // lanes (GM)
     private float noteSpeed; // (GM)
     private float noteTravelDistance; // (GM)
     private int nextNoteIndex = 0; // what note we're gonna be on
@@ -20,7 +20,7 @@ public class BeatmapPlayer
     /// <summary>
     /// Good old constructor
     /// </summary>
-    public BeatmapPlayer(BeatmapData beatmap, LaneController[] lanes, float noteSpeed)
+    public BeatmapPlayer(BeatmapData beatmap, LanePrefabController[] lanes, float noteSpeed)
     {
         this.beatmap = beatmap;
         this.lanes = lanes;
@@ -28,8 +28,7 @@ public class BeatmapPlayer
 
         foreach (var lane in lanes)
         {
-            lane.noteSpeed = noteSpeed;
-            this.noteTravelDistance = lane.hitZone.position.x - lane.spawnPoint.position.x;
+            this.noteTravelDistance = lane.specialZone.position.x - lane.spawnRight.position.x;
         }
     }
 
@@ -45,7 +44,7 @@ public class BeatmapPlayer
             if (data.lane >= 0 && data.lane < lanes.Length) // if the note is in a valid lane
             {
                 //Debug.Log($"Spawning {data.type} note");
-                lanes[data.lane].SpawnTypedNote(data, data.type); // spawn that shit
+                lanes[data.lane].SpawnNote(data, LanePrefabController.Side.Right); // spawn that shit
                 // note that while C# method calls do pass values and not references (so it gets duplicated),
                 // C#'s garbage collection system unwinds the stack after method execution and clears it, so there is 
                 // very little overhead.

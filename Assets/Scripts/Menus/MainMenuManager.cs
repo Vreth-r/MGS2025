@@ -101,7 +101,8 @@ public class MainMenuManager : MonoBehaviour
     private void OnPlay()
     {
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Base", LoadSceneMode.Single);
+        SceneManager.LoadScene("Game", LoadSceneMode.Additive);
     }
 
     private void OnQuit()

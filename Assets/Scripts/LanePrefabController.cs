@@ -1,13 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ILaneController
-{
-    public int Index { get; }
-    public Transform Zone { get; }
-}
-
-public class LanePrefabController : MonoBehaviour, ILaneController
+public class LanePrefabController : MonoBehaviour
 {
     public enum Side
     {
@@ -83,7 +77,8 @@ public class LanePrefabController : MonoBehaviour, ILaneController
     /// </summary>
     public void Scroll(Side side)
     {
-        var step = this.step * (side == Side.Left ? -1 : 1);
+        float s = 0.05f;
+        var step = this.step * (side == Side.Left ? -1 : 1) * s;
         if (spawningHold is not null && (Offset + step) <= spawningHold)
         {
             return;

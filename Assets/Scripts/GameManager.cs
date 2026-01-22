@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     private BeatmapPlayer beatmapPlayer; // the beatmap runner
 
     [Header("Hooks")]
-    public LaneController[] lanes; // Lane hooks (inspector)
+    public LanePrefabController[] lanes; // Lane hooks (inspector)
     public AudioSource audioSource; // audio hook (inspector)
     public Dictionary<string, GameObject> notePrefabs; // reference storage for parsing from csv (GM)
     // "erm 🤓 what about enums?" fuck off like actually.
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         beatmap = BeatmapData.Load(path);
         foreach (var lane in lanes) // set hitzone for each lane
         {
-            lane.hitZone = hitZone;
+            lane.specialZone = hitZone;
         }
         if (beatmap == null)
         {

@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Base.unity
+    guid: ad98b5e8da2336240938ccf4df5f2a19
+  - enabled: 1
+    path: Assets/Scenes/MainMenu-Copy.unity
+    guid: df94e59dde9fe6848bc28aaaf7856722
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 20c1b378922e93e4ca7cd1ee5e7d2045, type: 2}
   m_UseUCBPForAssetBundles: 0

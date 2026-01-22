@@ -166,7 +166,7 @@ public class AnimationManager : MonoBehaviour
 
     }// END OF NEWPOS()
 
-    public static void Missed(ILaneController lane)
+    public static void Missed(LanePrefabController lane)
     {
         hurtlanes.Add(lane.Index);
 

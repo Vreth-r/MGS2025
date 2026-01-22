@@ -4,8 +4,9 @@ using UnityEngine;
 /// A LaneController manages it's lane, including note spawning and hit registration.
 /// Multi instance (non singleton)
 /// </summary>
-public class LaneController : MonoBehaviour, ILaneController
+public class LaneController : MonoBehaviour
 {
+    /*
     public int laneIndex; // technically an ID
     public int Index { get => laneIndex; }
     //public GameObject notePrefab; // prefab (inspector) [hook] {artifact}
@@ -87,4 +88,5 @@ public class LaneController : MonoBehaviour, ILaneController
             ScoreManager.Instance.AddScore(1f); //miss
         }
     }
+    */
 }

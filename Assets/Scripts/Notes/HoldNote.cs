@@ -36,7 +36,7 @@ public class HoldNote : NoteBase
 
     public override void OnKeyPressed()
     {
-        if (!hasStarted && IsInHitZone(lane.Zone))
+        if (!hasStarted && IsInHitZone(lane.specialZone))
         {
             isHolding = true;
             hasStarted = true;

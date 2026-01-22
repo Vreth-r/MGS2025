@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class NoteBase : MonoBehaviour
 {
     protected float speed; // the speed at which the note moves (assigned on instantiation)
-    protected ILaneController lane; // the lane it's assigned (assigned on instantiation)
+    protected LanePrefabController lane; // the lane it's assigned (assigned on instantiation)
     protected BeatmapData.NoteData data; // any other args to be passed to children of the appropriate type (instantiation)
 
     /// <summary>
@@ -16,15 +16,9 @@ public abstract class NoteBase : MonoBehaviour
     /// </summary>
     /// <param name="lane">The lane the note belongs to.</param>
     /// <param name="speed">The speed the note moves at down the lane.</param>
-    public virtual void Initialize(LaneController lane, float speed, BeatmapData.NoteData data)
-    {
-        this.lane = lane; // setters
-        this.speed = speed;
-        this.data = data;
-    }
     public virtual void Initialize(LanePrefabController lane, float speed, BeatmapData.NoteData data)
     {
-        this.lane = lane;
+        this.lane = lane; // setters
         this.speed = speed;
         this.data = data;
     }
@@ -34,7 +28,8 @@ public abstract class NoteBase : MonoBehaviour
     /// </summary>
     protected virtual void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime; // translate its ass down the lane.
+        lane.Scroll(LanePrefabController.Side.Left);
+        //transform.position += Vector3.left * speed * Time.deltaTime; // translate its ass down the lane.
     }
 
     /// <summary>
@@ -51,6 +46,7 @@ public abstract class NoteBase : MonoBehaviour
 
     public virtual void Miss()
     {
+        Debug.Log("hello");
         data.resolved = true;
         AnimationManager.Missed(lane);
         Health.TakeDamage();
