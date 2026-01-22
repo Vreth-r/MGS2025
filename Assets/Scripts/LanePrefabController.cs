@@ -37,6 +37,9 @@ public class LanePrefabController : MonoBehaviour, ILaneController
     public float step = 1;
     // Offset based on scrolling
     public float Offset { get; private set; }
+    // Indiciates whether or not we are currently trying to spawn a HoldNote, and if so, what the
+    // start time bound is
+    public float? spawningHold = null;
 
     /// <summary>
     /// Awake() is a Monobehavior method, it is run before the first frame after object load and all Start() methods.
@@ -81,6 +84,10 @@ public class LanePrefabController : MonoBehaviour, ILaneController
     public void Scroll(Side side)
     {
         var step = this.step * (side == Side.Left ? -1 : 1);
+        if (spawningHold is not null && (Offset + step) <= spawningHold)
+        {
+            return;
+        }
         foreach (var note in GetComponentsInChildren<NoteBase>())
         {
             note.transform.position += new Vector3(step, 0, 0);
@@ -93,19 +100,25 @@ public class LanePrefabController : MonoBehaviour, ILaneController
         Offset += step;
     }
 
+    private static void InvalidNote(string type)
+    {
+        Debug.LogWarning($"Unknown note type '{type}': skip that shit");
+    }
+
     /// <summary>
     /// SpawnNote(), spawns a note!
     /// Spawns note from prefab based on note type.
     /// </summary>
-    public void SpawnNote(BeatmapData.NoteData data, Side side, out GameObject noteObj)
+    public void SpawnNote(BeatmapData.NoteData data, Side side)
     {
         if (!notePrefabs.TryGetValue(data.type, out GameObject prefab))
         {
-            Debug.LogWarning($"Unknown note type '{data.type}': skip that shit");
+            InvalidNote(data.type);
+            return;
         }
 
         // instantiate that shit
-        noteObj = Instantiate(
+        var noteObj = Instantiate(
             prefab,
             (side == Side.Left ? spawnLeft : spawnRight).position,
             Quaternion.identity,
@@ -117,6 +130,83 @@ public class LanePrefabController : MonoBehaviour, ILaneController
         if (noteObj.TryGetComponent<NoteBase>(out var note))
         {
             note.Initialize(this, 0, data);
+        }
+    }
+
+    /// <summary>
+    /// Adds a new note to the beatmap at the position of the 'Special Zone'. Only for use in the
+    /// editor.
+    ///
+    /// If `type` is 'Hold', will stay in 'adding note' mode until `EndSpawnSpecial` is called
+    /// </summary>
+    public void BeginSpawnSpecial(string type, ref BeatmapData data)
+    {
+        if (spawningHold is not null)
+        {
+            Debug.LogWarning($"attempt to start adding a new note to the beat map while in the middle of adding a HoldNote (start: {{ {spawningHold} }}) already");
+        }
+        if (type == "Tap" || type == "Dead")
+        {
+            BeatmapData.NoteData noteData = new()
+            {
+                type = type,
+                lane = laneIndex,
+                time = Offset,
+            };
+            data.notes.Add(noteData);
+            data.Save();
+            var noteObj = Instantiate(notePrefabs[type], specialZone.position, Quaternion.identity, transform);
+            // see if the attatched script is either a NoteBase or a child class of NoteBase
+            // THIS IS ONE OF THE FEW TIMES INHERITANCE IS USEFUL OUTSIDE OF WRITING API SOFTWARE.
+            if (noteObj.TryGetComponent<NoteBase>(out var note))
+            {
+                note.Initialize(this, 0, noteData);
+            }
+
+        }
+        else if (type == "Hold")
+        {
+            spawningHold = Offset;
+            // Can't put the start and the end in the same spot
+            Scroll(Side.Right);
+        }
+        else
+        {
+            InvalidNote(type);
+        }
+    }
+    public void EndSpawnSpecial(ref BeatmapData data)
+    {
+        if (spawningHold is null)
+        {
+            Debug.LogError("attempt to finish adding a HoldNote without starting");
+            return;
+        }
+        BeatmapData.NoteData noteData = new()
+        {
+            type = "Hold",
+            lane = laneIndex,
+            time = (float)spawningHold,
+            parameters = new Dictionary<string, float>
+            {
+                {"endTime", Offset},
+            },
+        };
+        data.Save();
+
+        // reset the position back to the start of the hold note
+        while (Offset > spawningHold)
+        {
+            Scroll(Side.Left);
+        }
+        spawningHold = null;
+
+        var noteObj = Instantiate(notePrefabs["Hold"], specialZone.position, Quaternion.identity, transform);
+        // see if the attatched script is either a NoteBase or a child class of NoteBase
+        // THIS IS ONE OF THE FEW TIMES INHERITANCE IS USEFUL OUTSIDE OF WRITING API SOFTWARE.
+        if (noteObj.TryGetComponent<NoteBase>(out var note))
+        {
+            note.Initialize(this, 0, noteData);
         }
     }
 
