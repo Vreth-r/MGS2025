@@ -27,6 +27,8 @@ public class LanePrefabController : MonoBehaviour
 
     // Should be updated by parent objects to change the behaviour of the `Scroll` method
     public float step = 1;
+    // Offset based on scrolling
+    public float Offset { get; private set; }
 
     /// <summary>
     /// Awake() is a Monobehavior method, it is run before the first frame after object load and all Start() methods.
@@ -80,6 +82,7 @@ public class LanePrefabController : MonoBehaviour
                 Destroy(note);
             }
         }
+        Offset += step;
     }
 
     /// <summary>
