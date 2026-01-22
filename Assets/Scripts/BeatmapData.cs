@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 /// <summary>
@@ -17,6 +18,7 @@ public class BeatmapData
     public string songPath; // directory path to the audio. Should be in Assets/StreamingAssets but that could change
     public float bpm; // the predetermined BPM of the song. Sound Design should be providing these to you.
     public string notesCsv; // Notes and timings [encoded(csv)]
+    public string SourcePath { private set; get; }
 
     [NonSerialized] public List<NoteData> notes = new(); // raw note data [decodeTarget]
 
@@ -36,7 +38,29 @@ public class BeatmapData
 
         // whether the note has been hit or missed
         // needed to determine when game ends
-        public bool resolved = false; 
+        public bool resolved = false;
+    }
+
+    public static BeatmapData Load(string filePath)
+    {
+        try // "try to run this code"
+        {
+            string json = File.ReadAllText(filePath); // grab that shit
+            BeatmapData data = JsonUtility.FromJson<BeatmapData>(json); // instatiate a beatmapdata object from the json utility
+            data.SourcePath = filePath;
+            data.ParseCsv(); // You should parse yourself, NOW!
+            return data;
+        }
+        catch (System.Exception e) // "and if anything goes wrong, don't crash, just run this code instead"
+        {
+            Debug.LogError($"Failed to load beatmap: {filePath}\n{e}");
+            return null;
+        }
+    }
+
+    public void Save()
+    {
+        Debug.LogError("this method still needs to be implemented!");
     }
 
     /// <summary>

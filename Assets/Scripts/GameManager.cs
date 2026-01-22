@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         }; // this is a rare instance of hardcoding being ok do to for non dynamic references.
         // the reason why i am storing them in prefabs is because it allows for custom behavior and visual options.
         // you can do it with code yeah but theres a fine line between game programming and programming a game yk. TLDR, use the engine features they save time.
-        beatmap = BeatmapLoader.LoadFromJson(path);
+        beatmap = BeatmapData.Load(path);
         foreach (var lane in lanes) // set hitzone for each lane
         {
             lane.hitZone = hitZone;
