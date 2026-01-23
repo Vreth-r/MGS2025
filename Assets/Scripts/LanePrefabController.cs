@@ -77,7 +77,7 @@ public class LanePrefabController : MonoBehaviour
     /// </summary>
     public void Scroll(Side side)
     {
-        float s = 0.05f;
+        float s = 0.01f;
         var step = this.step * (side == Side.Left ? -1 : 1) * s;
         if (spawningHold is not null && (Offset + step) <= spawningHold)
         {

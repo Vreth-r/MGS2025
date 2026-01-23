@@ -10,6 +10,8 @@ public abstract class NoteBase : MonoBehaviour
     protected LanePrefabController lane; // the lane it's assigned (assigned on instantiation)
     protected BeatmapData.NoteData data; // any other args to be passed to children of the appropriate type (instantiation)
 
+
+    public bool testMove = true;
     /// <summary>
     /// Initialize(LaneController, float) is suprisingly not a Mono method and is literally a workaround because
     /// Mono's can't have constructors. This is called in LaneController on note instantiation.
@@ -28,7 +30,8 @@ public abstract class NoteBase : MonoBehaviour
     /// </summary>
     protected virtual void Update()
     {
-        lane.Scroll(LanePrefabController.Side.Left);
+        if (testMove)
+            lane.Scroll(LanePrefabController.Side.Left);
         //transform.position += Vector3.left * speed * Time.deltaTime; // translate its ass down the lane.
     }
 
@@ -39,14 +42,13 @@ public abstract class NoteBase : MonoBehaviour
     /// <returns>Boolean whether the note is in the hitzone or not.</returns>
     public virtual bool IsInHitZone(Transform hitZone)
     {
-        var timing = Mathf.Abs(transform.position.x - hitZone.position.x) / speed; // actual timing
+        var timing = Mathf.Abs(transform.position.x - hitZone.position.x);// / speed; // actual timing
         ScoreManager.Instance.AddScore(timing);
         return timing < 0.4f; // if timing smaller than largest timing window
     }
 
     public virtual void Miss()
     {
-        Debug.Log("hello");
         data.resolved = true;
         AnimationManager.Missed(lane);
         Health.TakeDamage();

@@ -25,7 +25,6 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(float timing)
     {
-        Debug.Log("added score");
         if (timing < 0.1f) // perfect
         {
             consecutive++;
