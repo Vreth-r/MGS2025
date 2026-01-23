@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Button References")]
     [SerializeField] private Button playButton;
+    [SerializeField] private Button editorButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button quitButton;
@@ -32,6 +33,7 @@ public class MainMenuManager : MonoBehaviour
         buttons = new[] { playButton, settingsButton, creditsButton, quitButton };
         // Listeners
         playButton.onClick.AddListener(OnPlay);
+        editorButton.onClick.AddListener(OnEditor);
         settingsButton.onClick.AddListener(OpenSettings);
         creditsButton.onClick.AddListener(OpenCredits);
         quitButton.onClick.AddListener(OnQuit);
@@ -103,6 +105,12 @@ public class MainMenuManager : MonoBehaviour
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         SceneManager.LoadScene("Base", LoadSceneMode.Single);
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);
+    }
+
+    private void OnEditor()
+    {
+        SceneManager.LoadScene("Base", LoadSceneMode.Single);
+        SceneManager.LoadScene("Editor", LoadSceneMode.Additive);
     }
 
     private void OnQuit()
