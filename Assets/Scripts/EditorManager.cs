@@ -13,13 +13,14 @@ public class EditorManager : MonoBehaviour
     public string beatmapFileName;
     public LanePrefabController[] lanes;
     public AudioSource audioSource;
-    public Dictionary<string, GameObject> notePrefabs; 
+    public Dictionary<string, GameObject> notePrefabs;
 
     public GameObject tapNotePrefab;
     public GameObject holdNotePrefab;
     public GameObject deadNotePrefab;
 
-    
+    private int lane = 0;
+
     void Awake()
     {
         if (Instance == null)
@@ -35,15 +36,25 @@ public class EditorManager : MonoBehaviour
             lanes = GameManager.Instance.lanes;
             audioSource = GameManager.Instance.audioSource;
             notePrefabs = new Dictionary<string, GameObject>(GameManager.Instance.notePrefabs);
-            tapNotePrefab  = GameManager.Instance.tapNotePrefab;
+            tapNotePrefab = GameManager.Instance.tapNotePrefab;
             holdNotePrefab = GameManager.Instance.holdNotePrefab;
             deadNotePrefab = GameManager.Instance.deadNotePrefab;
         }
     }
 
 
-    public void PlayTrack() {}
-    public void PauseTrack() {}
-    public void SetTrackTime(float playbackPercent) {}
+    public void PlayTrack() { }
+    public void PauseTrack() { }
+    public void SetTrackTime(float playbackPercent) { }
     // add functions here!
+
+    public void SelectLane(int index)
+    {
+        if (index < 0 || index > 4)
+        {
+            Debug.LogError($"Refusing to select non-existent lane with index {index}");
+            return;
+        }
+        lane = index;
+    }
 }
