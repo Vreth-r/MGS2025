@@ -37,8 +37,10 @@ public class EditorManager : MonoBehaviour
             var special = GameObject.CreatePrimitive(PrimitiveType.Plane);
             special.transform.SetParent(lane.specialZone, false);
             special.transform.rotation = Quaternion.Euler(0, -90, 0);
-            special.transform.localScale = Vector3.one * 0.1f;
-            special.transform.position += Vector3.up * 0.1f;
+            special.transform.localScale = new(0.1f, 0.1f, 0.01f);
+            special.transform.localPosition += Vector3.left * 0.55f + Vector3.down * 0.5f;
+            special.transform.position += Vector3.up * 0.5f;
+
         }
     }
 
