@@ -26,7 +26,7 @@ public class BaseManager : MonoBehaviour
         get => offset;
         set
         {
-            offset = (float)Math.Round((double)value, 3);
+            offset = (float)Math.Round((double)value, 6);
             foreach (var lane in lanes)
             {
                 lane.Offset = offset;
