@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,22 +19,36 @@ public class BaseManager : MonoBehaviour
     public LaneController[] lanes; // Lane hooks (inspector)
     public AudioSource audioSource; // audio hook (inspector)
 
+
     private float offset;
     public float Offset
     {
         get => offset;
         set
         {
-            offset = value;
+            offset = (float)Math.Round((double)value, 3);
             foreach (var lane in lanes)
             {
-                lane.Offset = value;
+                lane.Offset = offset;
+            }
+        }
+    }
+    private int scale = 5;
+    public int Scale
+    {
+        get => scale;
+        set
+        {
+            scale = value;
+            Offset = offset;
+            foreach (var lane in lanes)
+            {
+                lane.Scale = value;
             }
         }
     }
 
-    private float step = 1f;
-    public float Step { get => step; }
+    public float step = 1f;
 
     // Note prefabs (inspector)
     public GameObject deadNotePrefab;
@@ -43,11 +58,12 @@ public class BaseManager : MonoBehaviour
 
     private void Awake()
     {
+
         NotePrefabs = new Dictionary<string, GameObject>
         {
             {"Tap", tapNotePrefab },
             {"Hold", holdNotePrefab },
-            {"Dead", deadNotePrefab }
+{"Dead", deadNotePrefab }
         }; // this is a rare instance of hardcoding being ok do to for non dynamic references.
            // the reason why i am storing them in prefabs is because it allows for custom behavior and visual options.
            // you can do it with code yeah but theres a fine line between game programming and programming a game yk. TLDR, use the engine features they save time.
@@ -63,8 +79,6 @@ public class BaseManager : MonoBehaviour
             return; // basically just tell it to break to avoid any loops
         }
 
-        step = beatmap.bpm / 60f * Time.fixedDeltaTime;
-
         foreach (var note in beatmap.notes)
         {
             if (lanes[note.lane].notes == null)
@@ -74,6 +88,12 @@ public class BaseManager : MonoBehaviour
             lanes[note.lane].SpawnNote(note);
         }
 
+    }
+
+    public void Start()
+    {
+        // Deliberately, explicitly invoke setter
+        Scale = scale;
     }
 
     public void Scroll(LaneController.Side side = LaneController.Side.Right)

@@ -25,7 +25,7 @@ public class HoldNote : NoteBase
 
         noteLength = data.parameters["endTime"] - data.time;
 
-        tail.position = head.position + Vector3.left * noteLength; // sets the tails position
+        UpdateTail();
 
         // sets the line from the head to tail
         lineRenderer.SetPosition(0, head.position);
@@ -57,8 +57,8 @@ public class HoldNote : NoteBase
             {
                 holdTimer += Time.deltaTime;
 
-                transform.position += Vector3.right * BaseManager.Instance.Step; // when holding, stop the note from moving
-                tail.position -= Vector3.right * BaseManager.Instance.Step; // keep the tail moving closer so the note "shrinks"
+                transform.position += Vector3.right * BaseManager.Instance.step; // when holding, stop the note from moving
+                tail.position -= Vector3.right * BaseManager.Instance.step; // keep the tail moving closer so the note "shrinks"
 
                 if (holdTimer >= (data.parameters["endTime"] - data.time))
                 {
@@ -73,5 +73,11 @@ public class HoldNote : NoteBase
             Destroy(gameObject);
             // hold released early, do any penalties before the destroy statement (same for success)
         }
+    }
+
+    public void UpdateTail()
+    {
+        if (head != null && tail != null)
+            tail.position = head.position + BaseManager.Instance.Scale * noteLength * Vector3.left; // sets the tails position
     }
 }

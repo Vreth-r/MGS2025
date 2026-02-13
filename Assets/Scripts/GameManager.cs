@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     // public float bpm = 120f; // the BPM to a given song, for the MVP, its 120 default {artifact}
     // private float secondsPerBeat; // (Awake()) due to calculation {artifact}
     //public float noteTravelDistance = 10f; // i need this for later {artifact}
-    public float noteSpeed = 5f; // i need this for later!
+
+    /// Bigger number -> faster notes
+    public int scale = 5;
     public Transform hitZone; // hit zone for notes (inspector)
                               // the killzone is set a trigger collider and handles note deletion on its own.
 
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
             beatmap = BaseManager.Instance.beatmap;
             lanes = BaseManager.Instance.lanes;
             audioSource = BaseManager.Instance.audioSource;
+            BaseManager.Instance.Scale = scale;
+            BaseManager.Instance.step = beatmap.bpm / 60f * Time.fixedDeltaTime;
         }
         else
             Debug.LogError("BaseManager singleton has not been instantiated. Did you forget to load the Base scene?");
@@ -57,7 +61,6 @@ public class GameManager : MonoBehaviour
         {
             lane.specialZone = hitZone;
         }
-        BaseManager.Instance.Offset = 10f;
         // beatmapPlayer = new BeatmapPlayer(beatmap, lanes, noteSpeed);
         //secondsPerBeat = 60f / bpm; // Seconds in each beat is just the bpm converted to seconds reciprocal.
     }

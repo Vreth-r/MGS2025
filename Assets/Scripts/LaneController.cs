@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LaneController : MonoBehaviour
@@ -24,11 +24,28 @@ public class LaneController : MonoBehaviour
     {
         get
         {
-            return notes.transform.localPosition.x;
+            return notes.transform.localPosition.x / BaseManager.Instance.Scale;
         }
         set
         {
-            notes.transform.localPosition = Vector3.right * value;
+            notes.transform.localPosition = BaseManager.Instance.Scale * value * Vector3.right;
+        }
+    }
+
+    private int scale = 5;
+    public int Scale
+    {
+        get => scale;
+        set
+        {
+            scale = value;
+            notes.localScale = new(value, 1, 1);
+            foreach (var note in notes.GetComponentsInChildren<NoteBase>())
+            {
+                note.gameObject.transform.localScale = new(1f / value, 1, 1);
+                if (note is HoldNote hold)
+                    hold.UpdateTail();
+            }
         }
     }
 
@@ -82,11 +99,15 @@ public class LaneController : MonoBehaviour
             Quaternion.identity
         ); // instantiate note prefab
         noteObj.transform.SetParent(notes.transform, false);
+        noteObj.transform.localScale = new(1f / scale, 1, 1);
+
 
         // see if the attatched script is either a NoteBase or a child class of NoteBase
         // THIS IS ONE OF THE FEW TIMES INHERITANCE IS USEFUL OUTSIDE OF WRITING API SOFTWARE.
         if (noteObj.TryGetComponent<NoteBase>(out var note))
         {
+            if (note is HoldNote hold)
+                hold.UpdateTail();
             note.Initialize(this, data);
         }
     }

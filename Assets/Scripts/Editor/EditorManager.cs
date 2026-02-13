@@ -24,6 +24,7 @@ public class EditorManager : MonoBehaviour
             beatmap = BaseManager.Instance.beatmap;
             lanes = BaseManager.Instance.lanes;
             audioSource = BaseManager.Instance.audioSource;
+            BaseManager.Instance.step = 1f;
         }
         else
             Debug.LogError("BaseManager singleton has not been instantiated. Did you forget to load the Base scene?");
@@ -39,8 +40,6 @@ public class EditorManager : MonoBehaviour
             special.transform.localScale = Vector3.one * 0.1f;
             special.transform.position += Vector3.up * 0.1f;
         }
-
-        BaseManager.Instance.Offset = -BaseManager.Instance.Step;
     }
 
 
@@ -143,7 +142,7 @@ public class EditorManager : MonoBehaviour
 
     public void Scroll(LaneController.Side side)
     {
-        var step = BaseManager.Instance.Step * (side == LaneController.Side.Right ? -1 : 1);
+        var step = BaseManager.Instance.step * (side == LaneController.Side.Right ? -1 : 1);
         // Don't allow the timeline to go further left of where we've already started placing a hold
         // note
         if (addingHoldNote is not null && BaseManager.Instance.Offset + step >= addingHoldNote)
@@ -167,5 +166,54 @@ public class EditorManager : MonoBehaviour
     public void Back()
     {
         BaseManager.MainMenu();
+    }
+
+
+    // For inspector
+    public static void SetScale(int index)
+    {
+        BaseManager.Instance.Scale = index + 1;
+    }
+    public static void SetStep(int index)
+    {
+        var factor = 0;
+        //
+        switch (index)
+        {
+            case 0:
+                factor = 48;
+                break;
+            case 1:
+                factor = 32;
+                break;
+            case 2:
+                factor = 24;
+                break;
+            case 3:
+                factor = 16;
+                break;
+            case 4:
+                factor = 12;
+                break;
+            case 5:
+                factor = 8;
+                break;
+            case 6:
+                factor = 6;
+                break;
+            case 7:
+                factor = 4;
+                break;
+            case 8:
+                factor = 3;
+                break;
+            case 9:
+                factor = 2;
+                break;
+            case 10:
+                factor = 1;
+                break;
+        }
+        BaseManager.Instance.step = 1f / factor;
     }
 }
