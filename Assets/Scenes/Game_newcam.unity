@@ -4529,7 +4529,7 @@ MonoBehaviour:
   sprBase: {fileID: 21300000, guid: dbf23062210e4394f8bb27904efea1a0, type: 3}
   sprAttack1: {fileID: 21300000, guid: 144ee4308bad4eb41beda615d673b6fe, type: 3}
   sprAttack2: {fileID: 21300000, guid: a6a0d4de0b5ce2345a233c4b2e5fdc88, type: 3}
-  sprOuch: {fileID: 21300000, guid: 309e8a55b6915f841933bc686bbfc339, type: 3}
+  sprOuch: {fileID: 21300000, guid: e4d111eb1a0ec3c40a268899cb83dab8, type: 3}
   spriteRenderer: {fileID: 1784994248}
   baseGeneral: {x: 0, y: 0, z: 0}
   resetcounter: 0
