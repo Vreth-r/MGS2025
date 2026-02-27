@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 33179715}
   - component: {fileID: 33179714}
   m_Layer: 5
-  m_Name: UltParticleL1 (1)
+  m_Name: UltParticleR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5313,6 +5313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 2034341608}
   comboText: {fileID: 1211580317}
+  inspectorUltimateScoreMultiplier: 4
 --- !u!4 &62884185
 Transform:
   m_ObjectHideFlags: 0
@@ -12965,6 +12966,7 @@ MonoBehaviour:
   tapNotePrefab: {fileID: 5200638745532964819, guid: 5092948592fb29f4093674817df3e82b, type: 3}
   holdNotePrefab: {fileID: 5200638745532964819, guid: c2fa55dc3ffae0d41ab4742c7b2b602e, type: 3}
   deadNotePrefab: {fileID: 5200638745532964819, guid: 286f60411db448a48aecf20ee47950a5, type: 3}
+  noteSaturation: 0.5
 --- !u!4 &1177858158
 Transform:
   m_ObjectHideFlags: 0
@@ -14489,7 +14491,7 @@ GameObject:
   - component: {fileID: 1771281858}
   - component: {fileID: 1771281857}
   m_Layer: 5
-  m_Name: UltParticleL2
+  m_Name: UltParticleR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
