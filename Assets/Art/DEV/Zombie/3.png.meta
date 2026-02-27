@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: cd42ad81f180dfb41a80495e881755e0
+guid: e8cff5b0ab76d5440aa0d7f19851e65f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3017426925328579091
-    second: Lu-idle_0
+      213: -6378057411893496995
+    second: Photo 2026-02-24, 7 53 26 PM (2)_0
+  - first:
+      213: -5451938704662182392
+    second: Photo 2026-02-24, 7 53 26 PM (2)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,10 +52,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.49834418, y: 0.03642991}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 600
-  spriteBorder: {x: 0, y: 37, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,23 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lu-idle_0
+      name: Photo 2026-02-24, 7 53 26 PM (2)_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 38
-        width: 587
-        height: 944
+        x: 85
+        y: 413
+        width: 244
+        height: 241
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31ab8e33dcd00e920800000000000000
-      internalID: 3017426925328579091
+      spriteID: d537a0783969c77a0800000000000000
+      internalID: -6378057411893496995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 2026-02-24, 7 53 26 PM (2)_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 55
+        width: 615
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806486b32a2d654b0800000000000000
+      internalID: -5451938704662182392
       vertices: []
       indices: 
       edges: []
@@ -139,7 +164,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lu-idle_0: 3017426925328579091
+      Photo 2026-02-24, 7 53 26 PM (2)_0: -6378057411893496995
+      Photo 2026-02-24, 7 53 26 PM (2)_1: -5451938704662182392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

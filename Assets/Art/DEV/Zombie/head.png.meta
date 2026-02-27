@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cd42ad81f180dfb41a80495e881755e0
+guid: db8d4220585c5ca458b1f5f5e1621f68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3017426925328579091
-    second: Lu-idle_0
+      213: 3785303887790642960
+    second: Photo 2026-02-24, 8 10 29 PM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,10 +49,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.49834418, y: 0.03642991}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 600
-  spriteBorder: {x: 0, y: 37, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lu-idle_0
+      name: Photo 2026-02-24, 8 10 29 PM_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 38
-        width: 587
-        height: 944
+        x: 630
+        y: 847
+        width: 256
+        height: 245
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31ab8e33dcd00e920800000000000000
-      internalID: 3017426925328579091
+      spriteID: 0179aae94d9188430800000000000000
+      internalID: 3785303887790642960
       vertices: []
       indices: 
       edges: []
@@ -139,7 +139,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lu-idle_0: 3017426925328579091
+      Photo 2026-02-24, 8 10 29 PM_0: 3785303887790642960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: cd42ad81f180dfb41a80495e881755e0
+guid: fbda5b81703ab8e49a2b3b8fac6b579a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3017426925328579091
-    second: Lu-idle_0
+      213: 8899475876268877182
+    second: Photo 2026-02-24, 8 10 29 PM (1)_0
+  - first:
+      213: 3837799941519780514
+    second: Photo 2026-02-24, 8 10 29 PM (1)_1
+  - first:
+      213: 2819926814711251188
+    second: Photo 2026-02-24, 8 10 29 PM (1)_2
+  - first:
+      213: -9096492359042204340
+    second: Photo 2026-02-24, 8 10 29 PM (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,10 +58,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.49834418, y: 0.03642991}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 600
-  spriteBorder: {x: 0, y: 37, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lu-idle_0
+      name: Photo 2026-02-24, 8 10 29 PM (1)_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 38
-        width: 587
-        height: 944
+        x: 87
+        y: 326
+        width: 305
+        height: 767
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31ab8e33dcd00e920800000000000000
-      internalID: 3017426925328579091
+      spriteID: e752a24782a418b70800000000000000
+      internalID: 8899475876268877182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 2026-02-24, 8 10 29 PM (1)_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 729
+        width: 236
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa2d4996ba924530800000000000000
+      internalID: 3837799941519780514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 2026-02-24, 8 10 29 PM (1)_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 39
+        width: 408
+        height: 729
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f086735f74622720800000000000000
+      internalID: 2819926814711251188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 2026-02-24, 8 10 29 PM (1)_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 761
+        width: 291
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4dfb3d0564c2c180800000000000000
+      internalID: -9096492359042204340
       vertices: []
       indices: 
       edges: []
@@ -139,7 +214,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lu-idle_0: 3017426925328579091
+      Photo 2026-02-24, 8 10 29 PM (1)_0: 8899475876268877182
+      Photo 2026-02-24, 8 10 29 PM (1)_1: 3837799941519780514
+      Photo 2026-02-24, 8 10 29 PM (1)_2: 2819926814711251188
+      Photo 2026-02-24, 8 10 29 PM (1)_3: -9096492359042204340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: cd42ad81f180dfb41a80495e881755e0
+guid: 3c7c152ee100c334da2346a2cc3eedb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3017426925328579091
-    second: Lu-idle_0
+      213: -7787789686258523147
+    second: Photo 2026-02-24, 8 10 29 PM (2)_0
+  - first:
+      213: 269970646427276252
+    second: Photo 2026-02-24, 8 10 29 PM (2)_1
+  - first:
+      213: -577142814900210118
+    second: Photo 2026-02-24, 8 10 29 PM (2)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,10 +55,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.49834418, y: 0.03642991}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 600
-  spriteBorder: {x: 0, y: 37, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,23 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lu-idle_0
+      name: Photo 2026-02-24, 8 10 29 PM (2)_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 38
-        width: 587
-        height: 944
+        x: 159
+        y: 266
+        width: 515
+        height: 581
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31ab8e33dcd00e920800000000000000
-      internalID: 3017426925328579091
+      spriteID: 5f32c15ba863ce390800000000000000
+      internalID: -7787789686258523147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 2026-02-24, 8 10 29 PM (2)_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 136
+        width: 269
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd394106fd02fb300800000000000000
+      internalID: 269970646427276252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 2026-02-24, 8 10 29 PM (2)_2
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 31
+        width: 42
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36343deaa39df7f0800000000000000
+      internalID: -577142814900210118
       vertices: []
       indices: 
       edges: []
@@ -139,7 +189,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lu-idle_0: 3017426925328579091
+      Photo 2026-02-24, 8 10 29 PM (2)_0: -7787789686258523147
+      Photo 2026-02-24, 8 10 29 PM (2)_1: 269970646427276252
+      Photo 2026-02-24, 8 10 29 PM (2)_2: -577142814900210118
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
