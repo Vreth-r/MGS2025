@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ultSparkleS
+  m_Name: ultSparkleB
   m_Shader: {fileID: 10761, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,11 +28,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailTex:
-        m_Texture: {fileID: 2800000, guid: f0b83cd6cefe5a949b9d3b27eceefff6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3c34591b16aee9942beabb4b501c3d58, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3ab1396ecb4fe764f97616bf0638d1d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3c34591b16aee9942beabb4b501c3d58, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:

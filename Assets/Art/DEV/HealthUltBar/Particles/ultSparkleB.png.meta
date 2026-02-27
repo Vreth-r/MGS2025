@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9a2324a06d531d247a8d486994c213a7
+guid: 3c34591b16aee9942beabb4b501c3d58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7116425081219686110
-    second: ultSparkle_0
+      213: -17926387385211732
+    second: ultSparkleB_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ultSparkle_0
+      name: ultSparkleB_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 720
-        height: 720
+        x: 70
+        y: 73
+        width: 580
+        height: 574
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2216833d7116d3d90800000000000000
-      internalID: -7116425081219686110
+      spriteID: ca46ccfab0050cff0800000000000000
+      internalID: -17926387385211732
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ultSparkle_0: -7116425081219686110
+      ultSparkleB_0: -17926387385211732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
