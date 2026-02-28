@@ -59,11 +59,11 @@ public class BeatmapPlayer
     public bool IsFinished()
     {
         // For debuggging
-        for (int i = 0; i < beatmap.notes.Count; i++)
-        {
-            var note = beatmap.notes[i];
-            Debug.Log($"Note {i}: time={note.time}, lane={note.lane}, type={note.type}, resolved={note.resolved}");
-        }
+        // for (int i = 0; i < beatmap.notes.Count; i++)
+        // {
+        //     var note = beatmap.notes[i];
+        //     Debug.Log($"Note {i}: time={note.time}, lane={note.lane}, type={note.type}, resolved={note.resolved}");
+        // }
 
         // Hold notes don't work right now so just check if the last note is resolved
         // return beatmap.notes.TrueForAll(note => note.resolved);

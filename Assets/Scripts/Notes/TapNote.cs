@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 
 public class TapNote : NoteBase
 {
@@ -11,12 +10,13 @@ public class TapNote : NoteBase
         damageIncrement = inspectorDamageIncrement;
         regenIncrement = inspectorRegenIncrement;
     }
-    
-    public override void OnKeyPressed()
+
+    public override void OnHit(Judgement judgement)
     {
-        UltimateSystem.IncrementUltimate(); //increments the ults progression bar
-        Health.Regen(inspectorRegenIncrement);
+        // you can scale rewards by judgement later if you want
+        UltimateSystem.IncrementUltimate();
+        Health.Regen(regenIncrement);
+
         Destroy(gameObject);
-        // add more functionality later, like scoring, etc
     }
 }

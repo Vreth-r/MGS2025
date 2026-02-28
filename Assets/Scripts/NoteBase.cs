@@ -1,62 +1,75 @@
 using UnityEngine;
 
-/// <summary>
-/// A NoteBase is the abstraction of basic functionality of a hittable object that spawns at a given time in a lane.
-/// If you need an explanation on abstraction, you are far better off googling it, however I will answer any questions.
-/// </summary>
+public enum Judgement
+{
+    Perfect,
+    Awesome,
+    Good,
+    Okay,
+    Miss
+}
+
 public abstract class NoteBase : MonoBehaviour
 {
-    protected float speed; // the speed at which the note moves (assigned on instantiation)
-    protected LaneController lane; // the lane it's assigned (assigned on instantiation)
-    protected BeatmapData.NoteData data; // any other args to be passed to children of the appropriate type (instantiation)
-    protected float damageIncrement; // health the player(s) will lose when missing the note
-    protected float regenIncrement; // health the player(s) will gain when missing the note
+    protected float speed;
+    protected LaneController lane;
+    protected BeatmapData.NoteData data;
 
-    /// <summary>
-    /// Initialize(LaneController, float) is suprisingly not a Mono method and is literally a workaround because
-    /// Mono's can't have constructors. This is called in LaneController on note instantiation.
-    /// </summary>
-    /// <param name="lane">The lane the note belongs to.</param>
-    /// <param name="speed">The speed the note moves at down the lane.</param>
+    protected float damageIncrement;
+    protected float regenIncrement;
+
+    // windows in seconds (match ScoreManager thresholds)
+    protected const float PERFECT = 0.1f;
+    protected const float AWESOME = 0.2f;
+    protected const float GOOD = 0.3f;
+    protected const float OKAY = 0.4f;
+
     public virtual void Initialize(LaneController lane, float speed, BeatmapData.NoteData data)
     {
-        this.lane = lane; // setters
+        this.lane = lane;
         this.speed = speed;
         this.data = data;
     }
 
-    /// <summary>
-    /// Update() is called every frame. 
-    /// </summary>
     protected virtual void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime; // translate its ass down the lane.
+        transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
-    /// <summary>
-    /// IsInHitZone(Transform) determines whether the note is within the confines of a hitzone.
-    /// </summary>
-    /// <param name="hitZone">The hitzone the note will possibly be in.</param>
-    /// <returns>Boolean whether the note is in the hitzone or not.</returns>
-    public virtual bool IsInHitZone(Transform hitZone)
-    {   
-        var timing = Mathf.Abs(transform.position.x - hitZone.position.x) / speed; // actual timing
-        ScoreManager.Instance.AddScore(timing);
-        return timing < 0.4f; // if timing smaller than largest timing window
+    public float GetTimingSeconds(Transform hitZone)
+    {
+        return Mathf.Abs(transform.position.x - hitZone.position.x) / Mathf.Max(0.0001f, speed);
     }
+
+    public Judgement GetJudgement(Transform hitZone)
+    {
+        float t = GetTimingSeconds(hitZone);
+        if (t < PERFECT) return Judgement.Perfect;
+        if (t < AWESOME) return Judgement.Awesome;
+        if (t < GOOD) return Judgement.Good;
+        if (t < OKAY) return Judgement.Okay;
+        return Judgement.Miss;
+    }
+
+    public virtual bool CanBeHit(Transform hitZone)
+        => GetJudgement(hitZone) != Judgement.Miss;
+
+    // Called by lane when a hit is confirmed
+    public abstract void OnHit(Judgement judgement);
 
     public virtual void Miss()
     {
-        data.resolved = true;
-        AnimationManager.Missed(this.lane);
+        if (data != null) data.resolved = true;
+
+        AnimationManager.Missed(lane);
         Health.TakeDamage(damageIncrement);
+        ScoreManager.Instance.AddScore(1f); // treat as miss in scoring system
+
         Destroy(gameObject);
     }
-    public abstract void OnKeyPressed();
 
-    // Used for when note is hit
     public void ResolveNote()
     {
-        data.resolved = true;
+        if (data != null) data.resolved = true;
     }
 }

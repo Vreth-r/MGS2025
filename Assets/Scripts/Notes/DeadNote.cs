@@ -3,26 +3,32 @@ using UnityEngine;
 public class DeadNote : NoteBase
 {
     [SerializeField] private float inspectorDamageIncrement = 10f;
-    [SerializeField] private float inspectorRegenIncrement = 10f;
 
     private void Start()
     {
         damageIncrement = inspectorDamageIncrement;
-        regenIncrement = inspectorRegenIncrement;
+        regenIncrement = 0f; // trap note: no reward ever
     }
 
-    public override void OnKeyPressed()
+    // Player HIT the trap note (bad)
+    public override void OnHit(Judgement judgement)
     {
-        AnimationManager.Missed(this.lane);
-        Health.TakeDamage(damageIncrement); // take damage when the note is hit
+        AnimationManager.Missed(lane);
+        Health.TakeDamage(damageIncrement);
+
+        // Count it like a miss in your current scoring system
+        ScoreManager.Instance.AddScore(1f);
+
+        ResolveNote();
         Destroy(gameObject);
     }
 
+    // Player AVOIDED it (good) -> neutral outcome
     public override void Miss()
     {
-        UltimateSystem.IncrementUltimate(); //increments the ults progression bar
-        ResolveNote(); // resolve the note
-        Health.Regen(regenIncrement); // regen health or add score when missed
+        // No health gain, no ultimate, no score change.
+        // Just mark it resolved and remove it.
+        ResolveNote();
         Destroy(gameObject);
     }
 }

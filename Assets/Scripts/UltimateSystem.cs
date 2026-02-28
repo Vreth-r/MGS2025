@@ -5,133 +5,144 @@ using UnityEngine.UI;
 
 public class UltimateSystem : MonoBehaviour
 {
+    [Header("Inspector")]
+    [SerializeField] private Image inspectorUltimateBar;
+    [SerializeField] private int inspectorUltimateDivider = 3;
+    [SerializeField] private float inspectorUltimateDuration = 10f;
+
     private GameManager manager;
 
-    [SerializeField] private Image inspectorUltimateBar;
-    [SerializeField] private int inspectorUltimateDivider;
-    [SerializeField] private float inspectorUltimateDuration;
+    // Ultimate settings (static API kept to avoid rewriting other scripts)
+    public static Image ultimateBar;
+    private static int totalNoteCount;
+    private static int ultimateNoteCountProgress = 0;
+    private static int ultimateNoteCountThreshold;
+    public static int ultimateDivider = 3;
+    private static int usedUltimateCount;
+    public static float ultimateDuration = 10f;
 
-
-    //ultimate settings
-    public static Image ultimateBar; //the visual bar image
-   
-    private static int totalNoteCount; //grabs the total amount of notes that are going to be spawned in the level
-    private static int ultimateNoteCountProgress = 0; //keeps track of how many notes have been successfully hit and counted towards building up the ult
-
-    private static int ultimateNoteCountThreshold; //the exact number of notes needed to fully fill the ult bar
-    public static int ultimateDivider = 3; //the divider that dictates the fraction of the total notes that gives you an ult (in this case, the divider being 3 means that a third of the notes are needed to activate the ult)
-    private static int usedUltimateCount; //tracks the numebr of ults used (so we can disable it completely after the max number of uses)
-
-    public static float ultimateDuration = 10f; //how long the ultimate lasts for
-
-    //events (calls other components/functions that are subscribed to these events)
     public static event Action OnUltimateStarted;
     public static event Action OnUltimateFinished;
 
-    //getter+setters
     public static UltimateSystem Instance { get; private set; }
-    public static bool UltimateActive {  get; private set; }
+    public static bool UltimateActive { get; private set; }
+
+    private static bool warnedMissingBar;
 
     private void Awake()
     {
+        // singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
-    }
 
-    void Start()
-    {
-        //attach the preliminary data that is available + some math to figure some numebrs out
-        manager = GameManager.Instance;
-        totalNoteCount = manager.noteCount;
-
+        // Initialize visuals/settings ASAP (Awake runs before Start)
         ultimateBar = inspectorUltimateBar;
-        ultimateDivider = inspectorUltimateDivider;
-        ultimateDuration = inspectorUltimateDuration;
+        ultimateDivider = Mathf.Max(1, inspectorUltimateDivider);
+        ultimateDuration = Mathf.Max(0.01f, inspectorUltimateDuration);
 
-        ultimateNoteCountThreshold = totalNoteCount / ultimateDivider;
+        if (ultimateBar != null)
+            ultimateBar.fillAmount = 0f;
     }
 
-    //increments the ult bar and logic numbers
+    private void Start()
+    {
+        // GameManager might not be ready in Awake; grab it here
+        manager = GameManager.Instance;
+
+        // If noteCount is set later, this may be 0 at first — so keep it safe
+        totalNoteCount = manager != null ? manager.noteCount : 0;
+        RebuildThreshold();
+    }
+
+    private static void RebuildThreshold()
+    {
+        ultimateDivider = Mathf.Max(1, ultimateDivider);
+        ultimateNoteCountThreshold = Mathf.Max(1, totalNoteCount / ultimateDivider);
+    }
+
+    private static bool EnsureInitialized()
+    {
+        if (Instance == null)
+            Instance = FindFirstObjectByType<UltimateSystem>();
+
+        // If we found it late, pull fields
+        if (Instance != null && ultimateBar == null)
+        {
+            ultimateBar = Instance.inspectorUltimateBar;
+            ultimateDivider = Mathf.Max(1, Instance.inspectorUltimateDivider);
+            ultimateDuration = Mathf.Max(0.01f, Instance.inspectorUltimateDuration);
+        }
+
+        if (ultimateBar == null)
+        {
+            if (!warnedMissingBar)
+            {
+                warnedMissingBar = true;
+                Debug.LogError("[UltimateSystem] ultimateBar is null. Assign inspectorUltimateBar in the scene.");
+            }
+            return false;
+        }
+
+        // If threshold is invalid (often because totalNoteCount was 0), keep it safe
+        if (ultimateNoteCountThreshold <= 0)
+            ultimateNoteCountThreshold = 1;
+
+        return true;
+    }
+
     public static void IncrementUltimate()
     {
-        if (usedUltimateCount < ultimateDivider-1) //if the max number if ults is not used up yet
-        {
-            if (!UltimateActive) //stop incrementing ult bar if ult bar is already currently being used
-            {
-                if (ultimateNoteCountProgress + 1 > ultimateNoteCountThreshold) //if more notes are hit and the ult is already ready, just cap it out
-                {
-                    ultimateNoteCountProgress = ultimateNoteCountThreshold;
-                }
+        if (!EnsureInitialized()) return;
 
-                else
-                {
-                    ultimateNoteCountProgress = ultimateNoteCountProgress + 1; //add to the ult count progress
-                }
-
-                ultimateBar.fillAmount = (float)ultimateNoteCountProgress / (float)ultimateNoteCountThreshold; //updates the visual ult bar to show progress 
-            } 
-        }
-
-        else
+        if (usedUltimateCount >= ultimateDivider - 1)
         {
             ultimateBar.enabled = false;
+            return;
         }
+
+        if (UltimateActive) return;
+
+        ultimateNoteCountProgress = Mathf.Min(ultimateNoteCountProgress + 1, ultimateNoteCountThreshold);
+        ultimateBar.fillAmount = (float)ultimateNoteCountProgress / (float)ultimateNoteCountThreshold;
     }
 
-    //function that activates the ultimate
     public static void ActivateUltimate()
     {
-        if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
+        if (!EnsureInitialized()) return;
+
+        if (ultimateNoteCountProgress >= ultimateNoteCountThreshold)
         {
-            ultimateNoteCountProgress = 0; //reset progress
+            ultimateNoteCountProgress = 0;
 
-            OnUltimateStarted?.Invoke();  //calls the functions that are subscribed to this event
-            UltimateActive = true; //makes boolean true
+            OnUltimateStarted?.Invoke();
+            UltimateActive = true;
 
-            Instance.StartCoroutine(UltimateScoreModifier()); //calls the ult score modifier for big funny score multiplier
+            // Instance is required for coroutines
+            Instance.StartCoroutine(UltimateScoreModifier());
         }
     }
 
-    //for the ult score multiplier and the visual ult bar decreasing over time
     private static IEnumerator UltimateScoreModifier()
     {
-        float elapsedTime = 0f; //accumulated time during the active ult
+        float elapsedTime = 0f;
+        float startFill = ultimateBar.fillAmount;
 
-        float fillAmount = ultimateBar.fillAmount;
-
-        //goes for the duration of the ultimate
         while (elapsedTime < ultimateDuration)
         {
-            elapsedTime = elapsedTime + Time.deltaTime;
-
+            elapsedTime += Time.deltaTime;
             float a = elapsedTime / ultimateDuration;
-            ultimateBar.fillAmount = Mathf.Lerp(fillAmount, 0f, a); //lerps until the bar becomes empty (basically more elapsed time, means lerp goes to a smaller and smaller bar amount)
-
+            ultimateBar.fillAmount = Mathf.Lerp(startFill, 0f, a);
             yield return null;
         }
 
-        ultimateBar.fillAmount = 0f; //just incase the bar somehow goes a bit over/under, force it to be exact 0
+        ultimateBar.fillAmount = 0f;
 
-        OnUltimateFinished?.Invoke(); //calls all functions that listen to OnUltimateFinished
+        OnUltimateFinished?.Invoke();
         UltimateActive = false;
-    }
-
-    //calls ultimate
-    private void UseUltimate() 
-    {
-        ActivateUltimate();
-    }
-
-    //subscribes the function "UseUltimate", to be called whenever "OnUltimatePressed" is called
-    private void OnEnable()
-    {
-        //call "UseUltimate" when ultimate is pressed
-        InputManager.Instance.OnUltimatePressed += UseUltimate;
-    }
-
-    //unsubscribes the function "UseUltimate" to no longer be called when "OnUltimatePressed" is called
-    private void OnDisable()
-    {
-        //stops "UseUltimate" from being subscribed
-        InputManager.Instance.OnUltimatePressed -= UseUltimate;
     }
 }

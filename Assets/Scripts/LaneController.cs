@@ -75,23 +75,41 @@ public class LaneController : MonoBehaviour
     /// <param name="lane">The lane that got proced</param>
     private void HandleLanePress(int lane)
     {
-        bool justHit = false;
-        if (lane != laneIndex) return; // fuck off if its not the lane we care about [checkCond]
+        if (lane != laneIndex) return;
 
-        // Detect closest note in hit zone
-        foreach (Transform child in transform) // for every note
+        NoteBase best = null;
+        Judgement bestJudge = Judgement.Miss;
+        float bestTiming = float.MaxValue;
+
+        foreach (Transform child in transform)
         {
-            if (child.TryGetComponent<NoteBase>(out var note) && note.IsInHitZone(hitZone)) // if the note is not nothing (it happens) and the note thinks its in the hitzone
+            if (!child.TryGetComponent<NoteBase>(out var note)) continue;
+
+            var j = note.GetJudgement(hitZone);
+            if (j == Judgement.Miss) continue;
+
+            float t = note.GetTimingSeconds(hitZone);
+            if (t < bestTiming)
             {
-                justHit = true;
-                note.OnKeyPressed(); // tell the note it hath been pressed
-                note.ResolveNote();
-                break; // dont need to check the rest, semantically (and design wise) it is impossible for two notes to be in the same place.
+                best = note;
+                bestTiming = t;
+                bestJudge = j;
             }
         }
-        if (!justHit)
+
+        if (best != null)
         {
-            ScoreManager.Instance.AddScore(1f); //miss
+            // scoring once, on actual hit
+            ScoreManager.Instance.AddScore(bestTiming);
+
+            best.OnHit(bestJudge);
+            best.ResolveNote();
+        }
+        else
+        {
+            // ghost tap
+            ScoreManager.Instance.AddScore(1f);
+            // optionally: Health.TakeDamage(smallGhostTapPenalty);
         }
     }
 }

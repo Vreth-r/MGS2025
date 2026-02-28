@@ -107,7 +107,7 @@ public class InputManager : MonoBehaviour
         gamePauseAction = uiMap.FindAction("Pause");
         gamePauseAction.performed += ctx => OnPausePressed?.Invoke();
 
-        Debug.Log($"ControlsManager initialized with {laneActions.Count} lanes.");
+        //Debug.Log($"ControlsManager initialized with {laneActions.Count} lanes.");
     }
 
     private void InitializeUIInputs()
@@ -130,7 +130,7 @@ public class InputManager : MonoBehaviour
         DisableAll();
         gameplayMap.Enable();
         CurrentContext = InputContext.Gameplay;
-        Debug.Log("InputManager switched to Gameplay action map");
+        //Debug.Log("InputManager switched to Gameplay action map");
     }
 
     public void EnableUI()
@@ -138,7 +138,7 @@ public class InputManager : MonoBehaviour
         DisableAll();
         uiMap.Enable();
         CurrentContext = InputContext.UI;
-        Debug.Log("InputManager switched to UI action map");
+        //Debug.Log("InputManager switched to UI action map");
     }
 
     private void DisableAll()
@@ -172,7 +172,7 @@ public class InputManager : MonoBehaviour
         var action = GetLaneAction(laneIndex);
         if (action == null)
         {
-            Debug.LogWarning($"No action found for lane {laneIndex}");
+            //Debug.LogWarning($"No action found for lane {laneIndex}");
             return;
         }
 
@@ -185,7 +185,7 @@ public class InputManager : MonoBehaviour
                 ctx.Dispose();
                 action.Enable();
                 onComplete?.Invoke();
-                Debug.Log($"Rebound Lane {laneIndex} to {action.bindings[0].effectivePath}");
+                //Debug.Log($"Rebound Lane {laneIndex} to {action.bindings[0].effectivePath}");
             });
 
         rebind.Start();

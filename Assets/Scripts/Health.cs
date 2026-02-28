@@ -5,44 +5,47 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float inspectorMaxHealth = 100f;
     [SerializeField] private Image inspectorHealthBar;
+    [SerializeField] private static bool logChanges = false;
 
-    public static Image healthBar;
-    public static float maxHealth = 100f;
-    public static float health;
+    public static float maxHealth { get; private set; } = 100f;
+    public static float health { get; private set; }
 
-    void Start()
+    private static Image healthBar;
+
+    void Awake()
     {
         maxHealth = inspectorMaxHealth;
         healthBar = inspectorHealthBar;
         health = maxHealth;
+        UpdateUI();
     }
 
-    public static void TakeDamage(float damageIncrement)
+    public static void TakeDamage(float amount)
     {
-        if (health - damageIncrement < 0) 
-        { 
-            health = 0;
-            Debug.Log("player should die");
-        }
-        else
-            health -= damageIncrement;
-        Debug.Log("miss... hp is now at: " + Health.health);
-        healthBar.fillAmount = health / 100f;
-    }
-    public static void Regen(float regenIncrement)
-    {
-        if (Health.IsDead()) return;
-        if (health + regenIncrement > maxHealth)
-            health = maxHealth;
-        else
-            health += regenIncrement;
-        Debug.Log("hit! hp is now at: " + Health.health);
-        healthBar.fillAmount = health / 100f;    
+        if (IsDead()) return;
+
+        health = Mathf.Max(0f, health - amount);
+        UpdateUI();
+
+        if (logChanges) Debug.Log($"[Health] -{amount} => {health}/{maxHealth}");
+        if (health <= 0f && logChanges) Debug.Log("[Health] Player died");
     }
 
-    public static bool IsDead()
+    public static void Regen(float amount)
     {
-        return Health.health <= 0;
+        if (IsDead()) return;
+
+        health = Mathf.Min(maxHealth, health + amount);
+        UpdateUI();
+
+        if (logChanges) Debug.Log($"[Health] +{amount} => {health}/{maxHealth}");
     }
 
+    public static bool IsDead() => health <= 0f;
+
+    private static void UpdateUI()
+    {
+        if (healthBar != null)
+            healthBar.fillAmount = (maxHealth <= 0f) ? 0f : (health / maxHealth);
+    }
 }
