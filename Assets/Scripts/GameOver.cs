@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
     }
     void Update()
     {
-        if (Health.health <= 0)
+        if (Health.IsDead())
         {
             gameOverScreen.SetActive(true);
             Time.timeScale = 0f; 

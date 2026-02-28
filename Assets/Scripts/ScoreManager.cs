@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
     
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text comboText;
+    [SerializeField] private GameManager GM;
     private int consecutive = 0;
     private int score = 0;
     private void Awake()
@@ -25,6 +26,8 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(float timing)
     {
+        bool isfinished = GM.GameIsDone();
+        if (isfinished) return;
         Debug.Log("added score");
         if (timing < 0.1f) // perfect
         {

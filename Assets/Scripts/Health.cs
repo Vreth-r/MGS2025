@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
     }
     public static void Regen(float regenIncrement)
     {
+        if (Health.IsDead()) return;
         if (health + regenIncrement > maxHealth)
             health = maxHealth;
         else
@@ -38,4 +39,10 @@ public class Health : MonoBehaviour
         Debug.Log("hit! hp is now at: " + Health.health);
         healthBar.fillAmount = health / 100f;    
     }
+
+    public static bool IsDead()
+    {
+        return Health.health <= 0;
+    }
+
 }

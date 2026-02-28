@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
     // beatmapPlayer is private so we need a public method to check if game is done
     public bool GameIsDone()
     {
+        if (Health.IsDead()) return true;
+
         if (beatmapPlayer == null)
             return false;
 
