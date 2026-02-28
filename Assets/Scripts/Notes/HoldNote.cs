@@ -130,6 +130,12 @@ public class HoldNote : NoteBase
             transform.position += Vector3.right * speed * Time.deltaTime; // when holding, stop the note from moving
             tail.position -= Vector3.right * speed * Time.deltaTime; // keep the tail moving closer so the note "shrinks"
 
+                if (holdTimer >= (data.parameters["endTime"] - data.time))
+                {
+                    Destroy(gameObject);
+                    UltimateSystem.IncrementUltimate(); //increments the ults progression bar
+                    // successful note completion (might want to add something to NoteBase for this)
+                }
             if (timeRemaining <= 0)
             {
                 // unsubscribe

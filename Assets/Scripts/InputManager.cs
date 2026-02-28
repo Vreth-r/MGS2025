@@ -22,6 +22,9 @@ public class InputManager : MonoBehaviour
     public event Action<int> OnLanePressed;
     public event Action<int> OnLaneReleased;
 
+    //ultimate activation 
+    public event Action OnUltimatePressed;
+
     // Gameplay Pause Action
     private InputAction gamePauseAction;
 
@@ -90,6 +93,14 @@ public class InputManager : MonoBehaviour
             action.canceled += ctx => OnLaneReleased?.Invoke(laneIndex);
 
             i++;
+        }
+
+        //finds the keybind for "Ultimate" in the new input system
+        var ultimateAction = gameplayMap.FindAction("Ultimate");
+        if (ultimateAction != null) //if it exists
+        {
+            //when ult button is pressed, invoke the event "OnUltimatePressed" and any events subscribed to its event flag (like the function "UseUltimate" in UltimateSystem.cs)
+            ultimateAction.performed += ctx => OnUltimatePressed?.Invoke(); 
         }
 
         // Assigning gamePause Action and Subscribing to Event

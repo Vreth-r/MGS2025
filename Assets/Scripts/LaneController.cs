@@ -57,6 +57,15 @@ public class LaneController : MonoBehaviour
             note.Initialize(this, noteSpeed, data);
         }
         //noteObj.GetComponent<Note>().Initialize(this, noteSpeed); // this grabs the script set in the prefab and tells it some info to keep track of {artifact}
+
+        //when the ult is active, tells the lanes to change the note saturation before they spawn new notes
+        //(does not apply for already existing notes on the lanes, that happens in GameManager)
+        if (UltimateSystem.UltimateActive)
+        {
+            //grabs the SpriteRenderer of the note instance and changes the saturation (see GameManager for the functions)
+            SpriteRenderer renderer = noteObj.GetComponentInChildren<SpriteRenderer>();
+            renderer.color = GameManager.Instance.changeSaturation(renderer.color, GameManager.Instance.noteSaturation);
+        }
     }
 
     /// <summary>

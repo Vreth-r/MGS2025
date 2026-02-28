@@ -14,6 +14,8 @@ public class TapNote : NoteBase
     
     public override void OnKeyPressed()
     {
+        Health.Regen();
+        UltimateSystem.IncrementUltimate(); //increments the ults progression bar
         Health.Regen(inspectorRegenIncrement);
         Destroy(gameObject);
         // add more functionality later, like scoring, etc

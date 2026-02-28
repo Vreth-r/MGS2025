@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     private BeatmapData beatmap; // the beatmap to run
     private BeatmapPlayer beatmapPlayer; // the beatmap runner
 
+    private int beatmapNoteCount;
+    public int noteCount => beatmapNoteCount;
+
     [Header("Pulse Settings")]
     public float bpm; // Taken from beatmap data
     public float secondsPerBeat; // (Awake()) due to calculation
@@ -49,6 +52,9 @@ public class GameManager : MonoBehaviour
     public GameObject tapNotePrefab; // (inspector)
     public GameObject holdNotePrefab; // (inspector)
     public GameObject deadNotePrefab; // (inspector)
+
+    [Header("Ultimate Note Saturation Settings")]
+    public float noteSaturation = 0.5f; //to changes note saturation during the ultimate
 
     /// <summary>
     /// Awake() is a Monobehavior method, it is run before the first frame after object load and all Start() methods.
@@ -78,6 +84,9 @@ public class GameManager : MonoBehaviour
             return; // basically just tell it to break to avoid any loops
         }
         beatmapPlayer = new BeatmapPlayer(beatmap, lanes, noteSpeed);
+        //secondsPerBeat = 60f / bpm; // Seconds in each beat is just the bpm converted to seconds reciprocal.
+
+        beatmapNoteCount = beatmap.notes.Count;
         bpm = beatmap.bpm;
         secondsPerBeat = 60f / bpm; // Seconds in each beat is just the bpm converted to seconds reciprocal.
     }
@@ -131,5 +140,71 @@ public class GameManager : MonoBehaviour
             return false;
 
         return beatmapPlayer.IsFinished();
+    }
+
+    //general custom function to change note saturation (currently used for the ultimate)
+    public Color changeSaturation(Color currentColor, float newSaturation)
+    {
+        float h, s, v; //hue, saturation, value
+
+        Color.RGBToHSV(currentColor, out h, out s, out v); //grabs the converted hsv values from the rgb colours (so we can access saturation values)
+
+        return Color.HSVToRGB(h, newSaturation, v); //reconverts the colour values from hsv to rgb, but with a new saturation
+    }
+
+    //ultimate specific func to change all the saturations of the currently active notes in the lanes
+    private void UltimateNoteSaturation()
+    {
+        for (int i = 0; i < lanes.Length; i = i + 1) //loops thru all lanes, grabs each lane and does stuff with them
+        {
+            LaneController lane = lanes[i]; //grab a single lane
+
+            for (int x = 0; x < lane.transform.childCount; x = x + 1) //grabs all children in the lanes (we looking for the notes)
+            {
+                Transform child = lane.transform.GetChild(x); //grabs a child object
+
+                if (child.TryGetComponent<NoteBase>(out var note)) //checks if the object type is a note (safeguards to prevent trying to do note stuff on non-notes)
+                {
+                    //changes the note saturation because the ultimate is active
+                    note.GetComponentInChildren<SpriteRenderer>().color = changeSaturation(note.GetComponentInChildren<SpriteRenderer>().color, noteSaturation);
+                }
+            }
+        }
+    }
+
+    //ultimate specific func to revert all the saturations of the currently active notes in the lanes
+    private void ResetNoteSaturation()
+    {
+        for (int i = 0; i < lanes.Length; i = i + 1) //loops thru all lanes, grabs each lane and does stuff with them
+        {
+            LaneController lane = lanes[i];
+
+            for (int x = 0; x < lane.transform.childCount; x = x + 1) //grabs all children in the lanes (we looking for the notes)
+            {
+                Transform child = lane.transform.GetChild(x); //grabs a child object
+
+                if (child.TryGetComponent<NoteBase>(out var note)) //checks if the object type is a note (safeguards to prevent trying to do note stuff on non-notes)
+                {
+                    //reverts the note saturation because the ultimate is done
+                    //currently hardcoded to revert to full saturation as all the notes are normally like this currently, might have to change later with some unique inspector value or something 
+                    note.GetComponentInChildren<SpriteRenderer>().color = changeSaturation(note.GetComponentInChildren<SpriteRenderer>().color, 1);
+                }
+            }
+        }
+    }
+
+    //subscribes both note saturation functions to be called to specific events in the UltimateSystem when its enabled
+    private void OnEnable()
+    {
+        UltimateSystem.OnUltimateStarted += UltimateNoteSaturation; //when "OnUltimateStarted" is called, also call the func "UltimateNoteSaturation"
+        UltimateSystem.OnUltimateFinished += ResetNoteSaturation; //when "OnUltimateFinished" is called, also call the func "ResetNoteSaturation"
+    }
+
+    //unsubscribes both note saturation functions from specific events in the UltimateSystem when its disabled
+    private void OnDisable()
+    {
+        //OnDisable happens when the ult is inactive -> this is to prevent unwanted functions accidentally being called when they shouldnt be (like after the ult is finished)
+        UltimateSystem.OnUltimateStarted -= UltimateNoteSaturation;
+        UltimateSystem.OnUltimateFinished -= ResetNoteSaturation;
     }
 }

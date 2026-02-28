@@ -59,6 +59,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Ultimate",
+                    "type": "Button",
+                    "id": "6cd75670-e845-424e-a022-4298504d166b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -180,12 +189,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Lane4",
-                    "id": "f5178b94-a579-444d-a5b2-a3efc0cb7bf6",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed568617-1c79-4f60-9207-642008b3e8cf",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause",
+                    "action": "Ultimate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
