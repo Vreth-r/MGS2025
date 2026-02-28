@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverScreen;
-    [SerializeField] private string retrySceneName = "GameCopy1";
-    [SerializeField] private string quitSceneName = "Quit";
+    [SerializeField] private string retrySceneName = "Game";
+    [SerializeField] private string quitSceneName = "MainMenu";
 
     void Start()
     {
