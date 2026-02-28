@@ -3,13 +3,10 @@
 *
 * SUMMARY
 * This script acts as a visual handler for all achieved combo display needs
-*
-* CURRENTLY
-* Working to make overall counter (located top right) work as intended at a base level
-*
-* TO DO
-* - Further polish overall counter
-* - integrate pop up combo feedback in the future when we get there
+* 
+* 
+* TO DO:
+* Animate other combos/miss
 */
 using System;
 using System.Collections;
@@ -59,11 +56,20 @@ public class ComboVisualHandler : MonoBehaviour
     const string FADE_PERFECT = "FADE_PERFECT";
     const string ONGOING_COMBO = "OngoingCombo";
 
+    private void OnEnable()
+    {
+        EventManager.Instance.gameplay_events.OnPlayerCombo += HandleComboVisuals;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Instance.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
+    }
 
     private void Start()
     {
         perfectCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsPerfect);
-        goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsGood);
+        goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsOK);
         missCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsMiss);
 
         comboCountDisplay.text = currentComboCount.ToString();
@@ -72,26 +78,33 @@ public class ComboVisualHandler : MonoBehaviour
         p2ComboEmitterAnimator = p2ComboEmitter.gameObject.GetComponent<Animator>();
     }
 
-    #region Testing Code for Buttons
+    // Temporary for debug
+    #region Testing Code for Buttons 
     public void HandleComboVisualsMiss()
     {
         currentComboCount = 0;
-        HandleComboVisuals(playerID, ComboType.Miss, currentComboCount);
+        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss,currentComboCount);
+        
+        //HandleComboVisuals(playerID, ComboType.Miss, currentComboCount);
         Debug.Log("MISS");
     }
 
-    public void HandleComboVisualsGood()
+    public void HandleComboVisualsOK()
     {
         currentComboCount++;
-        HandleComboVisuals(playerID, ComboType.Good, currentComboCount);
-        Debug.Log("GOOD");
+        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, currentComboCount);
+
+        //HandleComboVisuals(playerID, ComboType.Ok, currentComboCount);
+        Debug.Log("OK");
 
     }
 
     public void HandleComboVisualsPerfect()
     {
         currentComboCount++;
-        HandleComboVisuals(playerID, ComboType.Perfect, currentComboCount);
+        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, currentComboCount);
+
+        //HandleComboVisuals(playerID, ComboType.Perfect, currentComboCount);
         Debug.Log("PERFECT");
     }
     #endregion
@@ -151,7 +164,7 @@ public class ComboVisualHandler : MonoBehaviour
                     currentAnimator.SetTrigger(FADE_MISS);
                     break;
                 }
-            case ComboType.Good:
+            case ComboType.Ok:
                 {
                     // ANIMATE GOOD
                     currentAnimator.SetTrigger(POP_UP_GOOD);
@@ -185,9 +198,9 @@ public class ComboVisualHandler : MonoBehaviour
                     // ANIMATE MISS
                     break;
                 }
-            case ComboType.Good:
+            case ComboType.Ok:
                 {
-                    // ANIMATE GOOD
+                    // ANIMATE Ok
                     break;
                 }
             case ComboType.Perfect:
@@ -210,12 +223,12 @@ public class ComboVisualHandler : MonoBehaviour
     }
     #endregion
 
-    // temporary until more integrated with programming’s mechanics
-    public enum ComboType
-    {
-        Miss,
-        Good,
-        Perfect
-    }
+    //// temporary until more integrated with programming’s mechanics
+    //public enum ComboType
+    //{
+    //    Miss,
+    //    Good,
+    //    Perfect
+    //}
 
 }
