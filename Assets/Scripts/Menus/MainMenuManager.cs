@@ -138,15 +138,15 @@ public class MainMenuManager : MonoBehaviour
         if (direction.y > 0.5f)
         {
             selectedIndex = (selectedIndex - 1 + buttons.Length) % buttons.Length;
-            HighlightButton(selectedIndex);
+            //HighlightButton(selectedIndex);
         }
         else if (direction.y < -0.5f)
         {
             selectedIndex = (selectedIndex + 1) % buttons.Length;
-            HighlightButton(selectedIndex);
+            //HighlightButton(selectedIndex);
         }
     }
-    
+
     private void HighlightButton(int index)
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -159,7 +159,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void HandleSubmit()
     {
-        buttons[selectedIndex].onClick.Invoke();
+        //buttons[selectedIndex].onClick.Invoke();
     }
 
     private void HandleCancel()
