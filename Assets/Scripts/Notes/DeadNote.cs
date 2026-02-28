@@ -20,7 +20,6 @@ public class DeadNote : NoteBase
 
     public override void Miss()
     {
-        Health.Regen(); // regen health or add score when missed
         UltimateSystem.IncrementUltimate(); //increments the ults progression bar
         ResolveNote(); // resolve the note
         Health.Regen(regenIncrement); // regen health or add score when missed
