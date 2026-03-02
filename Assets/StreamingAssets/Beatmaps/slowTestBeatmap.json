@@ -1,6 +1,7 @@
 {
   "songName": "Example Song",
-  "songPath": "Audio/exampleSong",
+  "songPath": "event:/Music/TestBGM",
+  "songEvent": "event:/Music/TestBGM",
   "bpm": 120,
   "notesCsv": "Tap,0,1.0\nHold,1,3.0,endTime=5.0\nTap,2,7.0\nHold,3,9.0,endTime=11.0\nTap,4,13.0\nDead,0,15.0"
 }

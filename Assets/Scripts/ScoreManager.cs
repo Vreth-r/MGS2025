@@ -1,110 +1,104 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
-    
+
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text comboText;
-    [SerializeField] private GameManager GM;
-    private int consecutive = 0;
-    private int totalScore = 0;
-    private int score = 0;
 
-    [Header("Ultimate Score Stuff")] //ultimate score multiplier
+    [Header("Ultimate")]
+    [SerializeField] private int inspectorUltimateScoreMultiplier = 4;
 
-    [SerializeField] private int inspectorUltimateScoreMultiplier = 4; //the chosen multiplier factor
-    public static int ultimateScoreMultiplier = 1; //starts at 1 (aka no difference), because you dont start with the ult
+    public int TotalScore { get; private set; }
+    public int ComboMultiplier { get; private set; } = 1;
+
+    private int perfectStreak;
+
+    private const float PERFECT = 0.10f;
+    private const float AWESOME = 0.20f;
+    private const float GOOD    = 0.30f;
+    private const float OKAY    = 0.40f;
+
+    private int ultMultiplier = 1;
 
     private void Awake()
     {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-    }
-
-    private int GetCombo(int consecutive)
-    {
-        if (consecutive % 2 == 0 && consecutive <= 8)
-        {
-            return consecutive / 2 + 1; //  new combo
-        }
-        return (consecutive-1) / 2 + 1; // return old combo
+        UpdateUI();
     }
 
     public void AddScore(float timing)
     {
-        bool isfinished = GM.GameIsDone();
-        if (isfinished) return;
-        Debug.Log("added score");
-        if (timing < 0.1f) // perfect
-        {
-            consecutive++;
-            score = 10 * GetCombo(consecutive);
-        }
-        else if (timing < 0.2f) // awesome
-        {
-            consecutive = 0;
-            score = 7;
-        }
-        else if (timing < 0.3f) // good
-        {
-            consecutive = 0;
-            score = 5;
-        }
-        else if (timing < 0.4f) // okay
-        {
-            consecutive = 0;
-            score = 3;
-        }
-        else // miss
-        {
-            consecutive = 0;
-            score = 0;
-        }
+        
+        if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
 
-        score = Mathf.RoundToInt(score * ultimateScoreMultiplier); //multiplies the score by the ult multiplier (if ults not active, it just multiplies by 1)
-        totalScore = totalScore + score; //adds the score buildup to the total score
+        int baseScore;
 
-        UpdateText();
-    }
-
-    private void UpdateText()
-    {
-        scoreText.text = "score: " + totalScore;
-        if (consecutive == 0) 
+        if (timing < PERFECT)
         {
-            comboText.text = "combo: 0x"; //displays 0x if not perfect
+            perfectStreak++;
+            ComboMultiplier = 1 + (perfectStreak / 2); 
+            baseScore = 10 * ComboMultiplier;
+        }
+        else if (timing < AWESOME)
+        {
+            ResetCombo();
+            baseScore = 7;
+        }
+        else if (timing < GOOD)
+        {
+            ResetCombo();
+            baseScore = 5;
+        }
+        else if (timing < OKAY)
+        {
+            ResetCombo();
+            baseScore = 3;
         }
         else
         {
-            comboText.text = "combo: " + GetCombo(consecutive) + "x"; //displays 1x (or higher) if hit perfects
+            ResetCombo();
+            baseScore = 0;
         }
-            
+
+        TotalScore += baseScore * ultMultiplier;
+        UpdateUI();
+    }
+
+    public void AddBonus(int points)
+    {
+        if (points <= 0) return;
+        TotalScore += points * ultMultiplier;
+        UpdateUI();
+    }
+
+    private void ResetCombo()
+    {
+        perfectStreak = 0;
+        ComboMultiplier = 1;
+    }
+
+    private void UpdateUI()
+    {
+        if (scoreText != null) scoreText.text = $"score: {TotalScore}";
+        if (comboText != null) comboText.text = $"combo: {ComboMultiplier}x";
     }
 
     private void OnEnable()
     {
-        UltimateSystem.OnUltimateStarted += EnableMultiplier; //subscribes the function "EnableMultiplier", to be called whenever "OnUltimateStarted" is called
-        UltimateSystem.OnUltimateFinished += DisableMultiplier; //subscribes the function "DisableMultiplier", to be called whenever "OnUltimateFinished" is called
+        UltimateSystem.OnUltimateStarted += UltOn;
+        UltimateSystem.OnUltimateFinished += UltOff;
     }
 
-    private void OnDisable() 
-    { 
-        UltimateSystem.OnUltimateStarted -= EnableMultiplier; //unsubscribes the function
-        UltimateSystem.OnUltimateFinished -= DisableMultiplier; //unsubscribes the function
-    }
-
-    //enables the multiplier
-    private void EnableMultiplier()
+    private void OnDisable()
     {
-        ultimateScoreMultiplier = inspectorUltimateScoreMultiplier; //change the score multiplier to be the one chosen in the inspector
-        Debug.Log("Ult On");
+        UltimateSystem.OnUltimateStarted -= UltOn;
+        UltimateSystem.OnUltimateFinished -= UltOff;
     }
 
-    //disables the multiplier
-    private void DisableMultiplier()
-    {
-        ultimateScoreMultiplier = 1; //back to no multiplier
-        Debug.Log("Ult Off");
-    }
+    private void UltOn()  => ultMultiplier = inspectorUltimateScoreMultiplier;
+    private void UltOff() => ultMultiplier = 1;
 }

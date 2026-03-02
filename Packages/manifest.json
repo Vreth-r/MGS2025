@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.mmulder135.unityspec": "https://github.com/UnitySpec/UnitySpec.git",
-    "com.unity.2d.animation": "12.0.2",
+    "com.unity.2d.animation": "12.0.3",
     "com.unity.2d.aseprite": "2.0.1",
     "com.unity.2d.psdimporter": "11.0.1",
     "com.unity.2d.sprite": "1.0.0",
@@ -10,7 +10,7 @@
     "com.unity.2d.tilemap.extras": "5.0.1",
     "com.unity.addressables": "2.7.4",
     "com.unity.collab-proxy": "2.10.0",
-    "com.unity.ide.visualstudio": "2.0.23",
+    "com.unity.ide.visualstudio": "2.0.27",
     "com.unity.inputsystem": "1.14.2",
     "com.unity.multiplayer.center": "1.0.0",
     "com.unity.render-pipelines.universal": "17.2.0",

@@ -1,210 +1,305 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
-/// <summary>
-/// "That is my power. The Almighty." - Yhwach
-/// The Game Manager does an assortment of things, mainly variable tracking and hooking.
-/// 
-/// The Game Manager (also the other files) are intended to work as if they are recreated for each level, you'll see what I mean
-/// when we get to scene transitions
-/// 
-/// YES! I even documented my code!
-/// </summary>
 public class GameManager : MonoBehaviour
 {
-    // my commenting style is a bit unconventional, so heres an example of formatting i tend to stick to:
-    // public string fuckOff = "Fuck You"; // Context for the variable and/or reason it exists (where it's assigned if thats not obvious) [tags]
-    // [tags] function like keywords in Magic the Gathering, its a one work descriptor for a concept that should be well known.
-    // I also sometimes add {artifact} on commented lines, as past interations can provide some useful info for why things are done the way they are now.
-    // Anything with {artifact} is NOT to be uncommented, it likely does not have any supporting infrastructure and may break compilation
-    public static GameManager Instance { get; private set; } // There can only be one. [singleton]
+    public static GameManager Instance { get; private set; }
 
     [Header("Beat Settings")]
-    // public float bpm = 120f; // the BPM to a given song, for the MVP, its 120 default {artifact}
-    // private float secondsPerBeat; // (Awake()) due to calculation {artifact}
-    //public float noteTravelDistance = 10f; // i need this for later {artifact}
-    public float noteSpeed = 5f; // i need this for later!
-    public Transform hitZone; // hit zone for notes (inspector)
-    // the killzone is set a trigger collider and handles note deletion on its own.
+    public float noteSpeed = 5f;
+    public Transform hitZone;
 
     [Header("Beatmap")]
-    public string beatmapFileName = "fuckoff.json"; // A file name in /StreamingAssets/Beatmaps
-    private BeatmapData beatmap; // the beatmap to run
-    private BeatmapPlayer beatmapPlayer; // the beatmap runner
-
-    private int beatmapNoteCount;
-    public int noteCount => beatmapNoteCount;
-
-    [Header("Pulse Settings")]
-    public float bpm; // Taken from beatmap data
-    public float secondsPerBeat; // (Awake()) due to calculation
-    private float lastPulseTime = 0; // The time of which the last pulse was triggered
-
-    public event Action OnPulse; // Pulse Action
+    public string beatmapFileName = "beatmap.json";
 
     [Header("Hooks")]
-    public LaneController[] lanes; // Lane hooks (inspector)
-    public AudioSource audioSource; // audio hook (inspector)
-    public Dictionary<string, GameObject> notePrefabs; // reference storage for parsing from csv (GM)
-    // "erm 🤓 what about enums?" fuck off like actually.
+    public LaneController[] lanes;
 
-    public GameObject tapNotePrefab; // (inspector)
-    public GameObject holdNotePrefab; // (inspector)
-    public GameObject deadNotePrefab; // (inspector)
+    [Header("Note Prefabs")]
+    public GameObject tapNotePrefab;
+    public GameObject holdNotePrefab;
+    public GameObject deadNotePrefab;
 
-    [Header("Ultimate Note Saturation Settings")]
-    public float noteSaturation = 0.5f; //to changes note saturation during the ultimate
+    [Header("Pulse")]
+    public float bpm;
+    public float secondsPerBeat;
+    public event Action OnPulse;
 
-    /// <summary>
-    /// Awake() is a Monobehavior method, it is run before the first frame after object load and all Start() methods.
-    /// </summary>
+    [Header("Ultimate Note Saturation (optional)")]
+    public float noteSaturation = 0.5f;
+
+    
+    private EventInstance songInstance;
+    private bool songStarted;
+    private string currentSongEventPath;
+
+    
+    private BeatmapData _beatmap;
+    private BeatmapPlayer _player;
+    private int _beatmapNoteCount;
+    private float _nextPulseTime;
+    private float _lastSongTime;
+
+    public int noteCount => _beatmapNoteCount;
+
+    public float SongTimeSeconds => GetSongTimeSeconds();
+
+    
+    public Dictionary<string, GameObject> notePrefabs { get; private set; }
+
     private void Awake()
     {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+
         
-        Instance = this; // Assign singleton reference
-        string path = System.IO.Path.Combine(Application.streamingAssetsPath, "Beatmaps", beatmapFileName); // makes a nice readble path to the beatmap
+        if (lanes != null)
+        {
+            foreach (var lane in lanes)
+                if (lane != null) lane.hitZone = hitZone;
+        }
+
         notePrefabs = new Dictionary<string, GameObject>
         {
-            {"Tap", tapNotePrefab },
-            {"Hold", holdNotePrefab },
-            {"Dead", deadNotePrefab }
-        }; // this is a rare instance of hardcoding being ok do to for non dynamic references.
-        // the reason why i am storing them in prefabs is because it allows for custom behavior and visual options.
-        // you can do it with code yeah but theres a fine line between game programming and programming a game yk. TLDR, use the engine features they save time.
-        beatmap = BeatmapLoader.LoadFromJson(path);
-        foreach (var lane in lanes) // set hitzone for each lane
-        {
-            lane.hitZone = hitZone;
-        }
-        if (beatmap == null)
-        {
-            Debug.LogError("Failed to load beatmap. Abort!");
-            enabled = false;
-            return; // basically just tell it to break to avoid any loops
-        }
-        beatmapPlayer = new BeatmapPlayer(beatmap, lanes, noteSpeed);
-        //secondsPerBeat = 60f / bpm; // Seconds in each beat is just the bpm converted to seconds reciprocal.
+            { "Tap",  tapNotePrefab  },
+            { "Hold", holdNotePrefab },
+            { "Dead", deadNotePrefab }
+        };
 
-        beatmapNoteCount = beatmap.notes.Count;
-        bpm = beatmap.bpm;
-        secondsPerBeat = 60f / bpm; // Seconds in each beat is just the bpm converted to seconds reciprocal.
+        LoadBeatmapFromFile(beatmapFileName);
     }
 
     private void Start()
     {
-        // uncomment this when you add some audioclips in the proper path
-        // which is Assets/Resources/Audio/
-        /*
-        AudioClip clip = Resources.Load<AudioClip>(beatmap.songPath); // grab the associated beatmap audio
-        if (clip == null) // error catching
-        {
-            Debug.LogError($"No song at Resources/{beatmap.songPath}");
-            return;
-        }
-
-        audioSource.clip = clip;
-        audioSource.Play();
-        */
-
-        // Enable gameplay input map
+        FMODUnity.RuntimeManager.LoadBank("Master", true);
+        FMODUnity.RuntimeManager.LoadBank("Master.strings", true);
         InputManager.Instance.EnableGameplay();
+        StartBeatmapPlayback();
     }
 
-    /// <summary>
-    /// Update() is called every frame, all Update() calls from every object complete before the next frame is started.
-    /// </summary>
     private void Update()
     {
-        //if (audioSource.isPlaying)
-        //{
-        // swap for audioSource.time when the audioSource is fully implemented
-        beatmapPlayer.Update(Time.time);
-        if (Time.time - secondsPerBeat >= lastPulseTime)
+        if (_player == null) return;
+
+        float songTime = GetSongTimeSeconds();
+
+        
+        if (songTime < _lastSongTime - 0.05f)
+            ResetBeatmapPlayer(songTime);
+
+        _lastSongTime = songTime;
+
+        _player.Update(songTime);
+
+        if (Time.time >= _nextPulseTime)
         {
-            lastPulseTime += secondsPerBeat;
-            // PULSE
+            _nextPulseTime += secondsPerBeat;
             OnPulse?.Invoke();
         }
-        //}
     }
-    
 
-    // The GameManager is in the scene, but not beatmap player, so beatmap player can't be accessed outside of here
-    // beatmapPlayer is private so we need a public method to check if game is done
     public bool GameIsDone()
     {
         if (Health.IsDead()) return true;
-
-        if (beatmapPlayer == null)
-            return false;
-
-        return beatmapPlayer.IsFinished();
+        return _player != null && _player.IsFinished();
     }
 
-    //general custom function to change note saturation (currently used for the ultimate)
-    public Color changeSaturation(Color currentColor, float newSaturation)
+    public float BeatmapEndTimeSeconds
     {
-        float h, s, v; //hue, saturation, value
-
-        Color.RGBToHSV(currentColor, out h, out s, out v); //grabs the converted hsv values from the rgb colours (so we can access saturation values)
-
-        return Color.HSVToRGB(h, newSaturation, v); //reconverts the colour values from hsv to rgb, but with a new saturation
-    }
-
-    //ultimate specific func to change all the saturations of the currently active notes in the lanes
-    private void UltimateNoteSaturation()
-    {
-        for (int i = 0; i < lanes.Length; i = i + 1) //loops thru all lanes, grabs each lane and does stuff with them
+        get
         {
-            LaneController lane = lanes[i]; //grab a single lane
+            if (_beatmap == null || _beatmap.notes == null || _beatmap.notes.Count == 0) return 0f;
 
-            for (int x = 0; x < lane.transform.childCount; x = x + 1) //grabs all children in the lanes (we looking for the notes)
+            float end = 0f;
+            foreach (var n in _beatmap.notes)
             {
-                Transform child = lane.transform.GetChild(x); //grabs a child object
+                float t = n.time;
+                if (n.parameters != null && n.parameters.TryGetValue("endTime", out float e))
+                    t = Mathf.Max(t, e);
+                end = Mathf.Max(end, t);
+            }
+            return end;
+        }
+    }
 
-                if (child.TryGetComponent<NoteBase>(out var note)) //checks if the object type is a note (safeguards to prevent trying to do note stuff on non-notes)
-                {
-                    //changes the note saturation because the ultimate is active
-                    note.GetComponentInChildren<SpriteRenderer>().color = changeSaturation(note.GetComponentInChildren<SpriteRenderer>().color, noteSaturation);
-                }
+    public void LoadBeatmapFromFile(string fileName)
+    {
+        var path = System.IO.Path.Combine(Application.streamingAssetsPath, "Beatmaps", fileName);
+        var loaded = BeatmapLoader.LoadFromJson(path);
+
+        if (loaded == null)
+        {
+            Debug.LogError($"[GameManager] Failed to load beatmap: {path}");
+            enabled = false;
+            return;
+        }
+
+        _beatmap = loaded;
+        beatmapFileName = fileName;
+        
+        _beatmap.ParseCsv();
+
+        bpm = _beatmap.bpm;
+        secondsPerBeat = 60f / Mathf.Max(1f, bpm);
+
+        _beatmapNoteCount = _beatmap.notes?.Count ?? 0;
+
+        currentSongEventPath = _beatmap.songEvent;
+
+        _player = new BeatmapPlayer(_beatmap, lanes, noteSpeed);
+    }
+
+    public void ReloadCurrentBeatmap()
+    {
+        LoadBeatmapFromFile(beatmapFileName);
+        StartBeatmapPlayback();
+    }
+
+    public void SwitchSong(string newSongEventPath)
+    {
+        currentSongEventPath = newSongEventPath;
+        RestartSong();
+    }
+
+    private void StartBeatmapPlayback()
+    {
+        StopSongImmediate();
+
+        StartSong(currentSongEventPath);
+
+        ResetBeatmapPlayer(0f);
+        _nextPulseTime = Time.time + secondsPerBeat;
+        _lastSongTime = 0f;
+
+        ClearActiveNotes();
+    }
+
+    private void ResetBeatmapPlayer(float songTimeNow)
+    {
+        
+        _player = new BeatmapPlayer(_beatmap, lanes, noteSpeed);
+        _player.Update(songTimeNow);
+    }
+
+    private void ClearActiveNotes()
+    {
+        if (lanes == null) return;
+
+        foreach (var lane in lanes)
+        {
+            if (lane == null) continue;
+
+            for (int i = lane.transform.childCount - 1; i >= 0; i--)
+            {
+                var child = lane.transform.GetChild(i);
+                if (child == null) continue;
+
+                if (child.TryGetComponent<NoteBase>(out _))
+                    Destroy(child.gameObject);
             }
         }
     }
 
-    //ultimate specific func to revert all the saturations of the currently active notes in the lanes
-    private void ResetNoteSaturation()
+    private void StartSong(string eventPath)
     {
-        for (int i = 0; i < lanes.Length; i = i + 1) //loops thru all lanes, grabs each lane and does stuff with them
+        if (string.IsNullOrWhiteSpace(eventPath))
         {
-            LaneController lane = lanes[i];
-
-            for (int x = 0; x < lane.transform.childCount; x = x + 1) //grabs all children in the lanes (we looking for the notes)
-            {
-                Transform child = lane.transform.GetChild(x); //grabs a child object
-
-                if (child.TryGetComponent<NoteBase>(out var note)) //checks if the object type is a note (safeguards to prevent trying to do note stuff on non-notes)
-                {
-                    //reverts the note saturation because the ultimate is done
-                    //currently hardcoded to revert to full saturation as all the notes are normally like this currently, might have to change later with some unique inspector value or something 
-                    note.GetComponentInChildren<SpriteRenderer>().color = changeSaturation(note.GetComponentInChildren<SpriteRenderer>().color, 1);
-                }
-            }
+            Debug.LogError("[GameManager] Beatmap songEvent is empty/null.");
+            songStarted = false;
+            return;
         }
+
+        songInstance = RuntimeManager.CreateInstance(eventPath);
+
+        RuntimeManager.AttachInstanceToGameObject(songInstance, transform, GetComponent<Rigidbody>());
+
+        songInstance.start();
+        songStarted = true;
     }
 
-    //subscribes both note saturation functions to be called to specific events in the UltimateSystem when its enabled
+    public void RestartSong()
+    {
+        StartBeatmapPlayback();
+    }
+
+    public void SeekSong(float seconds)
+    {
+        if (!songStarted || !songInstance.isValid()) return;
+
+        int ms = Mathf.Max(0, Mathf.RoundToInt(seconds * 1000f));
+        songInstance.setTimelinePosition(ms);
+
+        
+        ResetBeatmapPlayer(seconds);
+        ClearActiveNotes(); 
+        _lastSongTime = seconds;
+    }
+
+    private void StopSongImmediate()
+    {
+        if (!songInstance.isValid()) return;
+
+        songInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        songInstance.release();
+        songStarted = false;
+    }
+
+    private float GetSongTimeSeconds()
+    {
+        if (!songStarted || !songInstance.isValid()) return 0f;
+
+        songInstance.getTimelinePosition(out int ms);
+        return ms / 1000f;
+    }
+
+    private void OnDestroy()
+    {
+        StopSongImmediate();
+    }
+
     private void OnEnable()
     {
-        UltimateSystem.OnUltimateStarted += UltimateNoteSaturation; //when "OnUltimateStarted" is called, also call the func "UltimateNoteSaturation"
-        UltimateSystem.OnUltimateFinished += ResetNoteSaturation; //when "OnUltimateFinished" is called, also call the func "ResetNoteSaturation"
+        UltimateSystem.OnUltimateStarted += ApplyUltimateSaturation;
+        UltimateSystem.OnUltimateFinished += ResetSaturation;
     }
 
-    //unsubscribes both note saturation functions from specific events in the UltimateSystem when its disabled
     private void OnDisable()
     {
-        //OnDisable happens when the ult is inactive -> this is to prevent unwanted functions accidentally being called when they shouldnt be (like after the ult is finished)
-        UltimateSystem.OnUltimateStarted -= UltimateNoteSaturation;
-        UltimateSystem.OnUltimateFinished -= ResetNoteSaturation;
+        UltimateSystem.OnUltimateStarted -= ApplyUltimateSaturation;
+        UltimateSystem.OnUltimateFinished -= ResetSaturation;
+    }
+
+    private void ApplyUltimateSaturation()
+        => ForEachActiveNoteSprite(r => r.color = ChangeSaturation(r.color, noteSaturation));
+
+    private void ResetSaturation()
+        => ForEachActiveNoteSprite(r => r.color = ChangeSaturation(r.color, 1f));
+
+    private void ForEachActiveNoteSprite(Action<SpriteRenderer> act)
+    {
+        if (lanes == null) return;
+
+        foreach (var lane in lanes)
+        {
+            if (lane == null) continue;
+
+            for (int i = 0; i < lane.transform.childCount; i++)
+            {
+                var t = lane.transform.GetChild(i);
+                if (!t.TryGetComponent<NoteBase>(out _)) continue;
+
+                var r = t.GetComponentInChildren<SpriteRenderer>();
+                if (r != null) act(r);
+            }
+        }
+    }
+
+    public Color ChangeSaturation(Color c, float newS)
+    {
+        Color.RGBToHSV(c, out float h, out _, out float v);
+        return Color.HSVToRGB(h, newS, v);
     }
 }

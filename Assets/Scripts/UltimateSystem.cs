@@ -5,144 +5,112 @@ using UnityEngine.UI;
 
 public class UltimateSystem : MonoBehaviour
 {
-    [Header("Inspector")]
-    [SerializeField] private Image inspectorUltimateBar;
-    [SerializeField] private int inspectorUltimateDivider = 3;
-    [SerializeField] private float inspectorUltimateDuration = 10f;
+    [Header("UI")]
+    [SerializeField] private Image ultimateBar;
 
-    private GameManager manager;
+    [Header("Charge Rules")]
+    [SerializeField] private float maxCharge = 10f;
+    [SerializeField] private float passiveChargeIntervalSeconds = 2f; 
+    [SerializeField] private float passiveChargePerTick = 1f;         
+    [SerializeField] private float chargePerNoteHit = 0.5f;           
 
-    // Ultimate settings (static API kept to avoid rewriting other scripts)
-    public static Image ultimateBar;
-    private static int totalNoteCount;
-    private static int ultimateNoteCountProgress = 0;
-    private static int ultimateNoteCountThreshold;
-    public static int ultimateDivider = 3;
-    private static int usedUltimateCount;
-    public static float ultimateDuration = 10f;
+    [Header("Ultimate")]
+    [SerializeField] private float ultimateDuration = 10f;
 
     public static event Action OnUltimateStarted;
     public static event Action OnUltimateFinished;
 
-    public static UltimateSystem Instance { get; private set; }
     public static bool UltimateActive { get; private set; }
 
-    private static bool warnedMissingBar;
+    
+    public static float Charge { get; private set; }
+
+    private static UltimateSystem instance;
+    private float passiveTimer;
 
     private void Awake()
     {
-        // singleton
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-
-        // Initialize visuals/settings ASAP (Awake runs before Start)
-        ultimateBar = inspectorUltimateBar;
-        ultimateDivider = Mathf.Max(1, inspectorUltimateDivider);
-        ultimateDuration = Mathf.Max(0.01f, inspectorUltimateDuration);
-
-        if (ultimateBar != null)
-            ultimateBar.fillAmount = 0f;
+        instance = this;
+        Charge = 0f;
+        UltimateActive = false;
+        passiveTimer = 0f;
+        UpdateBar();
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        // GameManager might not be ready in Awake; grab it here
-        manager = GameManager.Instance;
-
-        // If noteCount is set later, this may be 0 at first — so keep it safe
-        totalNoteCount = manager != null ? manager.noteCount : 0;
-        RebuildThreshold();
+        if (InputManager.Instance != null)
+            InputManager.Instance.OnUltimatePressed += TryActivate;
     }
 
-    private static void RebuildThreshold()
+    private void OnDisable()
     {
-        ultimateDivider = Mathf.Max(1, ultimateDivider);
-        ultimateNoteCountThreshold = Mathf.Max(1, totalNoteCount / ultimateDivider);
+        if (InputManager.Instance != null)
+            InputManager.Instance.OnUltimatePressed -= TryActivate;
     }
 
-    private static bool EnsureInitialized()
+    private void Update()
     {
-        if (Instance == null)
-            Instance = FindFirstObjectByType<UltimateSystem>();
-
-        // If we found it late, pull fields
-        if (Instance != null && ultimateBar == null)
-        {
-            ultimateBar = Instance.inspectorUltimateBar;
-            ultimateDivider = Mathf.Max(1, Instance.inspectorUltimateDivider);
-            ultimateDuration = Mathf.Max(0.01f, Instance.inspectorUltimateDuration);
-        }
-
-        if (ultimateBar == null)
-        {
-            if (!warnedMissingBar)
-            {
-                warnedMissingBar = true;
-                Debug.LogError("[UltimateSystem] ultimateBar is null. Assign inspectorUltimateBar in the scene.");
-            }
-            return false;
-        }
-
-        // If threshold is invalid (often because totalNoteCount was 0), keep it safe
-        if (ultimateNoteCountThreshold <= 0)
-            ultimateNoteCountThreshold = 1;
-
-        return true;
-    }
-
-    public static void IncrementUltimate()
-    {
-        if (!EnsureInitialized()) return;
-
-        if (usedUltimateCount >= ultimateDivider - 1)
-        {
-            ultimateBar.enabled = false;
-            return;
-        }
-
         if (UltimateActive) return;
 
-        ultimateNoteCountProgress = Mathf.Min(ultimateNoteCountProgress + 1, ultimateNoteCountThreshold);
-        ultimateBar.fillAmount = (float)ultimateNoteCountProgress / (float)ultimateNoteCountThreshold;
-    }
+        
+        if (GameManager.Instance != null && GameManager.Instance.GameIsDone())
+            return;
 
-    public static void ActivateUltimate()
-    {
-        if (!EnsureInitialized()) return;
+        if (Charge >= maxCharge) return;
 
-        if (ultimateNoteCountProgress >= ultimateNoteCountThreshold)
+        passiveTimer += Time.deltaTime;
+
+        if (passiveTimer >= passiveChargeIntervalSeconds)
         {
-            ultimateNoteCountProgress = 0;
+            int ticks = Mathf.FloorToInt(passiveTimer / passiveChargeIntervalSeconds);
+            passiveTimer -= ticks * passiveChargeIntervalSeconds;
 
-            OnUltimateStarted?.Invoke();
-            UltimateActive = true;
-
-            // Instance is required for coroutines
-            Instance.StartCoroutine(UltimateScoreModifier());
+            AddChargeInternal(ticks * passiveChargePerTick);
         }
     }
 
-    private static IEnumerator UltimateScoreModifier()
+    public static void AddChargeForSuccessfulNote()
     {
-        float elapsedTime = 0f;
-        float startFill = ultimateBar.fillAmount;
+        if (instance == null) return;
+        if (UltimateActive) return;
 
-        while (elapsedTime < ultimateDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float a = elapsedTime / ultimateDuration;
-            ultimateBar.fillAmount = Mathf.Lerp(startFill, 0f, a);
-            yield return null;
-        }
+        instance.AddChargeInternal(instance.chargePerNoteHit);
+    }
 
-        ultimateBar.fillAmount = 0f;
+    private void AddChargeInternal(float amount)
+    {
+        if (amount <= 0f) return;
 
-        OnUltimateFinished?.Invoke();
+        Charge = Mathf.Clamp(Charge + amount, 0f, maxCharge);
+        UpdateBar();
+    }
+
+    private void TryActivate()
+    {
+        if (UltimateActive) return;
+        if (Charge < maxCharge) return;
+
+        
+        Charge = 0f;
+        passiveTimer = 0f;
+        UpdateBar();
+
+        UltimateActive = true;
+        OnUltimateStarted?.Invoke();
+        StartCoroutine(UltRoutine());
+    }
+
+    private IEnumerator UltRoutine()
+    {
+        yield return new WaitForSeconds(Mathf.Max(0.01f, ultimateDuration));
         UltimateActive = false;
+        OnUltimateFinished?.Invoke();
+    }
+
+    private void UpdateBar()
+    {
+        if (ultimateBar == null) return;
+        ultimateBar.fillAmount = (maxCharge <= 0f) ? 0f : (Charge / maxCharge);
     }
 }

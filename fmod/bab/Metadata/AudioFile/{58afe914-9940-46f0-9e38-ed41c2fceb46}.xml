@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{58afe914-9940-46f0-9e38-ed41c2fceb46}">
+		<property name="assetPath">
+			<value>originalme_astrayao.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>223.24244897959184</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ce71e86e-e9d6-47b9-ae71-3c05bfc4bf8a}</destination>
+		</relationship>
+	</object>
+</objects>

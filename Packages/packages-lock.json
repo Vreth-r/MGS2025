@@ -8,7 +8,7 @@
       "hash": "7fc27f0d0205be8d59a47ae701235f61f206c7a3"
     },
     "com.unity.2d.animation": {
-      "version": "12.0.2",
+      "version": "12.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -147,11 +147,11 @@
       "dependencies": {}
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.23",
+      "version": "2.0.27",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.9"
+        "com.unity.test-framework": "1.1.33"
       },
       "url": "https://packages.unity.com"
     },

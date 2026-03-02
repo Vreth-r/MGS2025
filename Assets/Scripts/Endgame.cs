@@ -1,69 +1,81 @@
-using UnityEngine;
+using System.Collections;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Endgame : MonoBehaviour
 {
-    public GameObject endgameScreenPrefab; // Assign a Canvas prefab with a TextMeshProUGUI child
+    public GameObject endgameScreenPrefab;
     public Sprite victorySprite;
     public Sprite gameOverSprite;
 
-    // Prevents duplicate screens, retaining endgame screen visual transparency
-    private bool screenShown = false;
+    [SerializeField] private float delayAfterEnd = 1f;
 
-    void Update()
+    private bool triggered;
+
+    private void Update()
     {
-        if (!screenShown && ((GameManager.Instance != null && GameManager.Instance.GameIsDone()) || Health.health <= 0))
+        if (triggered) return;
+
+        var gm = GameManager.Instance;
+        if (gm == null) return;
+
+        
+        if (Health.IsDead())
         {
-            Debug.Log("Game Over Condition Met");
-            ShowEndgameScreen();
-            screenShown = true;
+            triggered = true;
+            StartCoroutine(ShowAfterDelay(0f));
+            return;
+        }
+
+        float songTime = gm.SongTimeSeconds;
+        float endTime = gm.BeatmapEndTimeSeconds;
+
+        
+        if (songTime >= endTime)
+        {
+            triggered = true;
+            StartCoroutine(ShowAfterDelay(delayAfterEnd));
         }
     }
 
-    void ShowEndgameScreen()
+    private IEnumerator ShowAfterDelay(float delay)
     {
-        if (endgameScreenPrefab != null)
-        {
-            GameObject screen = Instantiate(endgameScreenPrefab);
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
 
-            Transform titleTransform = screen.transform.Find("TitleText");
-            if (titleTransform != null)
-            {
-                TextMeshProUGUI title = titleTransform.GetComponent<TextMeshProUGUI>();
-                if (title != null)
-                {
-                    title.text = (Health.health > 0) ? "VICTORY" : "GAME OVER";
-                }
-            }
-
-            // Set the result sprite based on win/lose
-            Transform resultSpriteTransform = screen.transform.Find("ResultSprite");
-            if (resultSpriteTransform != null)
-            {
-                var image = resultSpriteTransform.GetComponent<UnityEngine.UI.Image>();
-                if (image != null)
-                {
-                    image.sprite = (Health.health > 0) ? victorySprite : gameOverSprite;
-                }
-            }
-
-            // Find the Play Again button and add listener
-            Transform playAgainTransform = screen.transform.Find("PlayAgainButton");
-            if (playAgainTransform != null)
-            {
-                var button = playAgainTransform.GetComponent<UnityEngine.UI.Button>();
-                if (button != null)
-                {
-                    button.onClick.AddListener(RestartGame);
-                }
-            }
-        }
+        Show();
     }
 
-    public void RestartGame()
+    private void Show()
     {
-        // Make sure to have the right scene name
-        SceneManager.LoadScene("GameCopy1");
+        if (endgameScreenPrefab == null) return;
+
+        bool victory = !Health.IsDead();
+
+        GameObject screen = Instantiate(endgameScreenPrefab);
+
+        var titleT = screen.transform.Find("TitleText");
+        if (titleT != null && titleT.TryGetComponent(out TextMeshProUGUI title))
+            title.text = victory ? "VICTORY" : "GAME OVER";
+
+        var spriteT = screen.transform.Find("ResultSprite");
+        if (spriteT != null && spriteT.TryGetComponent(out Image img))
+            img.sprite = victory ? victorySprite : gameOverSprite;
+
+        var scoreT = screen.transform.Find("ScoreText");
+        if (scoreT != null && scoreT.TryGetComponent(out TextMeshProUGUI scoreTmp) && ScoreManager.Instance != null)
+            scoreTmp.text = $"score: {ScoreManager.Instance.TotalScore}";
+
+        var btnT = screen.transform.Find("PlayAgainButton");
+        if (btnT != null && btnT.TryGetComponent(out Button btn))
+            btn.onClick.AddListener(Restart);
+    }
+
+    private void Restart()
+    {
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.buildIndex);
     }
 }

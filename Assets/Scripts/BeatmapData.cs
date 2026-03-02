@@ -15,6 +15,7 @@ public class BeatmapData
 {
     public string songName; // the name of the song [metadata]
     public string songPath; // directory path to the audio. Should be in Assets/StreamingAssets but that could change
+    public string songEvent; // fmod thing
     public float bpm; // the predetermined BPM of the song. Sound Design should be providing these to you.
     public string notesCsv; // Notes and timings [encoded(csv)]
 
