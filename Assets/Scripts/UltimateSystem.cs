@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UltimateSystem : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private Image ultimateBar;
+    [SerializeField] public Image ultimateBar;
 
     [Header("Charge Rules")]
     [SerializeField] private float maxCharge = 10f;
