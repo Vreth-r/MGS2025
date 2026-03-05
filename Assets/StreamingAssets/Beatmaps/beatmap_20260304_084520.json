@@ -1,0 +1,7 @@
+{
+  "songName": "Bruh",
+  "songPath": "",
+  "songEvent": "",
+  "bpm": 120.0,
+  "notesCsv": "Tap,0,2.955301\nTap,1,4.263953\nHold,2,66.95361,endTime=69.80509\nTap,0,68.86837\nTap,1,70.43875\nDead,1,74.53397\nDead,2,75.83361\nHold,0,76.18155,endTime=78.57617\nTap,3,77.43003\nTap,4,77.98264"
+}

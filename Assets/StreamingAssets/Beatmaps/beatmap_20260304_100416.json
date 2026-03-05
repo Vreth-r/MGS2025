@@ -1,0 +1,7 @@
+{
+  "songName": "OGME",
+  "songPath": "",
+  "songEvent": "",
+  "bpm": 128.0,
+  "notesCsv": "Tap,1,7.51385\nTap,2,9.384655\nHold,3,11.26927,endTime=13.04343\nDead,3,204.3998\nDead,4,205.3248"
+}

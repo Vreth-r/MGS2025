@@ -18,6 +18,8 @@ public class BeatmapData
     public string songEvent; // fmod thing
     public float bpm; // the predetermined BPM of the song. Sound Design should be providing these to you.
     public string notesCsv; // Notes and timings [encoded(csv)]
+    public string songId;
+    public string userFileRelative;
 
     [NonSerialized] public List<NoteData> notes = new(); // raw note data [decodeTarget]
 
