@@ -27,7 +27,6 @@ public class EditorFmodTransport : MonoBehaviour
     public bool Load()
     {
         Unload();
-
         if (string.IsNullOrWhiteSpace(eventPath))
         {
             Debug.LogError("[EditorFmodTransport] eventPath is empty.");
@@ -55,7 +54,6 @@ public class EditorFmodTransport : MonoBehaviour
             lengthMs = 0;
         }
 
-        
         instance.setTimelinePosition(0);
         instance.start();
         instance.setPaused(true);

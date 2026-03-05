@@ -2402,7 +2402,6 @@ GameObject:
   - component: {fileID: 584803793}
   - component: {fileID: 584803792}
   - component: {fileID: 584803796}
-  - component: {fileID: 584803797}
   - component: {fileID: 584803798}
   m_Layer: 0
   m_Name: Manager
@@ -2469,25 +2468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::EditorFmodTransport
   eventPath: event:/Music/TestBGM
---- !u!114 &584803797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584803791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7319adb98d113f34185c041973fa411d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::FmodProgrammerSongPlayer
-  programmerSongEvent:
-    Guid:
-      Data1: 2088000363
-      Data2: 1107071922
-      Data3: -496476516
-      Data4: -1440215867
-    Path: event:/Music/ProgrammerSong
 --- !u!114 &584803798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2500,8 +2480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b38183b19be7e4883147791c5d962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Scripts::EditorSongTransport
-  builtInEventTransport: {fileID: 584803796}
-  programmerPlayer: {fileID: 584803797}
+  transport: {fileID: 584803796}
 --- !u!1 &589025411
 GameObject:
   m_ObjectHideFlags: 0
@@ -8062,10 +8041,8 @@ GameObject:
   - component: {fileID: 1809366763}
   - component: {fileID: 1809366765}
   - component: {fileID: 1809366764}
-  - component: {fileID: 1809366767}
-  - component: {fileID: 1809366766}
   m_Layer: 5
-  m_Name: Song Library Panel
+  m_Name: Song Library Panel (OLD)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8133,41 +8110,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809366762}
   m_CullTransparentMesh: 1
---- !u!114 &1809366766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809366762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76004162d94a9944819faf3156c00d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::SongLibraryMenu
-  listParent: {fileID: 111352267}
-  itemPrefab: {fileID: 8206312237701095624, guid: ed3f599bf0df37849a30ee856288cf1c, type: 3}
-  addUserFileButton: {fileID: 199279441}
-  removeButton: {fileID: 85667921}
-  importProgressRoot: {fileID: 452843471}
-  importProgressBar: {fileID: 139409406}
-  importProgressLabel: {fileID: 1654050830}
-  addEventPathInput: {fileID: 0}
-  addEventButton: {fileID: 0}
-  editorTransport: {fileID: 584803798}
-  editorController: {fileID: 584803792}
---- !u!114 &1809366767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809366762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861c4918782d7ed45a3f3d33f0911eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::SongLibraryManager
 --- !u!1 &1833615182
 GameObject:
   m_ObjectHideFlags: 0

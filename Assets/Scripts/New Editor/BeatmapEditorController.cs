@@ -50,7 +50,7 @@ public class BeatmapEditorController : MonoBehaviour
     [SerializeField] private string editorActionMapName = "Editor";
     private InputAction aToggleLibrary;
 
-    private bool LibraryOpen => songLibraryPanel != null && songLibraryPanel.activeSelf;
+    //private bool LibraryOpen => songLibraryPanel != null && songLibraryPanel.activeSelf;
 
 
     public readonly List<EditorNote> notes = new();
@@ -103,8 +103,8 @@ public class BeatmapEditorController : MonoBehaviour
         }
         else
         {
-            if (songEventInput != null && !string.IsNullOrWhiteSpace(songEventInput.text))
-                transport.SetEventPath(songEventInput.text);
+            // if (songEventInput != null && !string.IsNullOrWhiteSpace(songEventInput.text))
+            //     transport.SetEventPath(songEventInput.text);
 
             transport.Load(); // starts paused at 0
         }
@@ -141,7 +141,7 @@ public class BeatmapEditorController : MonoBehaviour
     {
         if (transport == null) return;
 
-        transport.SetEventPath(songEventInput != null ? songEventInput.text : "");
+        //transport.SetEventPath(songEventInput != null ? songEventInput.text : "");
         if (transport.Load())
         {
             SeekTo(0f);
@@ -184,7 +184,7 @@ public class BeatmapEditorController : MonoBehaviour
         aSeekLeft = editorMap.FindAction("SeekSmallLeft", throwIfNotFound: false);
         aSeekRight = editorMap.FindAction("SeekSmallRight", throwIfNotFound: false);
 
-        aToggleLibrary = editorMap.FindAction("ToggleLibrary", throwIfNotFound: false);
+        //aToggleLibrary = editorMap.FindAction("ToggleLibrary", throwIfNotFound: false);
     }
 
     private void HookActions(bool hook)
@@ -202,13 +202,13 @@ public class BeatmapEditorController : MonoBehaviour
 
             if (aSeekLeft != null) aSeekLeft.performed += _ => NudgeSeek(-0.25f);
             if (aSeekRight != null) aSeekRight.performed += _ => NudgeSeek(+0.25f);
-            if (aToggleLibrary != null) aToggleLibrary.performed += OnToggleLibrary;
+            //if (aToggleLibrary != null) aToggleLibrary.performed += OnToggleLibrary;
         }
         else
         {
             if (aPlayPause != null) aPlayPause.performed -= OnPlayPause;
             if (aStop != null) aStop.performed -= OnStop;
-            if (aToggleLibrary != null) aToggleLibrary.performed += OnToggleLibrary;
+            //if (aToggleLibrary != null) aToggleLibrary.performed += OnToggleLibrary;
         }
     }
 
@@ -219,7 +219,7 @@ public class BeatmapEditorController : MonoBehaviour
 
     private void OnPlayPause(InputAction.CallbackContext _)
     {
-        if (LibraryOpen) return;
+        //if (LibraryOpen) return;
         if (transport == null || !transport.IsReady) return;
         if (transport.IsPlaying) Pause();
         else Play();
@@ -227,7 +227,7 @@ public class BeatmapEditorController : MonoBehaviour
 
     private void OnStop(InputAction.CallbackContext _)
     {
-        if (LibraryOpen) return;
+        //if (LibraryOpen) return;
         Stop();
     }
 
@@ -350,7 +350,7 @@ public class BeatmapEditorController : MonoBehaviour
 
     private void OnTimelineClick(int lane, float time)
     {
-        if (LibraryOpen) return;
+        //if (LibraryOpen) return;
         if (currentTool == EditorTool.Hold) return;
 
         var n = new EditorNote
@@ -429,22 +429,6 @@ public class BeatmapEditorController : MonoBehaviour
 
         string songId = "";
         string userFileRel = "";
-
-        if (transport != null && transport.CurrentEntry != null)
-        {
-            songId = transport.CurrentEntry.id;
-
-            if (transport.CurrentEntry.sourceType == SongSourceType.FmodEvent)
-            {
-                songEvent = transport.CurrentEntry.fmodEventPath;
-                userFileRel = "";
-            }
-            else
-            {
-                songEvent = "event:/Music/ProgrammerSong";
-                userFileRel = transport.CurrentEntry.relativeFilePath;
-            }
-        }
 
         float bpm = 120f;
         if (bpmInput != null)
