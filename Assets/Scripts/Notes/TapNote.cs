@@ -7,6 +7,7 @@ public class TapNote : NoteBase
         Resolve();
         UltimateSystem.AddChargeForSuccessfulNote();
         Health.Regen(regenIncrement);
-        Destroy(gameObject);
+        movement = false;
+        StartCoroutine(animPause(0.3f,"zombie die"));
     }
-}
+}   

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public enum Judgement { Perfect, Awesome, Good, Okay, Miss }
 
@@ -7,6 +8,9 @@ public abstract class NoteBase : MonoBehaviour
     protected LaneController lane;
     protected BeatmapData.NoteData data;
     protected float speed;
+    protected bool movement;
+
+    private Animator animator;
 
     [Header("Tuning")]
     [SerializeField] protected float damageIncrement = 10f;
@@ -23,11 +27,13 @@ public abstract class NoteBase : MonoBehaviour
         this.lane = lane;
         this.speed = speed;
         this.data = data;
+        this.movement = true;
     }
 
     protected virtual void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        if (movement)
+            transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
     public float TimingSeconds(Transform hitZone)
@@ -53,11 +59,19 @@ public abstract class NoteBase : MonoBehaviour
         AnimationManager.Missed(lane);
         Health.TakeDamage(damageIncrement);
         ScoreManager.Instance.AddScore(1f); // miss
-        Destroy(gameObject);
+        StartCoroutine(animPause(0.4f,"zombie attack"));
     }
 
     protected void Resolve()
     {
         if (data != null) data.resolved = true;
+    }
+
+    protected IEnumerator animPause(float waitTime, string type)
+    {
+        animator = gameObject.GetComponentInChildren<Animator>();
+        animator.Play(type, -1, 0f);
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
     }
 }
