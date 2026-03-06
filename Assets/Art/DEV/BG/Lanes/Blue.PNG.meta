@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: 18ac38609d430ee47b20601959bd9793
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6429493399158520243
+    second: Blue_0
+  - first:
+      213: 3648764528808031850
+    second: Blue_1
+  - first:
+      213: -3688568089006841474
+    second: Blue_2
+  - first:
+      213: -7608935580259569964
+    second: Blue_3
+  - first:
+      213: 8832018557762821792
+    second: Blue_4
+  - first:
+      213: 6534441128267502912
+    second: Blue_5
+  - first:
+      213: -4376590647097162214
+    second: Blue_6
+  - first:
+      213: 4208607686195526434
+    second: Blue_7
+  - first:
+      213: -5608541240922819171
+    second: Blue_8
+  - first:
+      213: -4260601082722757067
+    second: Blue_9
+  - first:
+      213: 2341889305116284032
+    second: Blue_10
+  - first:
+      213: 4598295003502512739
+    second: Blue_11
+  - first:
+      213: -7094699759390523938
+    second: Blue_12
+  - first:
+      213: -1670278077192849873
+    second: Blue_13
+  - first:
+      213: 9131621325635297459
+    second: Blue_14
+  - first:
+      213: -8331784581222038874
+    second: Blue_15
+  - first:
+      213: -811320144273637953
+    second: Blue_16
+  - first:
+      213: 5889022747024144289
+    second: Blue_17
+  - first:
+      213: 5213909876358603406
+    second: Blue_18
+  - first:
+      213: -8963580178460325425
+    second: Blue_19
+  - first:
+      213: -7200507210801547686
+    second: Blue_20
+  - first:
+      213: -8352827475717157662
+    second: Blue_21
+  - first:
+      213: 6958498068706998018
+    second: Blue_22
+  - first:
+      213: -1427278433749021687
+    second: Blue_23
+  - first:
+      213: 4112325772997265687
+    second: Blue_24
+  - first:
+      213: -4567284370607584802
+    second: Blue_25
+  - first:
+      213: -4389397031236941735
+    second: Blue_26
+  - first:
+      213: -5347766745170092760
+    second: Blue_27
+  - first:
+      213: -4687050927394683601
+    second: Blue_28
+  - first:
+      213: -1152127115546444861
+    second: Blue_29
+  - first:
+      213: 5001325155397710133
+    second: Blue_30
+  - first:
+      213: -7879753588095297463
+    second: Blue_31
+  - first:
+      213: 6360611041383435970
+    second: Blue_32
+  - first:
+      213: 6421145327243629149
+    second: Blue_33
+  - first:
+      213: -8257102090528942492
+    second: Blue_34
+  - first:
+      213: 2265350436489432980
+    second: Blue_35
+  - first:
+      213: -7991874419846244222
+    second: Blue_36
+  - first:
+      213: -3621778503156907084
+    second: Blue_37
+  - first:
+      213: -86708297145053839
+    second: Blue_38
+  - first:
+      213: 3883972819110646579
+    second: Blue_39
+  - first:
+      213: -5705782667090518036
+    second: Blue_40
+  - first:
+      213: 1798883347070986286
+    second: Blue_41
+  - first:
+      213: -3810747953633381028
+    second: Blue_42
+  - first:
+      213: -858771350998182170
+    second: Blue_43
+  - first:
+      213: 6575974276162414117
+    second: Blue_44
+  - first:
+      213: -8684749461620689920
+    second: Blue_45
+  - first:
+      213: -8956282725619775609
+    second: Blue_46
+  - first:
+      213: 8318002699948138703
+    second: Blue_47
+  - first:
+      213: -1734369521871543336
+    second: Blue_48
+  - first:
+      213: 4745337921204667512
+    second: Blue_49
+  - first:
+      213: 6621382345161099691
+    second: Blue_50
+  - first:
+      213: -651870410238111870
+    second: Blue_51
+  - first:
+      213: -1221025213602270429
+    second: Blue_52
+  - first:
+      213: 7904643369119849907
+    second: Blue_53
+  - first:
+      213: -8844239882760177065
+    second: Blue_54
+  - first:
+      213: -2994392274292628094
+    second: Blue_55
+  - first:
+      213: 5130419467384903427
+    second: Blue_56
+  - first:
+      213: 4091006535290311995
+    second: Blue_57
+  - first:
+      213: -6673726212117369072
+    second: Blue_58
+  - first:
+      213: 1758233002348116564
+    second: Blue_59
+  - first:
+      213: -1105699544354272973
+    second: Blue_60
+  - first:
+      213: 1423118894518252139
+    second: Blue_61
+  - first:
+      213: 6682368849473263722
+    second: Blue_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 750
+  spriteBorder: {x: 955, y: 0, z: 1051, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 974
+        height: 739
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 9, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46007181d9d5c6a0800000000000000
+      internalID: -6429493399158520243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_1
+      rect:
+        serializedVersion: 2
+        x: 4828
+        y: 0
+        width: 1046
+        height: 739
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66f5a8c10403a230800000000000000
+      internalID: 3648764528808031850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":1958.0,"y":739.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Blue_0: -6429493399158520243
+      Blue_1: 3648764528808031850
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

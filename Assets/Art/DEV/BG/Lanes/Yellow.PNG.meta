@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 01fb64b6a210af1468c1a0cc6e527b32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6358040702757662528
+    second: Yellow_0
+  - first:
+      213: 8499740148186698395
+    second: Yellow_1
+  - first:
+      213: 7760632299458796581
+    second: Yellow_2
+  - first:
+      213: 1630038963292314288
+    second: Yellow_3
+  - first:
+      213: -6024824774455971740
+    second: Yellow_4
+  - first:
+      213: 4197895970970880004
+    second: Yellow_5
+  - first:
+      213: 4974638878984279112
+    second: Yellow_6
+  - first:
+      213: 4858434102731612629
+    second: Yellow_7
+  - first:
+      213: -8992526483823807413
+    second: Yellow_8
+  - first:
+      213: 8261869031131465511
+    second: Yellow_9
+  - first:
+      213: -3881899911555437960
+    second: Yellow_10
+  - first:
+      213: -2290714072114536595
+    second: Yellow_11
+  - first:
+      213: 8607933654237002255
+    second: Yellow_12
+  - first:
+      213: 174437710302185212
+    second: Yellow_13
+  - first:
+      213: -5062269461246253945
+    second: Yellow_14
+  - first:
+      213: -6499406068804103389
+    second: Yellow_15
+  - first:
+      213: -1179105817756367674
+    second: Yellow_16
+  - first:
+      213: -1857715490422894295
+    second: Yellow_17
+  - first:
+      213: 3640190129067397543
+    second: Yellow_18
+  - first:
+      213: 959710121283743634
+    second: Yellow_19
+  - first:
+      213: 2543029789346356209
+    second: Yellow_20
+  - first:
+      213: -4087333718165154996
+    second: Yellow_21
+  - first:
+      213: -8426590675760069520
+    second: Yellow_22
+  - first:
+      213: -7404976891981089073
+    second: Yellow_23
+  - first:
+      213: 2028801173262785906
+    second: Yellow_24
+  - first:
+      213: -9082599891952828233
+    second: Yellow_25
+  - first:
+      213: -2274014488276203501
+    second: Yellow_26
+  - first:
+      213: -4567067724806717203
+    second: Yellow_27
+  - first:
+      213: 6925183156493784266
+    second: Yellow_28
+  - first:
+      213: -5989330341713044044
+    second: Yellow_29
+  - first:
+      213: -2011398748779748805
+    second: Yellow_30
+  - first:
+      213: -4454834113524121227
+    second: Yellow_31
+  - first:
+      213: -4979959564190976095
+    second: Yellow_32
+  - first:
+      213: -6476304001786344314
+    second: Yellow_33
+  - first:
+      213: -85215604711015055
+    second: Yellow_34
+  - first:
+      213: -3425229923232250412
+    second: Yellow_35
+  - first:
+      213: -8353043195387999252
+    second: Yellow_36
+  - first:
+      213: -5133144400689389944
+    second: Yellow_37
+  - first:
+      213: -858729702128479537
+    second: Yellow_38
+  - first:
+      213: -3747004210616040060
+    second: Yellow_39
+  - first:
+      213: 8508209035506891516
+    second: Yellow_40
+  - first:
+      213: 5879591824173031363
+    second: Yellow_41
+  - first:
+      213: 2611720075496418982
+    second: Yellow_42
+  - first:
+      213: -1269227797477580270
+    second: Yellow_43
+  - first:
+      213: -3427065911578778121
+    second: Yellow_44
+  - first:
+      213: -17516123096459969
+    second: Yellow_45
+  - first:
+      213: -8299930797493196159
+    second: Yellow_46
+  - first:
+      213: -3028873447353645781
+    second: Yellow_47
+  - first:
+      213: -7638127025933981675
+    second: Yellow_48
+  - first:
+      213: -2174598350895570856
+    second: Yellow_49
+  - first:
+      213: -8036196812993715970
+    second: Yellow_50
+  - first:
+      213: -2130547932290409987
+    second: Yellow_51
+  - first:
+      213: 3465190893573035236
+    second: Yellow_52
+  - first:
+      213: 9091923073823593009
+    second: Yellow_53
+  - first:
+      213: -2511950674024397715
+    second: Yellow_54
+  - first:
+      213: 2799285216089676262
+    second: Yellow_55
+  - first:
+      213: -4795332357312343418
+    second: Yellow_56
+  - first:
+      213: -2727621622405774300
+    second: Yellow_57
+  - first:
+      213: -4306153496641378961
+    second: Yellow_58
+  - first:
+      213: -4916805061695066739
+    second: Yellow_59
+  - first:
+      213: -192830787535387498
+    second: Yellow_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 750
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Yellow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1022
+        height: 761
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f6853355c4c3850800000000000000
+      internalID: 6358040702757662528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_1
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 0
+        width: 1138
+        height: 761
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b925bc791a425f570800000000000000
+      internalID: 8499740148186698395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":1966.0,"y":761.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Yellow_0: 6358040702757662528
+      Yellow_1: 8499740148186698395
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

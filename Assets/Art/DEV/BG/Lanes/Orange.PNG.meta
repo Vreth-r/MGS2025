@@ -1,0 +1,358 @@
+fileFormatVersion: 2
+guid: fe4ed8771a9c80b4b9946f5878c6409d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4121880872312635667
+    second: Orange_0
+  - first:
+      213: 2344270669467322306
+    second: Orange_1
+  - first:
+      213: 4308106298786891140
+    second: Orange_2
+  - first:
+      213: 7874291611447793305
+    second: Orange_3
+  - first:
+      213: 3285381865569172166
+    second: Orange_4
+  - first:
+      213: 7043855894265817204
+    second: Orange_5
+  - first:
+      213: 3988426822137034836
+    second: Orange_6
+  - first:
+      213: -2229105888306426895
+    second: Orange_7
+  - first:
+      213: 6008893271325792001
+    second: Orange_8
+  - first:
+      213: -7876212812653781381
+    second: Orange_9
+  - first:
+      213: 3515071814446350068
+    second: Orange_10
+  - first:
+      213: -7989559414504384385
+    second: Orange_11
+  - first:
+      213: -5807639670500276790
+    second: Orange_12
+  - first:
+      213: 6847284126642719973
+    second: Orange_13
+  - first:
+      213: -7248848098583867319
+    second: Orange_14
+  - first:
+      213: 4913402539735777752
+    second: Orange_15
+  - first:
+      213: -3526668604636205124
+    second: Orange_16
+  - first:
+      213: 559496575683597263
+    second: Orange_17
+  - first:
+      213: 1059023173507091762
+    second: Orange_18
+  - first:
+      213: 2133748405840239767
+    second: Orange_19
+  - first:
+      213: 4707852044336200978
+    second: Orange_20
+  - first:
+      213: -1019294444972620163
+    second: Orange_21
+  - first:
+      213: 1825301175938728563
+    second: Orange_22
+  - first:
+      213: 1317567594264175679
+    second: Orange_23
+  - first:
+      213: -1928797710523927202
+    second: Orange_24
+  - first:
+      213: 4755778209704672553
+    second: Orange_25
+  - first:
+      213: -8617392274808520957
+    second: Orange_26
+  - first:
+      213: -4456160682499012445
+    second: Orange_27
+  - first:
+      213: -2165025178526577389
+    second: Orange_28
+  - first:
+      213: -3341297565293577681
+    second: Orange_29
+  - first:
+      213: 3073816730334908709
+    second: Orange_30
+  - first:
+      213: 1362649965227793015
+    second: Orange_31
+  - first:
+      213: 8109559292044254046
+    second: Orange_32
+  - first:
+      213: 4474126896800497354
+    second: Orange_33
+  - first:
+      213: -4955394845732308824
+    second: Orange_34
+  - first:
+      213: 539816635634879325
+    second: Orange_35
+  - first:
+      213: 6303333908787370002
+    second: Orange_36
+  - first:
+      213: 1658967545285197670
+    second: Orange_37
+  - first:
+      213: 2405122992711813279
+    second: Orange_38
+  - first:
+      213: -1415844480539925574
+    second: Orange_39
+  - first:
+      213: -273106902289489936
+    second: Orange_40
+  - first:
+      213: 2310804698778416709
+    second: Orange_41
+  - first:
+      213: -7122590733236278202
+    second: Orange_42
+  - first:
+      213: -6007061603823746494
+    second: Orange_43
+  - first:
+      213: -5115710272052157448
+    second: Orange_44
+  - first:
+      213: 4226100193809274213
+    second: Orange_45
+  - first:
+      213: 2086386691810238637
+    second: Orange_46
+  - first:
+      213: 6055210269173587216
+    second: Orange_47
+  - first:
+      213: -1373331041183077873
+    second: Orange_48
+  - first:
+      213: 8750626037458925117
+    second: Orange_49
+  - first:
+      213: 642161769283797972
+    second: Orange_50
+  - first:
+      213: 8621952164020211476
+    second: Orange_51
+  - first:
+      213: -3114828890455639364
+    second: Orange_52
+  - first:
+      213: 6325976289775806833
+    second: Orange_53
+  - first:
+      213: -2639888962533144056
+    second: Orange_54
+  - first:
+      213: 6848931491201076428
+    second: Orange_55
+  - first:
+      213: 1768962416019435514
+    second: Orange_56
+  - first:
+      213: 8173247477535011294
+    second: Orange_57
+  - first:
+      213: 4826795218843026560
+    second: Orange_58
+  - first:
+      213: 8306578433153859818
+    second: Orange_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 750
+  spriteBorder: {x: 994, y: 0, z: 1067, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orange_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 1008
+        height: 742
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 18, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3110ca090dcd33930800000000000000
+      internalID: 4121880872312635667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange_1
+      rect:
+        serializedVersion: 2
+        x: 4766
+        y: 0
+        width: 1120
+        height: 742
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c787fed0c5888020800000000000000
+      internalID: 2344270669467322306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":1962.0,"y":742.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Orange_0: 4121880872312635667
+      Orange_1: 2344270669467322306
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
