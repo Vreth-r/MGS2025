@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e9030d702703f99448e10abe1e2efba1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e510966e7d049354da55030553519f8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,7 +140,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5200638745532964819}
-  m_LocalRotation: {x: -0.000000020149827, y: -0.88741356, z: -0.46097428, w: 0.00000003879008}
+  m_LocalRotation: {x: -0.000000011313344, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a1d4045055ae140b3cdca186fcda49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TapNote
-  inspectorDamageIncrement: 10
-  inspectorRegenIncrement: 10
+  damageIncrement: 10
+  regenIncrement: 10
 --- !u!1 &8133083919549003973
 GameObject:
   m_ObjectHideFlags: 0
