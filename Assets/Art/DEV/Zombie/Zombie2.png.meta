@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e510966e7d049354da55030553519f8a
+guid: 46cdb231fb495f042a04142ff27f6381
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1963004923900014204
-    second: ZombieNew_0
-  - first:
-      213: 4906679316168067823
-    second: ZombieNew_1
+      213: -8354713127785873202
+    second: Zombie2(1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
+  spritePixelsToUnits: 750
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ZombieNew_0
+      name: Zombie2(1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 925
-        height: 738
+        y: 49
+        width: 887
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7e276de39efd3b10800000000000000
-      internalID: 1963004923900014204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieNew_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 446
-        width: 5
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fea44f267d6081440800000000000000
-      internalID: 4906679316168067823
+      spriteID: ec0c70aeca81e0c80800000000000000
+      internalID: -8354713127785873202
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ZombieNew_0: 1963004923900014204
-      ZombieNew_1: 4906679316168067823
+      Zombie2(1)_0: -8354713127785873202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
