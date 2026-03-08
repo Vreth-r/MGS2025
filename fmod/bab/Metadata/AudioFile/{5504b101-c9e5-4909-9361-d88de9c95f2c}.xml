@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{78784a5d-1d03-4c32-8b37-2a3605e2e5d5}">
+	<object class="AudioFile" id="{5504b101-c9e5-4909-9361-d88de9c95f2c}">
 		<property name="assetPath">
-			<value>PunkIt_FINAL.mp3</value>
+			<value>PunkIt_Synths.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -14,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>162.864</value>
+			<value>160.00800000000001</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{ce71e86e-e9d6-47b9-ae71-3c05bfc4bf8a}</destination>
