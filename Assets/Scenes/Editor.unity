@@ -2467,7 +2467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc54d3f3efcb7b42a9fe726e6065c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Scripts::EditorFmodTransport
-  eventPath: event:/Music/TestBGM
+  eventPath: event:/Music/MainTrack
 --- !u!114 &584803798
 MonoBehaviour:
   m_ObjectHideFlags: 0
