@@ -7,7 +7,6 @@ using System.Collections;
 public class CharacterSelect : MonoBehaviour
 {
     // Keeps track of which character is selected
-    // When true, player 1 is set as the character Lu
     public bool P1IsLu { get; private set; } = true;
 
     // USS Class Names for changing p1/p2 selector positions
