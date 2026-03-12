@@ -54,8 +54,8 @@ public class LaneController : MonoBehaviour
         {
             if (!child.TryGetComponent(out NoteBase note)) continue;
 
-            var j = note.GetJudgement(hitZone);
-            if (j == Judgement.Miss) continue;
+           // var j = note.GetJudgement(hitZone);
+            if (!note.CanBeHit(hitZone)) continue;
 
             float t = note.TimingSeconds(hitZone);
             if (t < bestTiming)

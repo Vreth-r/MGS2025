@@ -49,7 +49,10 @@ public abstract class NoteBase : MonoBehaviour
         return Judgement.Miss;
     }
 
-    public bool CanBeHit(Transform hitZone) => GetJudgement(hitZone) != Judgement.Miss;
+    public bool CanBeHit(Transform hitZone)    
+    {
+        return (GetJudgement(hitZone) != Judgement.Miss) && data.resolved == false;
+    }
 
     public abstract void OnHit(Judgement judgement);
 
