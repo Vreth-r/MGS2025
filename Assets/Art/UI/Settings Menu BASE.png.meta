@@ -1,0 +1,1547 @@
+fileFormatVersion: 2
+guid: f6a2cf8d6bdce7f449e5a7e153f1021b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8896655498050930052
+    second: Settings Menu BASE_0
+  - first:
+      213: 488264688681078535
+    second: Settings Menu BASE_1
+  - first:
+      213: -364556383009632458
+    second: Settings Menu BASE_2
+  - first:
+      213: -8543549682260764729
+    second: Settings Menu BASE_3
+  - first:
+      213: -2908070215698188387
+    second: Settings Menu BASE_4
+  - first:
+      213: -3898871495259804570
+    second: Settings Menu BASE_5
+  - first:
+      213: 2031046325891137097
+    second: Settings Menu BASE_6
+  - first:
+      213: -1213847957778328650
+    second: Settings Menu BASE_7
+  - first:
+      213: -3471648369387610930
+    second: Settings Menu BASE_8
+  - first:
+      213: 1171631356233868140
+    second: Settings Menu BASE_9
+  - first:
+      213: 2154802859673104491
+    second: Settings Menu BASE_10
+  - first:
+      213: 3865691815674891108
+    second: Settings Menu BASE_11
+  - first:
+      213: -1067380887321746444
+    second: Settings Menu BASE_12
+  - first:
+      213: -6717513261791102423
+    second: Settings Menu BASE_13
+  - first:
+      213: -2622744049677774678
+    second: Settings Menu BASE_14
+  - first:
+      213: -7219491510074564823
+    second: Settings Menu BASE_15
+  - first:
+      213: -561971379369105100
+    second: Settings Menu BASE_16
+  - first:
+      213: 5524857635324784385
+    second: Settings Menu BASE_17
+  - first:
+      213: -8437211580113359267
+    second: Settings Menu BASE_18
+  - first:
+      213: -3007109418772090463
+    second: Settings Menu BASE_19
+  - first:
+      213: 4337777817012724535
+    second: Settings Menu BASE_20
+  - first:
+      213: 3027904143969997974
+    second: Settings Menu BASE_21
+  - first:
+      213: -5462872527559748961
+    second: Settings Menu BASE_22
+  - first:
+      213: -576057215616804484
+    second: Settings Menu BASE_23
+  - first:
+      213: -7987311453794129672
+    second: Settings Menu BASE_24
+  - first:
+      213: -7104943046667642885
+    second: Settings Menu BASE_25
+  - first:
+      213: 7226725771772265814
+    second: Settings Menu BASE_26
+  - first:
+      213: -5135880138332654505
+    second: Settings Menu BASE_27
+  - first:
+      213: 5999919860313429724
+    second: Settings Menu BASE_28
+  - first:
+      213: -4979437925220069931
+    second: Settings Menu BASE_29
+  - first:
+      213: 4181192887446728813
+    second: Settings Menu BASE_30
+  - first:
+      213: -6476387997968185251
+    second: Settings Menu BASE_31
+  - first:
+      213: -8793939877564360461
+    second: Settings Menu BASE_32
+  - first:
+      213: -2682593739606819174
+    second: Settings Menu BASE_33
+  - first:
+      213: 4560023707670349052
+    second: Settings Menu BASE_34
+  - first:
+      213: 4450370304571890249
+    second: Settings Menu BASE_35
+  - first:
+      213: -3378085272835270856
+    second: Settings Menu BASE_36
+  - first:
+      213: 5534761249193045922
+    second: Settings Menu BASE_37
+  - first:
+      213: 6193477731413146959
+    second: Settings Menu BASE_38
+  - first:
+      213: 892858273660344675
+    second: Settings Menu BASE_39
+  - first:
+      213: -6681556226203505419
+    second: Settings Menu BASE_40
+  - first:
+      213: 5757470681963582703
+    second: Settings Menu BASE_41
+  - first:
+      213: 8215072077722052578
+    second: Settings Menu BASE_42
+  - first:
+      213: -2702644272161197993
+    second: Settings Menu BASE_43
+  - first:
+      213: 5064266962502060874
+    second: Settings Menu BASE_44
+  - first:
+      213: 3378570008545829250
+    second: Settings Menu BASE_45
+  - first:
+      213: -8499056958440957685
+    second: Settings Menu BASE_46
+  - first:
+      213: 1467035945390505973
+    second: Settings Menu BASE_47
+  - first:
+      213: 8857137239229548051
+    second: Settings Menu BASE_48
+  - first:
+      213: 3034729986734371721
+    second: Settings Menu BASE_49
+  - first:
+      213: 8165611012802389032
+    second: Settings Menu BASE_50
+  - first:
+      213: -2432379758503153571
+    second: Settings Menu BASE_51
+  - first:
+      213: -2440737598611624542
+    second: Settings Menu BASE_52
+  - first:
+      213: -8118820627864601266
+    second: Settings Menu BASE_53
+  - first:
+      213: 3337901842255217268
+    second: Settings Menu BASE_54
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Settings Menu BASE_0
+      rect:
+        serializedVersion: 2
+        x: 7284
+        y: 4479
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4850a5af905477b70800000000000000
+      internalID: 8896655498050930052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_1
+      rect:
+        serializedVersion: 2
+        x: 7268
+        y: 4453
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70fc33db52aa6c600800000000000000
+      internalID: 488264688681078535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_2
+      rect:
+        serializedVersion: 2
+        x: 3349
+        y: 4415
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f0c12b6e5d0faf0800000000000000
+      internalID: -364556383009632458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 197
+        width: 4969
+        height: 3990
+      alignment: 9
+      pivot: {x: 0.5672399, y: 0.48090196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c712f364d63f6980800000000000000
+      internalID: -8543549682260764729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_4
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 4393
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d977a63eb8574a7d0800000000000000
+      internalID: -2908070215698188387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_5
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 4363
+        width: 55
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ca42c380d64e9c0800000000000000
+      internalID: -3898871495259804570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_6
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 4366
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e7a195fd9bf2c10800000000000000
+      internalID: 2031046325891137097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_7
+      rect:
+        serializedVersion: 2
+        x: 3306
+        y: 4383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b31a41b6bb872fe0800000000000000
+      internalID: -1213847957778328650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_8
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 4375
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc569d933a32dfc0800000000000000
+      internalID: -3471648369387610930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_9
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 4375
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63670cc288724010800000000000000
+      internalID: 1171631356233868140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_10
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 4374
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60bfc3c8c567ed10800000000000000
+      internalID: 2154802859673104491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_11
+      rect:
+        serializedVersion: 2
+        x: 2943
+        y: 4354
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bcf6c9932b5a530800000000000000
+      internalID: 3865691815674891108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_12
+      rect:
+        serializedVersion: 2
+        x: 7198
+        y: 4361
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3652bfcb6ef21f0800000000000000
+      internalID: -1067380887321746444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_13
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 3700
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a37f0874996c2a0800000000000000
+      internalID: -6717513261791102423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_14
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 3707
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa0df26ce242a9bd0800000000000000
+      internalID: -2622744049677774678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_15
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 3701
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f9e0bd8b63fcb90800000000000000
+      internalID: -7219491510074564823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_16
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 3702
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439a4c6020a7338f0800000000000000
+      internalID: -561971379369105100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_17
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 3708
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f63245fbc3cac40800000000000000
+      internalID: 5524857635324784385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_18
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 3698
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ee78825c009ea80800000000000000
+      internalID: -8437211580113359267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_19
+      rect:
+        serializedVersion: 2
+        x: 7253
+        y: 3608
+        width: 21
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1bb5d7ae99446d0800000000000000
+      internalID: -3007109418772090463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_20
+      rect:
+        serializedVersion: 2
+        x: 7072
+        y: 3441
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733ec9921f1e23c30800000000000000
+      internalID: 4337777817012724535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_21
+      rect:
+        serializedVersion: 2
+        x: 7103
+        y: 3485
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694d343c6c6450a20800000000000000
+      internalID: 3027904143969997974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_22
+      rect:
+        serializedVersion: 2
+        x: 7130
+        y: 3495
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f929f85316aff24b0800000000000000
+      internalID: -5462872527559748961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_23
+      rect:
+        serializedVersion: 2
+        x: 7159
+        y: 3464
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c791cd4b30f6108f0800000000000000
+      internalID: -576057215616804484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_24
+      rect:
+        serializedVersion: 2
+        x: 7180
+        y: 3488
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f821362d8e572190800000000000000
+      internalID: -7987311453794129672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_25
+      rect:
+        serializedVersion: 2
+        x: 7108
+        y: 3474
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf75ef151fb266d90800000000000000
+      internalID: -7104943046667642885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_26
+      rect:
+        serializedVersion: 2
+        x: 7126
+        y: 3479
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65585a3fccc7a4460800000000000000
+      internalID: 7226725771772265814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_27
+      rect:
+        serializedVersion: 2
+        x: 7132
+        y: 3474
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754b2b9a930b9b8b0800000000000000
+      internalID: -5135880138332654505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_28
+      rect:
+        serializedVersion: 2
+        x: 7199
+        y: 3472
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd61bc2f25ff34350800000000000000
+      internalID: 5999919860313429724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_29
+      rect:
+        serializedVersion: 2
+        x: 7208
+        y: 3479
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd4626d69b75eab0800000000000000
+      internalID: -4979437925220069931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_30
+      rect:
+        serializedVersion: 2
+        x: 7211
+        y: 3473
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60f6a937c4960a30800000000000000
+      internalID: 4181192887446728813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_31
+      rect:
+        serializedVersion: 2
+        x: 7224
+        y: 3466
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58c081ed6f3f16a0800000000000000
+      internalID: -6476387997968185251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_32
+      rect:
+        serializedVersion: 2
+        x: 7111
+        y: 3469
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f852ad0646a5f580800000000000000
+      internalID: -8793939877564360461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_33
+      rect:
+        serializedVersion: 2
+        x: 7060
+        y: 3444
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e7c02f43385cad0800000000000000
+      internalID: -2682593739606819174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_34
+      rect:
+        serializedVersion: 2
+        x: 7166
+        y: 3454
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf40d0fe665784f30800000000000000
+      internalID: 4560023707670349052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_35
+      rect:
+        serializedVersion: 2
+        x: 6996
+        y: 3228
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a54f28634e2cd30800000000000000
+      internalID: 4450370304571890249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_36
+      rect:
+        serializedVersion: 2
+        x: 7093
+        y: 3237
+        width: 54
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837dcab9751ae11d0800000000000000
+      internalID: -3378085272835270856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_37
+      rect:
+        serializedVersion: 2
+        x: 7107
+        y: 3260
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afafbe180c6fcc40800000000000000
+      internalID: 5534761249193045922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_38
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 3246
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d3c29ae27a3f550800000000000000
+      internalID: 6193477731413146959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_39
+      rect:
+        serializedVersion: 2
+        x: 7040
+        y: 3239
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3691b4c8ed1146c00800000000000000
+      internalID: 892858273660344675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_40
+      rect:
+        serializedVersion: 2
+        x: 7082
+        y: 3243
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc275e33085643a0800000000000000
+      internalID: -6681556226203505419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_41
+      rect:
+        serializedVersion: 2
+        x: 7148
+        y: 3248
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe45a23b415a6ef40800000000000000
+      internalID: 5757470681963582703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_42
+      rect:
+        serializedVersion: 2
+        x: 7027
+        y: 3232
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e76ad4878cc10270800000000000000
+      internalID: 8215072077722052578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_43
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 3059
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750769b8a574e7ad0800000000000000
+      internalID: -2702644272161197993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_44
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 3034
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b8ea388f3e74640800000000000000
+      internalID: 5064266962502060874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_45
+      rect:
+        serializedVersion: 2
+        x: 7025
+        y: 2995
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281a928b58713ee20800000000000000
+      internalID: 3378570008545829250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_46
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 2916
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09905ae9b84d0a80800000000000000
+      internalID: -8499056958440957685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_47
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2790
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fffabd6b65fb5410800000000000000
+      internalID: 1467035945390505973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_48
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 2796
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3164927546fdaea70800000000000000
+      internalID: 8857137239229548051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_49
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 2598
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983378028d68d1a20800000000000000
+      internalID: 3034729986734371721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_50
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 2360
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824aa10f3f3125170800000000000000
+      internalID: 8165611012802389032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_51
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 2362
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50b1973f737e3ed0800000000000000
+      internalID: -2432379758503153571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_52
+      rect:
+        serializedVersion: 2
+        x: 7011
+        y: 1433
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad60dce512c02ed0800000000000000
+      internalID: -2440737598611624542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_53
+      rect:
+        serializedVersion: 2
+        x: 6185
+        y: 547
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d340187a7245f80800000000000000
+      internalID: -8118820627864601266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_54
+      rect:
+        serializedVersion: 2
+        x: 4726
+        y: 134
+        width: 865
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4728eb26a0c925e20800000000000000
+      internalID: 3337901842255217268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dcc2687bc3e40464c89152c3c8bf6147
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Settings Menu: -8543549682260764729
+      Settings Menu BASE_0: 8896655498050930052
+      Settings Menu BASE_1: 488264688681078535
+      Settings Menu BASE_10: 2154802859673104491
+      Settings Menu BASE_11: 3865691815674891108
+      Settings Menu BASE_12: -1067380887321746444
+      Settings Menu BASE_13: -6717513261791102423
+      Settings Menu BASE_14: -2622744049677774678
+      Settings Menu BASE_15: -7219491510074564823
+      Settings Menu BASE_16: -561971379369105100
+      Settings Menu BASE_17: 5524857635324784385
+      Settings Menu BASE_18: -8437211580113359267
+      Settings Menu BASE_19: -3007109418772090463
+      Settings Menu BASE_2: -364556383009632458
+      Settings Menu BASE_20: 4337777817012724535
+      Settings Menu BASE_21: 3027904143969997974
+      Settings Menu BASE_22: -5462872527559748961
+      Settings Menu BASE_23: -576057215616804484
+      Settings Menu BASE_24: -7987311453794129672
+      Settings Menu BASE_25: -7104943046667642885
+      Settings Menu BASE_26: 7226725771772265814
+      Settings Menu BASE_27: -5135880138332654505
+      Settings Menu BASE_28: 5999919860313429724
+      Settings Menu BASE_29: -4979437925220069931
+      Settings Menu BASE_30: 4181192887446728813
+      Settings Menu BASE_31: -6476387997968185251
+      Settings Menu BASE_32: -8793939877564360461
+      Settings Menu BASE_33: -2682593739606819174
+      Settings Menu BASE_34: 4560023707670349052
+      Settings Menu BASE_35: 4450370304571890249
+      Settings Menu BASE_36: -3378085272835270856
+      Settings Menu BASE_37: 5534761249193045922
+      Settings Menu BASE_38: 6193477731413146959
+      Settings Menu BASE_39: 892858273660344675
+      Settings Menu BASE_4: -2908070215698188387
+      Settings Menu BASE_40: -6681556226203505419
+      Settings Menu BASE_41: 5757470681963582703
+      Settings Menu BASE_42: 8215072077722052578
+      Settings Menu BASE_43: -2702644272161197993
+      Settings Menu BASE_44: 5064266962502060874
+      Settings Menu BASE_45: 3378570008545829250
+      Settings Menu BASE_46: -8499056958440957685
+      Settings Menu BASE_47: 1467035945390505973
+      Settings Menu BASE_48: 8857137239229548051
+      Settings Menu BASE_49: 3034729986734371721
+      Settings Menu BASE_5: -3898871495259804570
+      Settings Menu BASE_50: 8165611012802389032
+      Settings Menu BASE_51: -2432379758503153571
+      Settings Menu BASE_52: -2440737598611624542
+      Settings Menu BASE_53: -8118820627864601266
+      Settings Menu BASE_54: 3337901842255217268
+      Settings Menu BASE_6: 2031046325891137097
+      Settings Menu BASE_7: -1213847957778328650
+      Settings Menu BASE_8: -3471648369387610930
+      Settings Menu BASE_9: 1171631356233868140
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

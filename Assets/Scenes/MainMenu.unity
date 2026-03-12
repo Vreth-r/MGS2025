@@ -1377,18 +1377,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 56825200603359736, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_text
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117835533268410939, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117835533268410939, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1133963522134724142, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1469,14 +1457,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2767744812804733938, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244070207821302660, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: returnButton
-      value: 
-      objectReference: {fileID: 909848481}
     - target: {fileID: 6949280925703141668, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
@@ -1491,17 +1471,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6949280925703141668, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
   m_PrefabInstance: {fileID: 909848479}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &909848481 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6273581727829661124, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-  m_PrefabInstance: {fileID: 909848479}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &928213213
 GameObject:
   m_ObjectHideFlags: 0
