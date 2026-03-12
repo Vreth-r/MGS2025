@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: 7793673a760dd4041b39096479ec847d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2830527432877833576
+    second: paintLine_0
+  - first:
+      213: -1298910431728799684
+    second: paintLine_1
+  - first:
+      213: 4780005285959770887
+    second: paintLine_2
+  - first:
+      213: -1613333904211238975
+    second: paintLine_3
+  - first:
+      213: 2250262141894637451
+    second: paintLine_4
+  - first:
+      213: -648703062767587433
+    second: paintLine_5
+  - first:
+      213: -8488118696921589012
+    second: paintLine_6
+  - first:
+      213: -6574424620308450410
+    second: paintLine_7
+  - first:
+      213: 6535812628879923332
+    second: paintLine_8
+  - first:
+      213: -2093321089567305825
+    second: paintLine_9
+  - first:
+      213: -1015390501428269205
+    second: paintLine_10
+  - first:
+      213: 1446245297299063458
+    second: paintLine_11
+  - first:
+      213: 2059871730903672118
+    second: paintLine_12
+  - first:
+      213: 7098574513612365988
+    second: paintLine_13
+  - first:
+      213: 8705230298702703584
+    second: paintLine_14
+  - first:
+      213: 7494995522012148128
+    second: paintLine_15
+  - first:
+      213: -6335020434918949499
+    second: paintLine_16
+  - first:
+      213: -5630881476239202957
+    second: paintLine_17
+  - first:
+      213: 2403997928042764469
+    second: paintLine_18
+  - first:
+      213: -6099055389091683446
+    second: paintLine_19
+  - first:
+      213: 7705666463180850915
+    second: paintLine_20
+  - first:
+      213: -6751168919626881861
+    second: paintLine_21
+  - first:
+      213: 4446007541863448189
+    second: paintLine_22
+  - first:
+      213: -5909327127020126135
+    second: paintLine_23
+  - first:
+      213: -7256095372064624259
+    second: paintLine_24
+  - first:
+      213: -525667566525721528
+    second: paintLine_25
+  - first:
+      213: -7182025490208093254
+    second: paintLine_26
+  - first:
+      213: 3845083302959827407
+    second: paintLine_27
+  - first:
+      213: 8359776287894117511
+    second: paintLine_28
+  - first:
+      213: -5335528188964202755
+    second: paintLine_29
+  - first:
+      213: -1550747272806102092
+    second: paintLine_30
+  - first:
+      213: 1763749779316487739
+    second: paintLine_31
+  - first:
+      213: 3872815337386819655
+    second: paintLine_32
+  - first:
+      213: 3956726254411254296
+    second: paintLine_33
+  - first:
+      213: 467022170338874734
+    second: paintLine_34
+  - first:
+      213: -84866693086485632
+    second: paintLine_35
+  - first:
+      213: -3831102560907921092
+    second: paintLine_36
+  - first:
+      213: -5469757496656407474
+    second: paintLine_37
+  - first:
+      213: -8765793815678367863
+    second: paintLine_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.499513, y: 0.14514245}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: paintLine_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1280
+        height: 621
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892815ceb42f7b8d0800000000000000
+      internalID: -2830527432877833576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 73
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3071c128d759fde0800000000000000
+      internalID: -1298910431728799684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7032f166b7df55240800000000000000
+      internalID: 4780005285959770887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 73
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf1567ac594c99e0800000000000000
+      internalID: -1613333904211238975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 40
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87b323ee798a3f10800000000000000
+      internalID: 2250262141894637451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 41
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fa70b50085ff6f0800000000000000
+      internalID: -648703062767587433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_6
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 72
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea13a26405243a80800000000000000
+      internalID: -8488118696921589012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_7
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 72
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693beeff3a3f2c4a0800000000000000
+      internalID: -6574424620308450410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 36
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48856ee25fed3ba50800000000000000
+      internalID: 6535812628879923332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_9
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 53
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fc1875f8703f2e0800000000000000
+      internalID: -2093321089567305825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_10
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 48
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6fef0ef7bb98e1f0800000000000000
+      internalID: -1015390501428269205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 60
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a207937f68121410800000000000000
+      internalID: 1446245297299063458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_12
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 78
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 635e163fc62269c10800000000000000
+      internalID: 2059871730903672118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_13
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 82
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0a18709e3338260800000000000000
+      internalID: 7098574513612365988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_14
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 86
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb642a95d03fc870800000000000000
+      internalID: 8705230298702703584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_15
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 72
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a17da297b2930860800000000000000
+      internalID: 7494995522012148128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 63
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58db0d39a7c7518a0800000000000000
+      internalID: -6335020434918949499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 78
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3756f6c81271bd1b0800000000000000
+      internalID: -5630881476239202957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_18
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 68
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b893cde067bc5120800000000000000
+      internalID: 2403997928042764469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_19
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 50
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8322c3107dcb5ba0800000000000000
+      internalID: -6099055389091683446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_20
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 81
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6098762d600fa60800000000000000
+      internalID: 7705666463180850915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_21
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 39
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb46bf603a70f42a0800000000000000
+      internalID: -6751168919626881861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_22
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 55
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e7a79ad4463bd30800000000000000
+      internalID: 4446007541863448189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_23
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 67
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940c264794addfda0800000000000000
+      internalID: -5909327127020126135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_24
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 34
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d717bbb14bb2d4b90800000000000000
+      internalID: -7256095372064624259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_25
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 55
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8445a43222474b8f0800000000000000
+      internalID: -525667566525721528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_26
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 78
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb88506ed1545c90800000000000000
+      internalID: -7182025490208093254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_27
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 87
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9c4b454ea7c5530800000000000000
+      internalID: 3845083302959827407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_28
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 81
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c99a9ed34e30470800000000000000
+      internalID: 8359776287894117511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_29
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 44
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df694b7816564f5b0800000000000000
+      internalID: -5335528188964202755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_30
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 44
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb8cf35293aa7ae0800000000000000
+      internalID: -1550747272806102092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_31
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 68
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3635dc54191a7810800000000000000
+      internalID: 1763749779316487739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_32
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 53
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74040a1c7010fb530800000000000000
+      internalID: 3872815337386819655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_33
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 77
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a05a3909d19e630800000000000000
+      internalID: 3956726254411254296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_34
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e65d74580323b7600800000000000000
+      internalID: 467022170338874734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_35
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 58
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0836159313e72def0800000000000000
+      internalID: -84866693086485632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_36
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c397ef6d48035dac0800000000000000
+      internalID: -3831102560907921092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_37
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 78
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44d34c69848714b0800000000000000
+      internalID: -5469757496656407474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paintLine_38
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 59
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 987cc22c7f4a95680800000000000000
+      internalID: -8765793815678367863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      paintLine_0: -2830527432877833576
+      paintLine_1: -1298910431728799684
+      paintLine_10: -1015390501428269205
+      paintLine_11: 1446245297299063458
+      paintLine_12: 2059871730903672118
+      paintLine_13: 7098574513612365988
+      paintLine_14: 8705230298702703584
+      paintLine_15: 7494995522012148128
+      paintLine_16: -6335020434918949499
+      paintLine_17: -5630881476239202957
+      paintLine_18: 2403997928042764469
+      paintLine_19: -6099055389091683446
+      paintLine_2: 4780005285959770887
+      paintLine_20: 7705666463180850915
+      paintLine_21: -6751168919626881861
+      paintLine_22: 4446007541863448189
+      paintLine_23: -5909327127020126135
+      paintLine_24: -7256095372064624259
+      paintLine_25: -525667566525721528
+      paintLine_26: -7182025490208093254
+      paintLine_27: 3845083302959827407
+      paintLine_28: 8359776287894117511
+      paintLine_29: -5335528188964202755
+      paintLine_3: -1613333904211238975
+      paintLine_30: -1550747272806102092
+      paintLine_31: 1763749779316487739
+      paintLine_32: 3872815337386819655
+      paintLine_33: 3956726254411254296
+      paintLine_34: 467022170338874734
+      paintLine_35: -84866693086485632
+      paintLine_36: -3831102560907921092
+      paintLine_37: -5469757496656407474
+      paintLine_38: -8765793815678367863
+      paintLine_4: 2250262141894637451
+      paintLine_5: -648703062767587433
+      paintLine_6: -8488118696921589012
+      paintLine_7: -6574424620308450410
+      paintLine_8: 6535812628879923332
+      paintLine_9: -2093321089567305825
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
