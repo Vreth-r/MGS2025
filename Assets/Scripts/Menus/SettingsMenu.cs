@@ -20,6 +20,8 @@ public class SettingsMenu : BaseMenu
         buttons = new[] { returnButton };
 
         returnButton.onClick.AddListener(ReturnBack);
+
+        base.Close();
     }
 
     protected override void OnOpen()

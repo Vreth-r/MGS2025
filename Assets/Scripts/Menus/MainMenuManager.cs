@@ -1,3 +1,9 @@
+/*
+HEY HEY HEY. THIS IS DEPRECATED AND MOVED TO MainMenuManager_fix.cs
+I made a new file because I'm scared of merge conflicts
+The new file is wildly different
+*/
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -41,7 +47,7 @@ public class MainMenuManager : MonoBehaviour
     {
         var menus = MenuManager.Instance;
 
-        menus.menusClosed += ToggleInputControl;
+        //menus.menusClosed += ToggleInputControl;
         // Disable Menu Inputs
         menus.enabled = false;
 

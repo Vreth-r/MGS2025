@@ -202,6 +202,17 @@
                     "action": "Ultimate",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27ecf796-7760-4104-bc88-4a5af71e2b8b",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -209,15 +220,6 @@
             "name": "UI",
             "id": "363ee08a-f912-4c80-bb7d-cc9cc744de4c",
             "actions": [
-                {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "1788fbc3-c6eb-4dec-a09e-c8a86ab02392",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
                 {
                     "name": "Navigate",
                     "type": "Value",
@@ -256,17 +258,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "68ff11f7-65d2-4b4d-995d-b56d6984b5cf",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "41161f8f-c680-48c4-b295-53c3c4bd017a",

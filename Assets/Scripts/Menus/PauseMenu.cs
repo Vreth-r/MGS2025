@@ -24,6 +24,8 @@ public class PauseMenu : BaseMenu
         resumeButton.onClick.AddListener(ResumeGame);
         settingsButton.onClick.AddListener(OpenSettings);
         quitButton.onClick.AddListener(QuitGame);
+
+        base.Close();
     }
 
     protected override void OnOpen()
@@ -36,6 +38,7 @@ public class PauseMenu : BaseMenu
     protected override void OnClose()
     {
         Time.timeScale = 1f; // resume gameplay
+        Debug.LogFormat($"Pause menu closed");
     }
 
     public override void HandleNavigate(Vector2 direction)
