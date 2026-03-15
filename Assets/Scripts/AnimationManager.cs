@@ -36,8 +36,9 @@ public class AnimationManager : MonoBehaviour
     int bouncetest = 0;
     int countin = 0;
 
-
     static List<int> hurtlanes = new List<int>();
+
+    private SoundEffectsPlayer soundEffectsPlayer;
 
     private void Start()
     {
@@ -52,6 +53,10 @@ public class AnimationManager : MonoBehaviour
         Vector3 basePDuo = GameObject.Find("Lane2").transform.position;
 
         animator = GetComponent<Animator>();
+
+        soundEffectsPlayer = GetComponent<SoundEffectsPlayer>();
+
+        SoundEffectsEventHelper.OnSuccessfulHit += PlaySoundOnSuccessfulHit;
 
         //Set up general position
         // General positions are bugged due to new pivots, pls adjust
@@ -78,6 +83,8 @@ public class AnimationManager : MonoBehaviour
         // Unsubscribe from lane press event to prevent MissingReferenceException
         if (InputManager.Instance != null)
             InputManager.Instance.OnLanePressed -= NewPos;
+
+        SoundEffectsEventHelper.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
     //run every frame
@@ -96,6 +103,9 @@ public class AnimationManager : MonoBehaviour
                 animator.Play("Bounce", -1, 0f);
                 // animator.Play("Bounce2");
                 spriteRenderer.sprite = sprOuch;
+
+                soundEffectsPlayer.PlaySoundEffect("MissHit_1");
+
                 hurtActive = 3;
                 if (hurtlanes[i] == 2)  //lets both Ps be hurt if in lane 2 (needs to be run twice)
                     hurtlanes.Add(-1);
@@ -215,6 +225,65 @@ public class AnimationManager : MonoBehaviour
             countin = 0;
         }
 
+    }
+
+    private string GetNextAttackSound()
+    {
+        if (isDuo)
+        {
+            if (attackcount == 1)
+            {
+                Debug.Log("Hi1");
+                return "DuoAttackHit_1";
+            }
+
+            else
+            {
+                Debug.Log("Hi2");
+                return "DuoAttackHit_1";
+            }
+        }
+
+        else
+        {
+            if (attackcount == 1)
+            {
+                Debug.Log("Hi3");
+                return "AttackHit_1";
+            }
+
+            else
+            {
+                Debug.Log("Hi4");
+                return "AttackHit_2";
+            }
+        }
+    }
+    private void PlaySoundOnSuccessfulHit(int laneIndex, Judgement judgement)
+    {
+        if (LaneIdentifier(laneIndex) == true)
+        {
+            string soundName = GetNextAttackSound();
+            soundEffectsPlayer.PlaySoundEffect(soundName);
+        }
+    }
+
+    private bool LaneIdentifier(int lane)
+    {
+        if (isDuo)
+        {
+            return lane == 2;
+        }
+
+        else if (isPlayer1)
+        {
+            return lane <= 2;
+        }
+
+        else
+        {
+            return lane >= 3;
+        }
     }
 
 }

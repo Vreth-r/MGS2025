@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 19662023}
   - component: {fileID: 19662022}
   - component: {fileID: 19662021}
+  - component: {fileID: 19662025}
   m_Layer: 0
   m_Name: P1-drummer
   m_TagString: Untagged
@@ -320,6 +321,20 @@ MonoBehaviour:
   freezeY: 1
   freezeZ: 1
   sweetCrispXTweak: 0
+--- !u!114 &19662025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19662019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
+  soundEffectsBank: {fileID: 11400000, guid: 9f0f76e39b2d5224489a874799c8a92c, type: 2}
+  UseFleshVersion: 1
 --- !u!1 &21626026
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +348,7 @@ GameObject:
   - component: {fileID: 21626030}
   - component: {fileID: 21626029}
   - component: {fileID: 21626028}
+  - component: {fileID: 21626032}
   m_Layer: 0
   m_Name: P2-bassist
   m_TagString: Untagged
@@ -446,6 +462,20 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &21626032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21626026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
+  soundEffectsBank: {fileID: 11400000, guid: 993826908b2933c4cbc33e4394180418, type: 2}
+  UseFleshVersion: 1
 --- !u!1 &23565640
 GameObject:
   m_ObjectHideFlags: 0
@@ -26615,6 +26645,7 @@ GameObject:
   - component: {fileID: 1757023866}
   - component: {fileID: 1757023865}
   - component: {fileID: 1757023864}
+  - component: {fileID: 1757023867}
   m_Layer: 0
   m_Name: PDuo
   m_TagString: Untagged
@@ -26698,6 +26729,20 @@ MonoBehaviour:
   freezeY: 1
   freezeZ: 1
   sweetCrispXTweak: 0
+--- !u!114 &1757023867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757023862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
+  soundEffectsBank: {fileID: 11400000, guid: bed7fd0e773a06a4aa36eb2e945e8c99, type: 2}
+  UseFleshVersion: 1
 --- !u!1 &1779061230
 GameObject:
   m_ObjectHideFlags: 0

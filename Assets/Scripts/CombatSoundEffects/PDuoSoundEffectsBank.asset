@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c71ba9173a3c8d45be5a242c4b9f4db, type: 3}
+  m_Name: PDuoSoundEffectsBank
+  m_EditorClassIdentifier: Scripts::SoundEffectsBank
+  soundEffects:
+  - name: AttackHit_1
+    normal:
+      Guid:
+        Data1: 358919427
+        Data2: 1109308605
+        Data3: 28688827
+        Data4: -900553407
+      Path: event:/CombatSoundEffects/ComboHit_1
+    flesh:
+      Guid:
+        Data1: -723781919
+        Data2: 1304851015
+        Data3: -1439565653
+        Data4: 1129460976
+      Path: event:/CombatSoundEffects/ComboHit_1 (flesh)
+  - name: MissHit_1
+    normal:
+      Guid:
+        Data1: 1259283869
+        Data2: 1156717818
+        Data3: -92535890
+        Data4: -808735274
+      Path: event:/CombatSoundEffects/MissHit_1
+    flesh:
+      Guid:
+        Data1: 1259283869
+        Data2: 1156717818
+        Data3: -92535890
+        Data4: -808735274
+      Path: event:/CombatSoundEffects/MissHit_1

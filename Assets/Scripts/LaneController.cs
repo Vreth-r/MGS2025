@@ -72,6 +72,14 @@ public class LaneController : MonoBehaviour
         }
 
         ScoreManager.Instance.AddScore(bestTiming);
-        best.OnHit(best.GetJudgement(hitZone));
+        //best.OnHit(best.GetJudgement(hitZone));
+        var judgement = best.GetJudgement(hitZone);
+
+        if (judgement != Judgement.Miss)
+        {
+            SoundEffectsEventHelper.OnSuccessfulHit?.Invoke(laneIndex, judgement);
+        }
+
+        best.OnHit(judgement);
     }
 }
