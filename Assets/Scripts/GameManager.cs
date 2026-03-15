@@ -99,6 +99,22 @@ public class GameManager : MonoBehaviour
             _nextPulseTime += secondsPerBeat;
             OnPulse?.Invoke();
         }
+        //temp button to open pause menu
+        var keyboard = UnityEngine.InputSystem.Keyboard.current;
+        if (keyboard != null && keyboard.escapeKey.wasPressedThisFrame)
+        MenuManager.Instance.OpenPause();
+    }
+
+    public void PauseSong()
+    {
+        if (songInstance.isValid())
+            songInstance.setPaused(true);
+    }
+
+    public void ResumeSong()
+    {
+        if (songInstance.isValid())
+            songInstance.setPaused(false);
     }
 
     public bool GameIsDone()
