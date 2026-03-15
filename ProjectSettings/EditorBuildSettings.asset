@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu-Copy.unity
     guid: df94e59dde9fe6848bc28aaaf7856722
   - enabled: 1
     path: Assets/Scenes/Game.unity
-    guid: 3d87f9d50e73e3b448622e6d93996910
+    guid: eabd39aca921f014c8947d5d7a19aa46
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d3fd3c796e1345343a4e86bd7966c77a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 20c1b378922e93e4ca7cd1ee5e7d2045, type: 2}
   m_UseUCBPForAssetBundles: 0
