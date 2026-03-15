@@ -2,7 +2,6 @@ using System;
 
 public class GameplayEvents
 {
-
     // Player Health events
     public event Action<int, int> OnPlayerHealthGained;
 
@@ -19,10 +18,10 @@ public class GameplayEvents
     }
 
     // Game Over Event
-    public event Action<int, bool> OnGameOver;
-    public void GameOver(int finalScore, bool finishedSong)
+    public event Action<bool> OnGameOver;
+    public void GameOver(bool finishedSong)
     {
-        OnGameOver?.Invoke(finalScore, finishedSong);
+        OnGameOver?.Invoke(finishedSong);
     }
 
     // Event for Combo processing, used for combo display for UI but can be considered a gameplay event so it will stay here
