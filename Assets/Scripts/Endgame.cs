@@ -14,14 +14,22 @@ public class Endgame : MonoBehaviour
 
     private bool triggered;
 
+
     private void Update()
     {
+
         if (triggered) return;
 
         var gm = GameManager.Instance;
         if (gm == null) return;
 
-        
+        if (gm.SongTimeSeconds >= gm.BeatmapEndTimeSeconds)
+        {
+            triggered = true;
+            StartCoroutine(ShowAfterDelay(delayAfterEnd));
+            return;
+        }
+
         if (Health.IsDead())
         {
             triggered = true;
@@ -29,15 +37,8 @@ public class Endgame : MonoBehaviour
             return;
         }
 
-        float songTime = gm.SongTimeSeconds;
-        float endTime = gm.BeatmapEndTimeSeconds;
-
         
-        if (songTime >= endTime)
-        {
-            triggered = true;
-            StartCoroutine(ShowAfterDelay(delayAfterEnd));
-        }
+
     }
 
     private IEnumerator ShowAfterDelay(float delay)

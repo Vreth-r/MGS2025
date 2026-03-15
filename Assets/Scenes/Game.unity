@@ -6996,8 +6996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::Endgame
   endgameScreenPrefab: {fileID: 6373580066921969200, guid: c557ed12a0bcdbb488bca321c67130b8, type: 3}
-  victorySprite: {fileID: 0}
-  gameOverSprite: {fileID: 0}
+  victorySprite: {fileID: 21300000, guid: 7f924c106fb83534d857d47f5fd4de28, type: 3}
+  gameOverSprite: {fileID: 21300000, guid: e9030d702703f99448e10abe1e2efba1, type: 3}
   delayAfterEnd: 1
 --- !u!1 &411275651
 GameObject:
@@ -19087,7 +19087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -865, y: -18}
+  m_AnchoredPosition: {x: -864.99994, y: -18}
   m_SizeDelta: {x: -1046, y: 1714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050836330
@@ -19674,7 +19674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -865, y: -18}
+  m_AnchoredPosition: {x: -864.99994, y: -18}
   m_SizeDelta: {x: -1046, y: 1714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210390942
@@ -20097,7 +20097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1307714037
 MonoBehaviour:
   m_ObjectHideFlags: 0

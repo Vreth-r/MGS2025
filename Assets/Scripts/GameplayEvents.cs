@@ -18,10 +18,10 @@ public class GameplayEvents
     }
 
     // Game Over Event
-    public event Action<bool> OnGameOver;
-    public void GameOver(bool finishedSong)
+    public event Action OnGameOver;
+    public void GameOver()
     {
-        OnGameOver?.Invoke(finishedSong);
+        OnGameOver?.Invoke();
     }
 
     // Event for Combo processing, used for combo display for UI but can be considered a gameplay event so it will stay here

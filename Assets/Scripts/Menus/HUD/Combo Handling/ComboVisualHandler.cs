@@ -19,10 +19,10 @@ using static ComboVisualHandler;
 
 public class ComboVisualHandler : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text comboCountDisplay;
-    [SerializeField]
-    private Animator comboCounterAnimator; // Top Right Counter
+    //[SerializeField]
+    //private TMP_Text comboCountDisplay;
+    //[SerializeField]
+    //private Animator comboCounterAnimator; // Top Right Counter
     [SerializeField]
     private PlayerComboEmitter p1ComboEmitter; // Player 1 combo emitter
     private Animator p1ComboEmitterAnimator; // Player 1 combo animator
@@ -33,9 +33,9 @@ public class ComboVisualHandler : MonoBehaviour
     // testing stuff
     public int currentComboCount = 0;
     public int playerID = 0;
-    [field: SerializeField] public GameObject perfectCombo;
-    [field: SerializeField] public GameObject goodCombo;
-    [field: SerializeField] public GameObject missCombo;
+    //[field: SerializeField] public GameObject perfectCombo;
+    //[field: SerializeField] public GameObject goodCombo;
+    //[field: SerializeField] public GameObject missCombo;
     public float timeBeforeFade;
     IEnumerator currentPopUp;
 
@@ -68,11 +68,11 @@ public class ComboVisualHandler : MonoBehaviour
 
     private void Start()
     {
-        perfectCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsPerfect);
-        goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsOK);
-        missCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsMiss);
+        //perfectCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsPerfect);
+        //goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsOK);
+        //missCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsMiss);
 
-        comboCountDisplay.text = currentComboCount.ToString();
+        //comboCountDisplay.text = currentComboCount.ToString();
 
         p1ComboEmitterAnimator = p1ComboEmitter.gameObject.GetComponent<Animator>();
         p2ComboEmitterAnimator = p2ComboEmitter.gameObject.GetComponent<Animator>();
@@ -206,7 +206,7 @@ public class ComboVisualHandler : MonoBehaviour
             case ComboType.Perfect:
                 {
                     //ANIMATE PERFECT
-                    comboCounterAnimator.SetTrigger(COUNT_DISPLAY_PERFECT);
+                    //comboCounterAnimator.SetTrigger(COUNT_DISPLAY_PERFECT);
                     break;
                 }
             default:
@@ -218,7 +218,7 @@ public class ComboVisualHandler : MonoBehaviour
 
     private void UpdateCount(int newComboCount, ComboType comboType)
     {
-        comboCountDisplay.text = newComboCount.ToString();
+        //comboCountDisplay.text = newComboCount.ToString();
         AnimateComboCount(comboType);
     }
     #endregion
