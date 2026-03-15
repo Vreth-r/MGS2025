@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2560dc28d39344cb98d77a3381e766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Scripts::CharacterSelect
+  controlsSwapper: {fileID: 11400000, guid: 603d07a6a147f5443b939885b19e3992, type: 2}
 --- !u!114 &1318755778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 363ee08a-f912-4c80-bb7d-cc9cc744de4c
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1451531225}
 --- !u!1 &1451531223
