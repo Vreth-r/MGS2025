@@ -19,19 +19,16 @@ using static ComboVisualHandler;
 
 public class ComboVisualHandler : MonoBehaviour
 {
-<<<<<<< Updated upstream
     //[SerializeField]
     //private TMP_Text comboCountDisplay;
     //[SerializeField]
     //private Animator comboCounterAnimator; // Top Right Counter
-=======
     [SerializeField]
     private EventManager eventManager;
     [SerializeField]
     private TMP_Text comboCountDisplay;
     [SerializeField]
     private Animator comboCounterAnimator; // Top Right Counter
->>>>>>> Stashed changes
     [SerializeField]
     private PlayerComboEmitter p1ComboEmitter; // Player 1 combo emitter
     private Animator p1ComboEmitterAnimator; // Player 1 combo animator
@@ -77,11 +74,8 @@ public class ComboVisualHandler : MonoBehaviour
 
     private void Start()
     {
-<<<<<<< Updated upstream
-=======
         eventManager.gameplay_events.OnPlayerCombo += HandleComboVisuals;
 
->>>>>>> Stashed changes
         //perfectCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsPerfect);
         //goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsOK);
         //missCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsMiss);

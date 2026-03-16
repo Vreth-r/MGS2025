@@ -6,7 +6,6 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance { get; private set; }
 
     [SerializeField] private EventManager eventManager;
-    [SerializeField] private CharacterSelect charSelect;
 
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text comboText;
