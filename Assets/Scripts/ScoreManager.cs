@@ -5,6 +5,9 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
+    [SerializeField] private EventManager eventManager;
+    [SerializeField] private CharacterSelect charSelect;
+
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text comboText;
 
@@ -15,6 +18,8 @@ public class ScoreManager : MonoBehaviour
     public int ComboMultiplier { get; private set; } = 1;
 
     private int perfectStreak;
+
+    private int playerID = 0;
 
     private const float PERFECT = 0.10f;
     private const float AWESOME = 0.20f;
@@ -40,6 +45,7 @@ public class ScoreManager : MonoBehaviour
         if (timing < PERFECT)
         {
             perfectStreak++;
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, perfectStreak);
             ComboMultiplier = 1 + (perfectStreak / 2); 
             baseScore = 10 * ComboMultiplier;
         }
@@ -56,11 +62,13 @@ public class ScoreManager : MonoBehaviour
         else if (timing < OKAY)
         {
             ResetCombo();
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, perfectStreak);
             baseScore = 3;
         }
         else
         {
             ResetCombo();
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, 0);
             baseScore = 0;
         }
 

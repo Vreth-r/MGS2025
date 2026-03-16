@@ -19,10 +19,19 @@ using static ComboVisualHandler;
 
 public class ComboVisualHandler : MonoBehaviour
 {
+<<<<<<< Updated upstream
     //[SerializeField]
     //private TMP_Text comboCountDisplay;
     //[SerializeField]
     //private Animator comboCounterAnimator; // Top Right Counter
+=======
+    [SerializeField]
+    private EventManager eventManager;
+    [SerializeField]
+    private TMP_Text comboCountDisplay;
+    [SerializeField]
+    private Animator comboCounterAnimator; // Top Right Counter
+>>>>>>> Stashed changes
     [SerializeField]
     private PlayerComboEmitter p1ComboEmitter; // Player 1 combo emitter
     private Animator p1ComboEmitterAnimator; // Player 1 combo animator
@@ -58,16 +67,21 @@ public class ComboVisualHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.Instance.gameplay_events.OnPlayerCombo += HandleComboVisuals;
+
     }
 
     private void OnDisable()
     {
-        EventManager.Instance.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
+        eventManager.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
     }
 
     private void Start()
     {
+<<<<<<< Updated upstream
+=======
+        eventManager.gameplay_events.OnPlayerCombo += HandleComboVisuals;
+
+>>>>>>> Stashed changes
         //perfectCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsPerfect);
         //goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsOK);
         //missCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsMiss);
@@ -83,7 +97,7 @@ public class ComboVisualHandler : MonoBehaviour
     public void HandleComboVisualsMiss()
     {
         currentComboCount = 0;
-        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss,currentComboCount);
+        eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss,currentComboCount);
         
         //HandleComboVisuals(playerID, ComboType.Miss, currentComboCount);
         Debug.Log("MISS");
@@ -92,7 +106,7 @@ public class ComboVisualHandler : MonoBehaviour
     public void HandleComboVisualsOK()
     {
         currentComboCount++;
-        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, currentComboCount);
+        eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, currentComboCount);
 
         //HandleComboVisuals(playerID, ComboType.Ok, currentComboCount);
         Debug.Log("OK");
@@ -102,7 +116,7 @@ public class ComboVisualHandler : MonoBehaviour
     public void HandleComboVisualsPerfect()
     {
         currentComboCount++;
-        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, currentComboCount);
+        eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, currentComboCount);
 
         //HandleComboVisuals(playerID, ComboType.Perfect, currentComboCount);
         Debug.Log("PERFECT");
@@ -129,6 +143,7 @@ public class ComboVisualHandler : MonoBehaviour
 
     IEnumerator PopUpCooldown(int playerID, ComboType combo)
     {
+
         Animator currentAnimator;
 
         // Set Current Animator
