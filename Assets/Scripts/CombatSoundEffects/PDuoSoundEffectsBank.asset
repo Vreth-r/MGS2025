@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PDuoSoundEffectsBank
   m_EditorClassIdentifier: Scripts::SoundEffectsBank
   soundEffects:
-  - name: AttackHit_1
+  - name: DuoAttackHit_1
     normal:
       Guid:
         Data1: 358919427
