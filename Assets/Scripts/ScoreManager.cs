@@ -50,7 +50,6 @@ public class ScoreManager : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
 
         int baseScore;
-
         if (timing < PERFECT)
         {
             perfectStreak++;

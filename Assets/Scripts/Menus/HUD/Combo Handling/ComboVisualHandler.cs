@@ -173,7 +173,7 @@ public class ComboVisualHandler : MonoBehaviour
                     // ANIMATE GOOD
                     currentAnimator.SetTrigger(POP_UP_GOOD);
                     yield return new WaitForSeconds(timeBeforeFade);
-                    
+
                     break;
                 }
             case ComboType.Perfect:
@@ -187,7 +187,6 @@ public class ComboVisualHandler : MonoBehaviour
         }
 
         currentAnimator.SetTrigger(FADE);
-
 
     }
 
