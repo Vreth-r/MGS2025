@@ -34,6 +34,16 @@ public class ScoreManager : MonoBehaviour
         UpdateUI();
     }
 
+    private void Start()
+    {
+        eventManager = GameObject.FindAnyObjectByType<EventManager>();
+
+        if (eventManager != null)
+        {
+            //Debug.Log($"{this.name} found {eventManager.name}");
+        }
+    }
+
     public void AddScore(float timing)
     {
         
@@ -51,11 +61,13 @@ public class ScoreManager : MonoBehaviour
         else if (timing < AWESOME)
         {
             ResetCombo();
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, perfectStreak);
             baseScore = 7;
         }
         else if (timing < GOOD)
         {
             ResetCombo();
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, perfectStreak);
             baseScore = 5;
         }
         else if (timing < OKAY)

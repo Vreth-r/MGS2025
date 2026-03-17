@@ -41,7 +41,7 @@ public class EventManager : MonoBehaviour
         }
 
         // Removes all subscriptions when destroyed
-        gameplay_events.ClearAll();
-        ui_events.ClearAll();
+        //gameplay_events.ClearAll();
+        //ui_events.ClearAll();
     }
 }

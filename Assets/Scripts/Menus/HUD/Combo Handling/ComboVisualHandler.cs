@@ -13,7 +13,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static ComboVisualHandler;
 
 public class ComboVisualHandler : MonoBehaviour
 {
@@ -21,8 +20,8 @@ public class ComboVisualHandler : MonoBehaviour
     //private TMP_Text comboCountDisplay;
     //[SerializeField]
     //private Animator comboCounterAnimator; // Top Right Counter
-    [SerializeField]
-    private EventManager eventManager;
+    //[SerializeField]
+    //private EventManager eventManager;
     [SerializeField]
     private TMP_Text comboCountDisplay;
     [SerializeField]
@@ -60,17 +59,18 @@ public class ComboVisualHandler : MonoBehaviour
 
     private void OnEnable()
     {
+        //EventManager.Instance.gameplay_events.OnPlayerCombo += HandleComboVisuals;
 
     }
 
     private void OnDisable()
     {
-        eventManager.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
+        EventManager.Instance.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
     }
 
     private void Start()
     {
-        eventManager.gameplay_events.OnPlayerCombo += HandleComboVisuals;
+        EventManager.Instance.gameplay_events.OnPlayerCombo += HandleComboVisuals;
 
         //perfectCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsPerfect);
         //goodCombo.GetComponent<Button>().onClick.AddListener(HandleComboVisualsOK);
@@ -87,7 +87,7 @@ public class ComboVisualHandler : MonoBehaviour
     public void HandleComboVisualsMiss()
     {
         currentComboCount = 0;
-        eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss,currentComboCount);
+        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss,currentComboCount);
         
         //HandleComboVisuals(playerID, ComboType.Miss, currentComboCount);
         Debug.Log("MISS");
@@ -96,7 +96,7 @@ public class ComboVisualHandler : MonoBehaviour
     public void HandleComboVisualsOK()
     {
         currentComboCount++;
-        eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, currentComboCount);
+        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, currentComboCount);
 
         //HandleComboVisuals(playerID, ComboType.Ok, currentComboCount);
         Debug.Log("OK");
@@ -106,7 +106,7 @@ public class ComboVisualHandler : MonoBehaviour
     public void HandleComboVisualsPerfect()
     {
         currentComboCount++;
-        eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, currentComboCount);
+        EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, currentComboCount);
 
         //HandleComboVisuals(playerID, ComboType.Perfect, currentComboCount);
         Debug.Log("PERFECT");

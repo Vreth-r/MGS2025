@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 787672334069747406, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 787672334069747406, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 787672334069747406, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.97
+      value: 0.836
       objectReference: {fileID: 0}
     - target: {fileID: 787672334069747406, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.05
+      value: 0.855
       objectReference: {fileID: 0}
     - target: {fileID: 787672334069747406, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2288921075177106030, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
+      propertyPath: playerPackage
+      value: 
+      objectReference: {fileID: 11400000, guid: c136b17385af6b94490e3a6dd54f6ebc, type: 2}
     - target: {fileID: 3458644095185359450, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -122,6 +126,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3458644095185359450, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279790669439036492, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573833239840146469, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
@@ -148,6 +156,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7090468970182941684, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398238040935275193, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f7f05776a87e0934b86a6f6540f1dfe0, type: 2}
     - target: {fileID: 7519678568116619843, guid: d7df4a4e721df024f87f1772adb016b7, type: 3}
       propertyPath: m_Name
       value: P2ComboPopUpEmitter Variant
