@@ -11,9 +11,7 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using static ComboVisualHandler;
 
@@ -55,11 +53,9 @@ public class ComboVisualHandler : MonoBehaviour
 
     // Pop-ups (shown near player, uses object on player object)
     const string POP_UP_MISS = "POPUP_MISS";
-    const string FADE_MISS = "FADE_MISS";
-    const string POP_UP_GOOD = "POPUP_GOOD";
-    const string FADE_GOOD = "FADE_GOOD";
+    const string FADE = "FADE";
+    const string POP_UP_GOOD = "POPUP_OK";
     const string POP_UP_PERFECT = "POPUP_PERFECT";
-    const string FADE_PERFECT = "FADE_PERFECT";
     const string ONGOING_COMBO = "OngoingCombo";
 
     private void OnEnable()
@@ -170,7 +166,6 @@ public class ComboVisualHandler : MonoBehaviour
                     // ANIMATE MISS
                     currentAnimator.SetTrigger(POP_UP_MISS);
                     yield return new WaitForSeconds(timeBeforeFade);
-                    currentAnimator.SetTrigger(FADE_MISS);
                     break;
                 }
             case ComboType.Ok:
@@ -178,7 +173,7 @@ public class ComboVisualHandler : MonoBehaviour
                     // ANIMATE GOOD
                     currentAnimator.SetTrigger(POP_UP_GOOD);
                     yield return new WaitForSeconds(timeBeforeFade);
-                    currentAnimator.SetTrigger(FADE_GOOD);
+                    
                     break;
                 }
             case ComboType.Perfect:
@@ -186,13 +181,14 @@ public class ComboVisualHandler : MonoBehaviour
                     //ANIMATE PERFECT
                     currentAnimator.SetTrigger(POP_UP_PERFECT);
                     yield return new WaitForSeconds(timeBeforeFade);
-                    currentAnimator.SetTrigger(FADE_PERFECT);
                     break;
                 }
            
         }
 
-       
+        currentAnimator.SetTrigger(FADE);
+
+
     }
 
     #endregion
