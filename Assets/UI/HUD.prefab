@@ -700,9 +700,6 @@ MonoBehaviour:
   p2ComboEmitter: {fileID: 0}
   currentComboCount: 0
   playerID: 0
-  perfectCombo: {fileID: 7090277958069831422}
-  goodCombo: {fileID: 1939596451045844202}
-  missCombo: {fileID: 4883899281763457578}
   timeBeforeFade: 1
 --- !u!95 &734399595646990333
 Animator:

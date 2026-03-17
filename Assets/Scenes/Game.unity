@@ -21186,10 +21186,6 @@ PrefabInstance:
       propertyPath: p2ComboEmitter
       value: 
       objectReference: {fileID: 1303664388}
-    - target: {fileID: 7778439535862136814, guid: ebdd733bbfe11a9438d4b53becebb1a3, type: 3}
-      propertyPath: timeBeforeFade
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8283315734001780296, guid: ebdd733bbfe11a9438d4b53becebb1a3, type: 3}
       propertyPath: m_IsActive
       value: 0
