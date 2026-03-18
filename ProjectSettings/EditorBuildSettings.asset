@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu-Copy.unity
-    guid: df94e59dde9fe6848bc28aaaf7856722
+    path: Assets/Scenes/MainMenu.unity
+    guid: d3fd3c796e1345343a4e86bd7966c77a
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: fb7f2847600fd634fa9acff928beb780
   - enabled: 1
     path: Assets/Scenes/Game.unity
-    guid: 3d87f9d50e73e3b448622e6d93996910
+    guid: eabd39aca921f014c8947d5d7a19aa46
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 20c1b378922e93e4ca7cd1ee5e7d2045, type: 2}
   m_UseUCBPForAssetBundles: 0

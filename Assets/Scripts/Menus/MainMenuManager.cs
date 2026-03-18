@@ -101,7 +101,7 @@ public class MainMenuManager : MonoBehaviour
     private void OnPlay()
     {
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
     private void OnQuit()
