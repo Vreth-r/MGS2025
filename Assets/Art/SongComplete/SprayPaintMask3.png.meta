@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 274b7d37f6058e243a99e32109d4a11f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1914144188646340195
+    second: SprayPaintMask3_0
+  - first:
+      213: 1422522929126940477
+    second: SprayPaintMask3_1
+  - first:
+      213: -8225539231287121550
+    second: SprayPaintMask3_2
+  - first:
+      213: -1082139831746190060
+    second: SprayPaintMask3_3
+  - first:
+      213: -6330179948188547267
+    second: SprayPaintMask3_4
+  - first:
+      213: -3899098087464645112
+    second: SprayPaintMask3_5
+  - first:
+      213: 7137042603398389599
+    second: SprayPaintMask3_6
+  - first:
+      213: 2656618205062058397
+    second: SprayPaintMask3_7
+  - first:
+      213: 6319483958663423873
+    second: SprayPaintMask3_8
+  - first:
+      213: -6176899434427572717
+    second: SprayPaintMask3_9
+  - first:
+      213: 2369038582056924997
+    second: SprayPaintMask3_10
+  - first:
+      213: 8856613276957257814
+    second: SprayPaintMask3_11
+  - first:
+      213: -321996280270972918
+    second: SprayPaintMask3_12
+  - first:
+      213: 1952347576350475601
+    second: SprayPaintMask3_13
+  - first:
+      213: -3726545313913254421
+    second: SprayPaintMask3_14
+  - first:
+      213: 6606745563447482318
+    second: SprayPaintMask3_15
+  - first:
+      213: -3427063940409322392
+    second: SprayPaintMask3_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SprayPaintMask3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 2560
+        height: 1387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d994bd280089f65e0800000000000000
+      internalID: -1914144188646340195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_1
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 1383
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f95733111ddb310800000000000000
+      internalID: 1422522929126940477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_2
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1383
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279671166a309dd80800000000000000
+      internalID: -8225539231287121550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_3
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 1391
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415a7737e877bf0f0800000000000000
+      internalID: -1082139831746190060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_4
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 1383
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d37cbe730eea628a0800000000000000
+      internalID: -6330179948188547267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_5
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1384
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ec340a2fe93e9c0800000000000000
+      internalID: -3899098087464645112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fd3622f6edb0360800000000000000
+      internalID: 7137042603398389599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 36
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d915f80ae243ed420800000000000000
+      internalID: 2656618205062058397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 38
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187a9e7ad2153b750800000000000000
+      internalID: 6319483958663423873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_9
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 42
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e12a5e0be374aa0800000000000000
+      internalID: -6176899434427572717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 35
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547b2b6e90480e020800000000000000
+      internalID: 2369038582056924997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_11
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 29
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650bb0ed9d209ea70800000000000000
+      internalID: 8856613276957257814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_12
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 34
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08937fc61a088bf0800000000000000
+      internalID: -321996280270972918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_13
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1550776d6c1281b10800000000000000
+      internalID: 1952347576350475601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_14
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 30
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedcdc4f7c6a84cc0800000000000000
+      internalID: -3726545313913254421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_15
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 19
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7dcaef510efab50800000000000000
+      internalID: 6606745563447482318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayPaintMask3_16
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8641a59e08f9070d0800000000000000
+      internalID: -3427063940409322392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SprayPaintMask3_0: -1914144188646340195
+      SprayPaintMask3_1: 1422522929126940477
+      SprayPaintMask3_10: 2369038582056924997
+      SprayPaintMask3_11: 8856613276957257814
+      SprayPaintMask3_12: -321996280270972918
+      SprayPaintMask3_13: 1952347576350475601
+      SprayPaintMask3_14: -3726545313913254421
+      SprayPaintMask3_15: 6606745563447482318
+      SprayPaintMask3_16: -3427063940409322392
+      SprayPaintMask3_2: -8225539231287121550
+      SprayPaintMask3_3: -1082139831746190060
+      SprayPaintMask3_4: -6330179948188547267
+      SprayPaintMask3_5: -3899098087464645112
+      SprayPaintMask3_6: 7137042603398389599
+      SprayPaintMask3_7: 2656618205062058397
+      SprayPaintMask3_8: 6319483958663423873
+      SprayPaintMask3_9: -6176899434427572717
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

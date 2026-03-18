@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Beat Settings")]
+    public SongCompleteScreen screen;
+    
     public float noteSpeed = 5f;
     public Transform hitZone;
 
@@ -99,12 +101,33 @@ public class GameManager : MonoBehaviour
             _nextPulseTime += secondsPerBeat;
             OnPulse?.Invoke();
         }
+        //temp button to open pause menu
+        var keyboard = UnityEngine.InputSystem.Keyboard.current;
+        if (keyboard != null && keyboard.escapeKey.wasPressedThisFrame)
+        MenuManager.Instance.OpenPause();
+    }
+
+    public void PauseSong()
+    {
+        if (songInstance.isValid())
+            songInstance.setPaused(true);
+    }
+
+    public void ResumeSong()
+    {
+        if (songInstance.isValid())
+            songInstance.setPaused(false);
     }
 
     public bool GameIsDone()
-    {
-        if (Health.IsDead()) return true;
-        return _player != null && _player.IsFinished();
+    {        
+        if (Health.IsDead()) 
+        {
+            return true;
+        } else {
+            screen.TrackFinish();
+            return _player != null && _player.IsFinished();
+        }
     }
 
     public float BeatmapEndTimeSeconds
