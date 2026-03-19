@@ -75,7 +75,7 @@ public class Endgame : MonoBehaviour
             screenToShow.SetActive(true);
         }
 
-        var scoreT = screen.transform.Find("ScoreText");
+        var scoreT = screen.transform.Find("Victory/RevealContainer/Tamagotchi/ScoreText");
         if (scoreT != null && scoreT.TryGetComponent(out TextMeshProUGUI scoreTmp) && ScoreManager.Instance != null)
             scoreTmp.text = $"{ScoreManager.Instance.TotalScore}";
 
