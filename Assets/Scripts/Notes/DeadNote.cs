@@ -8,7 +8,7 @@ public class DeadNote : NoteBase
         Resolve();
         AnimationManager.Missed(lane);
         Health.TakeDamage(damageIncrement);
-        ScoreManager.Instance.AddScore(1f);
+        ScoreManager.Instance.AddScore(1f, lane.laneIndex);
         Destroy(gameObject);
     }
 

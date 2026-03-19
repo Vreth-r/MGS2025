@@ -67,11 +67,11 @@ public class LaneController : MonoBehaviour
 
         if (best == null)
         {
-            ScoreManager.Instance.AddScore(1f); // ghost tap
+            ScoreManager.Instance.AddScore(1f, lane); // ghost tap
             return;
         }
 
-        ScoreManager.Instance.AddScore(bestTiming);
+        ScoreManager.Instance.AddScore(bestTiming, lane);
         best.OnHit(best.GetJudgement(hitZone));
     }
 }

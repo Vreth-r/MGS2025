@@ -124,7 +124,7 @@ public class HoldNote : NoteBase
         Resolve();
         AnimationManager.Missed(lane);
         Health.TakeDamage(damage);
-        ScoreManager.Instance.AddScore(1f);
+        ScoreManager.Instance.AddScore(1f, lane.laneIndex);
 
         
         if (gm != null) gm.OnPulse -= OnPulse;
