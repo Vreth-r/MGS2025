@@ -44,10 +44,12 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void AddScore(float timing)
+    public void AddScore(float timing, int lane)
     {
         
         if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
+
+        playerID = lane < 3 ? 0 : 1;
 
         int baseScore;
         if (timing < PERFECT)

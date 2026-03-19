@@ -61,7 +61,7 @@ public abstract class NoteBase : MonoBehaviour
         Resolve();
         AnimationManager.Missed(lane);
         Health.TakeDamage(damageIncrement);
-        ScoreManager.Instance.AddScore(1f); // miss
+        ScoreManager.Instance.AddScore(1f, lane.laneIndex); // miss
         StartCoroutine(animPause(0.4f,"zombie attack"));
     }
 
