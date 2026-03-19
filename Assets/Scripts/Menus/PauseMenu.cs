@@ -61,19 +61,44 @@ public class PauseMenu : BaseMenu
         UpdateButtonsInstant();
     }
 
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     //pauses song while in pause menu
     protected override void OnOpen()
     {
+        if (!SceneManager.GetActiveScene().name.Equals("Game")) return; // early return if not in game scene
+
+        if (GameManager.Instance.GameIsDone()) return; // early return if game is over
+
+        
+        if (GameManager.Instance.SongTimeSeconds > 0f)
+        {
+            GameManager.Instance.PauseSong();
+        }
+
         Time.timeScale = 0f;
-        GameManager.Instance.PauseSong();
+
         buttonPressed = false;
         HighlightButton(selectedIndex);
     }
 
     protected override void OnClose()
     {
+        if (!SceneManager.GetActiveScene().name.Equals("Game")) return; // early return if not in game scene
+
+        if (GameManager.Instance.GameIsDone()) return; // early return if game is over
+
+        
+
+        if (GameManager.Instance.SongTimeSeconds > 0f)
+        {
+            GameManager.Instance.ResumeSong();
+        }
+
         Time.timeScale = 1f;
-        GameManager.Instance.ResumeSong();
     }
 
     public override void Hide()

@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class Endgame : MonoBehaviour
 {
     public GameObject endgameScreenPrefab;
-    public Sprite victorySprite;
-    public Sprite gameOverSprite;
 
     [SerializeField] private float delayAfterEnd = 1f;
 
@@ -61,22 +59,49 @@ public class Endgame : MonoBehaviour
         if (titleT != null && titleT.TryGetComponent(out TextMeshProUGUI title))
             title.text = victory ? "VICTORY" : "GAME OVER";
 
+
         var spriteT = screen.transform.Find("ResultSprite");
         if (spriteT != null && spriteT.TryGetComponent(out Image img))
-            img.sprite = victory ? victorySprite : gameOverSprite;
+        { 
+            GameObject gameOverLoss = screen.transform.Find("Defeat").gameObject;
+            GameObject gameOverWin = screen.transform.Find("Victory").gameObject;
+
+            GameObject screenToShow = victory ? gameOverWin : gameOverLoss; 
+
+            gameOverLoss.SetActive(false);
+            gameOverWin.SetActive(false);
+            screenToShow.SetActive(true);
+        }
 
         var scoreT = screen.transform.Find("ScoreText");
         if (scoreT != null && scoreT.TryGetComponent(out TextMeshProUGUI scoreTmp) && ScoreManager.Instance != null)
-            scoreTmp.text = $"score: {ScoreManager.Instance.TotalScore}";
+            scoreTmp.text = $"{ScoreManager.Instance.TotalScore}";
 
-        var btnT = screen.transform.Find("PlayAgainButton");
-        if (btnT != null && btnT.TryGetComponent(out Button btn))
-            btn.onClick.AddListener(Restart);
+
+        // I am doing it this way bc y'all did not code this in a way we can have 2 fully different screens for results - Knox Fouladi
+        var btnT1 = screen.transform.Find("PlayAgainButton1");
+        var btnT2 = screen.transform.Find("PlayAgainButton2");
+        if (btnT1 != null && btnT1.TryGetComponent(out Button btn1))
+            btn1.onClick.AddListener(Restart);
+        if (btnT2 != null && btnT2.TryGetComponent(out Button btn2))
+            btn2.onClick.AddListener(Restart);
+
+        var btnM1 = screen.transform.Find("MainMenuButton1");
+        var btnM2 = screen.transform.Find("MainMenuButton2");
+        if (btnM1 != null && btnM1.TryGetComponent(out Button btn3))
+            btn3.onClick.AddListener(GoToMainMenu);
+        if (btnM2 != null && btnT2.TryGetComponent(out Button btn4))
+            btn4.onClick.AddListener(GoToMainMenu);
     }
 
     private void Restart()
     {
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.buildIndex);
+    }
+
+    private void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
