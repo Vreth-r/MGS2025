@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     private int _beatmapNoteCount;
     private float _nextPulseTime;
     private float _lastSongTime;
+    private bool finishedSong = false;
 
     public int noteCount => _beatmapNoteCount;
 
@@ -121,13 +122,15 @@ public class GameManager : MonoBehaviour
 
     public bool GameIsDone()
     {        
-        if (Health.IsDead()) 
+        if (Health.IsDead()) return true;
+        
+        if (!finishedSong && _player != null && _player.IsFinished())
         {
-            return true;
-        } else {
+            // Displays track finish screen
+            finishedSong = true;
             screen.TrackFinish();
-            return _player != null && _player.IsFinished();
         }
+        return _player != null && _player.IsFinished();
     }
 
     public float BeatmapEndTimeSeconds
