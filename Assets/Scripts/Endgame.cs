@@ -77,7 +77,7 @@ public class Endgame : MonoBehaviour
 
         var scoreT = screen.transform.Find("Victory/RevealContainer/Tamagotchi/ScoreText");
         if (scoreT != null && scoreT.TryGetComponent(out TextMeshProUGUI scoreTmp) && ScoreManager.Instance != null)
-            scoreTmp.text = $"{ScoreManager.Instance.TotalScore}";
+            scoreTmp.text = $"{(int)ScoreManager.Instance.TotalScore}";
 
 
         // [DEPRECATED] I am doing it this way bc y'all did not code this in a way we can have 2 fully different screens for results - Knox Fouladi
