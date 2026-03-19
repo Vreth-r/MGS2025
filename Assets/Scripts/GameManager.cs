@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [Header("Beat Settings")]
-    public SongCompleteScreen screen;
-    
+    [Header("Beat Settings")]    
     public float noteSpeed = 5f;
     public Transform hitZone;
 
@@ -44,7 +42,6 @@ public class GameManager : MonoBehaviour
     private int _beatmapNoteCount;
     private float _nextPulseTime;
     private float _lastSongTime;
-    private bool finishedSong = false;
 
     public int noteCount => _beatmapNoteCount;
 
@@ -123,13 +120,6 @@ public class GameManager : MonoBehaviour
     public bool GameIsDone()
     {        
         if (Health.IsDead()) return true;
-        
-        if (!finishedSong && _player != null && _player.IsFinished())
-        {
-            // Displays track finish screen
-            finishedSong = true;
-            screen.TrackFinish();
-        }
         return _player != null && _player.IsFinished();
     }
 

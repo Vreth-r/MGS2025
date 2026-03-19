@@ -9,6 +9,7 @@ public class SongCompleteManager : MonoBehaviour
 
     [Header("Menu Settings")]
     [SerializeField] private CanvasGroup canvasGroup;
+    public SongCompleteScreen screen;
 
     [Header("Button References")]
     [SerializeField] private Button menuButton;
@@ -43,6 +44,11 @@ public class SongCompleteManager : MonoBehaviour
 
         HighlightButton(selectedIndex);
         SubscribeInputs(); // Gain control over the inputs!!!!
+    }
+
+    private void OnEnable()
+    {
+        screen.TrackFinish();
     }
 
     private void OnDisable()

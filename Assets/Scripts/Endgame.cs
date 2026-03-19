@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Endgame : MonoBehaviour
 {
     public GameObject endgameScreenPrefab;
+    public Transform spawnpoint;
 
     [SerializeField] private float delayAfterEnd = 1f;
 
@@ -53,19 +54,23 @@ public class Endgame : MonoBehaviour
 
         bool victory = !Health.IsDead();
 
-        GameObject screen = Instantiate(endgameScreenPrefab);
+        GameObject screen = Instantiate(endgameScreenPrefab, spawnpoint);
 
-        var titleT = screen.transform.Find("TitleText");
-        if (titleT != null && titleT.TryGetComponent(out TextMeshProUGUI title))
-            title.text = victory ? "VICTORY" : "GAME OVER";
+        //var titleT = screen.transform.Find("TitleText");
+        //if (titleT != null && titleT.TryGetComponent(out TextMeshProUGUI title))
+        //    title.text = victory ? "VICTORY" : "GAME OVER";
 
 
-        var spriteT = screen.transform.Find("ResultSprite");
-        if (spriteT != null && spriteT.TryGetComponent(out Image img))
-        { 
-            GameObject gameOverLoss = screen.transform.Find("Defeat").gameObject;
-            GameObject gameOverWin = screen.transform.Find("Victory").gameObject;
+        //var spriteT = screen.transform.Find("ResultSprite");
+        
+            GameObject gameOverType1 = screen.transform.Find("Defeat").gameObject;
+            GameObject gameOverType2 = screen.transform.Find("Victory").gameObject;
 
+        Debug.Log(gameOverType1);
+        Debug.Log(gameOverType2);
+
+        if (gameOverType1 != null && gameOverType1.TryGetComponent(out GameObject gameOverLoss) && gameOverType2 != null && gameOverType2.TryGetComponent(out GameObject gameOverWin))
+        {
             GameObject screenToShow = victory ? gameOverWin : gameOverLoss; 
 
             gameOverLoss.SetActive(false);
