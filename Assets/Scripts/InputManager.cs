@@ -140,7 +140,7 @@ public class InputManager : MonoBehaviour
         }
 
         // Assigning gamePause Action and Subscribing to Event
-        gamePauseAction = uiMap.FindAction("Pause");
+        gamePauseAction = gameplayMap.FindAction("Pause");
         gamePauseAction.performed += ctx => OnPausePressed?.Invoke();
 
         //Debug.Log($"ControlsManager initialized with {laneActions.Count} lanes.");

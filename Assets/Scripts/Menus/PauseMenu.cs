@@ -58,6 +58,8 @@ public class PauseMenu : BaseMenu
         if (buttons.Length > 2) buttons[2].button.onClick.AddListener(RestartGame);
         if (buttons.Length > 3) buttons[3].button.onClick.AddListener(QuitGame);
 
+        base.Close();
+
         UpdateButtonsInstant();
     }
 
