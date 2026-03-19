@@ -299,19 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5408252420057004968, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408252420057004968, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408252420057004968, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
+    - target: {fileID: 1048130204772757738, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_Pivot.x
@@ -344,18 +336,6 @@ PrefabInstance:
     - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -404,10 +384,6 @@ PrefabInstance:
     - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

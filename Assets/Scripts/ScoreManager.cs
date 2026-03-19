@@ -103,8 +103,8 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (scoreText != null) scoreText.text = $"score: {TotalScore}";
-        if (comboText != null) comboText.text = $"combo: {ComboMultiplier}x";
+        if (scoreText != null) scoreText.text = $"{TotalScore}";
+        if (comboText != null) comboText.text = $"{ComboMultiplier}x Combo";
     }
 
     private void OnEnable()

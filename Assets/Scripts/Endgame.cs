@@ -54,7 +54,7 @@ public class Endgame : MonoBehaviour
 
         bool victory = !Health.IsDead();
 
-        GameObject screen = Instantiate(endgameScreenPrefab, spawnpoint);
+        GameObject screen = Instantiate(endgameScreenPrefab, spawnpoint); // spawns with HUD as parent
 
         //var titleT = screen.transform.Find("TitleText");
         //if (titleT != null && titleT.TryGetComponent(out TextMeshProUGUI title))
@@ -66,8 +66,8 @@ public class Endgame : MonoBehaviour
             GameObject gameOverType1 = screen.transform.Find("Defeat").gameObject;
             GameObject gameOverType2 = screen.transform.Find("Victory").gameObject;
 
-        Debug.Log(gameOverType1);
-        Debug.Log(gameOverType2);
+        //Debug.Log(gameOverType1);
+        //Debug.Log(gameOverType2);
 
         if (gameOverType1 != null && gameOverType1.TryGetComponent(out GameObject gameOverLoss) && gameOverType2 != null && gameOverType2.TryGetComponent(out GameObject gameOverWin))
         {
@@ -83,20 +83,20 @@ public class Endgame : MonoBehaviour
             scoreTmp.text = $"{ScoreManager.Instance.TotalScore}";
 
 
-        // I am doing it this way bc y'all did not code this in a way we can have 2 fully different screens for results - Knox Fouladi
-        var btnT1 = screen.transform.Find("PlayAgainButton1");
-        var btnT2 = screen.transform.Find("PlayAgainButton2");
-        if (btnT1 != null && btnT1.TryGetComponent(out Button btn1))
-            btn1.onClick.AddListener(Restart);
-        if (btnT2 != null && btnT2.TryGetComponent(out Button btn2))
-            btn2.onClick.AddListener(Restart);
+        // [DEPRECATED] I am doing it this way bc y'all did not code this in a way we can have 2 fully different screens for results - Knox Fouladi
+        //var btnT1 = screen.transform.Find("PlayAgainButton1");
+        //var btnT2 = screen.transform.Find("PlayAgainButton2");
+        //if (btnT1 != null && btnT1.TryGetComponent(out Button btn1))
+        //    btn1.onClick.AddListener(Restart);
+        //if (btnT2 != null && btnT2.TryGetComponent(out Button btn2))
+        //    btn2.onClick.AddListener(Restart);
 
-        var btnM1 = screen.transform.Find("MainMenuButton1");
-        var btnM2 = screen.transform.Find("MainMenuButton2");
-        if (btnM1 != null && btnM1.TryGetComponent(out Button btn3))
-            btn3.onClick.AddListener(GoToMainMenu);
-        if (btnM2 != null && btnT2.TryGetComponent(out Button btn4))
-            btn4.onClick.AddListener(GoToMainMenu);
+        //var btnM1 = screen.transform.Find("MainMenuButton1");
+        //var btnM2 = screen.transform.Find("MainMenuButton2");
+        //if (btnM1 != null && btnM1.TryGetComponent(out Button btn3))
+        //    btn3.onClick.AddListener(GoToMainMenu);
+        //if (btnM2 != null && btnT2.TryGetComponent(out Button btn4))
+        //    btn4.onClick.AddListener(GoToMainMenu);
     }
 
     private void Restart()
