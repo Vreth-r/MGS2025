@@ -25,9 +25,9 @@ public class GameplayEvents
     }
 
     // Event for Combo processing, used for combo display for UI but can be considered a gameplay event so it will stay here
-    public event Action<int, ComboType, int> OnPlayerCombo;
+    public event Action<int, ComboType, float> OnPlayerCombo;
 
-    public void ResolvePlayerCombo(int playerID, ComboType comboType, int currentComboCount)
+    public void ResolvePlayerCombo(int playerID, ComboType comboType, float currentComboCount)
     {
         OnPlayerCombo?.Invoke(playerID, comboType, currentComboCount);
     }

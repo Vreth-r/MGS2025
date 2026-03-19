@@ -81,6 +81,8 @@ public class ComboVisualHandler : MonoBehaviour
 
         p1ComboEmitterAnimator = p1ComboEmitter.gameObject.GetComponent<Animator>();
         p2ComboEmitterAnimator = p2ComboEmitter.gameObject.GetComponent<Animator>();
+
+        comboCountDisplay.text = $"{1}x Combo";
     }
 
     // Temporary for debug
@@ -114,7 +116,7 @@ public class ComboVisualHandler : MonoBehaviour
     }
     #endregion
 
-    public void HandleComboVisuals(int playerID, ComboType comboType, int currentComboCount)
+    public void HandleComboVisuals(int playerID, ComboType comboType, float currentComboCount)
     {
         UpdateCount(currentComboCount, comboType);
         PopUpCombo(playerID, comboType);
@@ -221,7 +223,7 @@ public class ComboVisualHandler : MonoBehaviour
     //    }
     //}
 
-    private void UpdateCount(int newComboCount, ComboType comboType)
+    private void UpdateCount(float newComboCount, ComboType comboType)
     {
         switch (comboType)
         {
@@ -232,7 +234,7 @@ public class ComboVisualHandler : MonoBehaviour
                 }
             case ComboType.Ok:
                 {
-                    newComboCount = 0;
+                    newComboCount += 0.5f;
                     break;
                 }
             case ComboType.Perfect:
@@ -245,7 +247,7 @@ public class ComboVisualHandler : MonoBehaviour
                     return;
                 }
         }
-        comboCountDisplay.text = newComboCount.ToString();
+        comboCountDisplay.text = $"{1+newComboCount}x Combo";
         Debug.Log(comboType.ToString() +", new combo count: " + newComboCount);
         //AnimateComboCount(comboType);
     }

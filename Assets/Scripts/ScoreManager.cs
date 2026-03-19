@@ -13,8 +13,8 @@ public class ScoreManager : MonoBehaviour
     [Header("Ultimate")]
     [SerializeField] private int inspectorUltimateScoreMultiplier = 4;
 
-    public int TotalScore { get; private set; }
-    public int ComboMultiplier { get; private set; } = 1;
+    public float TotalScore { get; private set; }
+    public float ComboMultiplier { get; private set; } = 1;
 
     private int perfectStreak;
 
@@ -51,31 +51,55 @@ public class ScoreManager : MonoBehaviour
 
         playerID = lane < 3 ? 0 : 1;
 
-        int baseScore;
+        float baseScore;
         if (timing < PERFECT)
         {
             perfectStreak++;
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, perfectStreak);
-            ComboMultiplier = 1 + (perfectStreak / 2); 
+            if(ComboMultiplier == 0) ComboMultiplier = 1;
+            ComboMultiplier++; 
             baseScore = 10 * ComboMultiplier;
+
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
+
         }
         else if (timing < AWESOME)
         {
-            ResetCombo();
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, perfectStreak);
-            baseScore = 7;
+            //ResetCombo();
+            perfectStreak++;
+            if (ComboMultiplier == 0) ComboMultiplier = 1;
+            ComboMultiplier++; 
+            //baseScore = 7;
+            baseScore = 10 * ComboMultiplier;
+
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
         }
         else if (timing < GOOD)
         {
-            ResetCombo();
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, perfectStreak);
-            baseScore = 5;
+            //ResetCombo();
+            perfectStreak++;
+            if (ComboMultiplier == 0) ComboMultiplier = 1;
+            ComboMultiplier += 0.5f;
+            //ComboMultiplier = 1 + (perfectStreak / 4);
+            //baseScore = 5;
+            baseScore = 5 * ComboMultiplier;
+
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
+
+
         }
         else if (timing < OKAY)
         {
-            ResetCombo();
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, perfectStreak);
-            baseScore = 3;
+            //ResetCombo();
+            perfectStreak++;
+           
+            if (ComboMultiplier == 0) ComboMultiplier = 1;
+            ComboMultiplier += 0.5f;
+            //ComboMultiplier = 1 + (perfectStreak / 4);
+            //baseScore = 3;
+            baseScore = 5 * ComboMultiplier;
+
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
+
         }
         else if (missed)
         {
@@ -108,8 +132,8 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (scoreText != null) scoreText.text = $"{TotalScore}";
-        if (comboText != null) comboText.text = $"{ComboMultiplier}x Combo";
+        if (scoreText != null) scoreText.text = $"{(int)TotalScore}";
+        //if (comboText != null) comboText.text = $"{ComboMultiplier}x Combo";
     }
 
     private void OnEnable()
