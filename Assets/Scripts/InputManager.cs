@@ -42,8 +42,6 @@ public class InputManager : MonoBehaviour
     public enum InputContext { Gameplay, UI }
     public InputContext CurrentContext { get; private set; } = InputContext.Gameplay;
 
-    private ControlsSwapper controlsSwapper;
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -54,10 +52,6 @@ public class InputManager : MonoBehaviour
 
         Instance = this;
         //DontDestroyOnLoad(gameObject);
-
-        //the controls stay swapped (if you chose to swap them during character select) after you exit the play mode testing.
-        //Go to Assets/Scripts/Resources/ControlsSwapper.asset and uncheck "Is Controls Swapped" to reset to default controls for any testing that doesnt touch the chracter select scene.
-        controlsSwapper = Resources.Load<ControlsSwapper>("ControlsSwapper"); 
 
         InitializeActionMaps();
     }
@@ -84,8 +78,6 @@ public class InputManager : MonoBehaviour
     {
         laneActions.Clear();
 
-        bool swapped = controlsSwapper.isControlsSwapped;
-
         // Auto-detect any actions named "Lane0", "Lane1", etc.
         int i = 0;
         while (true)
@@ -94,39 +86,11 @@ public class InputManager : MonoBehaviour
             if (action == null) break;
 
             int laneIndex = i; // Capture variable for closure
-
-
-            if (swapped == false)
-            {
-                Debug.Log("normal controls");
-                laneActions[laneIndex] = action;
-
-                action.performed += ctx => OnLanePressed?.Invoke(laneIndex);
-                action.canceled += ctx => OnLaneReleased?.Invoke(laneIndex);
-            }
-
-            else
-            {
-                Debug.Log("swapped controls");
-
-                int remappedLaneIndex = laneIndex switch
-                {
-                    0 => 3,
-                    1 => 4,
-                    2 => 2,
-                    3 => 0,
-                    4 => 1,
-                    _ => laneIndex
-                };
-
-                laneActions[remappedLaneIndex] = action;
-                action.performed += ctx => OnLanePressed?.Invoke(remappedLaneIndex);
-                action.canceled += ctx => OnLaneReleased?.Invoke(remappedLaneIndex);
-            }
+            laneActions[laneIndex] = action;
 
             // Subscribe events
-            //action.performed += ctx => OnLanePressed?.Invoke(laneIndex);
-            //action.canceled += ctx => OnLaneReleased?.Invoke(laneIndex);
+            action.performed += ctx => OnLanePressed?.Invoke(laneIndex);
+            action.canceled += ctx => OnLaneReleased?.Invoke(laneIndex);
 
             i++;
         }
