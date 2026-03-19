@@ -181,7 +181,8 @@ public class AnimationManager : MonoBehaviour
 
             animator.Play("Bounce", -1, 0f);
 
-            attackcount += 1;
+            //Commenting this out because there is no 2nd attack sprite yet
+            //attackcount += 1;
 
 
         }

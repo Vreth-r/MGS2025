@@ -11,6 +11,7 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -193,24 +194,50 @@ public class ComboVisualHandler : MonoBehaviour
     #endregion
 
     #region Combo Counter
-    private void AnimateComboCount(ComboType combo)
+    //private void AnimateComboCount(ComboType combo)
+    //{
+    //    switch (combo)
+    //    {
+    //        case ComboType.Miss:
+    //            {
+    //                // ANIMATE MISS
+    //                break;
+    //            }
+    //        case ComboType.Ok:
+    //            {
+    //                // ANIMATE Ok
+    //                break;
+    //            }
+    //        case ComboType.Perfect:
+    //            {
+    //                //ANIMATE PERFECT
+    //                //comboCounterAnimator.SetTrigger(COUNT_DISPLAY_PERFECT);
+    //                break;
+    //            }
+    //        default:
+    //            {
+    //                return;
+    //            }
+    //    }
+    //}
+
+    private void UpdateCount(int newComboCount, ComboType comboType)
     {
-        switch (combo)
+        switch (comboType)
         {
             case ComboType.Miss:
                 {
-                    // ANIMATE MISS
+                    newComboCount = 0;
                     break;
                 }
             case ComboType.Ok:
                 {
-                    // ANIMATE Ok
+                    newComboCount = 0;
                     break;
                 }
             case ComboType.Perfect:
                 {
-                    //ANIMATE PERFECT
-                    //comboCounterAnimator.SetTrigger(COUNT_DISPLAY_PERFECT);
+                    newComboCount += 1;
                     break;
                 }
             default:
@@ -218,12 +245,9 @@ public class ComboVisualHandler : MonoBehaviour
                     return;
                 }
         }
-    }
-
-    private void UpdateCount(int newComboCount, ComboType comboType)
-    {
-        //comboCountDisplay.text = newComboCount.ToString();
-        AnimateComboCount(comboType);
+        comboCountDisplay.text = newComboCount.ToString();
+        Debug.Log(comboType.ToString() +", new combo count: " + newComboCount);
+        //AnimateComboCount(comboType);
     }
     #endregion
 

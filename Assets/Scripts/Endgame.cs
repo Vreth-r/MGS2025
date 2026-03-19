@@ -36,8 +36,6 @@ public class Endgame : MonoBehaviour
             return;
         }
 
-        
-
     }
 
     private IEnumerator ShowAfterDelay(float delay)
@@ -53,7 +51,6 @@ public class Endgame : MonoBehaviour
         if (endgameScreenPrefab == null) return;
 
         bool victory = !Health.IsDead();
-
         GameObject screen = Instantiate(endgameScreenPrefab, spawnpoint); // spawns with HUD as parent
 
         //var titleT = screen.transform.Find("TitleText");
@@ -63,18 +60,18 @@ public class Endgame : MonoBehaviour
 
         //var spriteT = screen.transform.Find("ResultSprite");
         
-            GameObject gameOverType1 = screen.transform.Find("Defeat").gameObject;
-            GameObject gameOverType2 = screen.transform.Find("Victory").gameObject;
+            GameObject gameOverType1 = screen.transform.Find("Victory").gameObject;
+            GameObject gameOverType2 = screen.transform.Find("Defeat").gameObject;
 
         //Debug.Log(gameOverType1);
         //Debug.Log(gameOverType2);
 
-        if (gameOverType1 != null && gameOverType1.TryGetComponent(out GameObject gameOverLoss) && gameOverType2 != null && gameOverType2.TryGetComponent(out GameObject gameOverWin))
+        if (gameOverType1 != null && gameOverType2 != null)
         {
-            GameObject screenToShow = victory ? gameOverWin : gameOverLoss; 
+            GameObject screenToShow = victory ? gameOverType1 : gameOverType2; 
 
-            gameOverLoss.SetActive(false);
-            gameOverWin.SetActive(false);
+            gameOverType1.SetActive(false);
+            gameOverType2.SetActive(false);
             screenToShow.SetActive(true);
         }
 

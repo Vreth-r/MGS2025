@@ -44,7 +44,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void AddScore(float timing, int lane)
+    public void AddScore(float timing, int lane, bool missed = false)
     {
         
         if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
@@ -77,10 +77,15 @@ public class ScoreManager : MonoBehaviour
             eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, perfectStreak);
             baseScore = 3;
         }
-        else
+        else if (missed)
         {
             ResetCombo();
             eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, 0);
+            baseScore = 0;
+        }
+        else
+        {
+            ResetCombo();
             baseScore = 0;
         }
 
