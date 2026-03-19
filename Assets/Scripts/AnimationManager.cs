@@ -233,13 +233,11 @@ public class AnimationManager : MonoBehaviour
         {
             if (attackcount == 1)
             {
-                Debug.Log("Hi1");
                 return "DuoAttackHit_1";
             }
 
             else
             {
-                Debug.Log("Hi2");
                 return "DuoAttackHit_1";
             }
         }
@@ -248,13 +246,11 @@ public class AnimationManager : MonoBehaviour
         {
             if (attackcount == 1)
             {
-                Debug.Log("Hi3");
                 return "AttackHit_1";
             }
 
             else
             {
-                Debug.Log("Hi4");
                 return "AttackHit_2";
             }
         }
