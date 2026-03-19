@@ -1,0 +1,18 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/CharacterSelect.uss?fileID=7433441132597879392&amp;guid=fd430062d76019345a8fb9983528fda0&amp;type=3#CharacterSelect" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/IMG_3595.png?fileID=2800000&amp;guid=1b114ee568d1c3b4f90c473953903ef2&amp;type=3#IMG_3595&quot;);" />
+    <ui:VisualElement name="Title" class="title" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/Character%20Selection%20Banner.png?fileID=2800000&amp;guid=7dfb9c76077d5f448b8999a9849c210e&amp;type=3#Character Selection Banner&quot;); top: 4%; left: 299px; width: 1316px; height: 164px; -unity-background-scale-mode: scale-and-crop;" />
+    <ui:VisualElement name="CharacterLeft" class="character" style="flex-grow: 1; left: 22%;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 500px; background-image: url(&quot;project://database/Assets/Art/DEV/Bassist/Lu-idle.png?fileID=2800000&amp;guid=cd42ad81f180dfb41a80495e881755e0&amp;type=3#Lu-idle&quot;); -unity-background-scale-mode: scale-and-crop;" />
+        <ui:VisualElement class="character__label" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/Lu.png?fileID=2800000&amp;guid=75e12907b18934547b73e7567010d687&amp;type=3#Lu&quot;); -unity-background-scale-mode: scale-to-fit;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="CharacterRight" class="character" style="flex-grow: 1; right: 24%;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 525px; background-image: url(&quot;project://database/Assets/Art/DEV/Drummer/mona-idle.png?fileID=2800000&amp;guid=dbf23062210e4394f8bb27904efea1a0&amp;type=3#mona-idle&quot;); -unity-background-scale-mode: scale-and-crop; background-size: cover;" />
+        <ui:VisualElement class="character__label" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/Mona.png?fileID=2800000&amp;guid=9adf65839433e9743a66b82f7a4206ca&amp;type=3#Mona&quot;);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="P1Selector" class="selector leftCharacterSelected" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/Button%20Switch%20Character%20Selection%201.png?fileID=2800000&amp;guid=de42ed10f61fb8f42a04d03dbe3c8263&amp;type=3#Button Switch Character Selection 1&quot;);" />
+    <ui:VisualElement name="P2Selector" class="selector rightCharacterSelected" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/p2Select.png?fileID=2800000&amp;guid=157e420a4b718304ea439b7db7ff5108&amp;type=3#p2Select&quot;);" />
+    <ui:VisualElement style="flex-grow: 1; width: 150px; height: 150px; position: absolute; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/black%20button.png?fileID=2800000&amp;guid=98e2ff889e4faa1498ea80771aa60bbe&amp;type=3#black button&quot;); top: 57%; left: 46%;">
+        <ui:VisualElement name="Spinny" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/UI/Image/Selection%20Art/Swap%20button%20(arrows%20only).png?fileID=2800000&amp;guid=37148a3fe6ffdee4ba65cf1f45fb3e26&amp;type=3#Swap button (arrows only)&quot;); width: 80%; height: 80%; translate: 15px 15px;" />
+    </ui:VisualElement>
+</ui:UXML>
