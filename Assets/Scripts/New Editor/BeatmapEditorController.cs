@@ -42,6 +42,11 @@ public class BeatmapEditorController : MonoBehaviour
     [Header("Timeline")]
     [SerializeField] private BeatmapTimelineView timelineView;
 
+    [Header("Beatmap Load UI")]
+    [SerializeField] private Button loadBeatmapButton;
+    [SerializeField] private TMP_Dropdown beatmapDropdown;
+    [SerializeField] private bool refreshBeatmapListOnEnable = true;
+
     // [Header("Preview (optional)")]
     // [SerializeField] private EditorPreviewSpawner previewSpawner;
 
@@ -70,6 +75,12 @@ public class BeatmapEditorController : MonoBehaviour
 
     private static readonly CultureInfo C = CultureInfo.InvariantCulture;
 
+    private string BeatmapsDirectory => Path.Combine(Application.streamingAssetsPath, "Beatmaps");
+
+    private readonly List<string> beatmapFiles = new();
+
+    private string currentlyLoadedBeatmapPath;
+
     private void Awake()
     {
         playButton.onClick.AddListener(Play);
@@ -80,6 +91,12 @@ public class BeatmapEditorController : MonoBehaviour
 
         if (loadSongButton != null)
         loadSongButton.onClick.AddListener(ReloadFmodSong);
+
+        if (loadBeatmapButton != null)
+            loadBeatmapButton.onClick.AddListener(LoadSelectedBeatmap);
+
+        if (beatmapDropdown != null)
+            beatmapDropdown.onValueChanged.AddListener(_ => PreviewSelectedBeatmapName());
 
         seekSlider.onValueChanged.AddListener(OnSeekSliderChanged);
         AddSliderDragHooks(seekSlider);
@@ -129,6 +146,9 @@ public class BeatmapEditorController : MonoBehaviour
     {
         editorMap?.Enable();
         HookActions(true);
+
+        if (refreshBeatmapListOnEnable)
+            RefreshBeatmapList();
     }
 
     private void OnDisable()
@@ -145,6 +165,130 @@ public class BeatmapEditorController : MonoBehaviour
         if (transport.Load())
         {
             SeekTo(0f);
+        }
+    }
+
+    private void PreviewSelectedBeatmapName()
+    {
+        if (beatmapDropdown == null) return;
+        if (beatmapDropdown.options.Count == 0) return;
+        if (beatmapDropdown.value < 0 || beatmapDropdown.value >= beatmapFiles.Count) return;
+
+        Debug.Log($"[BeatmapEditor] Selected beatmap: {beatmapFiles[beatmapDropdown.value]}");
+    }
+
+    public void RefreshBeatmapList()
+    {
+        beatmapFiles.Clear();
+
+        if (beatmapDropdown != null)
+            beatmapDropdown.ClearOptions();
+
+        Directory.CreateDirectory(BeatmapsDirectory);
+
+        string[] files = Directory.GetFiles(BeatmapsDirectory, "*.json", SearchOption.TopDirectoryOnly);
+        Array.Sort(files, StringComparer.OrdinalIgnoreCase);
+
+        var optionLabels = new List<string>();
+
+        foreach (string file in files)
+        {
+            beatmapFiles.Add(file);
+            optionLabels.Add(Path.GetFileNameWithoutExtension(file));
+        }
+
+        if (beatmapDropdown != null)
+        {
+            beatmapDropdown.ClearOptions();
+            beatmapDropdown.AddOptions(optionLabels);
+            beatmapDropdown.RefreshShownValue();
+        }
+
+        Debug.Log($"[BeatmapEditor] Found {beatmapFiles.Count} beatmap file(s).");
+    }
+
+    public void LoadSelectedBeatmap()
+    {
+        if (beatmapFiles.Count == 0)
+        {
+            Debug.LogWarning("[BeatmapEditor] No beatmap JSON files found to load.");
+            return;
+        }
+
+        int index = 0;
+        if (beatmapDropdown != null)
+            index = Mathf.Clamp(beatmapDropdown.value, 0, beatmapFiles.Count - 1);
+
+        LoadBeatmapFromFile(beatmapFiles[index]);
+    }
+
+    private void LoadBeatmapFromFile(string filePath)
+    {
+        if (string.IsNullOrWhiteSpace(filePath) || !File.Exists(filePath))
+        {
+            Debug.LogWarning($"[BeatmapEditor] Beatmap file not found: {filePath}");
+            return;
+        }
+
+        string json = File.ReadAllText(filePath);
+
+        BeatmapData data;
+        try
+        {
+            data = Newtonsoft.Json.JsonConvert.DeserializeObject<BeatmapData>(json);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[BeatmapEditor] Failed to parse beatmap JSON.\n{filePath}\n{ex}");
+            return;
+        }
+
+        currentlyLoadedBeatmapPath = filePath;
+        ApplyBeatmapData(data);
+
+        Debug.Log($"[BeatmapEditor] Loaded beatmap: {filePath}");
+    }
+
+    private void ApplyBeatmapData(BeatmapData data)
+    {
+        selected = null;
+        isDraggingHold = false;
+        holdDraft = null;
+
+        if (songNameInput != null)
+            songNameInput.text = data.songName ?? "";
+
+        if (songEventInput != null)
+            songEventInput.text = data.songEvent ?? "";
+
+        if (bpmInput != null)
+            bpmInput.text = data.bpm.ToString(C);
+
+        notes.Clear();
+
+        if (!string.IsNullOrWhiteSpace(data.notesCsv))
+            notes.AddRange(BeatmapCsv.FromCsv(data.notesCsv));
+
+        SortNotes();
+
+        if (timelineView != null)
+        {
+            timelineView.SetBpm(data.bpm > 0f ? data.bpm : 120f);
+            timelineView.SetSelected(null);
+        }
+
+        if (transport != null)
+        {
+            if (!string.IsNullOrWhiteSpace(data.songEvent))
+                transport.SetEventPath(data.songEvent);
+
+            transport.Load();
+            SeekTo(0f);
+        }
+        else
+        {
+            timelineView.RenderWindow(notes, 0f);
+            lastWindowStart = 0f;
         }
     }
 
@@ -437,7 +581,7 @@ public class BeatmapEditorController : MonoBehaviour
         var data = new BeatmapData
         {
             songName = songName,
-            songPath = "", // unused i know fuck you
+            songPath = "", // unused i know fuck you pal
             songEvent = songEvent,
             songId = songId,
             userFileRelative = userFileRel,
@@ -450,10 +594,15 @@ public class BeatmapEditorController : MonoBehaviour
         string dir = Path.Combine(Application.streamingAssetsPath, "Beatmaps");
         Directory.CreateDirectory(dir);
 
-        string file = Path.Combine(dir, $"beatmap_{DateTime.Now:yyyyMMdd_HHmmss}.json");
+        string file = currentlyLoadedBeatmapPath;
+        if (string.IsNullOrWhiteSpace(file))
+            file = Path.Combine(dir, $"beatmap_{DateTime.Now:yyyyMMdd_HHmmss}.json");
+
         File.WriteAllText(file, json);
 
         Debug.Log($"[BeatmapEditor] Saved beatmap to: {file}\n\nCSV:\n{csv}");
+
+        RefreshBeatmapList();
     }
 
     private void SortNotes()
