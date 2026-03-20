@@ -1,0 +1,683 @@
+fileFormatVersion: 2
+guid: 806760ba0e458ba4dbdb8cf1cacabb50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7412563323335796553
+    second: Basic bars + text_Settings menu_0
+  - first:
+      213: -2428286814566940803
+    second: Basic bars + text_Settings menu_1
+  - first:
+      213: 5299920841414690925
+    second: Basic bars + text_Settings menu_2
+  - first:
+      213: 2861713495360082826
+    second: Basic bars + text_Settings menu_3
+  - first:
+      213: -7056931032185911505
+    second: Basic bars + text_Settings menu_4
+  - first:
+      213: 6131461066802231285
+    second: Basic bars + text_Settings menu_5
+  - first:
+      213: 4298614414066787815
+    second: Basic bars + text_Settings menu_6
+  - first:
+      213: -5682772796359179151
+    second: Basic bars + text_Settings menu_7
+  - first:
+      213: 2195203758531203968
+    second: Basic bars + text_Settings menu_8
+  - first:
+      213: 1871173002625240133
+    second: Basic bars + text_Settings menu_9
+  - first:
+      213: 1130707199254604653
+    second: Basic bars + text_Settings menu_10
+  - first:
+      213: 886466225469093768
+    second: Basic bars + text_Settings menu_11
+  - first:
+      213: 8274449020480218133
+    second: Basic bars + text_Settings menu_12
+  - first:
+      213: -791549634326283365
+    second: Basic bars + text_Settings menu_13
+  - first:
+      213: -7726284546903927519
+    second: Basic bars + text_Settings menu_14
+  - first:
+      213: -7635409167648175516
+    second: Basic bars + text_Settings menu_15
+  - first:
+      213: -3237905917166388645
+    second: Basic bars + text_Settings menu_16
+  - first:
+      213: 7328535124826681127
+    second: Basic bars + text_Settings menu_17
+  - first:
+      213: -5639876318449172008
+    second: Basic bars + text_Settings menu_18
+  - first:
+      213: 1524184106985657485
+    second: Basic bars + text_Settings menu_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_0
+      rect:
+        serializedVersion: 2
+        x: 3716
+        y: 2553
+        width: 232
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947e482b117bed660800000000000000
+      internalID: 7412563323335796553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_1
+      rect:
+        serializedVersion: 2
+        x: 4251
+        y: 2704
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ff8fcf10efc4ed0800000000000000
+      internalID: -2428286814566940803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_2
+      rect:
+        serializedVersion: 2
+        x: 3962
+        y: 2550
+        width: 133
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d684632dce91d8940800000000000000
+      internalID: 5299920841414690925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_3
+      rect:
+        serializedVersion: 2
+        x: 4107
+        y: 2549
+        width: 137
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8311e31349d6b720800000000000000
+      internalID: 2861713495360082826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_4
+      rect:
+        serializedVersion: 2
+        x: 4258
+        y: 2560
+        width: 49
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27c02e8d9eb01e90800000000000000
+      internalID: -7056931032185911505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_5
+      rect:
+        serializedVersion: 2
+        x: 4321
+        y: 2551
+        width: 141
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f772e8ba53571550800000000000000
+      internalID: 6131461066802231285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_6
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2298
+        width: 2892
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e523d8d80fb7ab30800000000000000
+      internalID: 4298614414066787815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_7
+      rect:
+        serializedVersion: 2
+        x: 3234
+        y: 1749
+        width: 167
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17402c5104cb221b0800000000000000
+      internalID: -5682772796359179151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_8
+      rect:
+        serializedVersion: 2
+        x: 3411
+        y: 1749
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083dadc003ee67e10800000000000000
+      internalID: 2195203758531203968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_9
+      rect:
+        serializedVersion: 2
+        x: 3567
+        y: 1748
+        width: 133
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c47c69eedb7f910800000000000000
+      internalID: 1871173002625240133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_10
+      rect:
+        serializedVersion: 2
+        x: 3716
+        y: 1752
+        width: 137
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b2c8cf43411bf00800000000000000
+      internalID: 1130707199254604653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_11
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 1753
+        width: 150
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887777ad55c5d4c00800000000000000
+      internalID: 886466225469093768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_12
+      rect:
+        serializedVersion: 2
+        x: 4111
+        y: 1751
+        width: 138
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5146dc15b8fb4d270800000000000000
+      internalID: 8274449020480218133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_13
+      rect:
+        serializedVersion: 2
+        x: 4255
+        y: 1753
+        width: 106
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b34e72dc9d305f0800000000000000
+      internalID: -791549634326283365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_14
+      rect:
+        serializedVersion: 2
+        x: 4359
+        y: 1753
+        width: 106
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1259334e329b6c490800000000000000
+      internalID: -7726284546903927519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_15
+      rect:
+        serializedVersion: 2
+        x: 4466
+        y: 1749
+        width: 143
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ac19fe0d3990690800000000000000
+      internalID: -7635409167648175516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_16
+      rect:
+        serializedVersion: 2
+        x: 4617
+        y: 1749
+        width: 141
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a792739b5a013d0800000000000000
+      internalID: -3237905917166388645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_17
+      rect:
+        serializedVersion: 2
+        x: 4762
+        y: 1750
+        width: 128
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f64472edf24b560800000000000000
+      internalID: 7328535124826681127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_18
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 1747
+        width: 137
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d103b5ae522bb1b0800000000000000
+      internalID: -5639876318449172008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic bars + text_Settings menu_19
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1531
+        width: 2892
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d841d2dae5df62510800000000000000
+      internalID: 1524184106985657485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music Text
+      rect:
+        serializedVersion: 2
+        x: 3687
+        y: 2529
+        width: 797
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82936bdcd139d584098335b67a4edb02
+      internalID: 1081830698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sound Effects text
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 1730
+        width: 1846
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610166ca28eb8604e93751f4a5222aca
+      internalID: -2096204656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 54ff93a1c881ab840bdcb5cb7e6f5162
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Basic bars + text_Settings menu_0: 7412563323335796553
+      Basic bars + text_Settings menu_1: -2428286814566940803
+      Basic bars + text_Settings menu_10: 1130707199254604653
+      Basic bars + text_Settings menu_11: 886466225469093768
+      Basic bars + text_Settings menu_12: 8274449020480218133
+      Basic bars + text_Settings menu_13: -791549634326283365
+      Basic bars + text_Settings menu_14: -7726284546903927519
+      Basic bars + text_Settings menu_15: -7635409167648175516
+      Basic bars + text_Settings menu_16: -3237905917166388645
+      Basic bars + text_Settings menu_17: 7328535124826681127
+      Basic bars + text_Settings menu_18: -5639876318449172008
+      Basic bars + text_Settings menu_19: 1524184106985657485
+      Basic bars + text_Settings menu_2: 5299920841414690925
+      Basic bars + text_Settings menu_3: 2861713495360082826
+      Basic bars + text_Settings menu_4: -7056931032185911505
+      Basic bars + text_Settings menu_5: 6131461066802231285
+      Basic bars + text_Settings menu_6: 4298614414066787815
+      Basic bars + text_Settings menu_7: -5682772796359179151
+      Basic bars + text_Settings menu_8: 2195203758531203968
+      Basic bars + text_Settings menu_9: 1871173002625240133
+      Music Text: 1081830698
+      Sound Effects text: -2096204656
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

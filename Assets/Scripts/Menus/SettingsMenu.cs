@@ -1,6 +1,8 @@
+using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+// using UnityEngine.UIElements;
 
 /// <summary>
 /// The settings menu, allows the player to tweak the settings.
@@ -9,9 +11,21 @@ public class SettingsMenu : BaseMenu
 {
     [Header("Buttons")]
     [SerializeField] private Button returnButton;
+    [Header("Sliders")]
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     private int selectedIndex = 0;
     private Button[] buttons;
+    
+    [Header("Panel Reference")]
+    [SerializeField] private RectTransform panel;
+    [SerializeField] private float maxPanelScale = 1f;
+    [Header("Animation Controls")]
+    [SerializeField] float scaleTime = 1f;
+    [SerializeField] AnimationCurve scaleCurve;
+    private bool grow = true;
+    private Coroutine scaleCoroutine;
 
     protected override void Awake()
     {
@@ -19,13 +33,38 @@ public class SettingsMenu : BaseMenu
 
         buttons = new[] { returnButton };
 
-        returnButton.onClick.AddListener(ReturnBack);
+        returnButton.onClick.AddListener(shrinkPanel);
     }
 
     protected override void OnOpen()
     {
         Debug.LogFormat($"Settings menu opened");
         HighlightButton(selectedIndex);
+        grow = true;
+        scaleCoroutine = StartCoroutine(scalePanel());
+    }
+
+    IEnumerator scalePanel()
+    {
+        float time = 0;
+        panel.localScale = Vector3.zero;
+
+        while (time < scaleTime)
+        {
+            float scale = scaleCurve.Evaluate(time/scaleTime);
+            scale = grow ? scale : 1 - scale;
+            panel.localScale = new Vector3(scale, scale, scale);
+            time += Time.deltaTime;
+            yield return null;   
+        }
+
+        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
+
+        if (!grow)
+        {
+            ReturnBack();
+        }
+        scaleCoroutine = null;
     }
 
     protected override void OnClose()
@@ -68,8 +107,19 @@ public class SettingsMenu : BaseMenu
         }
     }
 
+    private void shrinkPanel()
+    {
+        if (scaleCoroutine == null)
+        {
+            grow = false;
+            scaleCoroutine = StartCoroutine(scalePanel());   
+        }
+    }
+
     private void ReturnBack()
     {
+        Debug.Log("closing");
+        base.Close();
         MenuManager.Instance.CloseMenu();
     }
 }

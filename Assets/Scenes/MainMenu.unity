@@ -542,18 +542,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 56825200603359736, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_text
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117835533268410939, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117835533268410939, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1133963522134724142, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -634,14 +622,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2767744812804733938, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244070207821302660, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-      propertyPath: returnButton
-      value: 
-      objectReference: {fileID: 909848481}
     - target: {fileID: 6949280925703141668, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
@@ -660,18 +640,47 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6949280925703141668, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
   m_PrefabInstance: {fileID: 909848479}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &909848481 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6273581727829661124, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
-  m_PrefabInstance: {fileID: 909848479}
+--- !u!1 &928213213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &928213215 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928213214}
+  - component: {fileID: 928213217}
+  - component: {fileID: 928213216}
+  - component: {fileID: 928213215}
+  - component: {fileID: 928213218}
+  m_Layer: 5
+  m_Name: SettingsButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &928213214
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928213213}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1686294895}
+  m_Father: {fileID: 88506920}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 103.9351, y: -105.88501}
+  m_SizeDelta: {x: 4157.404, y: 1376}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &928213215
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1728337980528324440, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
   m_PrefabInstance: {fileID: 6051743841713516267}
