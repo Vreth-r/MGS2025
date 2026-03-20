@@ -6,17 +6,14 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    [Header("Menu References")]
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject settingsMenu;
+    [Header("Menu Prefab References")]
+    [SerializeField] private GameObject pauseMenuPrefab;
+    [SerializeField] private GameObject settingsMenuPrefab;
+    private GameObject pauseMenu;
+    private GameObject settingsMenu;
 
     private BaseMenu activeMenu;
     private Stack<BaseMenu> OpenedMenus = new Stack<BaseMenu>(); // Stack of menus. So we can backtrack between opened menus.
-
-    // When all menus are closed invoke this action
-    // (This is used to "hand-over" input management to a different manager i.e: MenuManager -> MainMenuManager)
-    // so far used in MainMenuManager and GameManager
-    public event Action menusClosed;
 
     private void Awake()
     {
@@ -26,7 +23,17 @@ public class MenuManager : MonoBehaviour
             return;
         }
         Instance = this;
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
+
+        // Instantiate the menus!!!
+        pauseMenu = Instantiate(pauseMenuPrefab);
+        settingsMenu = Instantiate(settingsMenuPrefab);
+
+        DontDestroyOnLoad(pauseMenu);
+        DontDestroyOnLoad(settingsMenu);
+
+        pauseMenu.SetActive(true);
+        settingsMenu.SetActive(true);
     }
 
     private void OnEnable()
@@ -102,7 +109,6 @@ public class MenuManager : MonoBehaviour
         else
         {
             activeMenu = null;
-            menusClosed?.Invoke();
         }
     }
 
@@ -118,7 +124,6 @@ public class MenuManager : MonoBehaviour
 
         OpenedMenus.Clear();
         activeMenu = null;
-        menusClosed?.Invoke();
     }
 
     private void HandleNavigate(Vector2 direction)

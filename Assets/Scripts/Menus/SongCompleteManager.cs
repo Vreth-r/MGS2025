@@ -38,7 +38,7 @@ public class SongCompleteManager : MonoBehaviour
     {
         var menus = MenuManager.Instance;
 
-        menus.menusClosed += ToggleInputControl;
+        //menus.menusClosed += ToggleInputControl;
         // Disable Menu Inputs
         menus.enabled = false;
 
