@@ -1,6 +1,9 @@
 {
   "songName": "Example Song",
-  "songPath": "Audio/exampleSong",
-  "bpm": 120,
-  "notesCsv": "Tap,0,0.5\nHold,1,1.0,endTime=2.0\nTap,2,1.5\nHold,3,2.0,endTime=3.0\nTap,4,3.5\nDead,0,3.0"
+  "songPath": "",
+  "songEvent": "",
+  "bpm": 120.0,
+  "notesCsv": "Tap,0,0.5\nHold,1,1,endTime=2\nTap,2,1.5\nHold,3,2,endTime=3\nDead,0,3\nTap,4,3.5\nDead,2,4.522448\nDead,3,5.026392\nDead,3,5.613176\nDead,3,6.01357\nDead,3,6.144733\nDead,3,6.248283\nDead,3,6.36564\nDead,3,6.503707",
+  "songId": "",
+  "userFileRelative": ""
 }
