@@ -7,13 +7,22 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: d3fd3c796e1345343a4e86bd7966c77a
+    guid: df94e59dde9fe6848bc28aaaf7856722
   - enabled: 1
     path: Assets/Scenes/CharacterSelect.unity
-    guid: fb7f2847600fd634fa9acff928beb780
+    guid: 7cf3637fdcd8da54980d3bbc1f1b811a
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: eabd39aca921f014c8947d5d7a19aa46
+  - enabled: 1
+    path: Assets/Scenes/Editor.unity
+    guid: 0300b7a0378d45d4d8ed324dd9fa473e
+  - enabled: 0
+    path: Assets/Scenes/MainMenu_Fix.unity
+    guid: b7f857fa2b9647f4b92bfa369b149952
+  - enabled: 0
+    path: Assets/Scenes/MainMenu-Copy.unity
+    guid: c8e4a1addeb0a394d84b201702f93eb3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 20c1b378922e93e4ca7cd1ee5e7d2045, type: 2}
   m_UseUCBPForAssetBundles: 0

@@ -26,14 +26,14 @@ public class MenuManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Instantiate the menus!!!
-        pauseMenu = Instantiate(pauseMenuPrefab);
-        settingsMenu = Instantiate(settingsMenuPrefab);
+        //pauseMenu = Instantiate(pauseMenuPrefab);
+        //settingsMenu = Instantiate(settingsMenuPrefab);
 
-        DontDestroyOnLoad(pauseMenu);
-        DontDestroyOnLoad(settingsMenu);
+        //DontDestroyOnLoad(pauseMenu);
+        //DontDestroyOnLoad(settingsMenu);
 
-        pauseMenu.SetActive(true);
-        settingsMenu.SetActive(true);
+        //pauseMenu.SetActive(true);
+        //settingsMenu.SetActive(true);
     }
 
     private void OnEnable()
