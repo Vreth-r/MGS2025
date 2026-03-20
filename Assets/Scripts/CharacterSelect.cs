@@ -17,8 +17,6 @@ public class CharacterSelect : MonoBehaviour
     private const string UiSelectNamae = "Navigate";
     private const string UiConfirmName = "Submit";
 
-    private const float SpinSpeed = 100f;
-
     // Components
     private PlayerInput _playerInput;
 
@@ -26,12 +24,7 @@ public class CharacterSelect : MonoBehaviour
     private VisualElement _root;
     private VisualElement _p1Selector;
     private VisualElement _p2Selector;
-    private VisualElement _spinny;
 
-    // Handles rotation for the Spinnythingy
-    private float rotate = 0;
-
-    public ControlsSwapper controlsSwapper;
 
     private void Awake()
     {
@@ -40,13 +33,6 @@ public class CharacterSelect : MonoBehaviour
 
         _p1Selector = _root.Q<VisualElement>("P1Selector");
         _p2Selector = _root.Q<VisualElement>("P2Selector");
-        _spinny = _root.Q<VisualElement>("Spinny");
-    }
-
-    private void Update()
-    {
-        _spinny.style.rotate = new(new Rotate(rotate));
-        rotate += SpinSpeed * Time.deltaTime;
     }
 
     private void OnEnable()
@@ -88,10 +74,6 @@ public class CharacterSelect : MonoBehaviour
     private void ConfirmCharacters(InputAction.CallbackContext ctx)
     {
         //Debug.Log("Character Selected!");
-
-        controlsSwapper.isControlsSwapped = !P1IsLu;
-
-        Debug.Log(controlsSwapper.isControlsSwapped);
 
         StartCoroutine(Transition());
 
