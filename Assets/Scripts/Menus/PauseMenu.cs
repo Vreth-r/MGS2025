@@ -63,11 +63,6 @@ public class PauseMenu : BaseMenu
         UpdateButtonsInstant();
     }
 
-    private void Start()
-    {
-        gameObject.SetActive(false);
-    }
-
     //pauses song while in pause menu
     protected override void OnOpen()
     {
@@ -175,24 +170,24 @@ public class PauseMenu : BaseMenu
 
     private void Update()
     {
-        if (wasHidden && gameObject.activeInHierarchy)
+        if (wasHidden && isOpen)
         {
             wasHidden = false;
             buttonPressed = false;
             HighlightButton(selectedIndex);
         }
+        if (isOpen)
+            HighlightButton(selectedIndex);
 
-        HighlightButton(selectedIndex);
+        // var keyboard = UnityEngine.InputSystem.Keyboard.current;
+        // if (keyboard == null) return;
 
-        var keyboard = UnityEngine.InputSystem.Keyboard.current;
-        if (keyboard == null) return;
-
-        if (keyboard.upArrowKey.wasPressedThisFrame)
-            HandleNavigate(Vector2.up);
-        if (keyboard.downArrowKey.wasPressedThisFrame)
-            HandleNavigate(Vector2.down);
-        if (keyboard.enterKey.wasPressedThisFrame)
-            HandleSubmit();
+        // if (keyboard.upArrowKey.wasPressedThisFrame)
+        //     HandleNavigate(Vector2.up);
+        // if (keyboard.downArrowKey.wasPressedThisFrame)
+        //     HandleNavigate(Vector2.down);
+        // if (keyboard.enterKey.wasPressedThisFrame)
+        //     HandleSubmit();
     }
 
     //calculate button position on semi-circle relative to selected button
@@ -220,13 +215,13 @@ public class PauseMenu : BaseMenu
     private void RestartGame()
     {
         Debug.Log("Restarting...");
-        Time.timeScale = 1f;
+        ResumeGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void QuitGame()
     {
         Debug.Log("Returning to main menu...");
-        Time.timeScale = 1f;
+        ResumeGame();
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }

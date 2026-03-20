@@ -80,7 +80,7 @@ public class MainMenu : BaseMenu
 
     public override void HandleCancel()
     {
-        MenuManager.Instance.OpenPause();
+        //MenuManager.Instance.OpenPause();
     }
 
     private void HighlightButton(int index)

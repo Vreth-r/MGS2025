@@ -49,7 +49,7 @@ public abstract class BaseMenu : MonoBehaviour
     {
         if (canvasGroup != null)
         {
-            canvasGroup.alpha = 0.6f;
+            canvasGroup.alpha = 1f;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
         }
