@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c71ba9173a3c8d45be5a242c4b9f4db, type: 3}
+  m_Name: P2SoundEffectsBank
+  m_EditorClassIdentifier: Scripts::SoundEffectsBank
+  soundEffects:
+  - name: AttackHit_1
+    normal:
+      Guid:
+        Data1: -2014766648
+        Data2: 1102064133
+        Data3: 163787447
+        Data4: -1864429464
+      Path: event:/CombatSoundEffects/BassHit_1
+    flesh:
+      Guid:
+        Data1: 1510353402
+        Data2: 1340355613
+        Data3: 1603250358
+        Data4: 1632396410
+      Path: event:/CombatSoundEffects/BassHit_1 (flesh)
+  - name: AttackHit_2
+    normal:
+      Guid:
+        Data1: -803219452
+        Data2: 1123046224
+        Data3: 1176388259
+        Data4: -1587947409
+      Path: event:/CombatSoundEffects/BassHit_2
+    flesh:
+      Guid:
+        Data1: 20308532
+        Data2: 1138279209
+        Data3: 1805665976
+        Data4: 928414014
+      Path: event:/CombatSoundEffects/BassHit_2 (flesh)
+  - name: MissHit_1
+    normal:
+      Guid:
+        Data1: 1456885832
+        Data2: 1109889751
+        Data3: -741242200
+        Data4: 1008367817
+      Path: event:/CombatSoundEffects/MissHit_1
+    flesh:
+      Guid:
+        Data1: 1456885832
+        Data2: 1109889751
+        Data3: -741242200
+        Data4: 1008367817
+      Path: event:/CombatSoundEffects/MissHit_1
