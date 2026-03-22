@@ -7,5 +7,4 @@
   <Project Path="FMODUnity.csproj" />
   <Project Path="Coffee.UIParticle.Editor.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
-  <Project Path="PlayModeTests.csproj" />
 </Solution>
