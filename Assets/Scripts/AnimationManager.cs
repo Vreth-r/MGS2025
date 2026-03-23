@@ -149,7 +149,9 @@ public class AnimationManager : MonoBehaviour
             duoActive = 2;
             resetcounter = 0;
             if (isDuo)//show duo, hide solo
-                transform.position = baseGeneral;
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 5.5f,
+                                                 GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
+                                                 GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
             else
                 transform.position = offscreen;
         }
