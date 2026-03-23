@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93986e1b128f2c64c93803ce373f5c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Scripts::CharacterSelect
+  controlsSwapper: {fileID: 11400000, guid: 603d07a6a147f5443b939885b19e3992, type: 2}
 --- !u!1 &1137819995
 GameObject:
   m_ObjectHideFlags: 0
