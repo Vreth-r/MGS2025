@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 // if you cant read this without comments maybe leave this one alone
 public class InputManager : MonoBehaviour
@@ -21,6 +22,13 @@ public class InputManager : MonoBehaviour
     // Lane press/release events
     public event Action<int> OnLanePressed;
     public event Action<int> OnLaneReleased;
+
+    //guitar specific events
+    public event Action<int> OnLanePressedGuitar;
+    public event Action<int> OnLaneReleasedGuitar;
+    public event Action OnGuitarAttackPressed;
+
+    private InputDevice guitarDevice;
 
     //ultimate activation 
     public event Action OnUltimatePressed;
@@ -95,21 +103,18 @@ public class InputManager : MonoBehaviour
 
             int laneIndex = i; // Capture variable for closure
 
+            int finalLaneIndex; //for after possible control swapping
 
-            if (swapped == false)
+            if (swapped == false) //default players
             {
-                Debug.Log("normal controls");
-                laneActions[laneIndex] = action;
-
-                action.performed += ctx => OnLanePressed?.Invoke(laneIndex);
-                action.canceled += ctx => OnLaneReleased?.Invoke(laneIndex);
+                finalLaneIndex = laneIndex;
             }
 
-            else
+            else //swapped players
             {
                 Debug.Log("swapped controls");
 
-                int remappedLaneIndex = laneIndex switch
+                finalLaneIndex = laneIndex switch
                 {
                     0 => 3,
                     1 => 4,
@@ -118,17 +123,72 @@ public class InputManager : MonoBehaviour
                     4 => 1,
                     _ => laneIndex
                 };
-
-                laneActions[remappedLaneIndex] = action;
-                action.performed += ctx => OnLanePressed?.Invoke(remappedLaneIndex);
-                action.canceled += ctx => OnLaneReleased?.Invoke(remappedLaneIndex);
             }
 
-            // Subscribe events
-            //action.performed += ctx => OnLanePressed?.Invoke(laneIndex);
-            //action.canceled += ctx => OnLaneReleased?.Invoke(laneIndex);
+            laneActions[finalLaneIndex] = action;
+
+            action.performed += ctx =>
+            {
+                var device = ctx.control.device;
+
+                if (guitarDevice == null && IsGuitar(device))
+                {
+                    //bind the guitar device
+                    guitarDevice = device;
+                }
+
+                if (device == guitarDevice)
+                {
+                    //if current input is guitar, do guitar specific stuff (gameplay/animation wise)
+                    OnLanePressedGuitar?.Invoke(finalLaneIndex);
+                }
+
+                else
+                {
+                    //any other controls
+                    OnLanePressed?.Invoke(finalLaneIndex);
+                }
+            };
+
+            action.canceled += ctx =>
+            {
+                var device = ctx.control.device;
+
+                if (device == guitarDevice)
+                {
+                    //if current input is guitar, do guitar specific stuff (gameplay/animation wise)
+                    OnLaneReleasedGuitar?.Invoke(finalLaneIndex);
+                }
+
+                else
+                {
+                    //any other controls
+                    OnLaneReleased?.Invoke(finalLaneIndex);
+                }
+            };
 
             i++;
+        }
+
+        var guitarAttackAction = gameplayMap.FindAction("GuitarAttack"); //the guitar flicky thing for attacking
+        if (guitarAttackAction != null) //if it exists
+        {
+            guitarAttackAction.performed += ctx =>
+            {
+                var device = ctx.control.device;
+
+                //bind device as guitar (from inputting the attack)
+                if (guitarDevice == null && IsGuitar(device))
+                {
+                    guitarDevice = device;
+                    Debug.Log("Added Guitar");
+                }
+
+                if (device == guitarDevice)
+                {
+                    OnGuitarAttackPressed?.Invoke();
+                }
+            };
         }
 
         //finds the keybind for "Ultimate" in the new input system
@@ -228,5 +288,39 @@ public class InputManager : MonoBehaviour
     }
 
     // UI Action Accessors
-    public bool IsPauseHeld => pauseAction != null && pauseAction.ReadValue<float>() > 0.5f; 
+    public bool IsPauseHeld => pauseAction != null && pauseAction.ReadValue<float>() > 0.5f;
+
+    private bool IsGuitar(InputDevice device)
+    {
+        //legit the worst way to do this, but seeing as the guitar controller we have is so old, i cant actually grab any normal model data from it (returns empty)
+        //only way i figured out to detect the specific controller we have is to check specifically all the used input buttons names (kinda the only data that i can find it returns.
+        //If they all match, its the guitar controller
+        //this 99% sure would not work with any other controller, be it guitar or not
+
+        bool hasButton8 = device.TryGetChildControl<ButtonControl>("button8") != null;
+        bool hasButton2 = device.TryGetChildControl<ButtonControl>("button2") != null;
+        bool hasButton9 = device.TryGetChildControl<ButtonControl>("button9") != null;
+        bool hasTrigger = device.TryGetChildControl<AxisControl>("trigger") != null;
+        bool hasHatLeft = device.TryGetChildControl<ButtonControl>("hat/left") != null;
+        /*
+        Debug.Log(hasButton8);
+        Debug.Log(hasButton2);
+        Debug.Log(hasButton9);
+        Debug.Log(hasTrigger);
+        Debug.Log(hasHatLeft);
+        */
+        bool isGuitar = hasButton8 && hasButton2 && hasButton9 && hasTrigger && hasHatLeft;
+
+        if (isGuitar)
+        {
+            Debug.Log("Is Guitar");
+        }
+
+        else
+        {
+            Debug.Log("Not Guitar");
+        }
+
+        return isGuitar;
+    }
 }

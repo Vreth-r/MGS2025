@@ -68,6 +68,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GuitarAttack",
+                    "type": "Button",
+                    "id": "a068f3b6-dc7d-4bad-a96d-6f4265e36869",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -95,6 +104,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d0d1bf6b-0808-43c9-9d17-cb81bc12d3c0",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ec79c8f2-c68b-4cd0-9b98-9808f83e86ad",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -108,6 +128,17 @@
                     "name": "",
                     "id": "911f6467-ba19-426a-a417-a9fc09cfea89",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b01d45f-c625-49ab-ba27-6084be74b787",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -141,6 +172,17 @@
                     "name": "",
                     "id": "4161c9c7-8cc9-44c5-b203-11b2cb7c2c7f",
                     "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3f185f2-8638-4d12-a3e9-cd62af7eb4f1",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -205,12 +247,34 @@
                 },
                 {
                     "name": "",
+                    "id": "56280b70-e162-4c00-a91e-bbc64300cf15",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "63876141-ac5f-4f22-92b5-d428a9b858c7",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e53355cf-90a8-440d-8312-82c6dc6ad2d8",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/hat/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GuitarAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
