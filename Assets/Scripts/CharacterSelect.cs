@@ -53,19 +53,19 @@ public class CharacterSelect : MonoBehaviour
 
         if (P1IsLu)
         {
-            _p1Selector.RemoveFromClassList(LeftCharacterSelectClassName);
-            _p2Selector.RemoveFromClassList(RightCharacterSelectClassName);
-
-            _p1Selector.AddToClassList(RightCharacterSelectClassName);
-            _p2Selector.AddToClassList(LeftCharacterSelectClassName);
-        }
-        else
-        {
             _p1Selector.AddToClassList(LeftCharacterSelectClassName);
             _p2Selector.AddToClassList(RightCharacterSelectClassName);
 
             _p1Selector.RemoveFromClassList(RightCharacterSelectClassName);
             _p2Selector.RemoveFromClassList(LeftCharacterSelectClassName);
+        }
+        else
+        {
+            _p1Selector.RemoveFromClassList(LeftCharacterSelectClassName);
+            _p2Selector.RemoveFromClassList(RightCharacterSelectClassName);
+
+            _p1Selector.AddToClassList(RightCharacterSelectClassName);
+            _p2Selector.AddToClassList(LeftCharacterSelectClassName);
         }
 
         P1IsLu = !P1IsLu;
