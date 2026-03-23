@@ -37,7 +37,6 @@ public class SoundEffectsPlayer : MonoBehaviour
         else
         {
             Debug.Log($"{name} sound effect not found");
-            Debug.LogWarning($"{name} sound effect not found on {gameObject.name}");
         }
     }
 }

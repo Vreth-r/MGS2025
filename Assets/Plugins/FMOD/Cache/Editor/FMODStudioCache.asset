@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8551976182145369183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/OnLoad_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/OnLoad_1
+  Guid:
+    Data1: 1834775605
+    Data2: 1153945529
+    Data3: -1750715719
+    Data4: -1330455283
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1201
 --- !u!114 &-7797474069439460640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,12 +333,16 @@ MonoBehaviour:
   - {fileID: -7797474069439460640}
   - {fileID: -350652231570302900}
   - {fileID: 6317404940256829183}
+  - {fileID: -8551976182145369183}
+  - {fileID: 155208907917274711}
+  - {fileID: 8711165258518560555}
+  - {fileID: 2939728006772053949}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1371869185898520989}
   StringsBanks:
   - {fileID: 5847864670906682896}
-  cacheTime: 639097111069905097
+  cacheTime: 639098055405373572
   cacheVersion: 131635
 --- !u!114 &36537282757851109
 MonoBehaviour:
@@ -340,6 +371,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
+--- !u!114 &155208907917274711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/ButtonSelect_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/ButtonSelect_1
+  Guid:
+    Data1: -469035693
+    Data2: 1262905187
+    Data3: -1341073234
+    Data4: -1851230355
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1306
 --- !u!114 &1084441853990084533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,10 +467,10 @@ MonoBehaviour:
   Path: fmod/bab/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097111069878879
+  lastModified: 639098055405348434
   FileSizes:
   - Name: Desktop
-    Value: 9267008
+    Value: 11149472
   Exists: 1
 --- !u!114 &2235334216678696261
 MonoBehaviour:
@@ -495,6 +553,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
+--- !u!114 &2939728006772053949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainMenuTrack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MainMenuTrack
+  Guid:
+    Data1: 372245938
+    Data2: 1273414707
+    Data3: -2071981911
+    Data4: 1976441463
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 128365
 --- !u!114 &5847864670906682896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,10 +595,10 @@ MonoBehaviour:
   Path: fmod/bab/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097111069905097
+  lastModified: 639098055405373572
   FileSizes:
   - Name: Desktop
-    Value: 1690
+    Value: 1910
   Exists: 1
 --- !u!114 &6317404940256829183
 MonoBehaviour:
@@ -596,6 +681,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
+--- !u!114 &8711165258518560555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/ButtonHoverRandom_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/ButtonHoverRandom_1
+  Guid:
+    Data1: 143252048
+    Data2: 1110985453
+    Data3: 2010302878
+    Data4: -1185974336
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1436
 --- !u!114 &8911503536698164919
 MonoBehaviour:
   m_ObjectHideFlags: 0
