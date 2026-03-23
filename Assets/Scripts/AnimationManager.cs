@@ -36,15 +36,24 @@ public class AnimationManager : MonoBehaviour
     int bouncetest = 0;
     int countin = 0;
 
-
     static List<int> hurtlanes = new List<int>();
+
+    int laneHeldGuitar = -1; //denotes which lane is currently held for the guitar controls
+
+    public System.Action OnCharacterReset; //position reseter
 
     private void Start()
     {
         //NOTE: the idle seems to trigger more than once somewhere, investigate!
         //do newPos when press
         InputManager.Instance.OnLanePressed += NewPos;
-         // Subscribe to pulse event
+
+        //guitar stuff
+        InputManager.Instance.OnLanePressedGuitar += LanePressedGuitar;
+        InputManager.Instance.OnLaneReleasedGuitar += LaneReleasedGuitar;
+        InputManager.Instance.OnGuitarAttackPressed += AttackAnimationGuitar;
+
+        // Subscribe to pulse event
         GameManager.Instance.OnPulse += idleanim;
 
         Vector3 baseP1 = GameObject.Find("Lane1").transform.position;
@@ -96,6 +105,7 @@ public class AnimationManager : MonoBehaviour
                 animator.Play("Bounce", -1, 0f);
                 // animator.Play("Bounce2");
                 spriteRenderer.sprite = sprOuch;
+
                 hurtActive = 3;
                 if (hurtlanes[i] == 2)  //lets both Ps be hurt if in lane 2 (needs to be run twice)
                     hurtlanes.Add(-1);
@@ -118,13 +128,14 @@ public class AnimationManager : MonoBehaviour
                 animator.Play("Bounce-Idle");
 
             attackcount = 0;
+            laneHeldGuitar = -1;
 
-             if ((duoActive >= 2) == isDuo)
+            if ((duoActive >= 2) == isDuo)
                 transform.position = baseGeneral;
-            else   
+             else   
                 transform.position = offscreen;
 
-
+             OnCharacterReset?.Invoke();
         }
 
 
@@ -191,6 +202,72 @@ public class AnimationManager : MonoBehaviour
 
     }// END OF NEWPOS()
 
+    //sets some variables for guitar specific controls/lane shenanigans
+    private void LanePressedGuitar(int lane)
+    {
+        laneHeldGuitar = lane;
+        resetcounter = 0;
+
+        MoveToLane(lane);
+    }
+
+    //essentially the first half of NewPos()
+    private void MoveToLane(int lane) 
+    {
+        if (lane == 2)
+        {
+            duoActive = 2;
+            resetcounter = 0;
+            if (isDuo)//show duo, hide solo
+                transform.position = baseGeneral;
+            else
+                transform.position = offscreen;
+        }
+        else if (lane != 2)
+        {
+            if (duoActive > 0 && !isDuo) // If just leaving Duo lane, make sure both charactes are there, and in base states
+            {
+                transform.position = baseGeneral;
+                duoActive--;
+                spriteRenderer.sprite = sprBase;
+            }
+
+            if (isDuo)
+                transform.position = offscreen;
+            else if (isPlayer1 == (lane <= 2))
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 5.5f,
+                                                 GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
+                                                 GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
+
+        }
+    }
+    private void AttackAnimationGuitar()
+    {
+        if (laneHeldGuitar != -1) //only works when MoveToLane is currently active (aka player waiting to attack in lane)
+        {
+            NewPos(laneHeldGuitar);
+        }
+    }
+
+    private void LaneReleasedGuitar(int lane)
+    {
+        //reset animations when lane button is let go
+        if (laneHeldGuitar == lane)
+        {
+            laneHeldGuitar = -1;
+            transform.position = baseGeneral;
+            spriteRenderer.sprite = sprBase;
+
+            if (isDuo)
+            {
+                transform.position = offscreen;
+            }
+            else
+            {
+                transform.position = baseGeneral;
+            }
+        }
+    }
     public static void Missed(LaneController lane)
     {
         hurtlanes.Add(lane.laneIndex);
@@ -219,5 +296,4 @@ public class AnimationManager : MonoBehaviour
         }
 
     }
-
 }

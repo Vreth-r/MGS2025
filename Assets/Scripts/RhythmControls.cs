@@ -154,6 +154,15 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GuitarAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""a068f3b6-dc7d-4bad-a96d-6f4265e36869"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -181,6 +190,17 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d0d1bf6b-0808-43c9-9d17-cb81bc12d3c0"",
+                    ""path"": ""<HID::ShanWan USB WirelessGamepad >/button8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lane0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ec79c8f2-c68b-4cd0-9b98-9808f83e86ad"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -194,6 +214,17 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""911f6467-ba19-426a-a417-a9fc09cfea89"",
                     ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lane1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b01d45f-c625-49ab-ba27-6084be74b787"",
+                    ""path"": ""<HID::ShanWan USB WirelessGamepad >/button2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -227,6 +258,17 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""4161c9c7-8cc9-44c5-b203-11b2cb7c2c7f"",
                     ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lane2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3f185f2-8638-4d12-a3e9-cd62af7eb4f1"",
+                    ""path"": ""<HID::ShanWan USB WirelessGamepad >/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -291,12 +333,34 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""56280b70-e162-4c00-a91e-bbc64300cf15"",
+                    ""path"": ""<HID::ShanWan USB WirelessGamepad >/button9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ultimate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""63876141-ac5f-4f22-92b5-d428a9b858c7"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e53355cf-90a8-440d-8312-82c6dc6ad2d8"",
+                    ""path"": ""<HID::ShanWan USB WirelessGamepad >/hat/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GuitarAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -457,6 +521,7 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         m_Gameplay_Lane4 = m_Gameplay.FindAction("Lane4", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         m_Gameplay_Ultimate = m_Gameplay.FindAction("Ultimate", throwIfNotFound: true);
+        m_Gameplay_GuitarAttack = m_Gameplay.FindAction("GuitarAttack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -551,6 +616,7 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Lane4;
     private readonly InputAction m_Gameplay_Pause;
     private readonly InputAction m_Gameplay_Ultimate;
+    private readonly InputAction m_Gameplay_GuitarAttack;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -590,6 +656,10 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Ultimate".
         /// </summary>
         public InputAction @Ultimate => m_Wrapper.m_Gameplay_Ultimate;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/GuitarAttack".
+        /// </summary>
+        public InputAction @GuitarAttack => m_Wrapper.m_Gameplay_GuitarAttack;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -637,6 +707,9 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             @Ultimate.started += instance.OnUltimate;
             @Ultimate.performed += instance.OnUltimate;
             @Ultimate.canceled += instance.OnUltimate;
+            @GuitarAttack.started += instance.OnGuitarAttack;
+            @GuitarAttack.performed += instance.OnGuitarAttack;
+            @GuitarAttack.canceled += instance.OnGuitarAttack;
         }
 
         /// <summary>
@@ -669,6 +742,9 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             @Ultimate.started -= instance.OnUltimate;
             @Ultimate.performed -= instance.OnUltimate;
             @Ultimate.canceled -= instance.OnUltimate;
+            @GuitarAttack.started -= instance.OnGuitarAttack;
+            @GuitarAttack.performed -= instance.OnGuitarAttack;
+            @GuitarAttack.canceled -= instance.OnGuitarAttack;
         }
 
         /// <summary>
@@ -887,6 +963,13 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnUltimate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "GuitarAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGuitarAttack(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
