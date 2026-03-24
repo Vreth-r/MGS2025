@@ -580,6 +580,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1109160190}
   hitZone: {fileID: 0}
   noteSpeed: 5
+  animationManager: {fileID: 1757023865}
 --- !u!212 &60690412
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7213,6 +7214,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 732785144}
   hitZone: {fileID: 0}
   noteSpeed: 5
+  animationManager: {fileID: 21626029}
 --- !u!212 &478625900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19549,6 +19551,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 844067505}
   hitZone: {fileID: 0}
   noteSpeed: 5
+  animationManager: {fileID: 21626029}
 --- !u!212 &1227302523
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20388,6 +20391,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 161164953}
   hitZone: {fileID: 0}
   noteSpeed: 5
+  animationManager: {fileID: 19662022}
 --- !u!212 &1566342113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26818,6 +26822,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1483944649}
   hitZone: {fileID: 0}
   noteSpeed: 5
+  animationManager: {fileID: 19662022}
 --- !u!212 &2071915543
 SpriteRenderer:
   m_ObjectHideFlags: 0

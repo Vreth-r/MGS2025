@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LaneController : MonoBehaviour
@@ -7,9 +8,52 @@ public class LaneController : MonoBehaviour
     public Transform hitZone;
     public float noteSpeed = 5f;
 
+    private List<int> heldGuitarLanes = new List<int>();
+
+    public AnimationManager animationManager;
+
     private void Start()
     {
+        //deals with lane holding and animations and logic for the guitar. If lanes are held, prioritize the latest one.
+
         InputManager.Instance.OnLanePressed += HandleLanePress;
+        InputManager.Instance.OnLanePressedGuitar += lane =>
+        {
+            if (LaneBelongsToThisCharacter(lane))
+            {
+                if (!heldGuitarLanes.Contains(lane))
+                {
+                    heldGuitarLanes.Add(lane);
+                }
+            }
+        };
+
+        InputManager.Instance.OnLaneReleasedGuitar += lane =>
+        {
+            if (LaneBelongsToThisCharacter(lane))
+            {
+                heldGuitarLanes.Remove(lane);
+            }
+        };
+
+        InputManager.Instance.OnGuitarAttackPressed += () =>
+        {
+            if (heldGuitarLanes.Count > 0)
+            {
+                int lastLane = heldGuitarLanes[heldGuitarLanes.Count - 1];
+
+                if (lastLane == laneIndex)
+                {
+                    animationManager.NewPos(lastLane);
+                    HandleLanePress(lastLane);
+                }
+            }
+        };
+
+        animationManager.OnCharacterReset += () =>
+        {
+            heldGuitarLanes.Clear();
+        };
     }
 
     private void OnDestroy()
@@ -81,5 +125,24 @@ public class LaneController : MonoBehaviour
         }
 
         best.OnHit(judgement);
+    }
+
+    //helps with the guitar controls, prevents multilane holding
+    private bool LaneBelongsToThisCharacter(int lane)
+    {
+        if (animationManager.isDuo)
+        {
+            return lane == 2;
+        }
+
+        if (animationManager.isPlayer1)
+        {
+            return lane == 0 || lane == 1 || lane == 2;
+        }
+
+        else
+        {
+            return lane == 2 || lane == 3 || lane == 4;
+        }
     }
 }
