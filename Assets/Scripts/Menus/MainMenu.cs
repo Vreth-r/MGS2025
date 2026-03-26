@@ -75,7 +75,17 @@ public class MainMenu : BaseMenu
 
     public override void HandleSubmit()
     {
-        buttons[selectedIndex].onClick.Invoke();
+        var button = buttons[selectedIndex];
+
+        var soundHelper = button.GetComponent<UISoundEffectsEventHelper>();
+        if (soundHelper != null)
+        {
+            soundHelper.PlayOnSubmit();
+        }
+
+        button.onClick.Invoke();
+
+        //buttons[selectedIndex].onClick.Invoke();
     }
 
     public override void HandleCancel()
