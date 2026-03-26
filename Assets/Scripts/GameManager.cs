@@ -78,6 +78,9 @@ public class GameManager : MonoBehaviour
         FMODUnity.RuntimeManager.LoadBank("Master.strings", true);
         InputManager.Instance.EnableGameplay();
         StartBeatmapPlayback();
+
+        UltimateSystem.Instance.OnUltimateStarted += ApplyUltimateSaturation;
+        UltimateSystem.Instance.OnUltimateFinished += ResetSaturation;
     }
 
     private void Update()
@@ -270,18 +273,9 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         StopSongImmediate();
-    }
 
-    private void OnEnable()
-    {
-        UltimateSystem.OnUltimateStarted += ApplyUltimateSaturation;
-        UltimateSystem.OnUltimateFinished += ResetSaturation;
-    }
-
-    private void OnDisable()
-    {
-        UltimateSystem.OnUltimateStarted -= ApplyUltimateSaturation;
-        UltimateSystem.OnUltimateFinished -= ResetSaturation;
+        UltimateSystem.Instance.OnUltimateStarted -= ApplyUltimateSaturation;
+        UltimateSystem.Instance.OnUltimateFinished -= ResetSaturation;
     }
 
     private void ApplyUltimateSaturation()

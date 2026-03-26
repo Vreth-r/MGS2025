@@ -98,7 +98,7 @@ public class HoldNote : NoteBase
             {
                 state = State.Done;
                 Resolve();
-                UltimateSystem.AddChargeForSuccessfulNote();
+                UltimateSystem.Instance.IncrementUltimate();
                 Destroy(gameObject);
             }
         }

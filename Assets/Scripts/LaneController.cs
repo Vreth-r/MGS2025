@@ -79,7 +79,7 @@ public class LaneController : MonoBehaviour
         if (obj.TryGetComponent<NoteBase>(out var note))
             note.Initialize(this, noteSpeed, data);
 
-        if (UltimateSystem.UltimateActive)
+        if (UltimateSystem.Instance.UltimateActive)
         {
             var r = obj.GetComponentInChildren<SpriteRenderer>();
             if (r != null)

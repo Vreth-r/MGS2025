@@ -223,6 +223,9 @@ public class InputManager : MonoBehaviour
     /// because balls
     public void EnableGameplay()
     {
+        ResetLanes();
+        InitializeLaneInputs();
+
         DisableAll();
         gameplayMap.Enable();
         CurrentContext = InputContext.Gameplay;
@@ -322,5 +325,14 @@ public class InputManager : MonoBehaviour
         }
 
         return isGuitar;
+    }
+
+    private void ResetLanes()
+    {
+        gameplayMap.Disable();
+
+        laneActions.Clear();
+
+        gameplayMap.Enable();
     }
 }

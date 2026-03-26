@@ -671,7 +671,7 @@ MonoBehaviour:
   eventManager: {fileID: 0}
   scoreText: {fileID: 1521129101}
   comboText: {fileID: 1583548038}
-  inspectorUltimateScoreMultiplier: 4
+  ultimateScoreMultiplier: 4
 --- !u!4 &62884185
 Transform:
   m_ObjectHideFlags: 0
@@ -6384,6 +6384,10 @@ PrefabInstance:
     - target: {fileID: 5015024526484971236, guid: 7edab2e9dafab0047af6b56839c194b9, type: 3}
       propertyPath: m_Name
       value: P2ComboPopUpEmitter Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898067634218723064, guid: 7edab2e9dafab0047af6b56839c194b9, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18895,7 +18899,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.5
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -19392,7 +19396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   noteSpeed: 5
   hitZone: {fileID: 37639069}
-  beatmapFileName: beatmap_20260305_221402.json
+  beatmapFileName: slowMultiLaneTestBeatmap.json
   lanes:
   - {fileID: 2071915542}
   - {fileID: 1566342112}
@@ -19857,11 +19861,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::UltimateSystem
   ultimateBar: {fileID: 1050836330}
-  maxCharge: 10
-  passiveChargeIntervalSeconds: 2
-  passiveChargePerTick: 1
-  chargePerNoteHit: 0.5
-  ultimateDuration: 10
+  ultimateDivider: 3
+  ultimateDuration: 3
 --- !u!114 &1303664388 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3602968188161212105, guid: 7edab2e9dafab0047af6b56839c194b9, type: 3}
@@ -26634,7 +26635,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
