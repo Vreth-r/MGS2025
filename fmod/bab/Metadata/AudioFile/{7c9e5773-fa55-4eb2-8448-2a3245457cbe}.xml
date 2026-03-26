@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7c9e5773-fa55-4eb2-8448-2a3245457cbe}">
+		<property name="assetPath">
+			<value>UI/faststrum1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2016326530612245</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ce71e86e-e9d6-47b9-ae71-3c05bfc4bf8a}</destination>
+		</relationship>
+	</object>
+</objects>
