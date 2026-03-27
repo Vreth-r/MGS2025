@@ -12,7 +12,7 @@ public class UltimateSystem : MonoBehaviour
     public int ultimateDivider = 3; //the divider that dictates the fraction of the total notes that gives you an ult (in this case, the divider being 3 means that a third of the notes are needed to activate the ult)
     public float ultimateDuration = 10f; //how long the ultimate lasts for
 
-    public Image ultimateReadyBorder;
+    public GameObject ultimateReadyBorder;
 
     private int totalNoteCount; //grabs the total amount of notes that are going to be spawned in the level
     private int ultimateNoteCountProgress = 0; //keeps track of how many notes have been successfully hit and counted towards building up the ult
@@ -45,6 +45,8 @@ public class UltimateSystem : MonoBehaviour
         ultimateDuration = inspectorUltimateDuration;
         */
         ultimateNoteCountThreshold = totalNoteCount / ultimateDivider;
+
+        ultimateBar.fillAmount = 0;
     }
 
     //increments the ult bar and logic numbers
@@ -77,7 +79,7 @@ public class UltimateSystem : MonoBehaviour
         {
             if (ultimateReadyBorder != null)
             {
-                ultimateReadyBorder.gameObject.SetActive(true);
+                ultimateReadyBorder.SetActive(true);
             }
         }
     }
@@ -87,6 +89,11 @@ public class UltimateSystem : MonoBehaviour
     {
         if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
         {
+            if (ultimateReadyBorder != null)
+            {
+                ultimateReadyBorder.SetActive(false);
+            }
+
             ultimateNoteCountProgress = 0; //reset progress
 
             OnUltimateStarted?.Invoke();  //calls the functions that are subscribed to this event
@@ -118,11 +125,6 @@ public class UltimateSystem : MonoBehaviour
 
         OnUltimateFinished?.Invoke(); //calls all functions that listen to OnUltimateFinished
         UltimateActive = false;
-
-        if (ultimateReadyBorder != null)
-        {
-            ultimateReadyBorder.gameObject.SetActive(false);
-        }
     }
 
     //calls ultimate
