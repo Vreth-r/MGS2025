@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "RhythmControls",
+    "name": "RhythmControls 2",
     "maps": [
         {
             "name": "Gameplay",
@@ -214,8 +214,8 @@
                 },
                 {
                     "name": "",
-                    "id": "56280b70-e162-4c00-a91e-bbc64300cf15",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/button9",
+                    "id": "f70a5169-52df-4f37-b659-501060413163",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/hat/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -225,8 +225,8 @@
                 },
                 {
                     "name": "",
-                    "id": "0d402295-ea98-4b08-88ca-749d4e89180e",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button5",
+                    "id": "56280b70-e162-4c00-a91e-bbc64300cf15",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button9",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

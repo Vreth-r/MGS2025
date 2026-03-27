@@ -12,6 +12,8 @@ public class UltimateSystem : MonoBehaviour
     public int ultimateDivider = 3; //the divider that dictates the fraction of the total notes that gives you an ult (in this case, the divider being 3 means that a third of the notes are needed to activate the ult)
     public float ultimateDuration = 10f; //how long the ultimate lasts for
 
+    public Image ultimateReadyBorder;
+
     private int totalNoteCount; //grabs the total amount of notes that are going to be spawned in the level
     private int ultimateNoteCountProgress = 0; //keeps track of how many notes have been successfully hit and counted towards building up the ult
 
@@ -70,6 +72,14 @@ public class UltimateSystem : MonoBehaviour
         {
             ultimateBar.enabled = false;
         }
+
+        if (ultimateNoteCountProgress == ultimateNoteCountThreshold)
+        {
+            if (ultimateReadyBorder != null)
+            {
+                ultimateReadyBorder.gameObject.SetActive(true);
+            }
+        }
     }
 
     //function that activates the ultimate
@@ -108,6 +118,11 @@ public class UltimateSystem : MonoBehaviour
 
         OnUltimateFinished?.Invoke(); //calls all functions that listen to OnUltimateFinished
         UltimateActive = false;
+
+        if (ultimateReadyBorder != null)
+        {
+            ultimateReadyBorder.gameObject.SetActive(false);
+        }
     }
 
     //calls ultimate

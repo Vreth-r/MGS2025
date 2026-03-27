@@ -300,11 +300,15 @@ public class InputManager : MonoBehaviour
         //If they all match, its the guitar controller
         //this 99% sure would not work with any other controller, be it guitar or not
 
+        string name = device.description.ToString().ToLower();
+
         bool hasButton8 = device.TryGetChildControl<ButtonControl>("button8") != null;
         bool hasButton2 = device.TryGetChildControl<ButtonControl>("button2") != null;
         bool hasButton9 = device.TryGetChildControl<ButtonControl>("button9") != null;
         bool hasTrigger = device.TryGetChildControl<AxisControl>("trigger") != null;
         bool hasHatLeft = device.TryGetChildControl<ButtonControl>("hat/left") != null;
+
+        Debug.Log(name);
         /*
         Debug.Log(hasButton8);
         Debug.Log(hasButton2);
@@ -312,7 +316,7 @@ public class InputManager : MonoBehaviour
         Debug.Log(hasTrigger);
         Debug.Log(hasHatLeft);
         */
-        bool isGuitar = hasButton8 && hasButton2 && hasButton9 && hasTrigger && hasHatLeft;
+        bool isGuitar = hasButton8 && hasButton2 && hasButton9 && hasTrigger && hasHatLeft && name.Contains("shanwan");
 
         if (isGuitar)
         {

@@ -89,7 +89,7 @@ public class CharacterSelect : MonoBehaviour
     {
         //Debug.Log("Character Selected!");
 
-        controlsSwapper.isControlsSwapped = !P1IsLu;
+        controlsSwapper.isControlsSwapped = P1IsLu;
 
         Debug.Log(controlsSwapper.isControlsSwapped);
 

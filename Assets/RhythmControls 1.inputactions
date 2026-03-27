@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "RhythmControls",
+    "name": "RhythmControls 1",
     "maps": [
         {
             "name": "Gameplay",
@@ -93,8 +93,19 @@
                 },
                 {
                     "name": "",
-                    "id": "f4ada1f5-832a-4766-9c31-ebcbfc7a2755",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button3",
+                    "id": "db2b537c-c956-4548-8a54-b47d4012c02f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0d1bf6b-0808-43c9-9d17-cb81bc12d3c0",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button8",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -115,8 +126,19 @@
                 },
                 {
                     "name": "",
-                    "id": "53419e1d-6b25-40c7-bd2f-4ddd1c0157a5",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button4",
+                    "id": "911f6467-ba19-426a-a417-a9fc09cfea89",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b01d45f-c625-49ab-ba27-6084be74b787",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -137,8 +159,8 @@
                 },
                 {
                     "name": "",
-                    "id": "3ba96327-dad4-4315-9699-822333aafe44",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/button8",
+                    "id": "90377c0d-58e8-4369-bcf0-aa28bac29a1e",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -148,8 +170,19 @@
                 },
                 {
                     "name": "",
-                    "id": "41e21844-df27-4422-90d3-c5081158b278",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger",
+                    "id": "4161c9c7-8cc9-44c5-b203-11b2cb7c2c7f",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3f185f2-8638-4d12-a3e9-cd62af7eb4f1",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -170,8 +203,8 @@
                 },
                 {
                     "name": "",
-                    "id": "766f5ef6-383b-4576-9b6e-f15461d2246b",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/button2",
+                    "id": "c0c16956-26d7-4242-8067-4951868a83cc",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -192,8 +225,8 @@
                 },
                 {
                     "name": "",
-                    "id": "2ac0c871-df80-44f5-bba2-f922143c93f0",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/trigger",
+                    "id": "90b08877-2d31-4888-9ead-5df65a712e94",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -216,17 +249,6 @@
                     "name": "",
                     "id": "56280b70-e162-4c00-a91e-bbc64300cf15",
                     "path": "<HID::ShanWan USB WirelessGamepad >/button9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ultimate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0d402295-ea98-4b08-88ca-749d4e89180e",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

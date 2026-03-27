@@ -19396,7 +19396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   noteSpeed: 5
   hitZone: {fileID: 37639069}
-  beatmapFileName: slowMultiLaneTestBeatmap.json
+  beatmapFileName: fullBeatmap.json
   lanes:
   - {fileID: 2071915542}
   - {fileID: 1566342112}
@@ -19839,8 +19839,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2029571975}
-  - {fileID: 1050836329}
   - {fileID: 1210390941}
+  - {fileID: 1050836329}
   m_Father: {fileID: 749505765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19863,6 +19863,7 @@ MonoBehaviour:
   ultimateBar: {fileID: 1050836330}
   ultimateDivider: 3
   ultimateDuration: 3
+  ultimateReadyBorder: {fileID: 1210390942}
 --- !u!114 &1303664388 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3602968188161212105, guid: 7edab2e9dafab0047af6b56839c194b9, type: 3}
