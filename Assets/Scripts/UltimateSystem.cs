@@ -7,6 +7,7 @@ public class UltimateSystem : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] public Image ultimateBar;
+    [SerializeField] public GameObject fullUlt;
 
     [Header("Charge Rules")]
     [SerializeField] private float maxCharge = 10f;
@@ -112,5 +113,14 @@ public class UltimateSystem : MonoBehaviour
     {
         if (ultimateBar == null) return;
         ultimateBar.fillAmount = (maxCharge <= 0f) ? 0f : (Charge / maxCharge);
+        if (Charge == maxCharge)
+        {
+            fullUlt.SetActive(true);
+        }
+        else
+        {
+            fullUlt.SetActive(false);
+        }
+
     }
 }
