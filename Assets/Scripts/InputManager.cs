@@ -223,6 +223,9 @@ public class InputManager : MonoBehaviour
     /// because balls
     public void EnableGameplay()
     {
+        ResetLanes();
+        InitializeLaneInputs();
+
         DisableAll();
         gameplayMap.Enable();
         CurrentContext = InputContext.Gameplay;
@@ -292,24 +295,14 @@ public class InputManager : MonoBehaviour
 
     private bool IsGuitar(InputDevice device)
     {
-        //legit the worst way to do this, but seeing as the guitar controller we have is so old, i cant actually grab any normal model data from it (returns empty)
-        //only way i figured out to detect the specific controller we have is to check specifically all the used input buttons names (kinda the only data that i can find it returns.
-        //If they all match, its the guitar controller
-        //this 99% sure would not work with any other controller, be it guitar or not
+        //checks if guitar has shanwan in the description.
+        //Probably only works for this guitar, might mess up if there are other shanwan type controllers (could be non-guitar)
 
-        bool hasButton8 = device.TryGetChildControl<ButtonControl>("button8") != null;
-        bool hasButton2 = device.TryGetChildControl<ButtonControl>("button2") != null;
-        bool hasButton9 = device.TryGetChildControl<ButtonControl>("button9") != null;
-        bool hasTrigger = device.TryGetChildControl<AxisControl>("trigger") != null;
-        bool hasHatLeft = device.TryGetChildControl<ButtonControl>("hat/left") != null;
-        /*
-        Debug.Log(hasButton8);
-        Debug.Log(hasButton2);
-        Debug.Log(hasButton9);
-        Debug.Log(hasTrigger);
-        Debug.Log(hasHatLeft);
-        */
-        bool isGuitar = hasButton8 && hasButton2 && hasButton9 && hasTrigger && hasHatLeft;
+        string deviceDescription = device.description.ToString().ToLower();
+
+        //Debug.Log(name);
+
+        bool isGuitar = deviceDescription.Contains("shanwan");
 
         if (isGuitar)
         {
@@ -322,5 +315,14 @@ public class InputManager : MonoBehaviour
         }
 
         return isGuitar;
+    }
+
+    private void ResetLanes()
+    {
+        gameplayMap.Disable();
+
+        laneActions.Clear();
+
+        gameplayMap.Enable();
     }
 }

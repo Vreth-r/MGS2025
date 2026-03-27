@@ -271,6 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3ba1f8009d1104f8a13e23dac38e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldNote
+  damageIncrement: 10
+  regenIncrement: 5
 --- !u!64 &9055508913194675362
 MeshCollider:
   m_ObjectHideFlags: 0
