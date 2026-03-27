@@ -26988,6 +26988,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 749505765}
     m_Modifications:
     - target: {fileID: 963721074543508773, guid: 33f77a4f092d8ba49a7096be5027d835, type: 3}
+      propertyPath: ultimateDuration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 963721074543508773, guid: 33f77a4f092d8ba49a7096be5027d835, type: 3}
       propertyPath: ultimateReadyBorder
       value: 
       objectReference: {fileID: 5056348623980952361}
