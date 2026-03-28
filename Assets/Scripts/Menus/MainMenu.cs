@@ -114,7 +114,7 @@ public class MainMenu : BaseMenu
 
         menuManager.CloseMenu();
 
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
     private void OpenSettings()

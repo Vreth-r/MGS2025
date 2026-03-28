@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text comboText;
 
     [Header("Ultimate")]
-    [SerializeField] private int inspectorUltimateScoreMultiplier = 4;
+    [SerializeField] private int ultimateScoreMultiplier = 4;
 
     public float TotalScore { get; private set; }
     public float ComboMultiplier { get; private set; } = 1;
@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     private const float GOOD    = 0.30f;
     private const float OKAY    = 0.40f;
 
-    private int ultMultiplier = 1;
+    private int activeUltMultiplier = 1;
 
     private void Awake()
     {
@@ -42,6 +42,9 @@ public class ScoreManager : MonoBehaviour
         {
             //Debug.Log($"{this.name} found {eventManager.name}");
         }
+
+        UltimateSystem.Instance.OnUltimateStarted += UltOn;
+        UltimateSystem.Instance.OnUltimateFinished += UltOff;
     }
 
     public void AddScore(float timing, int lane, bool missed = false)
@@ -113,14 +116,14 @@ public class ScoreManager : MonoBehaviour
             baseScore = 0;
         }
 
-        TotalScore += baseScore * ultMultiplier;
+        TotalScore += baseScore * activeUltMultiplier;
         UpdateUI();
     }
 
     public void AddBonus(int points)
     {
         if (points <= 0) return;
-        TotalScore += points * ultMultiplier;
+        TotalScore += points * activeUltMultiplier;
         UpdateUI();
     }
 
@@ -136,18 +139,12 @@ public class ScoreManager : MonoBehaviour
         //if (comboText != null) comboText.text = $"{ComboMultiplier}x Combo";
     }
 
-    private void OnEnable()
+    private void OnDestroy()
     {
-        UltimateSystem.OnUltimateStarted += UltOn;
-        UltimateSystem.OnUltimateFinished += UltOff;
+        UltimateSystem.Instance.OnUltimateStarted -= UltOn;
+        UltimateSystem.Instance.OnUltimateFinished -= UltOff;
     }
 
-    private void OnDisable()
-    {
-        UltimateSystem.OnUltimateStarted -= UltOn;
-        UltimateSystem.OnUltimateFinished -= UltOff;
-    }
-
-    private void UltOn()  => ultMultiplier = inspectorUltimateScoreMultiplier;
-    private void UltOff() => ultMultiplier = 1;
+    private void UltOn()  => activeUltMultiplier = ultimateScoreMultiplier;
+    private void UltOff() => activeUltMultiplier = 1;
 }
