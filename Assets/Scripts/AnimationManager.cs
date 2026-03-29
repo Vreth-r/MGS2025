@@ -204,7 +204,8 @@ public class AnimationManager : MonoBehaviour
             animator.Play("Bounce", -1, 0f);
 
             //Commenting this out because there is no 2nd attack sprite yet
-            //attackcount += 1;
+            //Commenting this back IN cus there IS a 2nd attack now, and this is a BUG that i must FIX
+            attackcount += 1;
 
 
         }

@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19662019}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
+  m_LocalRotation: {x: -0.000000011313344, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: -12.07878, y: 5.94404, z: 2.8879201}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21626026}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.0255803e-15, y: 1, z: 4.482954e-23, w: -0.00000004371139}
+  m_LocalRotation: {x: -0.000000011313343, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: -12.07878, y: 5.94404, z: -1.76208}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25823,7 +25823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.25, y: 0}
+  m_AnchoredPosition: {x: -1.05, y: 0}
   m_SizeDelta: {x: 1, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1721507617
@@ -26079,7 +26079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757023862}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.0255803e-15, y: 1, z: 4.482954e-23, w: -0.00000004371139}
+  m_LocalRotation: {x: -0.000000011313343, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: -11.87878, y: 5.94404, z: 0.48792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26126,7 +26126,7 @@ MonoBehaviour:
   isDuo: 1
   sprBase: {fileID: 21300000, guid: 7f924c106fb83534d857d47f5fd4de28, type: 3}
   sprAttack1: {fileID: 21300000, guid: 31239fe9469d4dd4bab880f7c752bbef, type: 3}
-  sprAttack2: {fileID: 21300000, guid: 2248531940234dd4d8381fb989e15fe6, type: 3}
+  sprAttack2: {fileID: 21300000, guid: 31239fe9469d4dd4bab880f7c752bbef, type: 3}
   sprOuch: {fileID: 21300000, guid: 42b10163def625c41ae3d21a90fa2dc5, type: 3}
   spriteRenderer: {fileID: 759691513}
   baseGeneral: {x: 0, y: 0, z: 0}
