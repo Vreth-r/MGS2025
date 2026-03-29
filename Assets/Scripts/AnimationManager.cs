@@ -46,7 +46,6 @@ public class AnimationManager : MonoBehaviour
 
     private void Start()
     {
-        //NOTE: the idle seems to trigger more than once somewhere, investigate!
         //do newPos when press
         InputManager.Instance.OnLanePressed += NewPos;
 
@@ -159,7 +158,7 @@ public class AnimationManager : MonoBehaviour
             duoActive = 2;
             resetcounter = 0;
             if (isDuo)//show duo, hide solo
-                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 5.5f,
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
                                                  GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
                                                  GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
             else
@@ -177,7 +176,7 @@ public class AnimationManager : MonoBehaviour
             if (isDuo)
                 transform.position = offscreen;
             else if (isPlayer1 == (lane <= 2))
-                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 5.5f,
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
                                                  GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
                                                  GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
 
@@ -245,7 +244,7 @@ public class AnimationManager : MonoBehaviour
             if (isDuo)
                 transform.position = offscreen;
             else if (isPlayer1 == (lane <= 2))
-                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 5.5f,
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
                                                  GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
                                                  GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
 
