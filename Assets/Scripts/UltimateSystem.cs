@@ -29,6 +29,10 @@ public class UltimateSystem : MonoBehaviour
     public static UltimateSystem Instance { get; private set; }
     public bool UltimateActive { get; private set; }
 
+    //visuals
+    public GameObject fgvisual;
+    public GameObject bgvisual;
+
     private void Awake()
     {
         Instance = this;
@@ -44,6 +48,7 @@ public class UltimateSystem : MonoBehaviour
         ultimateDivider = inspectorUltimateDivider;
         ultimateDuration = inspectorUltimateDuration;
         */
+
         ultimateNoteCountThreshold = totalNoteCount / ultimateDivider;
 
         ultimateBar.fillAmount = 0;
@@ -93,6 +98,11 @@ public class UltimateSystem : MonoBehaviour
             {
                 ultimateReadyBorder.SetActive(false);
             }
+            if (fgvisual != null && bgvisual != null)
+            {
+                fgvisual.SetActive(true);
+                bgvisual.SetActive(true);
+            }
 
             ultimateNoteCountProgress = 0; //reset progress
 
@@ -125,6 +135,12 @@ public class UltimateSystem : MonoBehaviour
 
         OnUltimateFinished?.Invoke(); //calls all functions that listen to OnUltimateFinished
         UltimateActive = false;
+
+        if (fgvisual != null && bgvisual != null)
+        {
+            fgvisual.SetActive(false);
+            bgvisual.SetActive(false);
+        }
     }
 
     //calls ultimate
