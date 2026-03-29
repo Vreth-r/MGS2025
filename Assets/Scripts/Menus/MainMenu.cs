@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 /// <summary>
 /// The main menu
@@ -12,11 +13,14 @@ public class MainMenu : BaseMenu
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private VideoPlayer creditsVideoPlayer;
+    [SerializeField] private RawImage creditsDisplay;
 
     private int selectedIndex = 0;
     private Button[] buttons;
 
     private GameObject EventSystem;
+    private bool CreditsOpen = false;
 
     protected override void Awake()
     {
@@ -61,6 +65,8 @@ public class MainMenu : BaseMenu
 
     public override void HandleNavigate(Vector2 direction)
     {
+        if (CreditsOpen) return;
+
         if (direction.y > 0.5f)
         {
             selectedIndex = (selectedIndex - 1 + buttons.Length) % buttons.Length;
@@ -119,8 +125,37 @@ public class MainMenu : BaseMenu
 
     private void OpenCredits()
     {
-        // Replace when we have a credit screen
-        Debug.Log("Opening credits screen...");
+        CreditsOpen = true; //blocks menu interaction
+        Hide();
+        creditsVideoPlayer.Stop();
+        creditsVideoPlayer.time = 0;
+        creditsVideoPlayer.Prepare();
+        creditsVideoPlayer.prepareCompleted += OnCreditsPrepared;
+    }
+
+    private void OnCreditsPrepared(VideoPlayer vp)
+    {
+        creditsVideoPlayer.prepareCompleted -= OnCreditsPrepared; //unsubscribes so it does not fire again
+        creditsDisplay.gameObject.SetActive(true);
+        creditsVideoPlayer.Play();
+        creditsVideoPlayer.loopPointReached += CloseCredits;
+        InputManager.Instance.OnSubmit += CloseCredits;
+    }
+
+    //loopPointReached needs this parameter, workaround to keep CloseCredits parameterless
+    private void CloseCredits(VideoPlayer vp) 
+    { 
+        CloseCredits();
+    }
+
+    private void CloseCredits()
+    {
+        CreditsOpen = false; //unlocks menu interaction
+        InputManager.Instance.OnSubmit -= CloseCredits;
+        creditsVideoPlayer.Stop();
+        creditsDisplay.gameObject.SetActive(false);
+        creditsVideoPlayer.loopPointReached -= CloseCredits;
+        Show();
     }
 
     private void OnQuit()
