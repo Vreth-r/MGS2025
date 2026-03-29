@@ -655,8 +655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c18dfabc974714c97695a9ee42ec2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
-  pauseMenuPrefab: {fileID: 7964319354372408830, guid: 7359af566ec5e894aa8836c93438fed3, type: 3}
-  settingsMenuPrefab: {fileID: 6949280925703141668, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
+  pauseMenu: {fileID: 7964319354372408830, guid: 7359af566ec5e894aa8836c93438fed3, type: 3}
+  settingsMenu: {fileID: 6949280925703141668, guid: 6e2bda4ff92e7b449a02e364465642f2, type: 3}
 --- !u!4 &844584941
 Transform:
   m_ObjectHideFlags: 0

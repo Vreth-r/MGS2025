@@ -22,6 +22,6 @@ public class MainMenuManagerFix : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.EnableUI();
-        MenuManager.Instance.OpenMenu(mainMenu);
+        MenuManager.Instance.SetCurrentMenu(mainMenu);
     }
 }

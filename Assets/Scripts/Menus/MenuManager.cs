@@ -7,10 +7,8 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance { get; private set; }
 
     [Header("Menu Prefab References")]
-    [SerializeField] private GameObject pauseMenuPrefab;
-    [SerializeField] private GameObject settingsMenuPrefab;
-    private GameObject pauseMenu;
-    private GameObject settingsMenu;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject settingsMenu;
 
     private BaseMenu activeMenu;
     private Stack<BaseMenu> OpenedMenus = new Stack<BaseMenu>(); // Stack of menus. So we can backtrack between opened menus.
@@ -67,6 +65,27 @@ public class MenuManager : MonoBehaviour
         OpenMenu(settingsMenu);
     }
 
+    public void SetCurrentMenu(GameObject menu)
+    {
+        BaseMenu menuToOpen = menu.GetComponent<BaseMenu>();
+
+        if (menuToOpen == null)
+        {
+            Debug.LogError($"Menu prefab {menu.name} is missing a BaseMenu component.");
+            return;
+        }
+
+        if (activeMenu != null)
+        {
+            OpenedMenus.Pop();
+            activeMenu.Close();
+        }
+
+        activeMenu = menuToOpen;
+        OpenedMenus.Push(activeMenu);
+        activeMenu.Open();
+    }
+
     public void OpenMenu(GameObject menuPrefab)
     {
         // Get the menu we want to open
@@ -84,8 +103,10 @@ public class MenuManager : MonoBehaviour
             activeMenu.Hide();
         }
 
+        var menu = Instantiate(menuToOpen); // instantiate
+
         // Setting the active menu to be the one we want opened
-        activeMenu = menuToOpen;
+        activeMenu = menu;
         OpenedMenus.Push(activeMenu);
         activeMenu.Open(); // Hey we finally opened the menu
 
@@ -99,6 +120,8 @@ public class MenuManager : MonoBehaviour
         // Close the active menu
         OpenedMenus.Pop();
         activeMenu.Close();
+
+        Destroy(activeMenu.gameObject); // destroy
 
         // Set the active menu to the menu behind it, if it exists.
         if (OpenedMenus.Count >= 1)
