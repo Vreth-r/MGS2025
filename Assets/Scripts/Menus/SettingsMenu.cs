@@ -119,7 +119,6 @@ public class SettingsMenu : BaseMenu
     private void ReturnBack()
     {
         Debug.Log("closing");
-        base.Close();
         MenuManager.Instance.CloseMenu();
     }
 }

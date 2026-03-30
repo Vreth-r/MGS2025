@@ -16,8 +16,16 @@ public class InputManager : MonoBehaviour
     private InputActionMap gameplayMap;
     private InputActionMap uiMap;
 
-    // Stores all lane actions: lane index → InputAction
-    private readonly Dictionary<int, InputAction> laneActions = new();
+    // This is so we can actually unsubscribe these lambda functions
+    private struct LaneBinding
+    {
+        public InputAction action;
+        public Action<InputAction.CallbackContext> performed;
+        public Action<InputAction.CallbackContext> canceled;
+    }
+
+    // Stores all lane bindings: lane index → LaneBinding (holds the lambdas and the action itself)
+    private readonly Dictionary<int, LaneBinding> laneActions = new();
 
     // Lane press/release events
     public event Action<int> OnLanePressed;
@@ -61,7 +69,7 @@ public class InputManager : MonoBehaviour
         }
 
         Instance = this;
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         //the controls stay swapped (if you chose to swap them during character select) after you exit the play mode testing.
         //Go to Assets/Scripts/Resources/ControlsSwapper.asset and uncheck "Is Controls Swapped" to reset to default controls for any testing that doesnt touch the chracter select scene.
@@ -85,6 +93,7 @@ public class InputManager : MonoBehaviour
         uiMap = inputAsset.FindActionMap("UI", throwIfNotFound: true);
 
         InitializeLaneInputs();
+        InitializeGameplayInputs();
         InitializeUIInputs();
     }
 
@@ -125,51 +134,49 @@ public class InputManager : MonoBehaviour
                 };
             }
 
-            laneActions[finalLaneIndex] = action;
-
-            action.performed += ctx =>
+            var binding = new LaneBinding // store the data nicely in a struct
             {
-                var device = ctx.control.device;
+                action = action,
 
-                if (guitarDevice == null && IsGuitar(device))
-                {
-                    //bind the guitar device
-                    guitarDevice = device;
-                }
+                performed = ctx =>
+                    {
+                        var device = ctx.control.device;
 
-                if (device == guitarDevice)
-                {
-                    //if current input is guitar, do guitar specific stuff (gameplay/animation wise)
-                    OnLanePressedGuitar?.Invoke(finalLaneIndex);
-                }
+                        if (guitarDevice == null && IsGuitar(device))
+                            guitarDevice = device;
 
-                else
-                {
-                    //any other controls
-                    OnLanePressed?.Invoke(finalLaneIndex);
-                }
+                        if (device == guitarDevice)
+                            OnLanePressedGuitar?.Invoke(finalLaneIndex);
+                        else
+                        {
+                            OnLanePressed?.Invoke(finalLaneIndex);
+                        }
+                    },
+
+                canceled = ctx =>
+                    {
+                        var device = ctx.control.device;
+
+                        if (device == guitarDevice)
+                            OnLaneReleasedGuitar?.Invoke(finalLaneIndex);
+                        else
+                            OnLaneReleased?.Invoke(finalLaneIndex);
+                    }
             };
 
-            action.canceled += ctx =>
-            {
-                var device = ctx.control.device;
+            action.performed += binding.performed;
+            action.canceled += binding.canceled;
 
-                if (device == guitarDevice)
-                {
-                    //if current input is guitar, do guitar specific stuff (gameplay/animation wise)
-                    OnLaneReleasedGuitar?.Invoke(finalLaneIndex);
-                }
-
-                else
-                {
-                    //any other controls
-                    OnLaneReleased?.Invoke(finalLaneIndex);
-                }
-            };
+            laneActions[finalLaneIndex] = binding;
 
             i++;
         }
 
+        //Debug.Log($"ControlsManager initialized with {laneActions.Count} lanes.");
+    }
+
+    private void InitializeGameplayInputs()
+    {
         var guitarAttackAction = gameplayMap.FindAction("GuitarAttack"); //the guitar flicky thing for attacking
         if (guitarAttackAction != null) //if it exists
         {
@@ -202,8 +209,6 @@ public class InputManager : MonoBehaviour
         // Assigning gamePause Action and Subscribing to Event
         gamePauseAction = gameplayMap.FindAction("Pause");
         gamePauseAction.performed += ctx => OnPausePressed?.Invoke();
-
-        //Debug.Log($"ControlsManager initialized with {laneActions.Count} lanes.");
     }
 
     private void InitializeUIInputs()
@@ -251,7 +256,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public InputAction GetLaneAction(int laneIndex)
     {
-        return laneActions.TryGetValue(laneIndex, out var action) ? action : null;
+        return laneActions.TryGetValue(laneIndex, out var binding) ? binding.action : null;
     }
 
     /// <summary>
@@ -320,6 +325,13 @@ public class InputManager : MonoBehaviour
     private void ResetLanes()
     {
         gameplayMap.Disable();
+
+        // KILL ALL LANE ACTIONS!! KILL THE LANE BINDINGS!!! KILL THEM ALL!!!
+        foreach (var binding in laneActions.Values)
+        {
+            binding.action.performed -= binding.performed;
+            binding.action.canceled -= binding.canceled;
+        }
 
         laneActions.Clear();
 
