@@ -253,7 +253,7 @@ public class GameManager : MonoBehaviour
         _lastSongTime = seconds;
     }
 
-    private void StopSongImmediate()
+    public void StopSongImmediate()
     {
         if (!songInstance.isValid()) return;
 

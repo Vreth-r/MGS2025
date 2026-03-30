@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 78e0f24b7e4016a48a2c8f050623cf5c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: Assets/Scripts/RhythmControls.cs
+  wrapperClassName: RhythmControls
+  wrapperCodeNamespace: 

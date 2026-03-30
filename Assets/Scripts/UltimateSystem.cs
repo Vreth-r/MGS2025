@@ -8,14 +8,24 @@ public class UltimateSystem : MonoBehaviour
     private GameManager manager;
 
     //ultimate settings
-    public Image ultimateBar; //the visual bar image
+    [Header("Ultimate Settings")]
     public int ultimateDivider = 3; //the divider that dictates the fraction of the total notes that gives you an ult (in this case, the divider being 3 means that a third of the notes are needed to activate the ult)
     public float ultimateDuration = 10f; //how long the ultimate lasts for
+    public bool autoActivateUltimate = false;
+
+    [Header("Ult System Gain Multipliers Settings")]
+    public float perfectGainMultiplier = 3f;
+    public float awesomeGainMultiplier = 2f;
+    public float goodGainMultiplier = 1f;
+    public float okayGainMultiplier = 0.5f;
+
+    [Header("Ultimate Visuals")]
+    public Image ultimateBar; //the visual bar image
 
     public GameObject ultimateReadyBorder;
 
     private int totalNoteCount; //grabs the total amount of notes that are going to be spawned in the level
-    private int ultimateNoteCountProgress = 0; //keeps track of how many notes have been successfully hit and counted towards building up the ult
+    private float ultimateNoteCountProgress = 0f; //keeps track of how many notes have been successfully hit and counted towards building up the ult
 
     private int ultimateNoteCountThreshold; //the exact number of notes needed to fully fill the ult bar
     
@@ -33,6 +43,7 @@ public class UltimateSystem : MonoBehaviour
     public GameObject fgvisual;
     public GameObject bgvisual;
 
+    private SoundEffectsPlayer soundEffectsPlayer;
     private void Awake()
     {
         Instance = this;
@@ -52,39 +63,50 @@ public class UltimateSystem : MonoBehaviour
         ultimateNoteCountThreshold = totalNoteCount / ultimateDivider;
 
         ultimateBar.fillAmount = 0;
+
+        soundEffectsPlayer = GetComponent<SoundEffectsPlayer>();
     }
 
     //increments the ult bar and logic numbers
-    public void IncrementUltimate()
+    public void IncrementUltimate(Judgement judgement)
     {
-        if (usedUltimateCount < ultimateDivider - 1) //if the max number if ults is not used up yet
+        float multiplier = judgement switch
         {
-            if (!UltimateActive) //stop incrementing ult bar if ult bar is already currently being used
+            Judgement.Perfect => perfectGainMultiplier,
+            Judgement.Awesome => awesomeGainMultiplier,
+            Judgement.Good => goodGainMultiplier,
+            Judgement.Okay => okayGainMultiplier,
+            _ => 0f
+        };
+
+        Debug.Log("current judge - " + judgement);
+
+        if (!UltimateActive) //stop incrementing ult bar if ult bar is already currently being used
+        {
+            ultimateNoteCountProgress = ultimateNoteCountProgress + (1 * multiplier); //add to the ult count progress
+
+            if (ultimateNoteCountProgress > ultimateNoteCountThreshold) //if more notes are hit and the ult is already ready, just cap it out
             {
-                if (ultimateNoteCountProgress + 1 > ultimateNoteCountThreshold) //if more notes are hit and the ult is already ready, just cap it out
-                {
-                    ultimateNoteCountProgress = ultimateNoteCountThreshold;
-                }
-
-                else
-                {
-                    ultimateNoteCountProgress = ultimateNoteCountProgress + 1; //add to the ult count progress
-                }
-
-                ultimateBar.fillAmount = (float)ultimateNoteCountProgress / (float)ultimateNoteCountThreshold; //updates the visual ult bar to show progress 
+                ultimateNoteCountProgress = ultimateNoteCountThreshold;
             }
-        }
 
-        else
-        {
-            ultimateBar.enabled = false;
-        }
+            ultimateBar.fillAmount = ultimateNoteCountProgress / (float)ultimateNoteCountThreshold; //updates the visual ult bar to show progress 
 
-        if (ultimateNoteCountProgress == ultimateNoteCountThreshold)
-        {
-            if (ultimateReadyBorder != null)
+            if (ultimateNoteCountProgress >= ultimateNoteCountThreshold)
             {
-                ultimateReadyBorder.SetActive(true);
+                soundEffectsPlayer.PlaySoundEffect("UltCharged_1");
+
+                soundEffectsPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
+
+                if (ultimateReadyBorder != null)
+                {
+                    ultimateReadyBorder.SetActive(true);
+
+                    if (autoActivateUltimate == true)
+                    {
+                        ActivateUltimate();
+                    }
+                }
             }
         }
     }
@@ -94,6 +116,8 @@ public class UltimateSystem : MonoBehaviour
     {
         if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
         {
+            soundEffectsPlayer.StopLoopingSoundEffect("UltChargedWaiting_1");
+
             if (ultimateReadyBorder != null)
             {
                 ultimateReadyBorder.SetActive(false);

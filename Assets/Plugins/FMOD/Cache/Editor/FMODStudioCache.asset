@@ -108,6 +108,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
+--- !u!114 &-6032090139079356998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/UltChargedWaiting_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/UltChargedWaiting_1
+  Guid:
+    Data1: 1308322588
+    Data2: 1275965721
+    Data3: -1122089341
+    Data4: -1413647657
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14811
 --- !u!114 &-4699960551004321459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,12 +364,15 @@ MonoBehaviour:
   - {fileID: 155208907917274711}
   - {fileID: 8711165258518560555}
   - {fileID: 2939728006772053949}
+  - {fileID: 5885263601007965403}
+  - {fileID: 7921344585345086230}
+  - {fileID: -6032090139079356998}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1371869185898520989}
   StringsBanks:
   - {fileID: 5847864670906682896}
-  cacheTime: 639104143507136602
+  cacheTime: 639104345653732494
   cacheVersion: 131635
 --- !u!114 &36537282757851109
 MonoBehaviour:
@@ -467,10 +497,10 @@ MonoBehaviour:
   Path: fmod/bab/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639104143507136602
+  lastModified: 639104345653712378
   FileSizes:
   - Name: Desktop
-    Value: 11149568
+    Value: 11445024
   Exists: 1
 --- !u!114 &2235334216678696261
 MonoBehaviour:
@@ -595,11 +625,38 @@ MonoBehaviour:
   Path: fmod/bab/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639104143507136602
+  lastModified: 639104345653732494
   FileSizes:
   - Name: Desktop
-    Value: 1910
+    Value: 2060
   Exists: 1
+--- !u!114 &5885263601007965403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/UltCharged_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/UltCharged_1
+  Guid:
+    Data1: -818873338
+    Data2: 1117009736
+    Data3: 1089219482
+    Data4: 1932658847
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1515
 --- !u!114 &6317404940256829183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,6 +711,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 223242
+--- !u!114 &7921344585345086230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/DeathRandom_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/DeathRandom_1
+  Guid:
+    Data1: -27944010
+    Data2: 1181207198
+    Data3: -518956359
+    Data4: -12936167
+  Banks:
+  - {fileID: 1371869185898520989}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50
 --- !u!114 &8602251476209781853
 MonoBehaviour:
   m_ObjectHideFlags: 0

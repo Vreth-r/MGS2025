@@ -73,6 +73,12 @@ public class Endgame : MonoBehaviour
             gameOverType1.SetActive(false);
             gameOverType2.SetActive(false);
             screenToShow.SetActive(true);
+
+            if (screenToShow == gameOverType2)
+            {
+                Debug.Log("fail");
+                GameManager.Instance.StopSongImmediate();
+            }
         }
 
         var scoreT = screen.transform.Find("Victory/RevealContainer/Tamagotchi/ScoreText");
