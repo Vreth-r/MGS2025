@@ -31,7 +31,7 @@ public class UISoundEffectsEventHelper : MonoBehaviour, IPointerEnterHandler, IP
     private void OnEnable()
     {
         PlaySound(UISoundEffectsType.Load);
-        
+        //Debug.Log("Played On Load");
     }
 
     public void OnPointerEnter(PointerEventData eventData)

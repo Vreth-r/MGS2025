@@ -305,9 +305,11 @@ public class InputManager : MonoBehaviour
 
         string deviceDescription = device.description.ToString().ToLower();
 
-        //Debug.Log(name);
+        bool isGuitar = deviceDescription.Contains("subtype");
 
-        bool isGuitar = deviceDescription.Contains("shanwan");
+        //bool isGuitar = deviceDescription.Contains("shanwan"); //old trashy guitar
+
+        /*
 
         if (isGuitar)
         {
@@ -318,6 +320,8 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Not Guitar");
         }
+
+        */
 
         return isGuitar;
     }

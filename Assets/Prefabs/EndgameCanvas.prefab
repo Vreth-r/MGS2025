@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 532061985241358372}
   - component: {fileID: 1871661239701191894}
   - component: {fileID: 3542914412907920930}
+  - component: {fileID: 2006526470346145803}
   m_Layer: 5
   m_Name: EndgameCanvas
   m_TagString: Untagged
@@ -104,6 +105,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2006526470346145803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373580066921969200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
 --- !u!1 &8653785602268256510
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,18 +286,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7666289406328206488, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7666289406328206488, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 351141739561115232}
   m_SourcePrefab: {fileID: 100100000, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
 --- !u!224 &4405055250940938837 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4538737888314133127, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
   m_PrefabInstance: {fileID: 278431968790560978}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7618140029043848266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7666289406328206488, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
+  m_PrefabInstance: {fileID: 278431968790560978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &351141739561115232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618140029043848266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 2006526470346145803}
+  sounds:
+  - type: 2
+    eventReference:
+      Guid:
+        Data1: -27944010
+        Data2: 1181207198
+        Data3: -518956359
+        Data4: -12936167
+      Path: event:/CombatSoundEffects/DeathRandom_1
 --- !u!1001 &8127713042246789224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,6 +339,10 @@ PrefabInstance:
     - target: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_Name
       value: Victory
+      objectReference: {fileID: 0}
+    - target: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       propertyPath: m_Pivot.x

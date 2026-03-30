@@ -4,5 +4,5 @@ public enum UISoundEffectsType
 {
     Hover,
     Click,
-    Load
+    Load,
 }

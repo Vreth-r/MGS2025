@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c71ba9173a3c8d45be5a242c4b9f4db, type: 3}
+  m_Name: UltSoundEffectsBank
+  m_EditorClassIdentifier: Scripts::SoundEffectsBank
+  soundEffects:
+  - name: UltCharged_1
+    normal:
+      Guid:
+        Data1: -818873338
+        Data2: 1117009736
+        Data3: 1089219482
+        Data4: 1932658847
+      Path: event:/CombatSoundEffects/UltCharged_1
+    flesh:
+      Guid:
+        Data1: -818873338
+        Data2: 1117009736
+        Data3: 1089219482
+        Data4: 1932658847
+      Path: event:/CombatSoundEffects/UltCharged_1
+  - name: UltChargedWaiting_1
+    normal:
+      Guid:
+        Data1: 1308322588
+        Data2: 1275965721
+        Data3: -1122089341
+        Data4: -1413647657
+      Path: event:/CombatSoundEffects/UltChargedWaiting_1
+    flesh:
+      Guid:
+        Data1: 1308322588
+        Data2: 1275965721
+        Data3: -1122089341
+        Data4: -1413647657
+      Path: event:/CombatSoundEffects/UltChargedWaiting_1
