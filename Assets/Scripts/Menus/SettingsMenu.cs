@@ -40,7 +40,7 @@ public class SettingsMenu : BaseMenu
         musicSlider.value = SettingsManager.musicVolume;
         sfxSlider.value = SettingsManager.sfxVolume;
 
-        returnButton.onClick.AddListener(shrinkPanel);
+        returnButton.onClick.AddListener(ReturnBack);
     }
 
     protected override void OnOpen()
@@ -50,7 +50,8 @@ public class SettingsMenu : BaseMenu
         musicSlider.value = SettingsManager.musicVolume;
         sfxSlider.value = SettingsManager.sfxVolume;
         grow = true;
-        scaleCoroutine = StartCoroutine(scalePanel());
+        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
+        //scaleCoroutine = StartCoroutine(scalePanel());
     }
 
     IEnumerator scalePanel()
@@ -81,6 +82,8 @@ public class SettingsMenu : BaseMenu
         // Save the settings somewhere
         SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
         SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+
+        panel.localScale = Vector3.zero;
         Debug.LogFormat($"Settings menu closed");
     }
 

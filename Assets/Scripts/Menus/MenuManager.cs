@@ -121,7 +121,7 @@ public class MenuManager : MonoBehaviour
         OpenedMenus.Pop();
         activeMenu.Close();
 
-        Destroy(activeMenu.gameObject); // destroy
+        //Destroy(activeMenu.gameObject); // destroy
 
         // Set the active menu to the menu behind it, if it exists.
         if (OpenedMenus.Count >= 1)

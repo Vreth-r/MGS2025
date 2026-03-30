@@ -230,14 +230,12 @@ public class GameManager : MonoBehaviour
 
         RuntimeManager.AttachInstanceToGameObject(songInstance, transform, GetComponent<Rigidbody>());
 
-        songInstance.setVolume(SettingsManager.musicVolume);
         songInstance.start();
         songStarted = true;
     }
 
     public void RestartSong()
     {
-        songInstance.setVolume(SettingsManager.musicVolume);
         StartBeatmapPlayback();
     }
 
