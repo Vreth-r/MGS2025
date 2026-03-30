@@ -91,7 +91,31 @@ public class AnimationManager : MonoBehaviour
     {
         // Unsubscribe from lane press event to prevent MissingReferenceException
         if (InputManager.Instance != null)
+        {
             InputManager.Instance.OnLanePressed -= NewPos;
+
+            //guitar stuff
+            InputManager.Instance.OnGuitarAttackPressed -= AttackAnimationGuitar;
+            InputManager.Instance.OnLanePressedGuitar -= LanePressedGuitar;
+            InputManager.Instance.OnLaneReleasedGuitar -= LaneReleasedGuitar;  
+        }
+
+        SoundEffectsEventHelper.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe from lane press event to prevent MissingReferenceException
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnLanePressed -= NewPos;
+
+            //guitar stuff
+            InputManager.Instance.OnGuitarAttackPressed -= AttackAnimationGuitar;
+            InputManager.Instance.OnLanePressedGuitar -= LanePressedGuitar;
+            InputManager.Instance.OnLaneReleasedGuitar -= LaneReleasedGuitar;
+        }
+
         SoundEffectsEventHelper.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
@@ -254,7 +278,7 @@ public class AnimationManager : MonoBehaviour
     {
         if (laneHeldGuitar != -1) //only works when MoveToLane is currently active (aka player waiting to attack in lane)
         {
-            NewPos(laneHeldGuitar);
+            NewPosGuitar(laneHeldGuitar);
         }
     }
 
@@ -276,6 +300,67 @@ public class AnimationManager : MonoBehaviour
                 transform.position = baseGeneral;
             }
         }
+    }
+
+    public void NewPosGuitar(int lane)
+    {
+        //Lane Placement Changer
+        if (lane == 2)
+        {
+            duoActive = 2;
+            resetcounter = 0;
+            if (isDuo)//show duo, hide solo
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
+                                                 GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
+                                                 GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
+            else
+                transform.position = offscreen;
+        }
+        else if (lane != 2)
+        {
+            if (duoActive > 0 && !isDuo) // If just leaving Duo lane, make sure both charactes are there, and in base states
+            {
+                transform.position = baseGeneral;
+                duoActive--;
+                spriteRenderer.sprite = sprBase;
+            }
+
+            if (isDuo)
+                transform.position = offscreen;
+            else if (isPlayer1 == (lane <= 2))
+                transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
+                                                 GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
+                                                 GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
+
+        }
+
+
+        //Sprite Changer
+        // Only operate on single character: 1 2 D
+        if ((isPlayer1 == (lane <= 2)) || isDuo)  //is P1 & <2   or   P2 & >2   or   Duo
+        {
+
+            resetcounter = 0; //in here so it doesnt trigger for all, always
+            if (attackcount == 0)
+            {
+                //gameObject.transform.localScale = new Vector3(1f, 0.5f, 1f);
+                spriteRenderer.sprite = sprAttack1;
+            }
+            else if (attackcount == 1)
+            {
+                spriteRenderer.sprite = sprAttack2;
+                attackcount = -1; //cus of the +1 below
+            }
+
+            animator.Play("Bounce", -1, 0f);
+
+            //Commenting this out because there is no 2nd attack sprite yet
+            //Commenting this back IN cus there IS a 2nd attack now, and this is a BUG that i must FIX
+            attackcount += 1;
+
+
+        }
+
     }
     public static void Missed(LaneController lane)
     {

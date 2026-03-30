@@ -30,6 +30,7 @@ public class UltimateSystem : MonoBehaviour
     private int ultimateNoteCountThreshold; //the exact number of notes needed to fully fill the ult bar
     
     private int usedUltimateCount; //tracks the number of ults used (so we can disable it completely after the max number of uses)
+    private bool isUltReady = false;
 
     //events (calls other components/functions that are subscribed to these events)
     public event Action OnUltimateStarted;
@@ -94,9 +95,13 @@ public class UltimateSystem : MonoBehaviour
 
             if (ultimateNoteCountProgress >= ultimateNoteCountThreshold)
             {
-                soundEffectsPlayer.PlaySoundEffect("UltCharged_1");
+                if (isUltReady == false)
+                {
+                    soundEffectsPlayer.PlaySoundEffect("UltCharged_1");
+                    soundEffectsPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
 
-                soundEffectsPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
+                    isUltReady = true;
+                }
 
                 if (ultimateReadyBorder != null)
                 {
@@ -114,6 +119,8 @@ public class UltimateSystem : MonoBehaviour
     //function that activates the ultimate
     public void ActivateUltimate()
     {
+        isUltReady = false;
+
         if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
         {
             soundEffectsPlayer.StopLoopingSoundEffect("UltChargedWaiting_1");

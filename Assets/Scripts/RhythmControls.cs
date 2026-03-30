@@ -168,8 +168,8 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""41e21844-df27-4422-90d3-c5081158b278"",
-                    ""path"": ""<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger"",
+                    ""id"": ""1f365310-b722-4fbe-9aef-9c26a748547a"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -179,8 +179,8 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1f365310-b722-4fbe-9aef-9c26a748547a"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""41e21844-df27-4422-90d3-c5081158b278"",
+                    ""path"": ""<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -206,7 +206,7 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Lane2"",
+                    ""action"": ""Lane1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -245,6 +245,17 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5a2fbf78-6c8c-4114-8823-2b12b93685c2"",
+                    ""path"": ""<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lane2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c0c88f69-f9b1-4a04-afc8-a11227c76f2d"",
                     ""path"": ""<XInputController>/leftShoulder"",
                     ""interactions"": """",
@@ -258,17 +269,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""4662d978-48ea-40e6-a629-73ebe1723666"",
                     ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Lane3"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5a2fbf78-6c8c-4114-8823-2b12b93685c2"",
-                    ""path"": ""<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

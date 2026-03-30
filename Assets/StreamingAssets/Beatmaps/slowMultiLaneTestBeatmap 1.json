@@ -3,7 +3,7 @@
   "songPath": "Audio/exampleSong",
   "songEvent": "event:/Music/TestBGM",
   "bpm": 120,
-  "notesCsv": "Tap,0,3.0\nTap,1,5.0",
+  "notesCsv": "Tap,0,3.0\nTap,1,5.0\nTap,2,7.0\nTap,3,9.0\nTap,4,11.0\nTap,0,13.0",
   "songId": "",
   "userFileRelative": ""
 }
