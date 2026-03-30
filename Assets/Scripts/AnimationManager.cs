@@ -341,6 +341,10 @@ public class AnimationManager : MonoBehaviour
         {
 
             resetcounter = 0; //in here so it doesnt trigger for all, always
+            Debug.Log("below");
+            Debug.Log(attackcount);
+            Debug.Log("above");
+
             if (attackcount == 0)
             {
                 //gameObject.transform.localScale = new Vector3(1f, 0.5f, 1f);
