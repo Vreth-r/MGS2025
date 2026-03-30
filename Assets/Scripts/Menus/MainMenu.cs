@@ -109,6 +109,13 @@ public class MainMenu : BaseMenu
 
     private void OnPlay()
     {
+        // there's a glitch where having the credits open and pressing enter returns you to character select instead of main menu
+        if (CreditsOpen)
+        {
+            return;
+        }
+
+
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         var menuManager = MenuManager.Instance;
 
