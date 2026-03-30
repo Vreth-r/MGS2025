@@ -24,14 +24,14 @@ public class MenuManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Instantiate the menus!!!
-        //pauseMenu = Instantiate(pauseMenuPrefab);
-        //settingsMenu = Instantiate(settingsMenuPrefab);
+        pauseMenu = Instantiate(pauseMenu);
+        settingsMenu = Instantiate(settingsMenu);
 
-        //DontDestroyOnLoad(pauseMenu);
-        //DontDestroyOnLoad(settingsMenu);
+        DontDestroyOnLoad(pauseMenu);
+        DontDestroyOnLoad(settingsMenu);
 
-        //pauseMenu.SetActive(true);
-        //settingsMenu.SetActive(true);
+        pauseMenu.GetComponent<BaseMenu>().Close();
+        settingsMenu.GetComponent<BaseMenu>().Close();
     }
 
     private void OnEnable()
@@ -103,10 +103,10 @@ public class MenuManager : MonoBehaviour
             activeMenu.Hide();
         }
 
-        var menu = Instantiate(menuToOpen); // instantiate
+        //var menu = Instantiate(menuToOpen); // instantiate
 
         // Setting the active menu to be the one we want opened
-        activeMenu = menu;
+        activeMenu = menuToOpen;
         OpenedMenus.Push(activeMenu);
         activeMenu.Open(); // Hey we finally opened the menu
 
