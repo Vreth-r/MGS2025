@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,12 +13,17 @@ public class LaneController : MonoBehaviour
 
     public AnimationManager animationManager;
 
+    private Action<int> onLanePressedGuitarAction;
+    private Action<int> onLaneReleasedGuitarAction;
+    private Action onGuitarAttackPressedAction;
+
     private void Start()
     {
         //deals with lane holding and animations and logic for the guitar. If lanes are held, prioritize the latest one.
 
         InputManager.Instance.OnLanePressed += HandleLanePress;
-        InputManager.Instance.OnLanePressedGuitar += lane =>
+
+        onLanePressedGuitarAction = lane =>
         {
             if (LaneBelongsToThisCharacter(lane))
             {
@@ -28,7 +34,20 @@ public class LaneController : MonoBehaviour
             }
         };
 
-        InputManager.Instance.OnLaneReleasedGuitar += lane =>
+        InputManager.Instance.OnLanePressedGuitar += onLanePressedGuitarAction;
+        /*
+        InputManager.Instance.OnLanePressedGuitar += lane =>
+        {
+            if (LaneBelongsToThisCharacter(lane))
+            {
+                if (!heldGuitarLanes.Contains(lane))
+                {
+                    heldGuitarLanes.Add(lane);
+                }
+            }
+        };
+        */
+        onLaneReleasedGuitarAction = lane =>
         {
             if (LaneBelongsToThisCharacter(lane))
             {
@@ -36,6 +55,33 @@ public class LaneController : MonoBehaviour
             }
         };
 
+        InputManager.Instance.OnLaneReleasedGuitar += onLaneReleasedGuitarAction;
+
+        /*
+        InputManager.Instance.OnLaneReleasedGuitar += lane =>
+        {
+            if (LaneBelongsToThisCharacter(lane))
+            {
+                heldGuitarLanes.Remove(lane);
+            }
+        };
+        */
+        onGuitarAttackPressedAction = () =>
+        {
+            if (heldGuitarLanes.Count > 0)
+            {
+                int lastLane = heldGuitarLanes[heldGuitarLanes.Count - 1];
+
+                if (lastLane == laneIndex)
+                {
+                    animationManager.NewPosGuitar(lastLane);
+                    HandleLanePress(lastLane);
+                }
+            }
+        };
+
+        InputManager.Instance.OnGuitarAttackPressed += onGuitarAttackPressedAction;
+        /*
         InputManager.Instance.OnGuitarAttackPressed += () =>
         {
             if (heldGuitarLanes.Count > 0)
@@ -44,12 +90,12 @@ public class LaneController : MonoBehaviour
 
                 if (lastLane == laneIndex)
                 {
-                    animationManager.NewPos(lastLane);
+                    animationManager.NewPosGuitar(lastLane);
                     HandleLanePress(lastLane);
                 }
             }
         };
-
+        */
         animationManager.OnCharacterReset += () =>
         {
             heldGuitarLanes.Clear();
@@ -59,7 +105,16 @@ public class LaneController : MonoBehaviour
     private void OnDestroy()
     {
         if (InputManager.Instance != null)
+        {
             InputManager.Instance.OnLanePressed -= HandleLanePress;
+            InputManager.Instance.OnLanePressedGuitar -= HandleLanePress;
+            InputManager.Instance.OnLaneReleasedGuitar -= HandleLanePress;
+
+            InputManager.Instance.OnLanePressedGuitar -= onLanePressedGuitarAction;
+            InputManager.Instance.OnLaneReleasedGuitar -= onLaneReleasedGuitarAction;
+            InputManager.Instance.OnGuitarAttackPressed -= onGuitarAttackPressedAction;
+        }
+            
     }
 
     public void SpawnTypedNote(BeatmapData.NoteData data, string type)
