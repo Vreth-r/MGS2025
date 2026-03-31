@@ -317,14 +317,11 @@ MonoBehaviour:
     Data4: -1440215867
   Banks:
   - {fileID: 1371869185898520989}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4845881161851379504
+  StringsBanks:
+  - {fileID: 5847864670906682896}
+  cacheTime: 639104978911176792
+  cacheVersion: 131635
+--- !u!114 &36537282757851109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,48 +438,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
-  EditorBanks:
-  - {fileID: 5847864670906682896}
-  - {fileID: 1371869185898520989}
-  EditorEvents:
-  - {fileID: -5453938495817807827}
-  - {fileID: 5579091873636574347}
-  - {fileID: 2403469296713295389}
-  - {fileID: -7338685122857932853}
-  - {fileID: 2730669583564129708}
-  - {fileID: 586211589531747388}
-  - {fileID: -6083418827884923951}
-  - {fileID: -4845881161851379504}
-  - {fileID: 4957482732484369839}
-  - {fileID: 2327569419521823773}
-  - {fileID: -5369429691326485316}
-  - {fileID: -7211260304390261840}
-  - {fileID: -4902887189881455779}
-  - {fileID: -6270283946118085550}
-  - {fileID: -7656271116937137537}
-  - {fileID: 7396247245311451478}
-  - {fileID: -3743687282631126128}
-  - {fileID: 7823318101106055604}
-  - {fileID: -5229423443551202597}
-  - {fileID: -6718143268998860815}
-  - {fileID: -1264940705466956478}
-  - {fileID: -6264414851068689136}
-  - {fileID: 2010096041151283384}
-  - {fileID: 6854041290729249266}
-  - {fileID: -5881694224268552503}
-  - {fileID: -703823368097036909}
-  - {fileID: 4021963677816705038}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 1371869185898520989}
-  StringsBanks:
-  - {fileID: 5847864670906682896}
-  cacheTime: 639104954753114029
-  cacheVersion: 131635
---- !u!114 &586211589531747388
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: fmod/bab/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639104978911154630
+  FileSizes:
+  - Name: Desktop
+    Value: 11445024
+  Exists: 1
+--- !u!114 &2235334216678696261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -592,25 +559,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/UltCharged_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/UltCharged_1
-  Guid:
-    Data1: -818873338
-    Data2: 1117009736
-    Data3: 1089219482
-    Data4: 1932658847
-  Banks:
-  - {fileID: 1371869185898520989}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1515
---- !u!114 &2730669583564129708
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: fmod/bab/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639104978911176792
+  FileSizes:
+  - Name: Desktop
+    Value: 2060
+  Exists: 1
+--- !u!114 &5885263601007965403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
