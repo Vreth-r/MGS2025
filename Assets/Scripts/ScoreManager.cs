@@ -5,7 +5,6 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
-    [SerializeField] private EventManager eventManager;
 
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text comboText;
@@ -36,13 +35,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        eventManager = GameObject.FindAnyObjectByType<EventManager>();
-
-        if (eventManager != null)
-        {
-            //Debug.Log($"{this.name} found {eventManager.name}");
-        }
-
         UltimateSystem.Instance.OnUltimateStarted += UltOn;
         UltimateSystem.Instance.OnUltimateFinished += UltOff;
     }
@@ -62,7 +54,7 @@ public class ScoreManager : MonoBehaviour
             ComboMultiplier++; 
             baseScore = 10 * ComboMultiplier;
 
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
 
         }
         else if (timing < AWESOME)
@@ -74,7 +66,7 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 7;
             baseScore = 10 * ComboMultiplier;
 
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
         }
         else if (timing < GOOD)
         {
@@ -86,7 +78,7 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 5;
             baseScore = 5 * ComboMultiplier;
 
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
 
 
         }
@@ -101,19 +93,20 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 3;
             baseScore = 5 * ComboMultiplier;
 
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
 
         }
         else if (missed)
         {
             ResetCombo();
-            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, 0);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, 0);
             baseScore = 0;
         }
         else
         {
-            ResetCombo();
+            //ResetCombo();
             baseScore = 0;
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, ComboMultiplier);
         }
 
         TotalScore += baseScore * activeUltMultiplier;

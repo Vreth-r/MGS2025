@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
 // using UnityEngine.UIElements;
@@ -15,8 +16,10 @@ public class SettingsMenu : BaseMenu
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
-    private int selectedIndex = 0;
+    private int selectedIndex = 0;  
     private Button[] buttons;
+    private Slider[] sliders;
+    private float volumeIncrement = 0.05f;
     
     [Header("Panel Reference")]
     [SerializeField] private RectTransform panel;
@@ -31,17 +34,24 @@ public class SettingsMenu : BaseMenu
     {
         base.Awake();
 
-        buttons = new[] { returnButton };
+        buttons = new[] { null, null, returnButton };
+        sliders = new[] { musicSlider, sfxSlider, null};
 
-        returnButton.onClick.AddListener(shrinkPanel);
+        musicSlider.value = SettingsManager.musicVolume;
+        sfxSlider.value = SettingsManager.sfxVolume;
+
+        returnButton.onClick.AddListener(ReturnBack);
     }
 
     protected override void OnOpen()
     {
         Debug.LogFormat($"Settings menu opened");
-        HighlightButton(selectedIndex);
+        HighlightElement(selectedIndex);
+        musicSlider.value = SettingsManager.musicVolume;
+        sfxSlider.value = SettingsManager.sfxVolume;
         grow = true;
-        scaleCoroutine = StartCoroutine(scalePanel());
+        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
+        //scaleCoroutine = StartCoroutine(scalePanel());
     }
 
     IEnumerator scalePanel()
@@ -54,7 +64,7 @@ public class SettingsMenu : BaseMenu
             float scale = scaleCurve.Evaluate(time/scaleTime);
             scale = grow ? scale : 1 - scale;
             panel.localScale = new Vector3(scale, scale, scale);
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
             yield return null;   
         }
 
@@ -70,6 +80,10 @@ public class SettingsMenu : BaseMenu
     protected override void OnClose()
     {
         // Save the settings somewhere
+        SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
+        SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+
+        panel.localScale = Vector3.zero;
         Debug.LogFormat($"Settings menu closed");
     }
 
@@ -78,18 +92,39 @@ public class SettingsMenu : BaseMenu
         if (direction.y > 0.5f)
         {
             selectedIndex = (selectedIndex - 1 + buttons.Length) % buttons.Length;
-            HighlightButton(selectedIndex);
+            
+            HighlightElement(selectedIndex);
         }
         else if (direction.y < -0.5f)
         {
             selectedIndex = (selectedIndex + 1) % buttons.Length;
-            HighlightButton(selectedIndex);
+            HighlightElement(selectedIndex);
         }
+        if (direction.x > 0.5f)
+        {
+            if (sliders[selectedIndex] != null)
+            {
+                sliders[selectedIndex].value += volumeIncrement;
+                SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
+                SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+            }
+        }
+        else if (direction.x < -0.5f)
+        {
+            if (sliders[selectedIndex] != null)
+            {
+                sliders[selectedIndex].value -= volumeIncrement;
+                SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
+                SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+            }
+        }
+        
     }
     
     public override void HandleSubmit()
     {
-        buttons[selectedIndex].onClick.Invoke();
+        if (buttons[selectedIndex] != null) 
+            buttons[selectedIndex].onClick.Invoke();
     }
 
     public override void HandleCancel()
@@ -97,13 +132,25 @@ public class SettingsMenu : BaseMenu
         ReturnBack();
     }
 
-    private void HighlightButton(int index)
+    private void HighlightElement(int index)
     {
         for (int i = 0; i < buttons.Length; i++)
         {
-            var colors = buttons[i].colors;
-            colors.normalColor = (i == index) ? Color.yellow : Color.white;
-            buttons[i].colors = colors;
+            if (buttons[i] != null)
+            {
+                var colors = buttons[i].colors;
+                colors.normalColor = (i == index) ? Color.yellow : Color.white;
+                buttons[i].colors = colors;   
+            }
+        }
+        for (int i = 0; i < sliders.Length; i++)
+        {
+            if (sliders[i] != null)
+            {
+                var colors = sliders[i].colors;
+                colors.normalColor = (i == index) ? Color.yellow : Color.white;
+                sliders[i].colors = colors;
+            }
         }
     }
 

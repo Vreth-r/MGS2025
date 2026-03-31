@@ -24,14 +24,14 @@ public class MenuManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Instantiate the menus!!!
-        //pauseMenu = Instantiate(pauseMenuPrefab);
-        //settingsMenu = Instantiate(settingsMenuPrefab);
+        pauseMenu = Instantiate(pauseMenu);
+        settingsMenu = Instantiate(settingsMenu);
 
-        //DontDestroyOnLoad(pauseMenu);
-        //DontDestroyOnLoad(settingsMenu);
+        DontDestroyOnLoad(pauseMenu);
+        DontDestroyOnLoad(settingsMenu);
 
-        //pauseMenu.SetActive(true);
-        //settingsMenu.SetActive(true);
+        pauseMenu.GetComponent<BaseMenu>().Close();
+        settingsMenu.GetComponent<BaseMenu>().Close();
     }
 
     private void OnEnable()
@@ -79,6 +79,9 @@ public class MenuManager : MonoBehaviour
         {
             OpenedMenus.Pop();
             activeMenu.Close();
+        } else
+        {
+            InputManager.Instance.EnableUI();
         }
 
         activeMenu = menuToOpen;
@@ -103,10 +106,10 @@ public class MenuManager : MonoBehaviour
             activeMenu.Hide();
         }
 
-        var menu = Instantiate(menuToOpen); // instantiate
+        //var menu = Instantiate(menuToOpen); // instantiate
 
         // Setting the active menu to be the one we want opened
-        activeMenu = menu;
+        activeMenu = menuToOpen;
         OpenedMenus.Push(activeMenu);
         activeMenu.Open(); // Hey we finally opened the menu
 
@@ -121,7 +124,7 @@ public class MenuManager : MonoBehaviour
         OpenedMenus.Pop();
         activeMenu.Close();
 
-        Destroy(activeMenu.gameObject); // destroy
+        //Destroy(activeMenu.gameObject); // destroy
 
         // Set the active menu to the menu behind it, if it exists.
         if (OpenedMenus.Count >= 1)
@@ -132,11 +135,12 @@ public class MenuManager : MonoBehaviour
         else
         {
             activeMenu = null;
+            InputManager.Instance.EnableGameplay();
         }
     }
 
     // This method just closes all the opened menus
-    private void CloseAllMenus()
+    public void CloseAllMenus()
     {
         if (activeMenu == null) return;
 
@@ -146,6 +150,7 @@ public class MenuManager : MonoBehaviour
         }
 
         OpenedMenus.Clear();
+        InputManager.Instance.EnableGameplay();
         activeMenu = null;
     }
 

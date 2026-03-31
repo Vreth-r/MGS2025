@@ -74,6 +74,8 @@ public class Endgame : MonoBehaviour
             gameOverType2.SetActive(false);
             screenToShow.SetActive(true);
 
+            MenuManager.Instance.SetCurrentMenu(screenToShow);
+
             if (screenToShow == gameOverType2)
             {
                 Debug.Log("fail");
