@@ -112,8 +112,9 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            ResetCombo();
+            //ResetCombo();
             baseScore = 0;
+            eventManager.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, ComboMultiplier);
         }
 
         TotalScore += baseScore * activeUltMultiplier;

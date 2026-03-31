@@ -118,7 +118,8 @@ public class ComboVisualHandler : MonoBehaviour
 
     public void HandleComboVisuals(int playerID, ComboType comboType, float currentComboCount)
     {
-        UpdateCount(currentComboCount, comboType);
+        if (comboType != ComboType.Miss || currentComboCount == 0) //ghost filter
+            UpdateCount(currentComboCount, comboType);
         PopUpCombo(playerID, comboType);
     }
     
