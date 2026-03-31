@@ -66,7 +66,7 @@ public class ComboVisualHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.Instance.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
+        if (EventManager.Instance != null) EventManager.Instance.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
     }
 
     private void Start()
@@ -254,7 +254,7 @@ public class ComboVisualHandler : MonoBehaviour
     }
     #endregion
 
-    //// temporary until more integrated with programming’s mechanics
+    //// temporary until more integrated with programmingï¿½s mechanics
     //public enum ComboType
     //{
     //    Miss,
