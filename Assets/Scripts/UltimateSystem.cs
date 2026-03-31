@@ -11,7 +11,7 @@ public class UltimateSystem : MonoBehaviour
     [Header("Ultimate Settings")]
     public int ultimateDivider = 3; //the divider that dictates the fraction of the total notes that gives you an ult (in this case, the divider being 3 means that a third of the notes are needed to activate the ult)
     public float ultimateDuration = 10f; //how long the ultimate lasts for
-    public bool autoActivateUltimate = false;
+    //public bool autoActivateUltimate = false;
 
     [Header("Ult System Gain Multipliers Settings")]
     public float perfectGainMultiplier = 3f;
@@ -45,6 +45,9 @@ public class UltimateSystem : MonoBehaviour
     public GameObject bgvisual;
 
     private SoundEffectsPlayer soundEffectsPlayer;
+
+    private GameSettings gameSettings;
+
     private void Awake()
     {
         Instance = this;
@@ -66,6 +69,8 @@ public class UltimateSystem : MonoBehaviour
         ultimateBar.fillAmount = 0;
 
         soundEffectsPlayer = GetComponent<SoundEffectsPlayer>();
+
+        gameSettings = Resources.Load<GameSettings>("GameSettings");
     }
 
     //increments the ult bar and logic numbers
@@ -107,7 +112,7 @@ public class UltimateSystem : MonoBehaviour
                 {
                     ultimateReadyBorder.SetActive(true);
 
-                    if (autoActivateUltimate == true)
+                    if (gameSettings.autoUltimate == true)
                     {
                         ActivateUltimate();
                     }

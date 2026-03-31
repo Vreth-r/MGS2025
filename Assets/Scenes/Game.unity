@@ -7294,7 +7294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &497157218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19391,7 +19391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   noteSpeed: 5
   hitZone: {fileID: 37639069}
-  beatmapFileName: fullBeatmapMar29.json
+  beatmapFileName: slowMultiLaneTestBeatmap.json
   lanes:
   - {fileID: 2071915542}
   - {fileID: 1566342112}
@@ -19857,7 +19857,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Scripts::UltimateSystem
   ultimateDivider: 3
   ultimateDuration: 3
-  autoActivateUltimate: 0
   perfectGainMultiplier: 3
   awesomeGainMultiplier: 2
   goodGainMultiplier: 1
