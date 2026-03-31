@@ -700,7 +700,7 @@ MonoBehaviour:
   p2ComboEmitter: {fileID: 0}
   currentComboCount: 0
   playerID: 0
-  timeBeforeFade: 1
+  timeBeforeFade: 0.2
 --- !u!95 &734399595646990333
 Animator:
   serializedVersion: 7
