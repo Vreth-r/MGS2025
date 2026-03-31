@@ -182,7 +182,6 @@ public class GameManager : MonoBehaviour
     private void StartBeatmapPlayback()
     {
         StopSongImmediate();
-
         StartSong(currentSongEventPath);
 
         ResetBeatmapPlayer(0f);
