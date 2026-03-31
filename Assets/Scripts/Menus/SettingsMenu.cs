@@ -54,7 +54,7 @@ public class SettingsMenu : BaseMenu
             float scale = scaleCurve.Evaluate(time/scaleTime);
             scale = grow ? scale : 1 - scale;
             panel.localScale = new Vector3(scale, scale, scale);
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
             yield return null;   
         }
 

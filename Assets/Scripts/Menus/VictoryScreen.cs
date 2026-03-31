@@ -1,44 +1,57 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class DefeatScreen : BaseMenu
+public class VictoryScreen : BaseMenu
 {
-    public Button restartBTN;
-    public Button mainMenuBTN;
+    
+    [Header("Button References")]
+    [SerializeField] private Button menuButton;
+    [SerializeField] private Button quitButton;
+    [SerializeField] public SongCompleteScreen screen;
 
     private int selectedIndex = 0;
     private Button[] buttons;
 
     private GameObject EventSystem;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Awake()
     {
         EventSystem = GameObject.Find("EventSystem");
 
-        buttons = new[] { restartBTN, mainMenuBTN };
-
-        restartBTN.onClick.AddListener(Restart);
-        mainMenuBTN.onClick.AddListener(GoToMainMenu);
+        // Hardcoded because the main menu aint gonna be dynamic I HOPE.
+        buttons = new[] { menuButton, quitButton };
+        // Listeners
+        menuButton.onClick.AddListener(OnMainMenu);
+        quitButton.onClick.AddListener(OnQuit);
     }
 
     protected override void OnOpen()
     {
+        screen.TrackFinish();
         HighlightButton(selectedIndex);
     }
 
-    private void Restart()
+    private void OnMainMenu()
     {
-        MenuManager.Instance.CloseMenu();
-        var scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.buildIndex);
-    }
-
-    private void GoToMainMenu()
-    {
+        // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         MenuManager.Instance.CloseMenu();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void OnQuit()
+    {
+        // There should be a check to see if the player actually wants to quit
+        // (Do you want to quit? yes | no)
+
+        Debug.Log("Quitting game...");
+        Time.timeScale = 1f;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
     public override void HandleNavigate(Vector2 direction)
@@ -77,7 +90,6 @@ public class DefeatScreen : BaseMenu
         Debug.Log("Cancel has been handled!");
 
         // FOR NOW, open the pause menu.
-        // actually dont... WEIRD stuff happens...
         //MenuManager.Instance.OpenPause();
 
         // OnQuit();

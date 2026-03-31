@@ -79,6 +79,9 @@ public class MenuManager : MonoBehaviour
         {
             OpenedMenus.Pop();
             activeMenu.Close();
+        } else
+        {
+            InputManager.Instance.EnableUI();
         }
 
         activeMenu = menuToOpen;
@@ -132,11 +135,12 @@ public class MenuManager : MonoBehaviour
         else
         {
             activeMenu = null;
+            InputManager.Instance.EnableGameplay();
         }
     }
 
     // This method just closes all the opened menus
-    private void CloseAllMenus()
+    public void CloseAllMenus()
     {
         if (activeMenu == null) return;
 
@@ -146,6 +150,7 @@ public class MenuManager : MonoBehaviour
         }
 
         OpenedMenus.Clear();
+        InputManager.Instance.EnableGameplay();
         activeMenu = null;
     }
 
