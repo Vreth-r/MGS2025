@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 299963510}
   - component: {fileID: 299963509}
   - component: {fileID: 299963508}
+  - component: {fileID: 299963511}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -254,6 +255,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299963511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299963507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d064a68de0b2e6a43bf20b9640b5984c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::EventManager
 --- !u!225 &314881648 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 4179129518269693183, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
