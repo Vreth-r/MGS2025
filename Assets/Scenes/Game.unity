@@ -7905,7 +7905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8df276ff8c8efd4faa899d38ad4d014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  inspectorMaxHealth: 100
+  inspectorMaxHealth: 1e+10
   inspectorHealthBar: {fileID: 1167490286}
 --- !u!4 &607797197
 Transform:
