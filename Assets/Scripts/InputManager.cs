@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
     public enum InputContext { Gameplay, UI }
     public InputContext CurrentContext { get; private set; } = InputContext.Gameplay;
 
-    private ControlsSwapper controlsSwapper;
+    private GameSettings gameSettings;
 
     private void Awake()
     {
@@ -72,8 +72,8 @@ public class InputManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         //the controls stay swapped (if you chose to swap them during character select) after you exit the play mode testing.
-        //Go to Assets/Scripts/Resources/ControlsSwapper.asset and uncheck "Is Controls Swapped" to reset to default controls for any testing that doesnt touch the chracter select scene.
-        controlsSwapper = Resources.Load<ControlsSwapper>("ControlsSwapper"); 
+        //Go to Assets/Scripts/Resources/gameSettings.asset and uncheck "Is Controls Swapped" to reset to default controls for any testing that doesnt touch the chracter select scene.
+        gameSettings = Resources.Load<GameSettings>("GameSettings"); 
 
         InitializeActionMaps();
     }
@@ -101,7 +101,7 @@ public class InputManager : MonoBehaviour
     {
         laneActions.Clear();
 
-        bool swapped = controlsSwapper.isControlsSwapped;
+        bool swapped = gameSettings.isControlsSwapped;
 
         // Auto-detect any actions named "Lane0", "Lane1", etc.
         int i = 0;

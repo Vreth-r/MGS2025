@@ -31,7 +31,7 @@ public class CharacterSelect : MonoBehaviour
     // Handles rotation for the Spinnythingy
     private float rotate = 0;
 
-    public ControlsSwapper controlsSwapper;
+    public GameSettings gameSettings;
 
     private void Awake()
     {
@@ -89,9 +89,9 @@ public class CharacterSelect : MonoBehaviour
     {
         //Debug.Log("Character Selected!");
 
-        controlsSwapper.isControlsSwapped = !P1IsLu;
+        gameSettings.isControlsSwapped = !P1IsLu;
 
-        Debug.Log(controlsSwapper.isControlsSwapped);
+        Debug.Log(gameSettings.isControlsSwapped);
 
         StartCoroutine(Transition());
 

@@ -74,7 +74,6 @@ public class LaneController : MonoBehaviour
 
                 if (lastLane == laneIndex)
                 {
-                    animationManager.NewPosGuitar(lastLane);
                     HandleLanePress(lastLane);
                 }
             }
@@ -107,8 +106,6 @@ public class LaneController : MonoBehaviour
         if (InputManager.Instance != null)
         {
             InputManager.Instance.OnLanePressed -= HandleLanePress;
-            InputManager.Instance.OnLanePressedGuitar -= HandleLanePress;
-            InputManager.Instance.OnLaneReleasedGuitar -= HandleLanePress;
 
             InputManager.Instance.OnLanePressedGuitar -= onLanePressedGuitarAction;
             InputManager.Instance.OnLaneReleasedGuitar -= onLaneReleasedGuitarAction;

@@ -374,6 +374,17 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""action"": ""GuitarAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a6d4f8a-a2a2-4ea4-bc84-4a29eb1b6f2c"",
+                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GuitarAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
