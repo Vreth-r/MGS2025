@@ -103,13 +103,22 @@ public class SettingsMenu : BaseMenu
         if (direction.x > 0.5f)
         {
             if (sliders[selectedIndex] != null)
+            {
                 sliders[selectedIndex].value += volumeIncrement;
+                SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
+                SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+            }
         }
         else if (direction.x < -0.5f)
         {
             if (sliders[selectedIndex] != null)
+            {
                 sliders[selectedIndex].value -= volumeIncrement;
+                SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
+                SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+            }
         }
+        
     }
     
     public override void HandleSubmit()
