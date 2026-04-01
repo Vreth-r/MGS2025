@@ -13,6 +13,9 @@ public class MainMenu : BaseMenu
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private Toggle autoUltToggle;
+    [SerializeField] private Toggle godModeToggle;
+
     [SerializeField] private VideoPlayer creditsVideoPlayer;
     [SerializeField] private RawImage creditsDisplay;
 
@@ -22,6 +25,7 @@ public class MainMenu : BaseMenu
     private GameObject EventSystem;
     private bool CreditsOpen = false;
 
+    public GameSettings gameSettings;
     protected override void Awake()
     {
         EventSystem = GameObject.Find("EventSystem");
@@ -115,6 +119,8 @@ public class MainMenu : BaseMenu
             return;
         }
 
+        gameSettings.autoUltimate = autoUltToggle.isOn;
+        gameSettings.godMode = godModeToggle.isOn;
 
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         var menuManager = MenuManager.Instance;

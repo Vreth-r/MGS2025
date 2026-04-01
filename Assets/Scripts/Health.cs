@@ -10,9 +10,24 @@ public class Health : MonoBehaviour
     public static float MaxHealth { get; private set; }
     private static Image bar;
 
+    private GameSettings gameSettings;
+
     private void Awake()
     {
-        MaxHealth = inspectorMaxHealth;
+        gameSettings = Resources.Load<GameSettings>("GameSettings");
+
+        if (gameSettings.godMode == true)
+        {
+            MaxHealth = 1000000000;
+        }
+
+        else
+        {
+            MaxHealth = inspectorMaxHealth;
+        }
+
+        
+
         HealthValue = MaxHealth;
         bar = inspectorHealthBar;
         UpdateUI();
