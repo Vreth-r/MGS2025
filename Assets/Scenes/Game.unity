@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19662019}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
+  m_LocalRotation: {x: -0.000000011313344, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: -12.07878, y: 5.94404, z: 2.8879201}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21626026}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.0255803e-15, y: 1, z: 4.482954e-23, w: -0.00000004371139}
+  m_LocalRotation: {x: -0.000000011313343, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: -12.07878, y: 5.94404, z: -1.76208}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -668,7 +668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641b930a8bb96844d9134e5e507cc675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  eventManager: {fileID: 0}
   scoreText: {fileID: 1521129101}
   comboText: {fileID: 1583548038}
   ultimateScoreMultiplier: 4
@@ -18867,7 +18866,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.24056602, b: 0.74912393, a: 0.9372549}
   m_FlipX: 0
@@ -26127,7 +26126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757023862}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.0255803e-15, y: 1, z: 4.482954e-23, w: -0.00000004371139}
+  m_LocalRotation: {x: -0.000000011313343, y: -0.9659258, z: -0.25881913, w: 0.00000004222196}
   m_LocalPosition: {x: -11.87878, y: 5.94404, z: 0.48792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
