@@ -64,7 +64,7 @@ public class ScoreManager : MonoBehaviour
             if (ComboMultiplier == 0) ComboMultiplier = 1;
             ComboMultiplier++; 
             //baseScore = 7;
-            baseScore = 10 * ComboMultiplier;
+            baseScore = 7 * ComboMultiplier;
 
             EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Awesome, ComboMultiplier);
         }
@@ -91,7 +91,7 @@ public class ScoreManager : MonoBehaviour
             ComboMultiplier += 0.5f;
             //ComboMultiplier = 1 + (perfectStreak / 4);
             //baseScore = 3;
-            baseScore = 5 * ComboMultiplier;
+            baseScore = 3 * ComboMultiplier;
 
             EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
 
