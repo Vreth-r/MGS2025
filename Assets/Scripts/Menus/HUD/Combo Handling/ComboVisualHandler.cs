@@ -41,7 +41,7 @@ public class ComboVisualHandler : MonoBehaviour
     //[field: SerializeField] public GameObject goodCombo;
     //[field: SerializeField] public GameObject missCombo;
     public float timeBeforeFade;
-    IEnumerator currentPopUp;
+    IEnumerator[] currentPopUp =  new IEnumerator[2];
 
 
     // animation name Constants
@@ -54,9 +54,12 @@ public class ComboVisualHandler : MonoBehaviour
     // Pop-ups (shown near player, uses object on player object)
     const string POP_UP_MISS = "POPUP_MISS";
     const string FADE = "FADE";
-    const string POP_UP_GOOD = "POPUP_OK";
+    const string POP_UP_OK = "POPUP_OK";
+    const string POP_UP_GOOD = "POPUP_GOOD";
+    const string POP_UP_AWESOME = "POPUP_AWESOME";
     const string POP_UP_PERFECT = "POPUP_PERFECT";
     const string ONGOING_COMBO = "OngoingCombo";
+    const string STOP_FADE = "STOP_FADE";
 
     private void OnEnable()
     {
@@ -126,18 +129,6 @@ public class ComboVisualHandler : MonoBehaviour
     #region PopUp Combos
     public void PopUpCombo(int playerID, ComboType comboType)
     {
-        if (currentPopUp != null)
-        { 
-            StopCoroutine(currentPopUp);
-        }
-
-        currentPopUp = PopUpCooldown(playerID, comboType);
-        StartCoroutine(currentPopUp);
-    }
-
-    IEnumerator PopUpCooldown(int playerID, ComboType combo)
-    {
-
         Animator currentAnimator;
 
         // Set Current Animator
@@ -155,10 +146,28 @@ public class ComboVisualHandler : MonoBehaviour
                 }
             default:
                 {
-                    currentAnimator = p1ComboEmitterAnimator;
+                    currentAnimator = null;
                     break;
                 }
         }
+
+        if (currentAnimator == null)
+            return;
+
+        if (currentPopUp[playerID] != null)
+        { 
+            StopCoroutine(currentPopUp[playerID]);
+            currentAnimator.SetTrigger(STOP_FADE);
+            currentPopUp[playerID] = null;
+            currentAnimator.ResetTrigger(STOP_FADE);
+        }
+
+        currentPopUp[playerID] = PopUpCooldown(playerID, comboType, currentAnimator);
+        StartCoroutine(currentPopUp[playerID]);
+    }
+
+    IEnumerator PopUpCooldown(int playerID, ComboType combo, Animator currentAnimator)
+    {
 
         currentAnimator.SetBool(ONGOING_COMBO, true);
 
@@ -174,10 +183,24 @@ public class ComboVisualHandler : MonoBehaviour
                 }
             case ComboType.Ok:
                 {
+                    // ANIMATE OK
+                    currentAnimator.SetTrigger(POP_UP_OK);
+                    yield return new WaitForSeconds(timeBeforeFade);
+
+                    break;
+                }
+            case ComboType.Good:
+                {
                     // ANIMATE GOOD
                     currentAnimator.SetTrigger(POP_UP_GOOD);
                     yield return new WaitForSeconds(timeBeforeFade);
-
+                    break;
+                }
+            case ComboType.Awesome:
+                {
+                    // ANIMATE AWESOME
+                    currentAnimator.SetTrigger(POP_UP_AWESOME);
+                    yield return new WaitForSeconds(timeBeforeFade);
                     break;
                 }
             case ComboType.Perfect:
@@ -234,6 +257,16 @@ public class ComboVisualHandler : MonoBehaviour
                     break;
                 }
             case ComboType.Ok:
+                {
+                    newComboCount += 0.5f;
+                    break;
+                }
+            case ComboType.Good:
+                {
+                    newComboCount += 0.5f;
+                    break;
+                }
+            case ComboType.Awesome:
                 {
                     newComboCount += 0.5f;
                     break;

@@ -66,7 +66,7 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 7;
             baseScore = 10 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Awesome, ComboMultiplier);
         }
         else if (timing < GOOD)
         {
@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 5;
             baseScore = 5 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Good, ComboMultiplier);
 
 
         }
