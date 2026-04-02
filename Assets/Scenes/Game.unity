@@ -20715,6 +20715,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1303664388}
     - target: {fileID: 7778439535862136814, guid: ebdd733bbfe11a9438d4b53becebb1a3, type: 3}
+      propertyPath: timeBeforeFade
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778439535862136814, guid: ebdd733bbfe11a9438d4b53becebb1a3, type: 3}
       propertyPath: comboCountDisplay
       value: 
       objectReference: {fileID: 1583548038}
