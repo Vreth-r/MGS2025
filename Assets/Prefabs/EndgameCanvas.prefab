@@ -431,10 +431,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1690155978411747873}
   m_SourcePrefab: {fileID: 100100000, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
 --- !u!224 &2077896649794317723 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
   m_PrefabInstance: {fileID: 8127713042246789224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9050355195588126966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+  m_PrefabInstance: {fileID: 8127713042246789224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690155978411747873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9050355195588126966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 2006526470346145803}
+  sounds:
+  - type: 2
+    eventReference:
+      Guid:
+        Data1: -620933190
+        Data2: 1278557444
+        Data3: 557567370
+        Data4: -738633766
+      Path: event:/CombatSoundEffects/Victory_1

@@ -28,7 +28,7 @@ public class UltimateSystem : MonoBehaviour
     private float ultimateNoteCountProgress = 0f; //keeps track of how many notes have been successfully hit and counted towards building up the ult
 
     private int ultimateNoteCountThreshold; //the exact number of notes needed to fully fill the ult bar
-    
+
     private int usedUltimateCount; //tracks the number of ults used (so we can disable it completely after the max number of uses)
     private bool isUltReady = false;
 
@@ -124,6 +124,11 @@ public class UltimateSystem : MonoBehaviour
     //function that activates the ultimate
     public void ActivateUltimate()
     {
+        if (UltimateActive == true)
+        {
+            return;
+        }
+
         isUltReady = false;
 
         if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
@@ -136,11 +141,20 @@ public class UltimateSystem : MonoBehaviour
             }
             if (fgvisual != null && bgvisual != null)
             {
-                fgvisual.SetActive(true);
-                bgvisual.SetActive(true);
+                //fgvisual.SetActive(true);
+                Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color;
+                bgvisual.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 30f/255f);
+
+                Color fgColor = fgvisual.GetComponent<Image>().color;
+                fgvisual.GetComponent<Image>().color = new Color(fgColor.r, fgColor.g, fgColor.b, 1f);
             }
 
             ultimateNoteCountProgress = 0; //reset progress
+
+            soundEffectsPlayer.PlaySoundEffect("UltActivate_1");
+            manager.StartFade("UltLayer", 1f, 0.5f);
+
+            Debug.Log("i ahte UI");
 
             OnUltimateStarted?.Invoke();  //calls the functions that are subscribed to this event
             UltimateActive = true; //makes boolean true
@@ -172,11 +186,8 @@ public class UltimateSystem : MonoBehaviour
         OnUltimateFinished?.Invoke(); //calls all functions that listen to OnUltimateFinished
         UltimateActive = false;
 
-        if (fgvisual != null && bgvisual != null)
-        {
-            fgvisual.SetActive(false);
-            bgvisual.SetActive(false);
-        }
+        manager.StartFade("UltLayer", 0f, 0.5f);
+        StartCoroutine(FadeOutUltVisuals());
     }
 
     //calls ultimate
@@ -197,5 +208,36 @@ public class UltimateSystem : MonoBehaviour
     {
         //stops "UseUltimate" from being subscribed
         InputManager.Instance.OnUltimatePressed -= UseUltimate;
+    }
+
+    public Color ChangeSaturation(Color c, float newS)
+    {
+        Color.RGBToHSV(c, out float h, out _, out float v);
+        return Color.HSVToRGB(h, newS, v);
+    }
+
+    private IEnumerator FadeOutUltVisuals()
+    {
+        Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color;
+        Color fgColor = fgvisual.GetComponent<Image>().color;
+
+        float elapsedTime = 0f; //accumulated time during the fadeout
+
+        while (elapsedTime < 0.5f)
+        {
+            elapsedTime = elapsedTime + Time.deltaTime;
+
+            float a = elapsedTime / 0.5f;
+            float bgAlpha = Mathf.Lerp(bgColor.a, 0f, a); //lerps until alpha goes to 0
+            float fgAlpha = Mathf.Lerp(fgColor.a, 0f, a); //lerps until alpha goes to 0
+
+            bgvisual.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, bgAlpha);
+            fgvisual.GetComponent<Image>().color = new Color(fgColor.r, fgColor.g, fgColor.b, fgAlpha);
+
+            yield return null;
+        }
+
+        bgvisual.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 0f);
+        fgvisual.GetComponent<Image>().color = new Color(fgColor.r, fgColor.g, fgColor.b, 0f);
     }
 }

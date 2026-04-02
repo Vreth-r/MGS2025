@@ -43,3 +43,18 @@ MonoBehaviour:
         Data3: -1122089341
         Data4: -1413647657
       Path: event:/CombatSoundEffects/UltChargedWaiting_1
+  - name: UltActivate_1
+    normal:
+      Guid:
+        Data1: -848015026
+        Data2: 1290771784
+        Data3: -1578937700
+        Data4: -1397083592
+      Path: event:/CombatSoundEffects/UltActivate_1
+    flesh:
+      Guid:
+        Data1: -848015026
+        Data2: 1290771784
+        Data3: -1578937700
+        Data4: -1397083592
+      Path: event:/CombatSoundEffects/UltActivate_1
