@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -43,6 +44,13 @@ public class MainMenu : BaseMenu
     protected override void OnOpen()
     {
         Debug.LogFormat($"Main menu opened");
+        UISoundEffectsEventHelper.surpressFirstHoverSound = true;
+        StartCoroutine(DelaySelect());
+    }
+
+    private IEnumerator DelaySelect()
+    {
+        yield return null;
         HighlightButton(selectedIndex);
     }
 

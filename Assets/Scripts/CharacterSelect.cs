@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using FMODUnity;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class CharacterSelect : MonoBehaviour
     private float rotate = 0;
 
     public GameSettings gameSettings;
+
+    public EventReference characterSelectConfirmedSound;
 
     private void Awake()
     {
@@ -92,6 +95,8 @@ public class CharacterSelect : MonoBehaviour
         gameSettings.isControlsSwapped = !P1IsLu;
 
         Debug.Log(gameSettings.isControlsSwapped);
+
+        RuntimeManager.PlayOneShot(characterSelectConfirmedSound);
 
         StartCoroutine(Transition());
 

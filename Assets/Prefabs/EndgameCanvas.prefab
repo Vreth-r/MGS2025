@@ -117,6 +117,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
+--- !u!1 &6784163953015706251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122117934177056975}
+  - component: {fileID: 6382507114552012660}
+  - component: {fileID: 1492082018434541417}
+  m_Layer: 0
+  m_Name: UISoundEffectsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122117934177056975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784163953015706251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1230.7692, y: -698.71796, z: 0}
+  m_LocalScale: {x: 1.2820513, y: 1.2820513, z: 1.2820513}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2077896649794317723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6382507114552012660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784163953015706251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
+--- !u!114 &1492082018434541417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784163953015706251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 6382507114552012660}
+  sounds: []
 --- !u!1 &8653785602268256510
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +259,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4856224554556574545}
     m_Modifications:
+    - target: {fileID: 4341587150823142200, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
+      propertyPath: sounds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4538737888314133127, guid: 29753e7dd27e1e24387d6e9e42ab3b5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -430,17 +493,96 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 122117934177056975}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1690155978411747873}
+    - targetCorrespondingSourceObject: {fileID: 8336095952048686556, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 875621132767905315}
+    - targetCorrespondingSourceObject: {fileID: 5575652825988699689, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5436862161663548602}
   m_SourcePrefab: {fileID: 100100000, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+--- !u!1 &244510396982160820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8336095952048686556, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+  m_PrefabInstance: {fileID: 8127713042246789224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &875621132767905315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244510396982160820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 6382507114552012660}
+  sounds:
+  - type: 0
+    eventReference:
+      Guid:
+        Data1: 143252048
+        Data2: 1110985453
+        Data3: 2010302878
+        Data4: -1185974336
+      Path: event:/UISoundEffects/ButtonHoverRandom_1
+  - type: 1
+    eventReference:
+      Guid:
+        Data1: -469035693
+        Data2: 1262905187
+        Data3: -1341073234
+        Data4: -1851230355
+      Path: event:/UISoundEffects/ButtonSelect_1
 --- !u!224 &2077896649794317723 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7790457754750748147, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
   m_PrefabInstance: {fileID: 8127713042246789224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4443888755628604993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5575652825988699689, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}
+  m_PrefabInstance: {fileID: 8127713042246789224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5436862161663548602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443888755628604993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 6382507114552012660}
+  sounds:
+  - type: 0
+    eventReference:
+      Guid:
+        Data1: 143252048
+        Data2: 1110985453
+        Data3: 2010302878
+        Data4: -1185974336
+      Path: event:/UISoundEffects/ButtonHoverRandom_1
+  - type: 1
+    eventReference:
+      Guid:
+        Data1: -469035693
+        Data2: 1262905187
+        Data3: -1341073234
+        Data4: -1851230355
+      Path: event:/UISoundEffects/ButtonSelect_1
 --- !u!1 &9050355195588126966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 959897747749191838, guid: c9792f72d3d80914e88dab22f0e5bee3, type: 3}

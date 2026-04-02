@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3360488604129400723}
   - component: {fileID: 8432685477750595111}
   - component: {fileID: 3020483543830560921}
+  - component: {fileID: 5243968965460019238}
   m_Layer: 5
   m_Name: PlayAgainButton2
   m_TagString: Untagged
@@ -196,6 +197,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5243968965460019238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999078655843722561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 1621414826050348435}
+  sounds:
+  - type: 0
+    eventReference:
+      Guid:
+        Data1: 143252048
+        Data2: 1110985453
+        Data3: 2010302878
+        Data4: -1185974336
+      Path: event:/UISoundEffects/ButtonHoverRandom_1
+  - type: 1
+    eventReference:
+      Guid:
+        Data1: -469035693
+        Data2: 1262905187
+        Data3: -1341073234
+        Data4: -1851230355
+      Path: event:/UISoundEffects/ButtonSelect_1
 --- !u!1 &3369137462930345430
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +302,73 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4420889269913504163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5344354664614515961}
+  - component: {fileID: 1621414826050348435}
+  - component: {fileID: 670220146441891680}
+  m_Layer: 0
+  m_Name: UISoundEffectsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5344354664614515961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420889269913504163}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -959.99994, y: -540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9171215240415121256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621414826050348435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420889269913504163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
+--- !u!114 &670220146441891680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420889269913504163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 1621414826050348435}
+  sounds:
+  - type: 2
+    eventReference:
+      Guid:
+        Data1: 1834775605
+        Data2: 1153945529
+        Data3: -1750715719
+        Data4: -1330455283
+      Path: event:/UISoundEffects/OnLoad_1
 --- !u!1 &4741083223116803818
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +404,7 @@ RectTransform:
   - {fileID: 5369345738675472866}
   - {fileID: 1192683232991867177}
   - {fileID: 5059309245990083748}
+  - {fileID: 5344354664614515961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -554,6 +653,7 @@ GameObject:
   - component: {fileID: 7993816847150125459}
   - component: {fileID: 3299542766461601020}
   - component: {fileID: 1541572666638927845}
+  - component: {fileID: 2668241072062852221}
   m_Layer: 5
   m_Name: MainMenuButton2
   m_TagString: Untagged
@@ -663,6 +763,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2668241072062852221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6561429320300942548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 1621414826050348435}
+  sounds:
+  - type: 0
+    eventReference:
+      Guid:
+        Data1: 143252048
+        Data2: 1110985453
+        Data3: 2010302878
+        Data4: -1185974336
+      Path: event:/UISoundEffects/ButtonHoverRandom_1
+  - type: 1
+    eventReference:
+      Guid:
+        Data1: -469035693
+        Data2: 1262905187
+        Data3: -1341073234
+        Data4: -1851230355
+      Path: event:/UISoundEffects/ButtonSelect_1
 --- !u!1 &6568713322179510324
 GameObject:
   m_ObjectHideFlags: 0
