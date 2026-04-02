@@ -260,7 +260,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
   soundEffectsBank: {fileID: 11400000, guid: 9f0f76e39b2d5224489a874799c8a92c, type: 2}
-  UseFleshVersion: 1
 --- !u!1 &21626026
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
   soundEffectsBank: {fileID: 11400000, guid: 993826908b2933c4cbc33e4394180418, type: 2}
-  UseFleshVersion: 1
 --- !u!1 &23565640
 GameObject:
   m_ObjectHideFlags: 0
@@ -26265,7 +26263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
   soundEffectsBank: {fileID: 11400000, guid: bed7fd0e773a06a4aa36eb2e945e8c99, type: 2}
-  UseFleshVersion: 1
 --- !u!1 &1779061230
 GameObject:
   m_ObjectHideFlags: 0
@@ -27334,7 +27331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
   soundEffectsBank: {fileID: 11400000, guid: 9a00b16ec002176428e718877aa08607, type: 2}
-  UseFleshVersion: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

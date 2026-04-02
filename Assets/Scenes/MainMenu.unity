@@ -393,17 +393,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &447323430 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3684921938109216931, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-  m_PrefabInstance: {fileID: 6051743841713516267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
 --- !u!1 &1047968658
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +483,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082150634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1598526432842744802, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+  m_PrefabInstance: {fileID: 6051743841713516267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!1 &1204494163
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,26 +840,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2913762987229296865, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-      propertyPath: soundEffectsPlayer
-      value: 
-      objectReference: {fileID: 447323430}
-    - target: {fileID: 4010635355979069188, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-      propertyPath: soundEffectsPlayer
-      value: 
-      objectReference: {fileID: 447323430}
-    - target: {fileID: 4624777080258234202, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-      propertyPath: soundEffectsPlayer
-      value: 
-      objectReference: {fileID: 447323430}
+    - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 738
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 738
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 6115328293942716559, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: creditsVideoPlayer
       value: 
       objectReference: {fileID: 1566874698}
-    - target: {fileID: 8174911339067786287, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-      propertyPath: soundEffectsPlayer
+    - target: {fileID: 6115328293942716559, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: fleshSoundVersionsToggle
       value: 
-      objectReference: {fileID: 447323430}
+      objectReference: {fileID: 1082150634}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

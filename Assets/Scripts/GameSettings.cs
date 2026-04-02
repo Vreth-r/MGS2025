@@ -6,4 +6,5 @@ public class GameSettings : ScriptableObject
     public bool isControlsSwapped = false;
     public bool autoUltimate = false;
     public bool godMode = false;
+    public bool useFleshSoundVersions = true;
 }

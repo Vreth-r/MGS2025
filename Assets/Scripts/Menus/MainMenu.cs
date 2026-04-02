@@ -16,6 +16,7 @@ public class MainMenu : BaseMenu
     [SerializeField] private Button quitButton;
     [SerializeField] private Toggle autoUltToggle;
     [SerializeField] private Toggle godModeToggle;
+    [SerializeField] private Toggle fleshSoundVersionsToggle;
 
     [SerializeField] private VideoPlayer creditsVideoPlayer;
     [SerializeField] private RawImage creditsDisplay;
@@ -129,6 +130,7 @@ public class MainMenu : BaseMenu
 
         gameSettings.autoUltimate = autoUltToggle.isOn;
         gameSettings.godMode = godModeToggle.isOn;
+        gameSettings.useFleshSoundVersions = fleshSoundVersionsToggle.isOn;
 
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         var menuManager = MenuManager.Instance;
