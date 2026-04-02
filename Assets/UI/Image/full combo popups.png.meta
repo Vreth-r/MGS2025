@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: c0463cb8a3d907a4aa6f5451c66b84f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1415832061673174066
+    second: full combo popups_0
+  - first:
+      213: 2226095541302245914
+    second: full combo popups_1
+  - first:
+      213: 6565847351852902123
+    second: full combo popups_2
+  - first:
+      213: -6149903586950169770
+    second: full combo popups_3
+  - first:
+      213: 8063659892631271629
+    second: full combo popups_4
+  - first:
+      213: 5691975130024518571
+    second: full combo popups_5
+  - first:
+      213: -64072685788826640
+    second: full combo popups_6
+  - first:
+      213: -1353879047550252607
+    second: full combo popups_7
+  - first:
+      213: -6693877321693613362
+    second: full combo popups_8
+  - first:
+      213: 2014640638311870816
+    second: full combo popups_9
+  - first:
+      213: -2527597025865907877
+    second: full combo popups_10
+  - first:
+      213: 349472265792824863
+    second: full combo popups_11
+  - first:
+      213: 490350737032106254
+    second: full combo popups_12
+  - first:
+      213: -7311795622261030761
+    second: full combo popups_13
+  - first:
+      213: -7816820894913829883
+    second: full combo popups_14
+  - first:
+      213: 8253246205046990888
+    second: full combo popups_15
+  - first:
+      213: -786512117891907417
+    second: full combo popups_16
+  - first:
+      213: 300496861870214105
+    second: full combo popups_17
+  - first:
+      213: 6768902137344764881
+    second: full combo popups_18
+  - first:
+      213: -1599815707436239663
+    second: full combo popups_19
+  - first:
+      213: 5087279744038840818
+    second: full combo popups_20
+  - first:
+      213: -4814194393069230534
+    second: full combo popups_21
+  - first:
+      213: -6851302970984399091
+    second: full combo popups_22
+  - first:
+      213: -819990139033364133
+    second: full combo popups_23
+  - first:
+      213: 2916996215441775483
+    second: full combo popups_24
+  - first:
+      213: -8883238590796913458
+    second: full combo popups_25
+  - first:
+      213: -4344148079719338446
+    second: full combo popups_26
+  - first:
+      213: -6236775881266244209
+    second: full combo popups_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: full combo popups_0
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 673
+        width: 310
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb8c56cd34f95ce0800000000000000
+      internalID: -1415832061673174066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups_2
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 677
+        width: 328
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6a1a011639e1b50800000000000000
+      internalID: 6565847351852902123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups_7
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 615
+        width: 761
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c94ceded2e063de0800000000000000
+      internalID: -1353879047550252607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups_18
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 0
+        width: 1040
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db21d771a8ffed50800000000000000
+      internalID: 6768902137344764881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups_20
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 83
+        width: 544
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9a97049f5a99640800000000000000
+      internalID: 5087279744038840818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8a84d9c4d45e6754ebf574a7d09122e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      full combo popups_0: -1415832061673174066
+      full combo popups_1: 2226095541302245914
+      full combo popups_10: -2527597025865907877
+      full combo popups_11: 349472265792824863
+      full combo popups_12: 490350737032106254
+      full combo popups_13: -7311795622261030761
+      full combo popups_14: -7816820894913829883
+      full combo popups_15: 8253246205046990888
+      full combo popups_16: -786512117891907417
+      full combo popups_17: 300496861870214105
+      full combo popups_18: 6768902137344764881
+      full combo popups_19: -1599815707436239663
+      full combo popups_2: 6565847351852902123
+      full combo popups_20: 5087279744038840818
+      full combo popups_21: -4814194393069230534
+      full combo popups_22: -6851302970984399091
+      full combo popups_23: -819990139033364133
+      full combo popups_24: 2916996215441775483
+      full combo popups_25: -8883238590796913458
+      full combo popups_26: -4344148079719338446
+      full combo popups_27: -6236775881266244209
+      full combo popups_3: -6149903586950169770
+      full combo popups_4: 8063659892631271629
+      full combo popups_5: 5691975130024518571
+      full combo popups_6: -64072685788826640
+      full combo popups_7: -1353879047550252607
+      full combo popups_8: -6693877321693613362
+      full combo popups_9: 2014640638311870816
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
