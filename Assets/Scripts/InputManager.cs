@@ -305,7 +305,7 @@ public class InputManager : MonoBehaviour
 
         string deviceDescription = device.description.ToString().ToLower();
 
-        bool isGuitar = deviceDescription.Contains("subtype");
+        bool isGuitar = deviceDescription.Contains("subtype") || deviceDescription.Contains("shanwan");
 
         //bool isGuitar = deviceDescription.Contains("shanwan"); //old trashy guitar
 
