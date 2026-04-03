@@ -13,7 +13,7 @@ public abstract class NoteBase : MonoBehaviour
     private Animator animator;
 
     [Header("Tuning")]
-    [SerializeField] protected float damageIncrement = 10f;
+    [SerializeField] protected float damageIncrement = 15f;
     [SerializeField] protected float regenIncrement = 1f;
 
     // timing windows (seconds)

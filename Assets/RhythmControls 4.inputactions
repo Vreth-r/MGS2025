@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "RhythmControls",
+    "name": "RhythmControls 4",
     "maps": [
         {
             "name": "Gameplay",
@@ -93,8 +93,8 @@
                 },
                 {
                     "name": "",
-                    "id": "41e21844-df27-4422-90d3-c5081158b278",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button3",
+                    "id": "5a2fbf78-6c8c-4114-8823-2b12b93685c2",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -159,8 +159,19 @@
                 },
                 {
                     "name": "",
-                    "id": "5a2fbf78-6c8c-4114-8823-2b12b93685c2",
-                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger",
+                    "id": "ca85735c-2cd8-4fe8-b646-452c34ff3de3",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41e21844-df27-4422-90d3-c5081158b278",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -172,6 +183,17 @@
                     "name": "",
                     "id": "c0c88f69-f9b1-4a04-afc8-a11227c76f2d",
                     "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83dd8d91-ab0a-4370-819f-0446180cfffe",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -194,6 +216,17 @@
                     "name": "",
                     "id": "53419e1d-6b25-40c7-bd2f-4ddd1c0157a5",
                     "path": "<XInputController>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "649a4b02-1bad-4a7e-a7d7-5e44e6e29787",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -227,6 +260,17 @@
                     "name": "",
                     "id": "56280b70-e162-4c00-a91e-bbc64300cf15",
                     "path": "<XInputController>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ebade00d-3557-4396-8766-b2cad57e988b",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/button9",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -282,6 +326,17 @@
                     "name": "",
                     "id": "369c73a1-3f16-4bc5-a7ed-743493b3f67d",
                     "path": "<XInputController>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GuitarAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecef0348-14ae-40ba-8f3d-97691832a31e",
+                    "path": "<HID::ShanWan USB WirelessGamepad >/hat/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

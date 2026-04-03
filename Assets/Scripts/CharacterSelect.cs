@@ -92,7 +92,7 @@ public class CharacterSelect : MonoBehaviour
     {
         //Debug.Log("Character Selected!");
 
-        gameSettings.isControlsSwapped = P1IsLu;
+        gameSettings.isControlsSwapped = !P1IsLu;
 
         Debug.Log(gameSettings.isControlsSwapped);
 
