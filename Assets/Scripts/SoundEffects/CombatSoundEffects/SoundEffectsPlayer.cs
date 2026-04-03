@@ -7,9 +7,11 @@ public class SoundEffectsPlayer : MonoBehaviour
 {
     [Header("Sound Effects")]
     public SoundEffectsBank soundEffectsBank;
-    public bool UseFleshVersion = true;
+    //public bool UseFleshVersion = true;
     private Dictionary<string, SoundEffectsBank.SoundEffect> soundEffectDict;
     private Dictionary<string, EventInstance> currentLoopingSounds = new Dictionary<string, EventInstance>();
+
+    private GameSettings gameSettings;
 
     private void Awake()
     {
@@ -19,13 +21,15 @@ public class SoundEffectsPlayer : MonoBehaviour
         {
             soundEffectDict[soundEffect.name] = soundEffect;
         }
+
+        gameSettings = Resources.Load<GameSettings>("GameSettings");
     }
 
     public void PlaySoundEffect(string name)
     {
         if (soundEffectDict.TryGetValue(name, out var soundEffect))
         {
-            if (UseFleshVersion == true)
+            if (gameSettings.useFleshSoundVersions == true)
             {
                 RuntimeManager.PlayOneShot(soundEffect.flesh);
             }
@@ -48,7 +52,7 @@ public class SoundEffectsPlayer : MonoBehaviour
         {
             if (soundEffectDict.TryGetValue(name, out var soundEffect))
             {
-                if (UseFleshVersion == true)
+                if (gameSettings.useFleshSoundVersions == true)
                 {
                     EventInstance instance = RuntimeManager.CreateInstance(soundEffect.flesh);
                     instance.start();

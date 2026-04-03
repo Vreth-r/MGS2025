@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using JetBrains.Annotations;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
     
     public Dictionary<string, GameObject> notePrefabs { get; private set; }
 
+    private Coroutine fadeCoroutine;
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -306,5 +309,40 @@ public class GameManager : MonoBehaviour
     {
         Color.RGBToHSV(c, out float h, out _, out float v);
         return Color.HSVToRGB(h, newS, v);
+    }
+
+    public void StartFade(string parameterName, float toggle, float duration)
+    {
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        fadeCoroutine = StartCoroutine(FadeSong(parameterName, toggle, duration));
+    }
+    public IEnumerator FadeSong(string parameterName, float toggle, float duration)
+    {
+        if (songInstance.isValid())
+        {
+            songInstance.getParameterByName(parameterName, out float current);
+
+            float time = 0f;
+
+            while (time < duration)
+            {
+                time = time + Time.deltaTime;
+
+                float a = Mathf.Lerp(current, toggle, time / duration);
+                songInstance.setParameterByName(parameterName, a);
+                yield return null;
+            }
+
+            songInstance.setParameterByName(parameterName, toggle);
+        }
+
+        else
+        {
+            yield break;
+        }
     }
 }

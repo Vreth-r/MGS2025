@@ -219,6 +219,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::CharacterSelect
   gameSettings: {fileID: 11400000, guid: 603d07a6a147f5443b939885b19e3992, type: 2}
+  characterSelectConfirmedSound:
+    Guid:
+      Data1: 438946625
+      Data2: 1087251508
+      Data3: -273462373
+      Data4: -1516776618
+    Path: event:/UISoundEffects/CharacterSelect_1
 --- !u!1 &1137819995
 GameObject:
   m_ObjectHideFlags: 0

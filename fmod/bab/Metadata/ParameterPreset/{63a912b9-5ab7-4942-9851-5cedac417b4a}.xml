@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{63a912b9-5ab7-4942-9851-5cedac417b4a}">
+		<property name="name">
+			<value>UltLayer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c4cff2fd-8be8-4972-a527-ac6dd450cef1}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{87285360-900e-42d8-adf2-50c265ad3323}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{87285360-900e-42d8-adf2-50c265ad3323}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

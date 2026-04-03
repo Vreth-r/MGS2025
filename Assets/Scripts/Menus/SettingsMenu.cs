@@ -123,8 +123,20 @@ public class SettingsMenu : BaseMenu
     
     public override void HandleSubmit()
     {
+        /*
         if (buttons[selectedIndex] != null) 
             buttons[selectedIndex].onClick.Invoke();
+        */
+
+        var button = buttons[selectedIndex];
+
+        var soundHelper = button.GetComponent<UISoundEffectsEventHelper>();
+        if (soundHelper != null)
+        {
+            soundHelper.PlayOnSubmit();
+        }
+
+        button.onClick.Invoke();
     }
 
     public override void HandleCancel()
@@ -151,6 +163,17 @@ public class SettingsMenu : BaseMenu
                 colors.normalColor = (i == index) ? Color.yellow : Color.white;
                 sliders[i].colors = colors;
             }
+        }
+
+        if (buttons[index] != null)
+        {
+            var sound = buttons[index]?.GetComponent<UISoundEffectsEventHelper>();
+            sound.PlaySound(UISoundEffectsType.Hover);
+        }
+
+        else if (sliders[index] != null)
+        {
+            sliders[index].Select();
         }
     }
 

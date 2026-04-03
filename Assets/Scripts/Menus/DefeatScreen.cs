@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +27,13 @@ public class DefeatScreen : BaseMenu
 
     protected override void OnOpen()
     {
+        UISoundEffectsEventHelper.surpressFirstHoverSound = true;
+        StartCoroutine(DelaySelect());
+    }
+
+    private IEnumerator DelaySelect()
+    {
+        yield return null;
         HighlightButton(selectedIndex);
     }
 
@@ -65,7 +74,16 @@ public class DefeatScreen : BaseMenu
 
     public override void HandleSubmit()
     {
-        buttons[selectedIndex].onClick.Invoke();
+        var button = buttons[selectedIndex];
+
+        var soundHelper = button.GetComponent<UISoundEffectsEventHelper>();
+        if (soundHelper != null)
+        {
+            soundHelper.PlayOnSubmit();
+        }
+
+        button.onClick.Invoke();
+
     }
 
     public override void HandleCancel()

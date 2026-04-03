@@ -121,6 +121,12 @@ public class PauseMenu : BaseMenu
         MenuButton b = buttons[selectedIndex];
         buttonPressed = true;
         b.SetSprite(b.selectedSprite);
+
+        if (b.button.TryGetComponent<UISoundEffectsEventHelper>(out var soundHelper))
+        {
+            soundHelper.PlayOnSubmit();
+        }
+
         b.button.onClick.Invoke();
     }
 
@@ -155,6 +161,10 @@ public class PauseMenu : BaseMenu
 
             b.rect.SetSiblingIndex(i == index ? buttons.Length - 1 : i);
         }
+
+        var selectedButton = buttons[index].button;
+
+        buttons[index].button.Select();
     }
 
     private void UpdateButtonsInstant()

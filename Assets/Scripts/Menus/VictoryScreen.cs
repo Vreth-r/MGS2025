@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using System.Collections;
 
 public class VictoryScreen : BaseMenu
 {
@@ -30,6 +31,13 @@ public class VictoryScreen : BaseMenu
     protected override void OnOpen()
     {
         screen.TrackFinish();
+        UISoundEffectsEventHelper.surpressFirstHoverSound = true;
+        StartCoroutine(DelaySelect());
+    }
+
+    private IEnumerator DelaySelect()
+    {
+        yield return null;
         HighlightButton(selectedIndex);
     }
 
@@ -78,7 +86,16 @@ public class VictoryScreen : BaseMenu
 
     public override void HandleSubmit()
     {
-        buttons[selectedIndex].onClick.Invoke();
+        var button = buttons[selectedIndex];
+
+        var soundHelper = button.GetComponent<UISoundEffectsEventHelper>();
+        if (soundHelper != null)
+        {
+            soundHelper.PlayOnSubmit();
+        }
+
+        button.onClick.Invoke();
+
     }
 
     public override void HandleCancel()
