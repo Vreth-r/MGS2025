@@ -17,10 +17,10 @@ public abstract class NoteBase : MonoBehaviour
     [SerializeField] protected float regenIncrement = 1f;
 
     // timing windows (seconds)
-    protected const float PERFECT = 0.10f;
-    protected const float AWESOME = 0.20f;
-    protected const float GOOD    = 0.30f;
-    protected const float OKAY    = 0.40f;
+    protected const float PERFECT = 0.05f;
+    protected const float AWESOME = 0.10f;
+    protected const float GOOD    = 0.15f;
+    protected const float OKAY    = 0.20f;
 
     public virtual void Initialize(LaneController lane, float speed, BeatmapData.NoteData data)
     {

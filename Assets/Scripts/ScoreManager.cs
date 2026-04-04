@@ -19,10 +19,10 @@ public class ScoreManager : MonoBehaviour
 
     private int playerID = 0;
 
-    private const float PERFECT = 0.10f;
-    private const float AWESOME = 0.20f;
-    private const float GOOD    = 0.30f;
-    private const float OKAY    = 0.40f;
+    private const float PERFECT = 0.05f;
+    private const float AWESOME = 0.10f;
+    private const float GOOD    = 0.15f;
+    private const float OKAY    = 0.20f;
 
     private int activeUltMultiplier = 1;
 
