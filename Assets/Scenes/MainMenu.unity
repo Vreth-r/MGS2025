@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1932592129904763211, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_Name
+      value: PRESS SELECT TO SKIP
+      objectReference: {fileID: 0}
     - target: {fileID: 2209302834928171697, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -852,6 +856,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 4187748337514191584, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_text
+      value: PRESS SELECT TO SKIP
+      objectReference: {fileID: 0}
     - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 200
@@ -872,6 +880,14 @@ PrefabInstance:
       propertyPath: fleshSoundVersionsToggle
       value: 
       objectReference: {fileID: 1082150634}
+    - target: {fileID: 8395483879192273575, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_Name
+      value: PRESS SELECT TO SKIP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948453193536374704, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_text
+      value: PRESS SELECT TO SKIP
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

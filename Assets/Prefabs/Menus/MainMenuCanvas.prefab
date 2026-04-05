@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4938190257997246978}
   - component: {fileID: 4187748337514191584}
   m_Layer: 5
-  m_Name: PRESS ENTER TO SKIP
+  m_Name: PRESS SELECT TO SKIP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS ENTER TO SKIP
+  m_text: PRESS SELECT TO SKIP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 483632683e304fb42bf05880fe0e2697, type: 2}
   m_sharedMaterial: {fileID: 5446759920926847814, guid: 483632683e304fb42bf05880fe0e2697, type: 2}
@@ -2232,7 +2232,7 @@ GameObject:
   - component: {fileID: 5355383960808519073}
   - component: {fileID: 8948453193536374704}
   m_Layer: 5
-  m_Name: PRESS ENTER TO SKIP
+  m_Name: PRESS SELECT TO SKIP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS ENTER TO SKIP
+  m_text: PRESS SELECT TO SKIP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 483632683e304fb42bf05880fe0e2697, type: 2}
   m_sharedMaterial: {fileID: 5446759920926847814, guid: 483632683e304fb42bf05880fe0e2697, type: 2}
