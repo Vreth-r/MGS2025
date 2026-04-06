@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public static float MaxHealth { get; private set; }
     private static Image bar;
 
-    private GameSettings gameSettings;
+    private static GameSettings gameSettings;
 
     private void Awake()
     {
@@ -26,8 +26,6 @@ public class Health : MonoBehaviour
             MaxHealth = inspectorMaxHealth;
         }
 
-        
-
         HealthValue = MaxHealth;
         bar = inspectorHealthBar;
         UpdateUI();
@@ -35,14 +33,35 @@ public class Health : MonoBehaviour
 
     public static void TakeDamage(float amount)
     {
-        HealthValue = Mathf.Max(0f, HealthValue - amount);
+        if (gameSettings.gameMode == 0)
+        {
+            HealthValue = Mathf.Max(0f, HealthValue - amount);
+        }
+        
+        else if (gameSettings.gameMode == 1)
+        {
+            HealthValue = Mathf.Max(0f, HealthValue - (amount * 2));
+        }
+
+        else
+        {
+            HealthValue = Mathf.Max(0f, HealthValue - amount * 3);
+        }
+
         UpdateUI();
     }
 
     public static void Regen(float amount)
     {
         if (IsDead()) return;
+
+        if (gameSettings.gameMode == 2)
+        {
+            return;
+        }
+
         HealthValue = Mathf.Min(MaxHealth, HealthValue + amount);
+
         UpdateUI();
     }
 

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using TMPro;
 
 /// <summary>
 /// The main menu
@@ -17,6 +18,7 @@ public class MainMenu : BaseMenu
     [SerializeField] private Toggle autoUltToggle;
     [SerializeField] private Toggle godModeToggle;
     [SerializeField] private Toggle fleshSoundVersionsToggle;
+    [SerializeField] private TMP_Dropdown gameModeDropdown;
 
     [SerializeField] private VideoPlayer creditsVideoPlayer;
     [SerializeField] private RawImage creditsDisplay;
@@ -131,13 +133,14 @@ public class MainMenu : BaseMenu
         gameSettings.autoUltimate = autoUltToggle.isOn;
         gameSettings.godMode = godModeToggle.isOn;
         gameSettings.useFleshSoundVersions = fleshSoundVersionsToggle.isOn;
+        gameSettings.gameMode = gameModeDropdown.value;
 
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         var menuManager = MenuManager.Instance;
 
         menuManager.CloseMenu();
 
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("Ready");
     }
 
     private void OpenSettings()
