@@ -7,4 +7,5 @@ public class GameSettings : ScriptableObject
     public bool autoUltimate = false;
     public bool godMode = false;
     public bool useFleshSoundVersions = true;
+    public int gameMode = 0;
 }

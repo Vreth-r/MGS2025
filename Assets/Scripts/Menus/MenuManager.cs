@@ -57,7 +57,10 @@ public class MenuManager : MonoBehaviour
 
     public void OpenPause()
     {
-        OpenMenu(pauseMenu);
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game")
+        {
+            OpenMenu(pauseMenu);
+        }
     }
 
     public void OpenSettings()
