@@ -33,6 +33,9 @@ public class ComboVisualHandler : MonoBehaviour
     [SerializeField]
     private PlayerComboEmitter p2ComboEmitter; // Player 2 combo emitter
     private Animator p2ComboEmitterAnimator; // Player 2 combo animator
+    [SerializeField]
+    private PlayerComboEmitter pDuoComboEmitter; // Player 2 combo emitter
+    private Animator pDuoComboEmitterAnimator; // Player 2 combo animator
 
     // testing stuff
     public int currentComboCount = 0;
@@ -41,7 +44,7 @@ public class ComboVisualHandler : MonoBehaviour
     //[field: SerializeField] public GameObject goodCombo;
     //[field: SerializeField] public GameObject missCombo;
     public float timeBeforeFade;
-    IEnumerator[] currentPopUp =  new IEnumerator[2];
+    IEnumerator[] currentPopUp =  new IEnumerator[3];
 
 
     // animation name Constants
@@ -84,6 +87,7 @@ public class ComboVisualHandler : MonoBehaviour
 
         p1ComboEmitterAnimator = p1ComboEmitter.gameObject.GetComponent<Animator>();
         p2ComboEmitterAnimator = p2ComboEmitter.gameObject.GetComponent<Animator>();
+        pDuoComboEmitterAnimator = pDuoComboEmitter.gameObject.GetComponent<Animator>();
 
         comboCountDisplay.text = $"{1}x Combo";
     }
@@ -142,6 +146,11 @@ public class ComboVisualHandler : MonoBehaviour
             case 1:
                 {
                     currentAnimator = p2ComboEmitterAnimator;
+                    break;
+                }
+            case 2:
+                {
+                    currentAnimator = pDuoComboEmitterAnimator;
                     break;
                 }
             default:

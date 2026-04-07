@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3a75923017d3246a829249ee2eda32, type: 3}
-  m_Name: Player1ComboPackage
+  m_Name: PlayerDuoComboPackage
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPackage
-  playerID: 0
-  playerColour: {r: 1, g: 0.6313726, b: 0, a: 0}
-  animController: {fileID: 9100000, guid: cecbeda8264bc0641ab6bbdc66882eae, type: 2}
+  playerID: 2
+  playerColour: {r: 0.5019608, g: 0, b: 0.5019608, a: 0}
+  animController: {fileID: 9100000, guid: 38ba96a2b103b834ca6919f30b5482c5, type: 2}

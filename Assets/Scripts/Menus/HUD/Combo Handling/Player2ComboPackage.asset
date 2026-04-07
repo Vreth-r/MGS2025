@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3a75923017d3246a829249ee2eda32, type: 3}
   m_Name: Player2ComboPackage
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPackage
-  playerID: 0
-  playerColour: {r: 1, g: 0.6324958, b: 0, a: 0}
-  animController: {fileID: 9100000, guid: cecbeda8264bc0641ab6bbdc66882eae, type: 2}
+  playerID: 1
+  playerColour: {r: 0, g: 0.8745098, b: 1, a: 0}
+  animController: {fileID: 9100000, guid: f7f05776a87e0934b86a6f6540f1dfe0, type: 2}

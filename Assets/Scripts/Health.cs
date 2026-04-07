@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
 
     public static void TakeDamage(float amount)
     {
-        if (gameSettings.gameMode == 0)
+        if (gameSettings.gameMode == 0 || gameSettings.gameMode == 3)
         {
             HealthValue = Mathf.Max(0f, HealthValue - amount);
         }
@@ -55,12 +55,27 @@ public class Health : MonoBehaviour
     {
         if (IsDead()) return;
 
-        if (gameSettings.gameMode == 2)
+        if (gameSettings.gameMode == 1)
+        {
+            HealthValue = Mathf.Min(MaxHealth, HealthValue + 3);
+            Debug.Log("regen");
+        }
+
+        else if (gameSettings.gameMode == 2)
         {
             return;
         }
 
-        HealthValue = Mathf.Min(MaxHealth, HealthValue + amount);
+        else if (gameSettings.gameMode == 3)
+        {
+            HealthValue = Mathf.Min(MaxHealth, HealthValue + (amount * 2));
+            Debug.Log("regen");
+        }
+
+        else
+        {
+            HealthValue = Mathf.Min(MaxHealth, HealthValue + amount);
+        }
 
         UpdateUI();
     }
