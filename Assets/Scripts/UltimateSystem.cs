@@ -91,15 +91,13 @@ public class UltimateSystem : MonoBehaviour
         {
             ultimateNoteCountProgress = ultimateNoteCountProgress + (1 * multiplier); //add to the ult count progress
 
-            if (ultimateNoteCountProgress > ultimateNoteCountThreshold) //if more notes are hit and the ult is already ready, just cap it out
-            {
-                ultimateNoteCountProgress = ultimateNoteCountThreshold;
-            }
-
-            ultimateBar.fillAmount = ultimateNoteCountProgress / (float)ultimateNoteCountThreshold; //updates the visual ult bar to show progress 
+            //updates the visual ult bar to show progress, and if more notes are hit and the ult is already ready, just cap it out
+            ultimateBar.fillAmount = Mathf.Clamp01(ultimateNoteCountProgress / (float)ultimateNoteCountThreshold);  
 
             if (ultimateNoteCountProgress >= ultimateNoteCountThreshold)
             {
+                ultimateNoteCountProgress = ultimateNoteCountThreshold; //prevents overflow for note count progress
+
                 if (isUltReady == false)
                 {
                     soundEffectsPlayer.PlaySoundEffect("UltCharged_1");
@@ -142,7 +140,7 @@ public class UltimateSystem : MonoBehaviour
             if (fgvisual != null && bgvisual != null)
             {
                 //fgvisual.SetActive(true);
-                Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color;
+                Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color; //for when the ult happens, visuals pop in
                 bgvisual.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 30f/255f);
 
                 Color fgColor = fgvisual.GetComponent<Image>().color;
@@ -153,8 +151,6 @@ public class UltimateSystem : MonoBehaviour
 
             soundEffectsPlayer.PlaySoundEffect("UltActivate_1");
             manager.StartFade("UltLayer", 1f, 0.5f);
-
-            Debug.Log("i ahte UI");
 
             OnUltimateStarted?.Invoke();  //calls the functions that are subscribed to this event
             UltimateActive = true; //makes boolean true
@@ -170,10 +166,31 @@ public class UltimateSystem : MonoBehaviour
 
         float fillAmount = ultimateBar.fillAmount;
 
+        //float regenTimer = 0f;
+
         //goes for the duration of the ultimate
         while (elapsedTime < ultimateDuration)
         {
+            if (Health.IsDead())
+            {
+                break;
+            }
+
             elapsedTime = elapsedTime + Time.deltaTime;
+
+            //if you want literal 3 health per second
+            /*
+            regenTimer = regenTimer + Time.deltaTime;
+
+            if (regenTimer >= 1f)
+            {
+                Health.Regen(3f);
+                regenTimer = regenTimer - 1f;
+                Debug.Log("ult health regen");
+            }
+            */
+
+            Health.UltHealthRegen(3f * Time.deltaTime); //ult regens health while it runs
 
             float a = elapsedTime / ultimateDuration;
             ultimateBar.fillAmount = Mathf.Lerp(fillAmount, 0f, a); //lerps until the bar becomes empty (basically more elapsed time, means lerp goes to a smaller and smaller bar amount)
@@ -187,7 +204,7 @@ public class UltimateSystem : MonoBehaviour
         UltimateActive = false;
 
         manager.StartFade("UltLayer", 0f, 0.5f);
-        StartCoroutine(FadeOutUltVisuals());
+        StartCoroutine(FadeOutUltVisuals()); //for when the ult happens, visuals fade away
     }
 
     //calls ultimate
@@ -216,7 +233,7 @@ public class UltimateSystem : MonoBehaviour
         return Color.HSVToRGB(h, newS, v);
     }
 
-    private IEnumerator FadeOutUltVisuals()
+    private IEnumerator FadeOutUltVisuals() //for when the ult happens, visuals fade away
     {
         Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color;
         Color fgColor = fgvisual.GetComponent<Image>().color;

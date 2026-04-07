@@ -55,28 +55,41 @@ public class Health : MonoBehaviour
     {
         if (IsDead()) return;
 
+        //hard mode 3 regen
         if (gameSettings.gameMode == 1)
         {
             HealthValue = Mathf.Min(MaxHealth, HealthValue + 3);
-            Debug.Log("regen");
         }
 
+        //nightmare mode 0 regen
         else if (gameSettings.gameMode == 2)
         {
             return;
         }
 
+        //easy mode double regen
         else if (gameSettings.gameMode == 3)
         {
             HealthValue = Mathf.Min(MaxHealth, HealthValue + (amount * 2));
-            Debug.Log("regen");
         }
 
+        //normal mode + any other non-specified mode gets normal regen
         else
         {
             HealthValue = Mathf.Min(MaxHealth, HealthValue + amount);
         }
 
+        UpdateUI();
+    }
+
+    //specifically the healing when ult is active
+    //this is its own thing so it doesnt get affected by gamemode multipliers (aka check above)
+    public static void UltHealthRegen(float amount)
+    {
+        if (IsDead()) return;
+
+        HealthValue = Mathf.Min(MaxHealth, HealthValue + amount);
+        
         UpdateUI();
     }
 
