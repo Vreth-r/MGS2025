@@ -44,7 +44,20 @@ public class ScoreManager : MonoBehaviour
         
         if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
 
-        playerID = lane < 3 ? 0 : 1;
+        if (lane < 2)
+        {
+            playerID = 0;
+        }
+
+        else if (lane > 2)
+        {
+            playerID = 1;
+        }
+
+        else
+        {
+            playerID = 2;
+        }
 
         float baseScore;
         if (timing < PERFECT)

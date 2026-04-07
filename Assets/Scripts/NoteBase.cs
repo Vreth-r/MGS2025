@@ -14,7 +14,7 @@ public abstract class NoteBase : MonoBehaviour
 
     [Header("Tuning")]
     [SerializeField] protected float damageIncrement = 15f;
-    [SerializeField] protected float regenIncrement = 1f;
+    [SerializeField] protected float regenIncrement = 5f;
 
     // timing windows (seconds)
     protected const float PERFECT = 0.05f;
