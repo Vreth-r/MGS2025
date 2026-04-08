@@ -1214,19 +1214,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417932229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451209118}
   - {fileID: 1631865872}
   - {fileID: 547940663}
-  m_Father: {fileID: 6051743841713516274}
+  m_Father: {fileID: 6051743841713516269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 285, y: -60}
+  m_AnchoredPosition: {x: 674.99994, y: 26.249992}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417932231
@@ -2084,8 +2084,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2209302834928171697, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-      insertIndex: -1
+    - targetCorrespondingSourceObject: {fileID: 3597404409517012311, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      insertIndex: 6
       addedObject: {fileID: 1417932230}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
@@ -2094,9 +2094,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 156116667494150088, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
   m_PrefabInstance: {fileID: 6051743841713516267}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &6051743841713516274 stripped
+--- !u!224 &6051743841713516269 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2209302834928171697, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3597404409517012311, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
   m_PrefabInstance: {fileID: 6051743841713516267}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
