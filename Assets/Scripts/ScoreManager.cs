@@ -119,7 +119,7 @@ public class ScoreManager : MonoBehaviour
         {
             //ResetCombo();
             baseScore = 0;
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Tap, ComboMultiplier);
         }
 
         TotalScore += baseScore * activeUltMultiplier;

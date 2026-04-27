@@ -313,7 +313,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 3798959112590232602, guid: c336a3c0a04a364478811fde020e96d1, type: 3}
+      value: {fileID: 7663724459769468524, guid: 154e0e9243f20764f83e44f22705df72, type: 3}
     attribute: m_Sprite
     path: POPUP_Word
     classID: 114
@@ -444,7 +444,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 3798959112590232602, guid: c336a3c0a04a364478811fde020e96d1, type: 3}
+    - {fileID: 7663724459769468524, guid: 154e0e9243f20764f83e44f22705df72, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
