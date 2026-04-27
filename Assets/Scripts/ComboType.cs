@@ -6,5 +6,6 @@ public enum ComboType
     Ok,
     Good,
     Awesome,
-    Perfect
+    Perfect,
+    Tap
 }

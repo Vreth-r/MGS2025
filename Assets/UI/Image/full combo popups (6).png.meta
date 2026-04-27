@@ -1,0 +1,381 @@
+fileFormatVersion: 2
+guid: 154e0e9243f20764f83e44f22705df72
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1266205750901812894
+    second: full combo popups (6)_0
+  - first:
+      213: 2679469564110417032
+    second: full combo popups (6)_1
+  - first:
+      213: 3273481351075412964
+    second: full combo popups (6)_2
+  - first:
+      213: 2491660748150570267
+    second: full combo popups (6)_3
+  - first:
+      213: 7496774434140496968
+    second: full combo popups (6)_4
+  - first:
+      213: 2958898632313596971
+    second: full combo popups (6)_5
+  - first:
+      213: 6370894467645587531
+    second: full combo popups (6)_6
+  - first:
+      213: 827949617178050604
+    second: full combo popups (6)_7
+  - first:
+      213: -827363666407604074
+    second: full combo popups (6)_8
+  - first:
+      213: -7886169990718367485
+    second: full combo popups (6)_9
+  - first:
+      213: 6853297963121548302
+    second: full combo popups (6)_10
+  - first:
+      213: 5833399513004602761
+    second: full combo popups (6)_11
+  - first:
+      213: 3026704791715973835
+    second: full combo popups (6)_12
+  - first:
+      213: 381687938350035073
+    second: full combo popups (6)_13
+  - first:
+      213: 3461722567760622341
+    second: full combo popups (6)_14
+  - first:
+      213: -3338953159689255050
+    second: full combo popups (6)_15
+  - first:
+      213: -7944896941470229081
+    second: full combo popups (6)_16
+  - first:
+      213: 2249922327949560816
+    second: full combo popups (6)_17
+  - first:
+      213: 7663724459769468524
+    second: full combo popups (6)_18
+  - first:
+      213: -4130204431616744166
+    second: full combo popups (6)_19
+  - first:
+      213: -4006358861079379205
+    second: full combo popups (6)_20
+  - first:
+      213: -2243501678123231237
+    second: full combo popups (6)_21
+  - first:
+      213: 2372693390986736899
+    second: full combo popups (6)_22
+  - first:
+      213: -6123205892082601192
+    second: full combo popups (6)_23
+  - first:
+      213: 8411855291451641035
+    second: full combo popups (6)_24
+  - first:
+      213: -633791935970163797
+    second: full combo popups (6)_25
+  - first:
+      213: 2549224226592475909
+    second: full combo popups (6)_26
+  - first:
+      213: 7731887135628938873
+    second: full combo popups (6)_27
+  - first:
+      213: -1474044144805913885
+    second: full combo popups (6)_28
+  - first:
+      213: -8805387650860199344
+    second: full combo popups (6)_29
+  - first:
+      213: -5375019876089033975
+    second: full combo popups (6)_30
+  - first:
+      213: 5921820639634214116
+    second: full combo popups (6)_31
+  - first:
+      213: 5606355228610478574
+    second: full combo popups (6)_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: full combo popups (6)_awesome
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 651
+        width: 304
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e2f0bfb67729110800000000000000
+      internalID: 1266205750901812894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups (6)_good
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 667
+        width: 327
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ce07111ae101920800000000000000
+      internalID: 2958898632313596971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups (6)_miss
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 557
+        width: 762
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2081d74ac77d7b00800000000000000
+      internalID: 827949617178050604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups (6)_perfect
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 0
+        width: 1043
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c661801cac40b5a60800000000000000
+      internalID: 7663724459769468524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups (6)_tap
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 119
+        width: 749
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a156db3c3f09ea6c0800000000000000
+      internalID: -4130204431616744166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: full combo popups (6)_ok
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 62
+        width: 687
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b8c0996e71865b0800000000000000
+      internalID: -5375019876089033975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      full combo popups (6)_1: 2679469564110417032
+      full combo popups (6)_10: 6853297963121548302
+      full combo popups (6)_11: 5833399513004602761
+      full combo popups (6)_12: 3026704791715973835
+      full combo popups (6)_13: 381687938350035073
+      full combo popups (6)_14: 3461722567760622341
+      full combo popups (6)_15: -3338953159689255050
+      full combo popups (6)_16: -7944896941470229081
+      full combo popups (6)_17: 2249922327949560816
+      full combo popups (6)_2: 3273481351075412964
+      full combo popups (6)_20: -4006358861079379205
+      full combo popups (6)_21: -2243501678123231237
+      full combo popups (6)_22: 2372693390986736899
+      full combo popups (6)_23: -6123205892082601192
+      full combo popups (6)_24: 8411855291451641035
+      full combo popups (6)_25: -633791935970163797
+      full combo popups (6)_26: 2549224226592475909
+      full combo popups (6)_27: 7731887135628938873
+      full combo popups (6)_28: -1474044144805913885
+      full combo popups (6)_29: -8805387650860199344
+      full combo popups (6)_31: 5921820639634214116
+      full combo popups (6)_32: 5606355228610478574
+      full combo popups (6)_33: -1388774508
+      full combo popups (6)_4: 7496774434140496968
+      full combo popups (6)_6: 6370894467645587531
+      full combo popups (6)_8: -827363666407604074
+      full combo popups (6)_9: -7886169990718367485
+      full combo popups (6)_awesome: 1266205750901812894
+      full combo popups (6)_good: 2958898632313596971
+      full combo popups (6)_miss: 827949617178050604
+      full combo popups (6)_ok: -5375019876089033975
+      full combo popups (6)_perfect: 7663724459769468524
+      full combo popups (6)_tap: -4130204431616744166
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

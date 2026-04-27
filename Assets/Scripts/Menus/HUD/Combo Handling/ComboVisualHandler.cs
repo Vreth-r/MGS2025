@@ -61,6 +61,7 @@ public class ComboVisualHandler : MonoBehaviour
     const string POP_UP_GOOD = "POPUP_GOOD";
     const string POP_UP_AWESOME = "POPUP_AWESOME";
     const string POP_UP_PERFECT = "POPUP_PERFECT";
+    const string POP_UP_TAP = "POPUP_TAP";
     const string ONGOING_COMBO = "OngoingCombo";
     const string STOP_FADE = "STOP_FADE";
 
@@ -125,7 +126,7 @@ public class ComboVisualHandler : MonoBehaviour
 
     public void HandleComboVisuals(int playerID, ComboType comboType, float currentComboCount)
     {
-        if (comboType != ComboType.Miss || currentComboCount == 0) //ghost filter
+        if (comboType != ComboType.Tap) //ghost filter
             UpdateCount(currentComboCount, comboType);
         PopUpCombo(playerID, comboType);
     }
@@ -219,7 +220,14 @@ public class ComboVisualHandler : MonoBehaviour
                     yield return new WaitForSeconds(timeBeforeFade);
                     break;
                 }
-           
+            case ComboType.Tap:
+                {
+                    // ANIMATE MISS
+                    currentAnimator.SetTrigger(POP_UP_TAP);
+                    yield return new WaitForSeconds(timeBeforeFade);
+                    break;
+                }
+
         }
 
         currentAnimator.SetTrigger(FADE);
