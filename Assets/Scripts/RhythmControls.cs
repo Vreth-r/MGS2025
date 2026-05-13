@@ -120,15 +120,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Lane2P2"",
-                    ""type"": ""Button"",
-                    ""id"": ""8c228c75-4175-461d-bf9b-93e735cb8b05"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Lane3"",
                     ""type"": ""Button"",
                     ""id"": ""359706b7-149b-4292-a80f-5a20ab845105"",
@@ -168,24 +159,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                     ""name"": ""GuitarAttack"",
                     ""type"": ""Button"",
                     ""id"": ""a068f3b6-dc7d-4bad-a96d-6f4265e36869"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""DuoMergeP1"",
-                    ""type"": ""Button"",
-                    ""id"": ""2a76a34a-1953-4052-b927-43e5e45ed8df"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""DuoMergeP2"",
-                    ""type"": ""Button"",
-                    ""id"": ""994ee7fb-53a9-4ce8-a4c1-26810dd4e3ef"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -250,6 +223,28 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a46d27d9-3440-40ff-b145-1100f1c7e829"",
+                    ""path"": ""<XInputController>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lane2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2072437-e392-4735-905d-97f36dcb4f31"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lane2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""5a2fbf78-6c8c-4114-8823-2b12b93685c2"",
                     ""path"": ""<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger"",
                     ""interactions"": """",
@@ -261,34 +256,12 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""69a6bdd2-c424-41f2-b94e-8bd25c233e6f"",
-                    ""path"": ""<Keyboard>/h"",
+                    ""id"": ""c0c88f69-f9b1-4a04-afc8-a11227c76f2d"",
+                    ""path"": ""<XInputController>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Lane2P2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""65cda2d3-5dde-4d07-8696-caf474d9a6fb"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Lane2P2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fc5dc9b8-42d2-41db-a121-07b10cd2e4db"",
-                    ""path"": ""<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Lane2P2"",
+                    ""action"": ""Lane3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -305,12 +278,12 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""592bda0e-0683-46e7-a4cf-507d008c97a8"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""53419e1d-6b25-40c7-bd2f-4ddd1c0157a5"",
+                    ""path"": ""<XInputController>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Lane3"",
+                    ""action"": ""Lane4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -327,19 +300,19 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""08d146c2-c2e3-4366-9595-1b3688f735d7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""ed568617-1c79-4f60-9207-642008b3e8cf"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Lane4"",
+                    ""action"": ""Ultimate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ed568617-1c79-4f60-9207-642008b3e8cf"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""56280b70-e162-4c00-a91e-bbc64300cf15"",
+                    ""path"": ""<XInputController>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -382,56 +355,34 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e53355cf-90a8-440d-8312-82c6dc6ad2d8"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GuitarAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""369c73a1-3f16-4bc5-a7ed-743493b3f67d"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GuitarAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""6a6d4f8a-a2a2-4ea4-bc84-4a29eb1b6f2c"",
                     ""path"": ""<Keyboard>/leftAlt"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""GuitarAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""00f0f2a6-baca-4709-870f-d5942ba079b3"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""GuitarAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""45aeb9be-5c58-4dee-aa99-81b3b5943f11"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DuoMergeP1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c9b2eb48-7927-477a-b93d-2112b3525c3b"",
-                    ""path"": ""<Keyboard>/g"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DuoMergeP2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""29b494bc-9a43-4850-80fb-b2754ddaec0f"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DuoMergeP2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -643,14 +594,11 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         m_Gameplay_Lane0 = m_Gameplay.FindAction("Lane0", throwIfNotFound: true);
         m_Gameplay_Lane1 = m_Gameplay.FindAction("Lane1", throwIfNotFound: true);
         m_Gameplay_Lane2 = m_Gameplay.FindAction("Lane2", throwIfNotFound: true);
-        m_Gameplay_Lane2P2 = m_Gameplay.FindAction("Lane2P2", throwIfNotFound: true);
         m_Gameplay_Lane3 = m_Gameplay.FindAction("Lane3", throwIfNotFound: true);
         m_Gameplay_Lane4 = m_Gameplay.FindAction("Lane4", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         m_Gameplay_Ultimate = m_Gameplay.FindAction("Ultimate", throwIfNotFound: true);
         m_Gameplay_GuitarAttack = m_Gameplay.FindAction("GuitarAttack", throwIfNotFound: true);
-        m_Gameplay_DuoMergeP1 = m_Gameplay.FindAction("DuoMergeP1", throwIfNotFound: true);
-        m_Gameplay_DuoMergeP2 = m_Gameplay.FindAction("DuoMergeP2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -741,14 +689,11 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Lane0;
     private readonly InputAction m_Gameplay_Lane1;
     private readonly InputAction m_Gameplay_Lane2;
-    private readonly InputAction m_Gameplay_Lane2P2;
     private readonly InputAction m_Gameplay_Lane3;
     private readonly InputAction m_Gameplay_Lane4;
     private readonly InputAction m_Gameplay_Pause;
     private readonly InputAction m_Gameplay_Ultimate;
     private readonly InputAction m_Gameplay_GuitarAttack;
-    private readonly InputAction m_Gameplay_DuoMergeP1;
-    private readonly InputAction m_Gameplay_DuoMergeP2;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -773,10 +718,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Lane2 => m_Wrapper.m_Gameplay_Lane2;
         /// <summary>
-        /// Provides access to the underlying input action "Gameplay/Lane2P2".
-        /// </summary>
-        public InputAction @Lane2P2 => m_Wrapper.m_Gameplay_Lane2P2;
-        /// <summary>
         /// Provides access to the underlying input action "Gameplay/Lane3".
         /// </summary>
         public InputAction @Lane3 => m_Wrapper.m_Gameplay_Lane3;
@@ -796,14 +737,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/GuitarAttack".
         /// </summary>
         public InputAction @GuitarAttack => m_Wrapper.m_Gameplay_GuitarAttack;
-        /// <summary>
-        /// Provides access to the underlying input action "Gameplay/DuoMergeP1".
-        /// </summary>
-        public InputAction @DuoMergeP1 => m_Wrapper.m_Gameplay_DuoMergeP1;
-        /// <summary>
-        /// Provides access to the underlying input action "Gameplay/DuoMergeP2".
-        /// </summary>
-        public InputAction @DuoMergeP2 => m_Wrapper.m_Gameplay_DuoMergeP2;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -839,9 +772,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             @Lane2.started += instance.OnLane2;
             @Lane2.performed += instance.OnLane2;
             @Lane2.canceled += instance.OnLane2;
-            @Lane2P2.started += instance.OnLane2P2;
-            @Lane2P2.performed += instance.OnLane2P2;
-            @Lane2P2.canceled += instance.OnLane2P2;
             @Lane3.started += instance.OnLane3;
             @Lane3.performed += instance.OnLane3;
             @Lane3.canceled += instance.OnLane3;
@@ -857,12 +787,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             @GuitarAttack.started += instance.OnGuitarAttack;
             @GuitarAttack.performed += instance.OnGuitarAttack;
             @GuitarAttack.canceled += instance.OnGuitarAttack;
-            @DuoMergeP1.started += instance.OnDuoMergeP1;
-            @DuoMergeP1.performed += instance.OnDuoMergeP1;
-            @DuoMergeP1.canceled += instance.OnDuoMergeP1;
-            @DuoMergeP2.started += instance.OnDuoMergeP2;
-            @DuoMergeP2.performed += instance.OnDuoMergeP2;
-            @DuoMergeP2.canceled += instance.OnDuoMergeP2;
         }
 
         /// <summary>
@@ -883,9 +807,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             @Lane2.started -= instance.OnLane2;
             @Lane2.performed -= instance.OnLane2;
             @Lane2.canceled -= instance.OnLane2;
-            @Lane2P2.started -= instance.OnLane2P2;
-            @Lane2P2.performed -= instance.OnLane2P2;
-            @Lane2P2.canceled -= instance.OnLane2P2;
             @Lane3.started -= instance.OnLane3;
             @Lane3.performed -= instance.OnLane3;
             @Lane3.canceled -= instance.OnLane3;
@@ -901,12 +822,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
             @GuitarAttack.started -= instance.OnGuitarAttack;
             @GuitarAttack.performed -= instance.OnGuitarAttack;
             @GuitarAttack.canceled -= instance.OnGuitarAttack;
-            @DuoMergeP1.started -= instance.OnDuoMergeP1;
-            @DuoMergeP1.performed -= instance.OnDuoMergeP1;
-            @DuoMergeP1.canceled -= instance.OnDuoMergeP1;
-            @DuoMergeP2.started -= instance.OnDuoMergeP2;
-            @DuoMergeP2.performed -= instance.OnDuoMergeP2;
-            @DuoMergeP2.canceled -= instance.OnDuoMergeP2;
         }
 
         /// <summary>
@@ -1098,13 +1013,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLane2(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Lane2P2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnLane2P2(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "Lane3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -1139,20 +1047,6 @@ public partial class @RhythmControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGuitarAttack(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "DuoMergeP1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDuoMergeP1(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "DuoMergeP2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDuoMergeP2(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

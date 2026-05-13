@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8179196124137750684
+--- !u!114 &-8706069429517128263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/ComboHit_1 (flesh)
+  m_Name: event:/CombatSoundEffects/BassHit_1
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/ComboHit_1 (flesh)
+  Path: event:/CombatSoundEffects/BassHit_1
   Guid:
-    Data1: -1937169707
-    Data2: 1162137843
-    Data3: -495617097
-    Data4: -5360389
+    Data1: -2014766648
+    Data2: 1102064133
+    Data3: 163787447
+    Data4: -1864429464
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -27,86 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
---- !u!114 &-7603743148434803196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainTrack 2
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/MainTrack 2
-  Guid:
-    Data1: 1257356336
-    Data2: 1103303712
-    Data3: 1991585194
-    Data4: -1804049898
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -7126233410915617819}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7260433689674238024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainTrackSynth
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/MainTrackSynth
-  Guid:
-    Data1: -327800608
-    Data2: 1100884592
-    Data3: 1563202734
-    Data4: 1192098302
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 160008
---- !u!114 &-7126233410915617819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MainTrack 2/UltLayer
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: UltLayer
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2753392247
-    data2: 3699666744
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-6478401997758129683
+--- !u!114 &-7731592299501550091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +46,7 @@ MonoBehaviour:
     Data3: 1610342036
     Data4: -419066963
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -133,7 +54,169 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
---- !u!114 &-6318339476720892880
+--- !u!114 &-7592846922432071374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/BassHit_2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/BassHit_2
+  Guid:
+    Data1: -803219452
+    Data2: 1123046224
+    Data3: 1176388259
+    Data4: -1587947409
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &-7168791723653683656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/CharacterSelect_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/CharacterSelect_1
+  Guid:
+    Data1: 438946625
+    Data2: 1087251508
+    Data3: -273462373
+    Data4: -1516776618
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1201
+--- !u!114 &-6702417479920389762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/DrumHit_2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/DrumHit_2
+  Guid:
+    Data1: -2110005770
+    Data2: 1125088056
+    Data3: -429862774
+    Data4: -1245070238
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &-5533697209806315742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainTrackSynth
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MainTrackSynth
+  Guid:
+    Data1: -327800608
+    Data2: 1100884592
+    Data3: 1563202734
+    Data4: 1192098302
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 160008
+--- !u!114 &-4024676828948207271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/BassHit_2_OLD
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/BassHit_2_OLD
+  Guid:
+    Data1: -1055604998
+    Data2: 1214736174
+    Data3: 1902803084
+    Data4: -2025087700
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &-3405796957799761019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/MissHit_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/MissHit_1
+  Guid:
+    Data1: 1456885832
+    Data2: 1109889751
+    Data3: -741242200
+    Data4: 1008367817
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &-2988657695318642492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,61 +240,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-5867219835165632725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/ProgrammerSong
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/ProgrammerSong
-  Guid:
-    Data1: 2088000363
-    Data2: 1107071922
-    Data3: -496476516
-    Data4: -1440215867
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5805428338429008210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/DrumHit_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/DrumHit_1
-  Guid:
-    Data1: -2120781624
-    Data2: 1314787665
-    Data3: 1991358853
-    Data4: 363117282
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &-5610435939147206516
+--- !u!114 &-2742655332068782851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,7 +259,7 @@ MonoBehaviour:
     Data3: 557567370
     Data4: -738633766
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -238,630 +267,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8359
---- !u!114 &-5383413847425608796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/BassHit_2
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/BassHit_2
-  Guid:
-    Data1: -803219452
-    Data2: 1123046224
-    Data3: 1176388259
-    Data4: -1587947409
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &-4800623523622992943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UISoundEffects/CharacterSelect_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UISoundEffects/CharacterSelect_1
-  Guid:
-    Data1: 438946625
-    Data2: 1087251508
-    Data3: -273462373
-    Data4: -1516776618
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1201
---- !u!114 &-4703097529855233887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainTrackDrums
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/MainTrackDrums
-  Guid:
-    Data1: -1582860085
-    Data2: 1308495623
-    Data3: 915775113
-    Data4: 1763801526
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 160008
---- !u!114 &-2143747598924325042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/DrumHit_2
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/DrumHit_2
-  Guid:
-    Data1: -2110005770
-    Data2: 1125088056
-    Data3: -429862774
-    Data4: -1245070238
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &-1538480953475486111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/MissHit_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/MissHit_1
-  Guid:
-    Data1: 1456885832
-    Data2: 1109889751
-    Data3: -741242200
-    Data4: 1008367817
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &-500116710048682217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainTrack
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/MainTrack
-  Guid:
-    Data1: -730246458
-    Data2: 1174026771
-    Data3: -1097490537
-    Data4: 1554046802
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -6318339476720892880}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
-  EditorBanks:
-  - {fileID: 8657790761976579520}
-  - {fileID: 3452290792198103042}
-  EditorEvents:
-  - {fileID: -6478401997758129683}
-  - {fileID: -5383413847425608796}
-  - {fileID: 4527188453681236615}
-  - {fileID: 5454813876985257828}
-  - {fileID: 5083682520533254796}
-  - {fileID: 2898996445202685417}
-  - {fileID: -1538480953475486111}
-  - {fileID: 252474582330524166}
-  - {fileID: 7428437242160518421}
-  - {fileID: 6073440617841152126}
-  - {fileID: 7564068462023647886}
-  - {fileID: 3377072078036134641}
-  - {fileID: -5867219835165632725}
-  - {fileID: 7236429490514105834}
-  - {fileID: 1615565394306493624}
-  - {fileID: 4486575514630373088}
-  - {fileID: 6230402540640383875}
-  - {fileID: 2121413358735831264}
-  - {fileID: -500116710048682217}
-  - {fileID: 3571321105405206709}
-  - {fileID: -5805428338429008210}
-  - {fileID: -4703097529855233887}
-  - {fileID: -8179196124137750684}
-  - {fileID: -7260433689674238024}
-  - {fileID: -2143747598924325042}
-  - {fileID: 896335841054137022}
-  - {fileID: 734689213060275042}
-  - {fileID: 4411551211099081999}
-  - {fileID: -7603743148434803196}
-  - {fileID: -5610435939147206516}
-  - {fileID: -4800623523622992943}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 3452290792198103042}
-  StringsBanks:
-  - {fileID: 8657790761976579520}
-<<<<<<< Updated upstream
-  cacheTime: 639134332263268413
-=======
-  cacheTime: 639142194558553008
->>>>>>> Stashed changes
-  cacheVersion: 131635
---- !u!114 &252474582330524166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UISoundEffects/ButtonHoverRandom_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UISoundEffects/ButtonHoverRandom_1
-  Guid:
-    Data1: 143252048
-    Data2: 1110985453
-    Data3: 2010302878
-    Data4: -1185974336
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1436
---- !u!114 &734689213060275042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/BassHit_2_OLD
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/BassHit_2_OLD
-  Guid:
-    Data1: -1055604998
-    Data2: 1214736174
-    Data3: 1902803084
-    Data4: -2025087700
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &896335841054137022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/BassHit_1 (flesh)
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/BassHit_1 (flesh)
-  Guid:
-    Data1: 1510353402
-    Data2: 1340355613
-    Data3: 1603250358
-    Data4: 1632396410
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &1615565394306493624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/DrumHit_2 (flesh)
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/DrumHit_2 (flesh)
-  Guid:
-    Data1: 2090476685
-    Data2: 1129987956
-    Data3: -1369189454
-    Data4: -1265409305
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &2121413358735831264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/DeathRandom_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/DeathRandom_1
-  Guid:
-    Data1: -27944010
-    Data2: 1181207198
-    Data3: -518956359
-    Data4: -12936167
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 50
---- !u!114 &2898996445202685417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UISoundEffects/OnLoad_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UISoundEffects/OnLoad_1
-  Guid:
-    Data1: 1834775605
-    Data2: 1153945529
-    Data3: -1750715719
-    Data4: -1330455283
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1201
---- !u!114 &3377072078036134641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/TestBGM
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/TestBGM
-  Guid:
-    Data1: -269553311
-    Data2: 1331460779
-    Data3: 1647817356
-    Data4: 1877815791
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 223242
---- !u!114 &3452290792198103042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: fmod/bab/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 639134332263243208
-=======
-  lastModified: 639142194558532921
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: Desktop
-    Value: 13449408
-  Exists: 1
---- !u!114 &3571321105405206709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/BassHit_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/BassHit_1
-  Guid:
-    Data1: -2014766648
-    Data2: 1102064133
-    Data3: 163787447
-    Data4: -1864429464
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &4411551211099081999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/UltActivate_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/UltActivate_1
-  Guid:
-    Data1: -848015026
-    Data2: 1290771784
-    Data3: -1578937700
-    Data4: -1397083592
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2716
---- !u!114 &4486575514630373088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/DrumHit_1 (flesh)
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/DrumHit_1 (flesh)
-  Guid:
-    Data1: 1096522396
-    Data2: 1077952384
-    Data3: -1451116623
-    Data4: -674264411
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &4527188453681236615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/UltCharged_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/UltCharged_1
-  Guid:
-    Data1: -818873338
-    Data2: 1117009736
-    Data3: 1089219482
-    Data4: 1932658847
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1515
---- !u!114 &5083682520533254796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/BassHit_2 (flesh)
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/BassHit_2 (flesh)
-  Guid:
-    Data1: 20308532
-    Data2: 1138279209
-    Data3: 1805665976
-    Data4: 928414014
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 864
---- !u!114 &5454813876985257828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/UltChargedWaiting_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/UltChargedWaiting_1
-  Guid:
-    Data1: 1308322588
-    Data2: 1275965721
-    Data3: -1122089341
-    Data4: -1413647657
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 14811
---- !u!114 &6073440617841152126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UISoundEffects/ButtonSelect_1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UISoundEffects/ButtonSelect_1
-  Guid:
-    Data1: -469035693
-    Data2: 1262905187
-    Data3: -1341073234
-    Data4: -1851230355
-  Banks:
-  - {fileID: 3452290792198103042}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1306
---- !u!114 &6230402540640383875
+--- !u!114 &-1836420636337909560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -880,7 +286,7 @@ MonoBehaviour:
     Data3: -2071981911
     Data4: 1976441463
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -888,7 +294,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 128365
---- !u!114 &7236429490514105834
+--- !u!114 &-1574175855575800299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -898,16 +304,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/CombatSoundEffects/BassHit_2_OLD (flesh)
+  m_Name: event:/CombatSoundEffects/DrumHit_2 (flesh)
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/CombatSoundEffects/BassHit_2_OLD (flesh)
+  Path: event:/CombatSoundEffects/DrumHit_2 (flesh)
   Guid:
-    Data1: 2115369861
-    Data2: 1296938002
-    Data3: 1886341511
-    Data4: -78061083
+    Data1: 2090476685
+    Data2: 1129987956
+    Data3: -1369189454
+    Data4: -1265409305
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -915,7 +321,294 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
---- !u!114 &7428437242160518421
+--- !u!114 &-55249324929348821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/TestBGM
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/TestBGM
+  Guid:
+    Data1: -269553311
+    Data2: 1331460779
+    Data3: 1647817356
+    Data4: 1877815791
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 223242
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
+  EditorBanks:
+  - {fileID: 2501108071354642436}
+  - {fileID: 9201975456026742098}
+  EditorEvents:
+  - {fileID: -7731592299501550091}
+  - {fileID: -7592846922432071374}
+  - {fileID: 209621054302915502}
+  - {fileID: 664247418033025545}
+  - {fileID: 7945865810952811740}
+  - {fileID: 9074777203154776277}
+  - {fileID: 4684395180941736581}
+  - {fileID: -7168791723653683656}
+  - {fileID: -3405796957799761019}
+  - {fileID: 4191697048952595407}
+  - {fileID: 3946849542096162470}
+  - {fileID: 4297911144770534986}
+  - {fileID: 626797359908880422}
+  - {fileID: 7397095687371936813}
+  - {fileID: -55249324929348821}
+  - {fileID: 5889101001283848072}
+  - {fileID: 7030221808247448490}
+  - {fileID: -1574175855575800299}
+  - {fileID: 5719832733215338665}
+  - {fileID: -1836420636337909560}
+  - {fileID: 4664557694885024621}
+  - {fileID: -2742655332068782851}
+  - {fileID: 7474794577821299956}
+  - {fileID: -8706069429517128263}
+  - {fileID: 8197994775734670024}
+  - {fileID: 3839901462497203816}
+  - {fileID: 7146364847889993907}
+  - {fileID: -5533697209806315742}
+  - {fileID: -6702417479920389762}
+  - {fileID: 8158542930823026023}
+  - {fileID: -4024676828948207271}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 9201975456026742098}
+  StringsBanks:
+  - {fileID: 2501108071354642436}
+  cacheTime: 639142780860736859
+  cacheVersion: 131635
+--- !u!114 &146823099636390297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainTrack 2/UltLayer
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: UltLayer
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2753392247
+    data2: 3699666744
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &209621054302915502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/UltCharged_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/UltCharged_1
+  Guid:
+    Data1: -818873338
+    Data2: 1117009736
+    Data3: 1089219482
+    Data4: 1932658847
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1515
+--- !u!114 &626797359908880422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/ButtonSelect_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/ButtonSelect_1
+  Guid:
+    Data1: -469035693
+    Data2: 1262905187
+    Data3: -1341073234
+    Data4: -1851230355
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1306
+--- !u!114 &664247418033025545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/UltChargedWaiting_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/UltChargedWaiting_1
+  Guid:
+    Data1: 1308322588
+    Data2: 1275965721
+    Data3: -1122089341
+    Data4: -1413647657
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14811
+--- !u!114 &2501108071354642436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: fmod/bab/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639142194558553008
+  FileSizes:
+  - Name: Desktop
+    Value: 2318
+  Exists: 1
+--- !u!114 &3839901462497203816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainTrackDrums
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MainTrackDrums
+  Guid:
+    Data1: -1582860085
+    Data2: 1308495623
+    Data3: 915775113
+    Data4: 1763801526
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 160008
+--- !u!114 &3946849542096162470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/ButtonHoverRandom_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/ButtonHoverRandom_1
+  Guid:
+    Data1: 143252048
+    Data2: 1110985453
+    Data3: 2010302878
+    Data4: -1185974336
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1436
+--- !u!114 &4191697048952595407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/UltActivate_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/UltActivate_1
+  Guid:
+    Data1: -848015026
+    Data2: 1290771784
+    Data3: -1578937700
+    Data4: -1397083592
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2716
+--- !u!114 &4297911144770534986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -934,7 +627,7 @@ MonoBehaviour:
     Data3: 844365490
     Data4: 1121955622
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -942,7 +635,169 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
---- !u!114 &7564068462023647886
+--- !u!114 &4664557694885024621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/DeathRandom_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/DeathRandom_1
+  Guid:
+    Data1: -27944010
+    Data2: 1181207198
+    Data3: -518956359
+    Data4: -12936167
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50
+--- !u!114 &4684395180941736581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UISoundEffects/OnLoad_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UISoundEffects/OnLoad_1
+  Guid:
+    Data1: 1834775605
+    Data2: 1153945529
+    Data3: -1750715719
+    Data4: -1330455283
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1201
+--- !u!114 &5719832733215338665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/DrumHit_1 (flesh)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/DrumHit_1 (flesh)
+  Guid:
+    Data1: 1096522396
+    Data2: 1077952384
+    Data3: -1451116623
+    Data4: -674264411
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &5889101001283848072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/ProgrammerSong
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/ProgrammerSong
+  Guid:
+    Data1: 2088000363
+    Data2: 1107071922
+    Data3: -496476516
+    Data4: -1440215867
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7030221808247448490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/BassHit_2_OLD (flesh)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/BassHit_2_OLD (flesh)
+  Guid:
+    Data1: 2115369861
+    Data2: 1296938002
+    Data3: 1886341511
+    Data4: -78061083
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &7146364847889993907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/ComboHit_1 (flesh)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/ComboHit_1 (flesh)
+  Guid:
+    Data1: -1937169707
+    Data2: 1162137843
+    Data3: -495617097
+    Data4: -5360389
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &7397095687371936813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -961,7 +816,7 @@ MonoBehaviour:
     Data3: -1890918
     Data4: -686439954
   Banks:
-  - {fileID: 3452290792198103042}
+  - {fileID: 9201975456026742098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -969,7 +824,144 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
---- !u!114 &8657790761976579520
+--- !u!114 &7474794577821299956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainTrack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MainTrack
+  Guid:
+    Data1: -730246458
+    Data2: 1174026771
+    Data3: -1097490537
+    Data4: 1554046802
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2988657695318642492}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7945865810952811740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainTrack 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MainTrack 2
+  Guid:
+    Data1: 1257356336
+    Data2: 1103303712
+    Data3: 1991585194
+    Data4: -1804049898
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 146823099636390297}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8158542930823026023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/BassHit_1 (flesh)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/BassHit_1 (flesh)
+  Guid:
+    Data1: 1510353402
+    Data2: 1340355613
+    Data3: 1603250358
+    Data4: 1632396410
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &8197994775734670024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/DrumHit_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/DrumHit_1
+  Guid:
+    Data1: -2120781624
+    Data2: 1314787665
+    Data3: 1991358853
+    Data4: 363117282
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &9074777203154776277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/BassHit_2 (flesh)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/BassHit_2 (flesh)
+  Guid:
+    Data1: 20308532
+    Data2: 1138279209
+    Data3: 1805665976
+    Data4: 928414014
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 864
+--- !u!114 &9201975456026742098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -979,17 +971,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: fmod/bab/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-<<<<<<< Updated upstream
-  lastModified: 639134332263268413
-=======
-  lastModified: 639142194558553008
->>>>>>> Stashed changes
+  Path: fmod/bab/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639142780860736859
   FileSizes:
   - Name: Desktop
-    Value: 2318
+    Value: 13449408
   Exists: 1
