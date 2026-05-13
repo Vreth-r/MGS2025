@@ -300,8 +300,8 @@ public class InputManager : MonoBehaviour
 
     private bool IsGuitar(InputDevice device)
     {
-        //checks if guitar has shanwan in the description.
-        //Probably only works for this guitar, might mess up if there are other shanwan type controllers (could be non-guitar)
+        //checks if guitar has subtype in the description.
+        //Probably only works for this guitar, might mess up if there are other type controllers (could be non-guitar)
 
         string deviceDescription = device.description.ToString().ToLower();
 

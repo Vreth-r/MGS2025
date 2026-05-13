@@ -1,0 +1,9 @@
+{
+  "songName": "Example Song",
+  "songPath": "Audio/exampleSong",
+  "songEvent": "event:/Music/MainTrack",
+  "bpm": 168.0,
+  "notesCsv": "Dead,2,3.0\nDead,2,5.0\nDead,2,7.0\nDead,2,9.0\nDead,2,11.0\nDead,2,13.0\nDead,2,15.0\nDead,2,17.0\nDead,2,19.0\nDead,2,21.0\nDead,2,23.0\nDead,2,25.0\nDead,2,27.0\nDead,2,29.0\nDead,2,31.0\nDead,2,33.0\nDead,2,35.0\nDead,2,37.0\nDead,2,39.0\nDead,2,41.0\nDead,2,43.0\nDead,2,45.0",
+  "songId": "",
+  "userFileRelative": ""
+}

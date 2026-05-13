@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeadNote
   damageIncrement: 15
-  regenIncrement: 5
+  regenIncrement: 10

@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TapNote
   damageIncrement: 15
-  regenIncrement: 5
+  regenIncrement: 10
 --- !u!1 &8133083919549003973
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Lane2P2",
+                    "type": "Button",
+                    "id": "8c228c75-4175-461d-bf9b-93e735cb8b05",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Lane3",
                     "type": "Button",
                     "id": "359706b7-149b-4292-a80f-5a20ab845105",
@@ -77,6 +86,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DuoMergeP1",
+                    "type": "Button",
+                    "id": "2a76a34a-1953-4052-b927-43e5e45ed8df",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DuoMergeP2",
+                    "type": "Button",
+                    "id": "994ee7fb-53a9-4ce8-a4c1-26810dd4e3ef",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -93,19 +120,8 @@
                 },
                 {
                     "name": "",
-                    "id": "db2b537c-c956-4548-8a54-b47d4012c02f",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lane0",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d0d1bf6b-0808-43c9-9d17-cb81bc12d3c0",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/button8",
+                    "id": "41e21844-df27-4422-90d3-c5081158b278",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -126,19 +142,8 @@
                 },
                 {
                     "name": "",
-                    "id": "911f6467-ba19-426a-a417-a9fc09cfea89",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lane1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5b01d45f-c625-49ab-ba27-6084be74b787",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/button2",
+                    "id": "5cb1efeb-33e9-41f6-ab8a-0fade4657510",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -159,8 +164,8 @@
                 },
                 {
                     "name": "",
-                    "id": "90377c0d-58e8-4369-bcf0-aa28bac29a1e",
-                    "path": "<Gamepad>/leftShoulder",
+                    "id": "a46d27d9-3440-40ff-b145-1100f1c7e829",
+                    "path": "<XInputController>/select",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -170,8 +175,8 @@
                 },
                 {
                     "name": "",
-                    "id": "4161c9c7-8cc9-44c5-b203-11b2cb7c2c7f",
-                    "path": "<Gamepad>/rightShoulder",
+                    "id": "c2072437-e392-4735-905d-97f36dcb4f31",
+                    "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -181,12 +186,67 @@
                 },
                 {
                     "name": "",
-                    "id": "f3f185f2-8638-4d12-a3e9-cd62af7eb4f1",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/trigger",
+                    "id": "5a2fbf78-6c8c-4114-8823-2b12b93685c2",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Lane2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69a6bdd2-c424-41f2-b94e-8bd25c233e6f",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2P2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3afe0138-7c2a-48ad-b8ce-e5a0b917f5dc",
+                    "path": "<XInputController>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2P2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0098483b-d9c7-4f48-bcc5-a8fae5a6cc5b",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2P2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc5dc9b8-42d2-41db-a121-07b10cd2e4db",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2P2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0c88f69-f9b1-4a04-afc8-a11227c76f2d",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -203,19 +263,8 @@
                 },
                 {
                     "name": "",
-                    "id": "c0c16956-26d7-4242-8067-4951868a83cc",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lane3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "738a3b2a-e476-4197-9af4-24f708934c9f",
-                    "path": "<Keyboard>/k",
+                    "id": "53419e1d-6b25-40c7-bd2f-4ddd1c0157a5",
+                    "path": "<XInputController>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -225,8 +274,8 @@
                 },
                 {
                     "name": "",
-                    "id": "90b08877-2d31-4888-9ead-5df65a712e94",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "738a3b2a-e476-4197-9af4-24f708934c9f",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -248,7 +297,29 @@
                 {
                     "name": "",
                     "id": "56280b70-e162-4c00-a91e-bbc64300cf15",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/button9",
+                    "path": "<XInputController>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "270ab119-8a2e-4927-9018-8c0d432df9a1",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d402295-ea98-4b08-88ca-749d4e89180e",
+                    "path": "<HID::Licensed by Nintendo of America  Harmonix Drum Controller for Nintendo Wii>/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -270,11 +341,55 @@
                 {
                     "name": "",
                     "id": "e53355cf-90a8-440d-8312-82c6dc6ad2d8",
-                    "path": "<HID::ShanWan USB WirelessGamepad >/hat/left",
+                    "path": "<XInputController>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "GuitarAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "369c73a1-3f16-4bc5-a7ed-743493b3f67d",
+                    "path": "<XInputController>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GuitarAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a6d4f8a-a2a2-4ea4-bc84-4a29eb1b6f2c",
+                    "path": "<Keyboard>/leftAlt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GuitarAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45aeb9be-5c58-4dee-aa99-81b3b5943f11",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DuoMergeP1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9b2eb48-7927-477a-b93d-2112b3525c3b",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DuoMergeP2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -334,6 +449,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "e8dee654-ecd9-438b-91ec-3ceeb3197005",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "7ff57730-a933-475b-a0d5-720fbc374072",
                     "path": "2DVector",
@@ -356,9 +482,31 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "up",
+                    "id": "c05a93f5-9b6c-4565-a48d-460ee3ff9f19",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "down",
                     "id": "d2fe143d-e751-4535-b827-61dcb29fade0",
                     "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "810aabac-0352-4087-b449-6f88c996bb93",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -401,8 +549,30 @@
                 },
                 {
                     "name": "",
+                    "id": "f611a2ff-d295-4a80-ba1f-e842befcd0c0",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b1e036cb-4052-4b40-9556-0f4561deee9d",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70cade4e-7ac3-4562-9765-6245a632eaf8",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
