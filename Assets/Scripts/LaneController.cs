@@ -167,15 +167,16 @@ public class LaneController : MonoBehaviour
             return;
         }
 
-        ScoreManager.Instance.AddScore(bestTiming, lane);
+        //ScoreManager.Instance.AddScore(bestTiming, lane);
         //best.OnHit(best.GetJudgement(hitZone));
         var judgement = best.GetJudgement(hitZone);
 
+        /*
         if (judgement != Judgement.Miss)
         {
             SoundEffectsEventHelper.OnSuccessfulHit?.Invoke(laneIndex, judgement);
         }
-
+        */
         best.OnHit(judgement);
     }
 

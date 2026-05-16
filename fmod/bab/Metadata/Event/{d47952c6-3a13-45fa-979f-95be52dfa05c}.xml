@@ -138,7 +138,7 @@
 	</object>
 	<object class="SingleSound" id="{a4d9561c-7c5b-4eaa-bc20-833b6da6b331}">
 		<relationship name="audioFile">
-			<destination>{2af78685-136c-420b-a8fa-4b6851ba549c}</destination>
+			<destination>{37bc9667-e4ea-489a-927f-b6155c96516c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{928b8700-9170-4f32-8afa-d5464098d20a}">

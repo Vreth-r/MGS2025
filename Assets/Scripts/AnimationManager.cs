@@ -441,7 +441,7 @@ public class AnimationManager : MonoBehaviour
 
         else if (isPlayer1)
         {
-            return lane <= 2;
+            return lane <= 1;
         }
 
         else

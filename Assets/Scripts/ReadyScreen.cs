@@ -21,14 +21,6 @@ public class ReadyScreen : MonoBehaviour
     // Components
     private PlayerInput _playerInput;
 
-    // UXML Elements
-    private VisualElement _root;
-    private VisualElement _p1Selector;
-    private VisualElement _p2Selector;
-
-    // Handles rotation for the Spinnythingy
-    private float rotate = 0;
-
     public GameSettings gameSettings;
 
     public EventReference characterSelectConfirmedSound;
@@ -36,11 +28,6 @@ public class ReadyScreen : MonoBehaviour
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
-        _root = GetComponent<UIDocument>().rootVisualElement;
-
-        _p1Selector = _root.Q<VisualElement>("P1Selector");
-        _p2Selector = _root.Q<VisualElement>("P2Selector");
-
     }
 
     private void OnEnable()
