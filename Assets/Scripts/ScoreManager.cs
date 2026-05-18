@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -15,14 +16,18 @@ public class ScoreManager : MonoBehaviour
     public float TotalScore { get; private set; }
     public float ComboMultiplier { get; private set; } = 1;
 
-    private int perfectStreak;
 
     private int playerID = 0;
 
     private const float PERFECT = 0.05f;
     private const float AWESOME = 0.10f;
     private const float GOOD    = 0.15f;
-    private const float OKAY    = 0.20f;
+    private const float OKAY    = 0.20f;  // this really should be bound to the enum some way
+
+
+    
+    
+    
 
     private int activeUltMultiplier = 1;
 
@@ -43,6 +48,8 @@ public class ScoreManager : MonoBehaviour
     {
         
         if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
+        
+        
 
         if (lane < 2)
         {
@@ -59,46 +66,49 @@ public class ScoreManager : MonoBehaviour
             playerID = 2;
         }
 
+        
+        
+
         float baseScore;
         if (timing < PERFECT)
         {
-            perfectStreak++;
+  
             if(ComboMultiplier == 0) ComboMultiplier = 1;
             ComboMultiplier++; 
             baseScore = 10 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Perfect, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Perfect, ComboMultiplier);
 
         }
         else if (timing < AWESOME)
         {
             //ResetCombo();
-            perfectStreak++;
+
             if (ComboMultiplier == 0) ComboMultiplier = 1;
             ComboMultiplier++; 
             //baseScore = 7;
             baseScore = 7 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Awesome, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Awesome, ComboMultiplier);
         }
         else if (timing < GOOD)
         {
             //ResetCombo();
-            perfectStreak++;
+    
             if (ComboMultiplier == 0) ComboMultiplier = 1;
             ComboMultiplier += 0.5f;
             //ComboMultiplier = 1 + (perfectStreak / 4);
             //baseScore = 5;
             baseScore = 5 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Good, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Good, ComboMultiplier);
 
 
         }
         else if (timing < OKAY)
         {
             //ResetCombo();
-            perfectStreak++;
+     
            
             if (ComboMultiplier == 0) ComboMultiplier = 1;
             ComboMultiplier += 0.5f;
@@ -106,21 +116,24 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 3;
             baseScore = 3 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Ok, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Ok, ComboMultiplier);
 
         }
         else if (missed)
         {
             ResetCombo();
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Miss, 0);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Miss, 0);
             baseScore = 0;
         }
         else
         {
             //ResetCombo();
             baseScore = 0;
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, ComboType.Tap, ComboMultiplier);
+            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Tap, ComboMultiplier);
         }
+        
+        
+        
 
         TotalScore += baseScore * activeUltMultiplier;
         UpdateUI();
@@ -135,7 +148,6 @@ public class ScoreManager : MonoBehaviour
 
     private void ResetCombo()
     {
-        perfectStreak = 0;
         ComboMultiplier = 1;
     }
 

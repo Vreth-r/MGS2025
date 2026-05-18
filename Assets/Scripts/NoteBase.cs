@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public enum Judgement { Perfect, Awesome, Good, Okay, Miss }
+
 
 public abstract class NoteBase : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public abstract class NoteBase : MonoBehaviour
     protected virtual void Update()
     {
         if (movement)
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += Vector3.left * (speed * Time.deltaTime);
     }
 
     public float TimingSeconds(Transform hitZone)
@@ -45,7 +45,7 @@ public abstract class NoteBase : MonoBehaviour
         if (t < PERFECT) return Judgement.Perfect;
         if (t < AWESOME) return Judgement.Awesome;
         if (t < GOOD)    return Judgement.Good;
-        if (t < OKAY)    return Judgement.Okay;
+        if (t < OKAY) return Judgement.Ok;
         return Judgement.Miss;
     }
 

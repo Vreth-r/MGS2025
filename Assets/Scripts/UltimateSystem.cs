@@ -81,7 +81,7 @@ public class UltimateSystem : MonoBehaviour
             Judgement.Perfect => perfectGainMultiplier,
             Judgement.Awesome => awesomeGainMultiplier,
             Judgement.Good => goodGainMultiplier,
-            Judgement.Okay => okayGainMultiplier,
+            Judgement.Ok => okayGainMultiplier,
             _ => 0f
         };
 

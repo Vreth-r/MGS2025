@@ -25,15 +25,15 @@ public class GameplayEvents
     }
 
     // Event for Combo processing, used for combo display for UI but can be considered a gameplay event so it will stay here
-    public event Action<int, ComboType, float> OnPlayerCombo;
+    public event Action<int, Judgement, float> OnPlayerCombo;
 
-    public void ResolvePlayerCombo(int playerID, ComboType comboType, float currentComboCount)
+    public void ResolvePlayerCombo(int playerID, Judgement judgement, float currentComboCount)
     {
-        OnPlayerCombo?.Invoke(playerID, comboType, currentComboCount);
+        OnPlayerCombo?.Invoke(playerID, judgement, currentComboCount);
     }
 
 
-    internal void ClearAll()
+    public void ClearAll()
     { 
         OnGameOver = null;
         OnPlayerHealthGained = null;
