@@ -25,7 +25,7 @@ public class DifficultyMenu : BaseMenu
     public Sprite sprHard;
     public Sprite sprNightmare;
     private Sprite[] sprites;
-    private int diffVal = 3;
+    private int diffVal = 1;
 
     [Header("Display Assets")]
     public GameObject display;
@@ -55,7 +55,10 @@ public class DifficultyMenu : BaseMenu
 
         buttons = new[] { backButton, nextButton, returnButton };
         sprites = new[] { sprEasy, sprNormal, sprHard, sprNightmare };
-        text = new[] { "we all start somewhere,\nit's the only way anything happens", "keep your sanity\nwith a little challenge", "oh, the rhythms are kicking in", "inadvisable for all" };
+        text = new[] { "we all start somewhere,\nit's the only way anything happens", //easy
+            "keep your sanity\nwith a little challenge", //normal
+            "oh, the rhythms are kicking in", //hard
+            "inadvisable for all" }; //nightmare
         sizes = new[] { 40, 44, 50, 50 };
 
         //default settings
@@ -110,6 +113,7 @@ public class DifficultyMenu : BaseMenu
         Debug.LogFormat($"Difficulty menu closed");
     }
 
+    //horiz will move between back and next, and vertical will go to select, and it remembers your last placement
     public override void HandleNavigate(Vector2 direction)
     {
         if (direction.y > 0.5f || direction.y < -0.5f)
