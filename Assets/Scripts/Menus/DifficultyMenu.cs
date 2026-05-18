@@ -59,7 +59,7 @@ public class DifficultyMenu : BaseMenu
             "keep your sanity\nwith a little challenge", //normal
             "oh, the rhythms are kicking in", //hard
             "inadvisable for all" }; //nightmare
-        sizes = new[] { 40, 44, 50, 50 };
+        sizes = new[] { 40, 44, 46, 50 };
 
         //default settings
         var img = display.GetComponent<Image>();
