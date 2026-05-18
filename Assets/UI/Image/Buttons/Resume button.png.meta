@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: d395837e689c7d2479d9bdf8d30c58bf
+guid: 5b409775dbfd4be41b58e79685518086
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6991514997038080037
-    second: Inside of the Music n VFX bar_Settings menu_0
-  - first:
-      213: 5140947994818507023
-    second: Inside of the Music n VFX bar_Settings menu_1
+      213: -6833182688366066403
+    second: Resume button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inside of the Music n VFX bar_Settings menu_0
+      name: Resume button_0
       rect:
         serializedVersion: 2
-        x: 2688
-        y: 2298
-        width: 2323
-        height: 106
+        x: 2892
+        y: 277
+        width: 2277
+        height: 385
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bdf9abf172629fe90800000000000000
-      internalID: -6991514997038080037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Inside of the Music n VFX bar_Settings menu_1
-      rect:
-        serializedVersion: 2
-        x: 2688
-        y: 1531
-        width: 2323
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f01f9ef96f0585740800000000000000
-      internalID: 5140947994818507023
+      spriteID: d1587967c88ab21a0800000000000000
+      internalID: -6833182688366066403
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inside of the Music n VFX bar_Settings menu_0: -6991514997038080037
-      Inside of the Music n VFX bar_Settings menu_1: 5140947994818507023
+      Resume button_0: -6833182688366066403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

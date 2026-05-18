@@ -15,10 +15,11 @@ public class MainMenu : BaseMenu
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private Button difficultyButton;
     [SerializeField] private Toggle autoUltToggle;
     [SerializeField] private Toggle godModeToggle;
     [SerializeField] private Toggle fleshSoundVersionsToggle;
-    [SerializeField] private TMP_Dropdown gameModeDropdown;
+    //[SerializeField] private TMP_Dropdown gameModeDropdown;
 
     [SerializeField] private VideoPlayer creditsVideoPlayer;
     [SerializeField] private RawImage creditsDisplay;
@@ -36,13 +37,24 @@ public class MainMenu : BaseMenu
 
         base.Awake();
 
-        buttons = new[] { playButton, settingsButton, creditsButton, quitButton };
+        buttons = new[] { playButton, settingsButton, creditsButton, quitButton, difficultyButton };
+
+        gameSettings.gameMode = 1; //default is normal for difficulty
 
         playButton.onClick.AddListener(OnPlay);
         settingsButton.onClick.AddListener(OpenSettings);
         creditsButton.onClick.AddListener(OpenCredits);
         quitButton.onClick.AddListener(OnQuit);
+        difficultyButton.onClick.AddListener(OpenDifficulty);
     }
+
+    protected void Update()
+    {
+        //update difficulty button visual
+        // Debug.Log("should be now set as: " + gameSettings.gameMode);
+        difficultyButton.GetComponent<Animator>().SetInteger("Diff", gameSettings.gameMode);
+    }
+
 
     protected override void OnOpen()
     {
@@ -80,16 +92,26 @@ public class MainMenu : BaseMenu
 
     public override void HandleNavigate(Vector2 direction)
     {
+
         if (CreditsOpen) return;
 
         if (direction.y > 0.5f)
         {
-            selectedIndex = (selectedIndex - 1 + buttons.Length) % buttons.Length;
+            selectedIndex = (selectedIndex - 1 + (buttons.Length-1)) % (buttons.Length-1); //-1 offset as to avoid Difficulty Button in vertical
             HighlightButton(selectedIndex);
         }
         else if (direction.y < -0.5f)
         {
-            selectedIndex = (selectedIndex + 1) % buttons.Length;
+            selectedIndex = (selectedIndex + 1) % (buttons.Length-1);
+            HighlightButton(selectedIndex);
+        }
+
+        if (direction.x > 0.5f || direction.x < -0.5f)
+        {
+            if (selectedIndex != 4)
+                selectedIndex = 4;
+            else
+                selectedIndex = 0;
             HighlightButton(selectedIndex);
         }
     }
@@ -133,7 +155,8 @@ public class MainMenu : BaseMenu
         gameSettings.autoUltimate = autoUltToggle.isOn;
         gameSettings.godMode = godModeToggle.isOn;
         gameSettings.useFleshSoundVersions = fleshSoundVersionsToggle.isOn;
-        gameSettings.gameMode = gameModeDropdown.value;
+        Debug.Log("diff is: " + gameSettings.gameMode);
+        //gameSettings.gameMode = gameModeDropdown.value;
 
         // This just loads the scene, (BUG: The notes move before the scene is fully loaded...)
         var menuManager = MenuManager.Instance;
@@ -147,6 +170,11 @@ public class MainMenu : BaseMenu
     {
         Debug.Log("Opening settings menu...");
         MenuManager.Instance.OpenSettings();
+    }
+    private void OpenDifficulty()
+    {
+        Debug.Log("Opening difficulty menu...");
+        MenuManager.Instance.OpenDifficulty();
     }
 
     private void OpenCredits()

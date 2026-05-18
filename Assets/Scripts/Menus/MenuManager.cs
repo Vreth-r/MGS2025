@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class MenuManager : MonoBehaviour
     [Header("Menu Prefab References")]
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject difficultyMenu;
 
     private BaseMenu activeMenu;
     private Stack<BaseMenu> OpenedMenus = new Stack<BaseMenu>(); // Stack of menus. So we can backtrack between opened menus.
+
 
     private void Awake()
     {
@@ -26,12 +29,16 @@ public class MenuManager : MonoBehaviour
         // Instantiate the menus!!!
         pauseMenu = Instantiate(pauseMenu);
         settingsMenu = Instantiate(settingsMenu);
+        difficultyMenu = Instantiate(difficultyMenu);
 
         DontDestroyOnLoad(pauseMenu);
         DontDestroyOnLoad(settingsMenu);
+        DontDestroyOnLoad(difficultyMenu);
 
         pauseMenu.GetComponent<BaseMenu>().Close();
         settingsMenu.GetComponent<BaseMenu>().Close();
+        difficultyMenu.GetComponent<BaseMenu>().Close();
+
     }
 
     private void OnEnable()
@@ -66,6 +73,11 @@ public class MenuManager : MonoBehaviour
     public void OpenSettings()
     {
         OpenMenu(settingsMenu);
+    }
+
+    public void OpenDifficulty()
+    {
+        OpenMenu(difficultyMenu);
     }
 
     public void SetCurrentMenu(GameObject menu)

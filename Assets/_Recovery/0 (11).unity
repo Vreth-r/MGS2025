@@ -1110,7 +1110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 757.3, y: -236.3}
+  m_AnchoredPosition: {x: 780, y: -105.88501}
   m_SizeDelta: {x: 1956, y: 823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192001932
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8071881758785715391, guid: 89d6807b592c49f43b078665136326ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 79bc95e287d7bf044a0dbe0bf7a9be34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 7964319354372408830, guid: 7359af566ec5e894aa8836c93438fed3, type: 3}
   settingsMenu: {fileID: 3235966923218494495, guid: 659bc5b3cd660c84eb319221900a6bc8, type: 3}
   difficultyMenu: {fileID: 3235966923218494495, guid: 5e43aa951a1fdfb43997ed8ffcd41472, type: 3}
-  difficultyButton: {fileID: 1192001934}
+  difficultyButton: {fileID: 0}
 --- !u!4 &2124783423
 Transform:
   m_ObjectHideFlags: 0
@@ -2234,11 +2234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 791
+      value: 738
       objectReference: {fileID: 0}
     - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.7
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4460927560944136237, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_IsActive
@@ -2250,11 +2250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 790.5
+      value: 738
       objectReference: {fileID: 0}
     - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.5
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 6115328293942716559, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: difficultyButton
