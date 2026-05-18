@@ -12,12 +12,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject difficultyMenu;
 
-    [Header("Diff Button Access For Visual Change")]
-    [SerializeField] private Button difficultyButton;
-    private static GameSettings gameSettings;
-
     private BaseMenu activeMenu;
     private Stack<BaseMenu> OpenedMenus = new Stack<BaseMenu>(); // Stack of menus. So we can backtrack between opened menus.
+
 
     private void Awake()
     {
@@ -42,8 +39,6 @@ public class MenuManager : MonoBehaviour
         settingsMenu.GetComponent<BaseMenu>().Close();
         difficultyMenu.GetComponent<BaseMenu>().Close();
 
-        //settings access for diff button visual
-        gameSettings = Resources.Load<GameSettings>("GameSettings");
     }
 
     private void OnEnable()
@@ -143,10 +138,6 @@ public class MenuManager : MonoBehaviour
         // Close the active menu
         OpenedMenus.Pop();
         activeMenu.Close();
-
-        //update difficulty button visual
-       // Debug.Log("should be now set as: " + gameSettings.gameMode);
-        difficultyButton.GetComponent<Animator>().SetInteger("Diff", gameSettings.gameMode);
 
         //Destroy(activeMenu.gameObject); // destroy
 

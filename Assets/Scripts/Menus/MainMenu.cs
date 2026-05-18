@@ -48,6 +48,14 @@ public class MainMenu : BaseMenu
         difficultyButton.onClick.AddListener(OpenDifficulty);
     }
 
+    protected void Update()
+    {
+        //update difficulty button visual
+        // Debug.Log("should be now set as: " + gameSettings.gameMode);
+        difficultyButton.GetComponent<Animator>().SetInteger("Diff", gameSettings.gameMode);
+    }
+
+
     protected override void OnOpen()
     {
         Debug.LogFormat($"Main menu opened");
