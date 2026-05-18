@@ -20720,6 +20720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
   pauseMenu: {fileID: 7964319354372408830, guid: 7359af566ec5e894aa8836c93438fed3, type: 3}
   settingsMenu: {fileID: 3235966923218494495, guid: 659bc5b3cd660c84eb319221900a6bc8, type: 3}
+  difficultyMenu: {fileID: 0}
 --- !u!1 &1497845082
 GameObject:
   m_ObjectHideFlags: 0

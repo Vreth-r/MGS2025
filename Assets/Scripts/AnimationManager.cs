@@ -4,6 +4,13 @@ using System.Diagnostics.Tracing;
 using System.Linq.Expressions;
 using UnityEngine;
 
+/// Central Animation programmed by: LogChiCha
+/// Guitar Specific programmed by: kikiluvumba#5886
+///
+/// SUMMARY
+/// The animation manager, changes the player character visuals depending on inputs and notes
+///  (P1, P2, PDuo)
+
 public class AnimationManager : MonoBehaviour
 {
     [Header("Identifiers")] // "What player is this?"

@@ -34,18 +34,18 @@ public class Health : MonoBehaviour
     public static void TakeDamage(float amount)
     {
         //normal + easy
-        if (gameSettings.gameMode == 0 || gameSettings.gameMode == 3)
+        if (gameSettings.gameMode == 1 || gameSettings.gameMode == 0)
         {
             HealthValue = Mathf.Max(0f, HealthValue - amount);
         }
 
         //hard
-        else if (gameSettings.gameMode == 1)
+        else if (gameSettings.gameMode == 2)
         {
             HealthValue = Mathf.Max(0f, HealthValue - (amount * 2));
         }
 
-        //nightmare
+        //nightmare (3)
         else
         {
             HealthValue = Mathf.Max(0f, HealthValue - amount * 3);
@@ -59,26 +59,30 @@ public class Health : MonoBehaviour
         if (IsDead()) return;
 
         //hard mode 3 regen
-        if (gameSettings.gameMode == 1)
+        if (gameSettings.gameMode == 2)
         {
+           // Debug.Log("hard mode diff");
             HealthValue = Mathf.Min(MaxHealth, HealthValue + 3);
         }
 
         //nightmare mode 0 regen
-        else if (gameSettings.gameMode == 2)
+        else if (gameSettings.gameMode == 3)
         {
+           // Debug.Log("nightmare mode diff");
             return;
         }
 
         //easy mode double regen
-        else if (gameSettings.gameMode == 3)
+        else if (gameSettings.gameMode == 0)
         {
+            //Debug.Log("easy mode diff");
             HealthValue = Mathf.Min(MaxHealth, HealthValue + (amount * 2));
         }
 
-        //normal mode + any other non-specified mode gets normal regen
+        //normal mode (1) + any other non-specified mode gets normal regen
         else
         {
+           // Debug.Log("normal mode diff");
             HealthValue = Mathf.Min(MaxHealth, HealthValue + amount);
         }
 

@@ -1,0 +1,381 @@
+fileFormatVersion: 2
+guid: f6a2cf8d6bdce7f449e5a7e153f1021b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8896655498050930052
+    second: Settings Menu BASE_0
+  - first:
+      213: 488264688681078535
+    second: Settings Menu BASE_1
+  - first:
+      213: -364556383009632458
+    second: Settings Menu BASE_2
+  - first:
+      213: -8543549682260764729
+    second: Settings Menu BASE_3
+  - first:
+      213: -2908070215698188387
+    second: Settings Menu BASE_4
+  - first:
+      213: -3898871495259804570
+    second: Settings Menu BASE_5
+  - first:
+      213: 2031046325891137097
+    second: Settings Menu BASE_6
+  - first:
+      213: -1213847957778328650
+    second: Settings Menu BASE_7
+  - first:
+      213: -3471648369387610930
+    second: Settings Menu BASE_8
+  - first:
+      213: 1171631356233868140
+    second: Settings Menu BASE_9
+  - first:
+      213: 2154802859673104491
+    second: Settings Menu BASE_10
+  - first:
+      213: 3865691815674891108
+    second: Settings Menu BASE_11
+  - first:
+      213: -1067380887321746444
+    second: Settings Menu BASE_12
+  - first:
+      213: -6717513261791102423
+    second: Settings Menu BASE_13
+  - first:
+      213: -2622744049677774678
+    second: Settings Menu BASE_14
+  - first:
+      213: -7219491510074564823
+    second: Settings Menu BASE_15
+  - first:
+      213: -561971379369105100
+    second: Settings Menu BASE_16
+  - first:
+      213: 5524857635324784385
+    second: Settings Menu BASE_17
+  - first:
+      213: -8437211580113359267
+    second: Settings Menu BASE_18
+  - first:
+      213: -3007109418772090463
+    second: Settings Menu BASE_19
+  - first:
+      213: 4337777817012724535
+    second: Settings Menu BASE_20
+  - first:
+      213: 3027904143969997974
+    second: Settings Menu BASE_21
+  - first:
+      213: -5462872527559748961
+    second: Settings Menu BASE_22
+  - first:
+      213: -576057215616804484
+    second: Settings Menu BASE_23
+  - first:
+      213: -7987311453794129672
+    second: Settings Menu BASE_24
+  - first:
+      213: -7104943046667642885
+    second: Settings Menu BASE_25
+  - first:
+      213: 7226725771772265814
+    second: Settings Menu BASE_26
+  - first:
+      213: -5135880138332654505
+    second: Settings Menu BASE_27
+  - first:
+      213: 5999919860313429724
+    second: Settings Menu BASE_28
+  - first:
+      213: -4979437925220069931
+    second: Settings Menu BASE_29
+  - first:
+      213: 4181192887446728813
+    second: Settings Menu BASE_30
+  - first:
+      213: -6476387997968185251
+    second: Settings Menu BASE_31
+  - first:
+      213: -8793939877564360461
+    second: Settings Menu BASE_32
+  - first:
+      213: -2682593739606819174
+    second: Settings Menu BASE_33
+  - first:
+      213: 4560023707670349052
+    second: Settings Menu BASE_34
+  - first:
+      213: 4450370304571890249
+    second: Settings Menu BASE_35
+  - first:
+      213: -3378085272835270856
+    second: Settings Menu BASE_36
+  - first:
+      213: 5534761249193045922
+    second: Settings Menu BASE_37
+  - first:
+      213: 6193477731413146959
+    second: Settings Menu BASE_38
+  - first:
+      213: 892858273660344675
+    second: Settings Menu BASE_39
+  - first:
+      213: -6681556226203505419
+    second: Settings Menu BASE_40
+  - first:
+      213: 5757470681963582703
+    second: Settings Menu BASE_41
+  - first:
+      213: 8215072077722052578
+    second: Settings Menu BASE_42
+  - first:
+      213: -2702644272161197993
+    second: Settings Menu BASE_43
+  - first:
+      213: 5064266962502060874
+    second: Settings Menu BASE_44
+  - first:
+      213: 3378570008545829250
+    second: Settings Menu BASE_45
+  - first:
+      213: -8499056958440957685
+    second: Settings Menu BASE_46
+  - first:
+      213: 1467035945390505973
+    second: Settings Menu BASE_47
+  - first:
+      213: 8857137239229548051
+    second: Settings Menu BASE_48
+  - first:
+      213: 3034729986734371721
+    second: Settings Menu BASE_49
+  - first:
+      213: 8165611012802389032
+    second: Settings Menu BASE_50
+  - first:
+      213: -2432379758503153571
+    second: Settings Menu BASE_51
+  - first:
+      213: -2440737598611624542
+    second: Settings Menu BASE_52
+  - first:
+      213: -8118820627864601266
+    second: Settings Menu BASE_53
+  - first:
+      213: 3337901842255217268
+    second: Settings Menu BASE_54
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Settings Menu
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 133
+        width: 4961
+        height: 4039
+      alignment: 9
+      pivot: {x: 0.5672399, y: 0.48090196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c712f364d63f6980800000000000000
+      internalID: -8543549682260764729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings Menu BASE_53
+      rect:
+        serializedVersion: 2
+        x: 6185
+        y: 547
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d340187a7245f80800000000000000
+      internalID: -8118820627864601266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dcc2687bc3e40464c89152c3c8bf6147
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Settings Menu: -8543549682260764729
+      Settings Menu BASE_0: 8896655498050930052
+      Settings Menu BASE_1: 488264688681078535
+      Settings Menu BASE_10: 2154802859673104491
+      Settings Menu BASE_11: 3865691815674891108
+      Settings Menu BASE_12: -1067380887321746444
+      Settings Menu BASE_13: -6717513261791102423
+      Settings Menu BASE_14: -2622744049677774678
+      Settings Menu BASE_15: -7219491510074564823
+      Settings Menu BASE_16: -561971379369105100
+      Settings Menu BASE_17: 5524857635324784385
+      Settings Menu BASE_18: -8437211580113359267
+      Settings Menu BASE_19: -3007109418772090463
+      Settings Menu BASE_2: -364556383009632458
+      Settings Menu BASE_20: 4337777817012724535
+      Settings Menu BASE_21: 3027904143969997974
+      Settings Menu BASE_22: -5462872527559748961
+      Settings Menu BASE_23: -576057215616804484
+      Settings Menu BASE_24: -7987311453794129672
+      Settings Menu BASE_25: -7104943046667642885
+      Settings Menu BASE_26: 7226725771772265814
+      Settings Menu BASE_27: -5135880138332654505
+      Settings Menu BASE_28: 5999919860313429724
+      Settings Menu BASE_29: -4979437925220069931
+      Settings Menu BASE_30: 4181192887446728813
+      Settings Menu BASE_31: -6476387997968185251
+      Settings Menu BASE_32: -8793939877564360461
+      Settings Menu BASE_33: -2682593739606819174
+      Settings Menu BASE_34: 4560023707670349052
+      Settings Menu BASE_35: 4450370304571890249
+      Settings Menu BASE_36: -3378085272835270856
+      Settings Menu BASE_37: 5534761249193045922
+      Settings Menu BASE_38: 6193477731413146959
+      Settings Menu BASE_39: 892858273660344675
+      Settings Menu BASE_4: -2908070215698188387
+      Settings Menu BASE_40: -6681556226203505419
+      Settings Menu BASE_41: 5757470681963582703
+      Settings Menu BASE_42: 8215072077722052578
+      Settings Menu BASE_43: -2702644272161197993
+      Settings Menu BASE_44: 5064266962502060874
+      Settings Menu BASE_45: 3378570008545829250
+      Settings Menu BASE_46: -8499056958440957685
+      Settings Menu BASE_47: 1467035945390505973
+      Settings Menu BASE_48: 8857137239229548051
+      Settings Menu BASE_49: 3034729986734371721
+      Settings Menu BASE_5: -3898871495259804570
+      Settings Menu BASE_50: 8165611012802389032
+      Settings Menu BASE_51: -2432379758503153571
+      Settings Menu BASE_52: -2440737598611624542
+      Settings Menu BASE_53: -8118820627864601266
+      Settings Menu BASE_54: 3337901842255217268
+      Settings Menu BASE_6: 2031046325891137097
+      Settings Menu BASE_7: -1213847957778328650
+      Settings Menu BASE_8: -3471648369387610930
+      Settings Menu BASE_9: 1171631356233868140
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

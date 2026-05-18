@@ -652,6 +652,17 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &398451090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3684921938109216931, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+  m_PrefabInstance: {fileID: 6051743841713516267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
 --- !u!1 &547940662
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,17 +897,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749584387}
   m_CullTransparentMesh: 1
---- !u!114 &777583683 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3684921938109216931, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
-  m_PrefabInstance: {fileID: 6051743841713516267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
 --- !u!1 &795762137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,180 +1073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
---- !u!1 &1192001930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1192001931}
-  - component: {fileID: 1192001936}
-  - component: {fileID: 1192001935}
-  - component: {fileID: 1192001934}
-  - component: {fileID: 1192001933}
-  - component: {fileID: 1192001932}
-  m_Layer: 5
-  m_Name: DifficultyButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1192001931
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192001930}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 6051743841713516269}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 757.3, y: -236.3}
-  m_SizeDelta: {x: 1956, y: 823}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1192001932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192001930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 777583683}
-  sounds:
-  - type: 0
-    eventReference:
-      Guid:
-        Data1: 143252048
-        Data2: 1110985453
-        Data3: 2010302878
-        Data4: -1185974336
-      Path: event:/UISoundEffects/ButtonHoverRandom_1
-  - type: 1
-    eventReference:
-      Guid:
-        Data1: -469035693
-        Data2: 1262905187
-        Data3: -1341073234
-        Data4: -1851230355
-      Path: event:/UISoundEffects/ButtonSelect_1
---- !u!95 &1192001933
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192001930}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76c7e7f600674b543bc2627a35f1e169, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1192001934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192001930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: -1522933655, guid: de89e32e21ef7564da98addca664a3d2, type: 3}
-    m_PressedSprite: {fileID: 1134834051, guid: de89e32e21ef7564da98addca664a3d2, type: 3}
-    m_SelectedSprite: {fileID: -1522933655, guid: de89e32e21ef7564da98addca664a3d2, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1192001935}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1192001935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192001930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -8071881758785715391, guid: 89d6807b592c49f43b078665136326ff, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1192001936
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192001930}
-  m_CullTransparentMesh: 1
 --- !u!1 &1193800095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1199,180 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1257252503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1257252504}
+  - component: {fileID: 1257252508}
+  - component: {fileID: 1257252507}
+  - component: {fileID: 1257252509}
+  - component: {fileID: 1257252506}
+  - component: {fileID: 1257252505}
+  m_Layer: 5
+  m_Name: DifficultyButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1257252504
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257252503}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6051743841713516269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 783, y: -105.88501}
+  m_SizeDelta: {x: 5000, y: 1450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1257252505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257252503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
+  soundEffectsPlayer: {fileID: 398451090}
+  sounds:
+  - type: 0
+    eventReference:
+      Guid:
+        Data1: 143252048
+        Data2: 1110985453
+        Data3: 2010302878
+        Data4: -1185974336
+      Path: event:/UISoundEffects/ButtonHoverRandom_1
+  - type: 1
+    eventReference:
+      Guid:
+        Data1: -469035693
+        Data2: 1262905187
+        Data3: -1341073234
+        Data4: -1851230355
+      Path: event:/UISoundEffects/ButtonSelect_1
+--- !u!95 &1257252506
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257252503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1817d3db50b6254d8ce0b55d3859ed5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1257252507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257252503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -685882125225082838, guid: d2859b70361e9894aa9956722bc7b797, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1257252508
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257252503}
+  m_CullTransparentMesh: 1
+--- !u!114 &1257252509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257252503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 3
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: -1522933655, guid: de89e32e21ef7564da98addca664a3d2, type: 3}
+    m_PressedSprite: {fileID: 1134834051, guid: de89e32e21ef7564da98addca664a3d2, type: 3}
+    m_SelectedSprite: {fileID: -1522933655, guid: de89e32e21ef7564da98addca664a3d2, type: 3}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1257252507}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1417932229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1815,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566874697}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 1b8fb3933e4a9f14f9497e3b1262eea1, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 56f1623de67b56a4a9813f0a9a13d13d, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 384167860}
@@ -2120,7 +2120,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 7964319354372408830, guid: 7359af566ec5e894aa8836c93438fed3, type: 3}
   settingsMenu: {fileID: 3235966923218494495, guid: 659bc5b3cd660c84eb319221900a6bc8, type: 3}
   difficultyMenu: {fileID: 3235966923218494495, guid: 5e43aa951a1fdfb43997ed8ffcd41472, type: 3}
-  difficultyButton: {fileID: 1192001934}
 --- !u!4 &2124783423
 Transform:
   m_ObjectHideFlags: 0
@@ -2147,6 +2146,10 @@ PrefabInstance:
     - target: {fileID: 156116667494150088, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 156116667494150088, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2209302834928171697, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_Pivot.x
@@ -2234,11 +2237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 791
+      value: 738
       objectReference: {fileID: 0}
     - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.7
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4460927560944136237, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_IsActive
@@ -2250,16 +2253,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 790.5
+      value: 738
       objectReference: {fileID: 0}
     - target: {fileID: 4944500707156329010, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.5
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 6115328293942716559, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: difficultyButton
       value: 
-      objectReference: {fileID: 1192001934}
+      objectReference: {fileID: 1257252509}
     - target: {fileID: 6115328293942716559, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: gameModeDropdown
       value: 
@@ -2276,12 +2279,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7981831606201259287, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3597404409517012311, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 1192001931}
+      addedObject: {fileID: 1257252504}
     - targetCorrespondingSourceObject: {fileID: 3597404409517012311, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       insertIndex: 7
       addedObject: {fileID: 1417932230}

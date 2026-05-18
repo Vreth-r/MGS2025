@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: d395837e689c7d2479d9bdf8d30c58bf
+guid: e5315e29cc6de5041b669811846a5fa1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6991514997038080037
-    second: Inside of the Music n VFX bar_Settings menu_0
+      213: -2429919002490121231
+    second: arrows_0
   - first:
-      213: 5140947994818507023
-    second: Inside of the Music n VFX bar_Settings menu_1
+      213: 67926103340967526
+    second: arrows_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,45 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inside of the Music n VFX bar_Settings menu_0
+      name: arrows_left
       rect:
         serializedVersion: 2
-        x: 2688
-        y: 2298
-        width: 2323
-        height: 106
+        x: 2393
+        y: 1850
+        width: 424
+        height: 813
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bdf9abf172629fe90800000000000000
-      internalID: -6991514997038080037
+      spriteID: 1f3da9f9a81374ed0800000000000000
+      internalID: -2429919002490121231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Inside of the Music n VFX bar_Settings menu_1
+      name: arrows_right
       rect:
         serializedVersion: 2
-        x: 2688
-        y: 1531
-        width: 2323
-        height: 106
+        x: 5427
+        y: 1850
+        width: 424
+        height: 813
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f01f9ef96f0585740800000000000000
-      internalID: 5140947994818507023
+      spriteID: 6666d9c5e6251f000800000000000000
+      internalID: 67926103340967526
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c576a043669cb114bb721a767a3330ab
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inside of the Music n VFX bar_Settings menu_0: -6991514997038080037
-      Inside of the Music n VFX bar_Settings menu_1: 5140947994818507023
+      arrows_left: -2429919002490121231
+      arrows_right: 67926103340967526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
