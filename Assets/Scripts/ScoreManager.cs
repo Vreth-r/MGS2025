@@ -13,8 +13,6 @@ public class ScoreManager : MonoBehaviour
     private const float OKAY    = 0.20f;  // this really should be bound to the enum some way
     
     public static ScoreManager Instance { get; private set; }
-
-
     
     
     [SerializeField] private TMP_Text scoreText;
@@ -26,12 +24,9 @@ public class ScoreManager : MonoBehaviour
     public float TotalScore { get; private set; }
     public float ComboMultiplier { get; private set; } = 1;
     
-    
-    
-    
 
     private int _activeUltMultiplier = 1;
-    private bool _playersMerged = false;
+    private bool _playersMerged;
     
     
 
@@ -52,8 +47,10 @@ public class ScoreManager : MonoBehaviour
         GameplayEvents.PlayersSeparateEvent.AddEventListener(this.OnPlayersSeparate);
     }
 
+    //--------------------------Event listeners-------------------------------------
 
-
+    //this really should be accessible via some central manager if we're talking about code cleanliness
+    //perferably some level manager
     private void OnPlayersMerge(ValueTuple _)
     {
         this._playersMerged = true;
@@ -63,18 +60,23 @@ public class ScoreManager : MonoBehaviour
     {
         this._playersMerged = false;
     }
-
+    
+    
+    private void UltOn()  => _activeUltMultiplier = ultimateScoreMultiplier;
+    private void UltOff() => _activeUltMultiplier = 1;
+    
+    
+    //---------------------------------------------------------------------------
 
 
 
 
     public void AddScore(float timing, int lane, bool missed = false)
     {
-        if (GameManager.Instance != null && GameManager.Instance.GameIsDone())
+        if (GameManager.Instance != null || GameManager.Instance.GameIsDone())
             return;
 
         int playerID;
-
         if (this._playersMerged)
             playerID = 2;
         else
@@ -91,7 +93,7 @@ public class ScoreManager : MonoBehaviour
             
             
             GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Perfect, ComboMultiplier));
-           // EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Perfect, ComboMultiplier);
+  
 
         }
         else if (timing < AWESOME)
@@ -176,7 +178,5 @@ public class ScoreManager : MonoBehaviour
         UltimateSystem.Instance.OnUltimateStarted -= UltOn;
         UltimateSystem.Instance.OnUltimateFinished -= UltOff;
     }
-
-    private void UltOn()  => _activeUltMultiplier = ultimateScoreMultiplier;
-    private void UltOff() => _activeUltMultiplier = 1;
+    
 }

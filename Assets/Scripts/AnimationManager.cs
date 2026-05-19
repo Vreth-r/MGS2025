@@ -191,9 +191,7 @@ public class AnimationManager : MonoBehaviour
         //Lane Placement Changer
         if (lane == 2)
         {
-            
             duoActive = 2;
-            
             
             //this is considered a bandaid solution for what we have here. Refactoring this is recommended.
             GameplayEvents.PlayersMergeEvent.CallEvent(ValueTuple.Create());
@@ -207,7 +205,7 @@ public class AnimationManager : MonoBehaviour
             else
                 transform.position = offscreen;
         }
-        else if (lane != 2)
+        else
         {
             if (duoActive > 0 && !isDuo) // If just leaving Duo lane, make sure both charactes are there, and in base states
             {

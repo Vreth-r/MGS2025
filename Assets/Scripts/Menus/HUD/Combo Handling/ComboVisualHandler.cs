@@ -98,9 +98,6 @@ public class ComboVisualHandler : MonoBehaviour
     private void PopUpCombo(int playerID, Judgement judgement)
     {
         Animator currentAnimator;
-        Debug.Log(playerID +" "+ judgement.ToString());
-        
-        
         
         // Set Current Animator
         switch (playerID)
@@ -143,8 +140,6 @@ public class ComboVisualHandler : MonoBehaviour
             currentAnimator.ResetTrigger(STOP_FADE);
         }
         
-        
-        Debug.Log("player id: "+playerID);
         currentPopUp[playerID] = PopUpCooldown(judgement, currentAnimator);
         StartCoroutine(currentPopUp[playerID]);
     }
@@ -156,7 +151,6 @@ public class ComboVisualHandler : MonoBehaviour
     {
 
         currentAnimator.SetBool(ONGOING_COMBO, true);
-        Debug.Log("ienumerator j: "+combo);
 
         // Pop Up Emision
         switch (combo)

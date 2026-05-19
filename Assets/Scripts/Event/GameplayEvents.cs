@@ -16,7 +16,8 @@ namespace Event
         public static EventDispatcher<(int, Judgement, float)> ScoreUpdateEvent = new EventDispatcher<(int, Judgement, float)>();
         //replaces the OnCombo event that we had
         //this really shouldn't be needed. Creating a Level wrapper for the players, score management, and their 
-        //abilities will cut down on the amount of redirection we have here
+        //abilities will cut down on the amount of redirection we have here which should improve readibility
+        //(then again I'm making you read an essay of comments here so maybe I should be watching out)
         
         
         //bandaid solution for the popup fix. I beg you to change this in the future.
