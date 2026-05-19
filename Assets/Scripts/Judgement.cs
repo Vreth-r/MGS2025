@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum ComboType
+public enum Judgement
 {
     Miss,
     Ok,

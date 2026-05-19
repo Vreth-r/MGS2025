@@ -1,3 +1,5 @@
+using Event;
+
 using UnityEngine;
 /*
  * Code Created by Knox Fouladi
@@ -13,7 +15,7 @@ public class EventManager : MonoBehaviour
 
 
     [Header("Event Containers")] // event type script references for easier calling
-    public GameplayEvents gameplay_events { get; private set; }
+   // public GameplayEvents gameplay_events { get; private set; }
     public UIEvents ui_events { get; private set; }
 
     private void Awake()
@@ -28,7 +30,7 @@ public class EventManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // initialize event containers
-        gameplay_events = new GameplayEvents();
+       // gameplay_events = new GameplayEvents();
         ui_events = new UIEvents();
 
     }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq.Expressions;
+using Event;
 using UnityEngine;
 
 /// Central Animation programmed by: LogChiCha
@@ -93,6 +94,10 @@ public class AnimationManager : MonoBehaviour
         }
 
     }//END OF START()
+    
+    
+    
+    
 
     private void OnDestroy()
     {
@@ -187,6 +192,11 @@ public class AnimationManager : MonoBehaviour
         if (lane == 2)
         {
             duoActive = 2;
+            
+            //this is considered a bandaid solution for what we have here. Refactoring this is recommended.
+            GameplayEvents.PlayersMergeEvent.CallEvent(ValueTuple.Create());
+            
+            
             resetcounter = 0;
             if (isDuo)//show duo, hide solo
                 transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
@@ -195,12 +205,18 @@ public class AnimationManager : MonoBehaviour
             else
                 transform.position = offscreen;
         }
-        else if (lane != 2)
+        else
         {
             if (duoActive > 0 && !isDuo) // If just leaving Duo lane, make sure both charactes are there, and in base states
             {
                 transform.position = baseGeneral;
+                
                 duoActive--;
+                
+                //this is considered a bandaid solution for what we have here. Refactoring this is recommended.
+                GameplayEvents.PlayersSeparateEvent.CallEvent(ValueTuple.Create());
+                
+                
                 spriteRenderer.sprite = sprBase;
             }
             
@@ -257,6 +273,10 @@ public class AnimationManager : MonoBehaviour
         if (lane == 2)
         {
             duoActive = 2;
+            
+            //this is considered a bandaid solution for what we have here. Refactoring this is recommended.
+            GameplayEvents.PlayersMergeEvent.CallEvent(ValueTuple.Create());
+            
             resetcounter = 0;
             if (isDuo)//show duo, hide solo
                 transform.position = baseGeneral;
@@ -269,6 +289,12 @@ public class AnimationManager : MonoBehaviour
             {
                 transform.position = baseGeneral;
                 duoActive--;
+                
+                //this is considered a bandaid solution for what we have here. Refactoring this is recommended.
+                GameplayEvents.PlayersSeparateEvent.CallEvent(ValueTuple.Create());
+                
+                
+                
                 spriteRenderer.sprite = sprBase;
             }
 

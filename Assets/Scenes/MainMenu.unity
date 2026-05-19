@@ -2120,7 +2120,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 7964319354372408830, guid: 7359af566ec5e894aa8836c93438fed3, type: 3}
   settingsMenu: {fileID: 3235966923218494495, guid: 659bc5b3cd660c84eb319221900a6bc8, type: 3}
   difficultyMenu: {fileID: 3235966923218494495, guid: 5e43aa951a1fdfb43997ed8ffcd41472, type: 3}
-  difficultyButton: {fileID: 1192001934}
 --- !u!4 &2124783423
 Transform:
   m_ObjectHideFlags: 0
@@ -2239,6 +2238,10 @@ PrefabInstance:
     - target: {fileID: 3676694125383448532, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -31.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766894364139191292, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4460927560944136237, guid: f10ac18bd2f5ef048ad5fc8b69f549f9, type: 3}
       propertyPath: m_IsActive
