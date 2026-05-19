@@ -1,4 +1,5 @@
 using System;
+using Event;
 using TMPro;
 using UnityEngine;
 
@@ -43,6 +44,11 @@ public class ScoreManager : MonoBehaviour
         UltimateSystem.Instance.OnUltimateStarted += UltOn;
         UltimateSystem.Instance.OnUltimateFinished += UltOff;
     }
+    
+    
+    
+    
+    
 
     public void AddScore(float timing, int lane, bool missed = false)
     {
@@ -76,8 +82,10 @@ public class ScoreManager : MonoBehaviour
             if(ComboMultiplier == 0) ComboMultiplier = 1;
             ComboMultiplier++; 
             baseScore = 10 * ComboMultiplier;
-
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Perfect, ComboMultiplier);
+            
+            
+            GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Perfect, ComboMultiplier));
+           // EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Perfect, ComboMultiplier);
 
         }
         else if (timing < AWESOME)
@@ -89,7 +97,7 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 7;
             baseScore = 7 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Awesome, ComboMultiplier);
+            GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Awesome, ComboMultiplier));
         }
         else if (timing < GOOD)
         {
@@ -101,7 +109,7 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 5;
             baseScore = 5 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Good, ComboMultiplier);
+            GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Good, ComboMultiplier));
 
 
         }
@@ -116,20 +124,20 @@ public class ScoreManager : MonoBehaviour
             //baseScore = 3;
             baseScore = 3 * ComboMultiplier;
 
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Ok, ComboMultiplier);
+            GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Ok, ComboMultiplier));
 
         }
         else if (missed)
         {
             ResetCombo();
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Miss, 0);
+            GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Miss, ComboMultiplier));
             baseScore = 0;
         }
         else
         {
             //ResetCombo();
             baseScore = 0;
-            EventManager.Instance.gameplay_events.ResolvePlayerCombo(playerID, Judgement.Tap, ComboMultiplier);
+            GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Tap, ComboMultiplier));
         }
         
         

@@ -10,6 +10,7 @@
 */
 using System;
 using System.Collections;
+using Event;
 using TMPro;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
@@ -68,12 +69,13 @@ public class ComboVisualHandler : MonoBehaviour
     
     private void OnDisable()
     {
-        if (EventManager.Instance != null) EventManager.Instance.gameplay_events.OnPlayerCombo -= HandleComboVisuals;
+        GameplayEvents.ScoreUpdateEvent.RemoveEventListener(HandleComboVisuals);
     }
 
     private void Start()
     {
-        EventManager.Instance.gameplay_events.OnPlayerCombo += HandleComboVisuals;
+        GameplayEvents.ScoreUpdateEvent.AddEventListener(HandleComboVisuals);
+        // EventManager.Instance.gameplay_events.OnPlayerCombo += HandleComboVisuals;
         
         p1ComboEmitterAnimator = p1ComboEmitter.gameObject.GetComponent<Animator>();
         p2ComboEmitterAnimator = p2ComboEmitter.gameObject.GetComponent<Animator>();
@@ -82,17 +84,18 @@ public class ComboVisualHandler : MonoBehaviour
         comboCountDisplay.text = $"{1}x Combo";
     }
 
-
-    public void HandleComboVisuals(int playerID, Judgement judgement, float currentComboCount)
+    private void HandleComboVisuals((int playerID, Judgement judgement, float currentComboCount) e)
     {
-        if (judgement != Judgement.Tap) //ghost filter
-            this.UpdateCount(currentComboCount, judgement);
+        if (e.judgement != Judgement.Tap) //ghost filter
+            this.UpdateCount(e.currentComboCount, e.judgement);
         
-        this.PopUpCombo(playerID, judgement);
+        this.PopUpCombo(e.playerID, e.judgement);
     }
     
-    #region PopUp Combos
-    public void PopUpCombo(int playerID, Judgement judgement)
+    
+    //#region PopUp Combos 
+    
+    private void PopUpCombo(int playerID, Judgement judgement)
     {
         Animator currentAnimator;
         Debug.Log(playerID +" "+ judgement.ToString());
@@ -208,7 +211,7 @@ public class ComboVisualHandler : MonoBehaviour
 
     }
 
-    #endregion
+
 
     
     
