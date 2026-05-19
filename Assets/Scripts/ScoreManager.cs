@@ -5,9 +5,18 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    
+    
+    private const float PERFECT = 0.05f;
+    private const float AWESOME = 0.10f;
+    private const float GOOD    = 0.15f;
+    private const float OKAY    = 0.20f;  // this really should be bound to the enum some way
+    
     public static ScoreManager Instance { get; private set; }
 
 
+    
+    
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text comboText;
 
@@ -16,21 +25,15 @@ public class ScoreManager : MonoBehaviour
 
     public float TotalScore { get; private set; }
     public float ComboMultiplier { get; private set; } = 1;
-
-
-    private int playerID = 0;
-
-    private const float PERFECT = 0.05f;
-    private const float AWESOME = 0.10f;
-    private const float GOOD    = 0.15f;
-    private const float OKAY    = 0.20f;  // this really should be bound to the enum some way
-
-
+    
     
     
     
 
-    private int activeUltMultiplier = 1;
+    private int _activeUltMultiplier = 1;
+    private bool _playersMerged = false;
+    
+    
 
     private void Awake()
     {
@@ -43,36 +46,39 @@ public class ScoreManager : MonoBehaviour
     {
         UltimateSystem.Instance.OnUltimateStarted += UltOn;
         UltimateSystem.Instance.OnUltimateFinished += UltOff;
+        
+        
+        GameplayEvents.PlayersMergeEvent.AddEventListener(this.OnPlayersMerge);
+        GameplayEvents.PlayersSeparateEvent.AddEventListener(this.OnPlayersSeparate);
     }
-    
-    
-    
-    
-    
+
+
+
+    private void OnPlayersMerge(ValueTuple _)
+    {
+        this._playersMerged = true;
+    }
+
+    private void OnPlayersSeparate(ValueTuple _)
+    {
+        this._playersMerged = false;
+    }
+
+
+
+
 
     public void AddScore(float timing, int lane, bool missed = false)
     {
-        
-        if (GameManager.Instance != null && GameManager.Instance.GameIsDone()) return;
-        
-        
+        if (GameManager.Instance != null && GameManager.Instance.GameIsDone())
+            return;
 
-        if (lane < 2)
-        {
-            playerID = 0;
-        }
+        int playerID;
 
-        else if (lane > 2)
-        {
-            playerID = 1;
-        }
-
-        else
-        {
+        if (this._playersMerged)
             playerID = 2;
-        }
-
-        
+        else
+            playerID = (lane < 2) ? 0 : 1;
         
 
         float baseScore;
@@ -143,14 +149,14 @@ public class ScoreManager : MonoBehaviour
         
         
 
-        TotalScore += baseScore * activeUltMultiplier;
+        TotalScore += baseScore * _activeUltMultiplier;
         UpdateUI();
     }
 
     public void AddBonus(int points)
     {
         if (points <= 0) return;
-        TotalScore += points * activeUltMultiplier;
+        TotalScore += points * _activeUltMultiplier;
         UpdateUI();
     }
 
@@ -171,6 +177,6 @@ public class ScoreManager : MonoBehaviour
         UltimateSystem.Instance.OnUltimateFinished -= UltOff;
     }
 
-    private void UltOn()  => activeUltMultiplier = ultimateScoreMultiplier;
-    private void UltOff() => activeUltMultiplier = 1;
+    private void UltOn()  => _activeUltMultiplier = ultimateScoreMultiplier;
+    private void UltOff() => _activeUltMultiplier = 1;
 }

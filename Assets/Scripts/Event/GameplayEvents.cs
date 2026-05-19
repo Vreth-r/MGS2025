@@ -5,9 +5,12 @@ using System;
 namespace Event
 {
     
-    //Realistically we should be able to get rid of the references that the event manager uses and just plop this into there instead.
+    //Realistically we should be able to get rid of the references that the event manager uses and just plop the dispatchers into there instead.
     //Since this isn't to be a major refactoring thing yet I'm keeping this here for the meantime until we do
     //I'm trying to hold back the urge to refactor...
+    
+    //also if we're using this method, we should refactor everything else to also use this as well.
+    //if we're not using this method, show me a better solution.
     public static class GameplayEvents
     {
         public static EventDispatcher<(int, Judgement, float)> ScoreUpdateEvent = new EventDispatcher<(int, Judgement, float)>();
