@@ -89,6 +89,7 @@ public class ComboVisualHandler : MonoBehaviour
         if (e.judgement != Judgement.Tap) //ghost filter
             this.UpdateCount(e.currentComboCount, e.judgement);
         
+        Debug.Log(e.playerID +" d: "+e.judgement);
         this.PopUpCombo(e.playerID, e.judgement);
     }
     

@@ -13,7 +13,7 @@ namespace Event
     //if we're not using this method, show me a better solution.
     public static class GameplayEvents
     {
-        public static EventDispatcher<(int, Judgement, float)> ScoreUpdateEvent = new EventDispatcher<(int, Judgement, float)>();
+        public static readonly EventDispatcher<(int, Judgement, float)> ScoreUpdateEvent = new EventDispatcher<(int, Judgement, float)>();
         //replaces the OnCombo event that we had
         //this really shouldn't be needed. Creating a Level wrapper for the players, score management, and their 
         //abilities will cut down on the amount of redirection we have here which should improve readibility
@@ -21,10 +21,10 @@ namespace Event
         
         
         //bandaid solution for the popup fix. I beg you to change this in the future.
-        public static EventDispatcher<ValueTuple> PlayersMergeEvent = new EventDispatcher<ValueTuple>();
+        public static readonly EventDispatcher<ValueTuple> PlayersMergeEvent = new EventDispatcher<ValueTuple>();
         //called when the players merge on the duo lane
         
-        public static EventDispatcher<ValueTuple> PlayersSeparateEvent = new EventDispatcher<ValueTuple>();
+        public static readonly EventDispatcher<ValueTuple> PlayersSeparateEvent = new EventDispatcher<ValueTuple>();
         //called when the players separate from the duo lane
         //because of core jank this is currently called every time the duo value is < 2
     }

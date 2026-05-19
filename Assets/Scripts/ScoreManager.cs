@@ -73,9 +73,9 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(float timing, int lane, bool missed = false)
     {
-        if (GameManager.Instance != null || GameManager.Instance.GameIsDone())
+        if (GameManager.Instance != null && GameManager.Instance.GameIsDone())
             return;
-
+    
         int playerID;
         if (this._playersMerged)
             playerID = 2;
@@ -137,6 +137,7 @@ public class ScoreManager : MonoBehaviour
         }
         else if (missed)
         {
+            
             ResetCombo();
             GameplayEvents.ScoreUpdateEvent.CallEvent((playerID, Judgement.Miss, ComboMultiplier));
             baseScore = 0;
