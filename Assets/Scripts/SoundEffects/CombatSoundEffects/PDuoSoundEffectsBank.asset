@@ -43,3 +43,18 @@ MonoBehaviour:
         Data3: -741242200
         Data4: 1008367817
       Path: event:/CombatSoundEffects/MissHit_1
+  - name: DeadNoteHit_1
+    normal:
+      Guid:
+        Data1: -432871611
+        Data2: 1300624693
+        Data3: -1746923585
+        Data4: 780156089
+      Path: event:/CombatSoundEffects/DeadNoteHit_1
+    flesh:
+      Guid:
+        Data1: -432871611
+        Data2: 1300624693
+        Data3: -1746923585
+        Data4: 780156089
+      Path: event:/CombatSoundEffects/DeadNoteHit_1
