@@ -19812,7 +19812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   noteSpeed: 5
   hitZone: {fileID: 37639069}
-  beatmapFileName: fullBeatmapApr6.json
+  beatmapFileName: fullBeatmapMay22.json
   lanes:
   - {fileID: 2071915542}
   - {fileID: 1566342112}
@@ -19821,7 +19821,9 @@ MonoBehaviour:
   - {fileID: 478625899}
   tapNotePrefab: {fileID: 5200638745532964819, guid: 5092948592fb29f4093674817df3e82b, type: 3}
   holdNotePrefab: {fileID: 5200638745532964819, guid: c2fa55dc3ffae0d41ab4742c7b2b602e, type: 3}
-  deadNotePrefab: {fileID: 5200638745532964819, guid: 286f60411db448a48aecf20ee47950a5, type: 3}
+  deadNotePrefab:
+  - {fileID: 5200638745532964819, guid: 286f60411db448a48aecf20ee47950a5, type: 3}
+  - {fileID: 5200638745532964819, guid: dfc09fb95d53973468176e63973aadc2, type: 3}
   bpm: 0
   secondsPerBeat: 0
   noteSaturation: 0.5

@@ -52,6 +52,8 @@ public class AnimationManager : MonoBehaviour
 
     public System.Action OnCharacterReset; //position reseter
 
+    private static string lastMissedNoteType;
+
     private void Start()
     {
         //do newPos when press
@@ -148,7 +150,19 @@ public class AnimationManager : MonoBehaviour
                 // animator.Play("Bounce2");
                 spriteRenderer.sprite = sprOuch;
 
-                soundEffectsPlayer.PlaySoundEffect("MissHit_1");
+                //soundEffectsPlayer.PlaySoundEffect("MissHit_1");
+
+                if (lastMissedNoteType == "DeadNote")
+                {
+                    soundEffectsPlayer.PlaySoundEffect("DeadNoteHit_1");
+                    Debug.Log("dead");
+                }
+
+                else
+                {
+                    soundEffectsPlayer.PlaySoundEffect("MissHit_1");
+                    Debug.Log("not dead");
+                }
 
                 hurtActive = 3;
                 if (hurtlanes[i] == 2)  //lets both Ps be hurt if in lane 2 (needs to be run twice)
@@ -401,8 +415,17 @@ public class AnimationManager : MonoBehaviour
     }
     public static void Missed(LaneController lane)
     {
+        lastMissedNoteType = "";
+        Debug.Log("Miss Tap");
         hurtlanes.Add(lane.laneIndex);
+    }
 
+    public static void Missed(LaneController lane, string noteType)
+    {
+        lastMissedNoteType = noteType;
+        Debug.Log(noteType);
+        Debug.Log("Hit DeadNote");
+        hurtlanes.Add(lane.laneIndex);
     }
 
     private void idleanim()

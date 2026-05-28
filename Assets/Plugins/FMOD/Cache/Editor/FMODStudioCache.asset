@@ -321,6 +321,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 864
+--- !u!114 &-133276151830915761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CombatSoundEffects/DeadNoteHit_1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CombatSoundEffects/DeadNoteHit_1
+  Guid:
+    Data1: -432871611
+    Data2: 1300624693
+    Data3: -1746923585
+    Data4: 780156089
+  Banks:
+  - {fileID: 9201975456026742098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1201
 --- !u!114 &-55249324929348821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,12 +422,13 @@ MonoBehaviour:
   - {fileID: -6702417479920389762}
   - {fileID: 8158542930823026023}
   - {fileID: -4024676828948207271}
+  - {fileID: -133276151830915761}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9201975456026742098}
   StringsBanks:
   - {fileID: 2501108071354642436}
-  cacheTime: 639145292648941116
+  cacheTime: 639150285039071871
   cacheVersion: 131635
 --- !u!114 &146823099636390297
 MonoBehaviour:
@@ -522,10 +550,10 @@ MonoBehaviour:
   Path: fmod/bab/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639135026194135297
+  lastModified: 639150285039071871
   FileSizes:
   - Name: Desktop
-    Value: 2318
+    Value: 2370
   Exists: 1
 --- !u!114 &3839901462497203816
 MonoBehaviour:
@@ -976,8 +1004,8 @@ MonoBehaviour:
   Path: fmod/bab/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639145292648941116
+  lastModified: 639150285039006403
   FileSizes:
   - Name: Desktop
-    Value: 13449408
+    Value: 13460768
   Exists: 1

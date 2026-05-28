@@ -58,17 +58,17 @@ public class Health : MonoBehaviour
     {
         if (IsDead()) return;
 
-        //hard mode 3 regen
+        //hard mode half regen
         if (gameSettings.gameMode == 2)
         {
-           // Debug.Log("hard mode diff");
-            HealthValue = Mathf.Min(MaxHealth, HealthValue + 3);
+            //Debug.Log("hard mode diff");
+            HealthValue = Mathf.Min(MaxHealth, HealthValue + ((int)amount / 2));
         }
 
         //nightmare mode 0 regen
         else if (gameSettings.gameMode == 3)
         {
-           // Debug.Log("nightmare mode diff");
+            //Debug.Log("nightmare mode diff");
             return;
         }
 

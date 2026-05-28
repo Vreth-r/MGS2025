@@ -11,10 +11,10 @@ public class DeadNote : NoteBase
         }
 
         Resolve();
-        AnimationManager.Missed(lane);
+        AnimationManager.Missed(lane, "DeadNote");
         Health.TakeDamage(damageIncrement);
         ScoreManager.Instance.AddScore(1f, lane.laneIndex, true);
-        Destroy(gameObject);
+        StartCoroutine(animPause(0.4f, "dead note hit"));
     }
 
     public override void Miss()
@@ -28,6 +28,6 @@ public class DeadNote : NoteBase
         UltimateSystem.Instance.IncrementUltimate(Judgement.Perfect);
         Health.Regen(regenIncrement);
         ScoreManager.Instance.AddScore(0f, lane.laneIndex);
-        Destroy(gameObject);
+        StartCoroutine(animPause(0.4f, "pass through"));
     }
 }

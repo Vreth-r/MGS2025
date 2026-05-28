@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Note Prefabs")]
     public GameObject tapNotePrefab;
     public GameObject holdNotePrefab;
-    public GameObject deadNotePrefab;
+    public GameObject[] deadNotePrefab;
 
     [Header("Pulse")]
     public float bpm;
@@ -69,7 +69,8 @@ public class GameManager : MonoBehaviour
         {
             { "Tap",  tapNotePrefab  },
             { "Hold", holdNotePrefab },
-            { "Dead", deadNotePrefab }
+            { "Dead1", deadNotePrefab[0] },
+            { "Dead2", deadNotePrefab[1] }
         };
 
         LoadBeatmapFromFile(beatmapFileName);
