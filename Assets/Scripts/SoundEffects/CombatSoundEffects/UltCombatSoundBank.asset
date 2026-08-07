@@ -9,19 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c71ba9173a3c8d45be5a242c4b9f4db, type: 3}
-  m_Name: UltSoundEffectsBank
-  m_EditorClassIdentifier: Scripts::SoundEffectsBank
-  soundEffects:
+  m_Script: {fileID: 11500000, guid: 2571f3642c87e8349b9114df6c3a612a, type: 3}
+  m_Name: UltCombatSoundBank
+  m_EditorClassIdentifier: Scripts::CombatSoundBank
+  combatSoundEffects:
   - name: UltCharged_1
-    normal:
-      Guid:
-        Data1: -818873338
-        Data2: 1117009736
-        Data3: 1089219482
-        Data4: 1932658847
-      Path: event:/CombatSoundEffects/UltCharged_1
-    flesh:
+    eventReference:
       Guid:
         Data1: -818873338
         Data2: 1117009736
@@ -29,14 +22,7 @@ MonoBehaviour:
         Data4: 1932658847
       Path: event:/CombatSoundEffects/UltCharged_1
   - name: UltChargedWaiting_1
-    normal:
-      Guid:
-        Data1: 1308322588
-        Data2: 1275965721
-        Data3: -1122089341
-        Data4: -1413647657
-      Path: event:/CombatSoundEffects/UltChargedWaiting_1
-    flesh:
+    eventReference:
       Guid:
         Data1: 1308322588
         Data2: 1275965721
@@ -44,14 +30,7 @@ MonoBehaviour:
         Data4: -1413647657
       Path: event:/CombatSoundEffects/UltChargedWaiting_1
   - name: UltActivate_1
-    normal:
-      Guid:
-        Data1: -848015026
-        Data2: 1290771784
-        Data3: -1578937700
-        Data4: -1397083592
-      Path: event:/CombatSoundEffects/UltActivate_1
-    flesh:
+    eventReference:
       Guid:
         Data1: -848015026
         Data2: 1290771784

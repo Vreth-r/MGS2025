@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 415530086386118426}
   - component: {fileID: 5884771920502486487}
   - component: {fileID: 2796357701905920959}
-  - component: {fileID: 5679320109479483736}
+  - component: {fileID: 3590232483397245376}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5679320109479483736
+--- !u!114 &3590232483397245376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -689,10 +689,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5158882415972840455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Script: {fileID: 11500000, guid: 498152a16c04aa844b245df5fc55d4be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 2354006414283491069}
+  m_EditorClassIdentifier: Scripts::UISoundPlayer
   sounds:
   - type: 0
     eventReference:
@@ -722,7 +721,7 @@ GameObject:
   - component: {fileID: 6673966879916817158}
   - component: {fileID: 7520315039198930183}
   - component: {fileID: 2864685039153531368}
-  - component: {fileID: 4168319554298830450}
+  - component: {fileID: 3809871940034858156}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -832,7 +831,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4168319554298830450
+--- !u!114 &3809871940034858156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -841,10 +840,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5211513677007360731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Script: {fileID: 11500000, guid: 498152a16c04aa844b245df5fc55d4be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 2354006414283491069}
+  m_EditorClassIdentifier: Scripts::UISoundPlayer
   sounds:
   - type: 0
     eventReference:
@@ -972,65 +970,6 @@ Transform:
   - {fileID: 4436770393694030803}
   m_Father: {fileID: 3669874952543653346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6751554956889654448
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8234277848260411168}
-  - component: {fileID: 2354006414283491069}
-  - component: {fileID: 6385896693024105465}
-  m_Layer: 0
-  m_Name: UISoundEffectsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8234277848260411168
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6751554956889654448}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3669874952543653346}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2354006414283491069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6751554956889654448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
---- !u!114 &6385896693024105465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6751554956889654448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 2354006414283491069}
-  sounds: []
 --- !u!1 &7117529363011874933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +982,7 @@ GameObject:
   - component: {fileID: 8241256703372323560}
   - component: {fileID: 7338240347828406015}
   - component: {fileID: 8935192282198903880}
-  - component: {fileID: 7523135609128400258}
+  - component: {fileID: 7960829931569109513}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -1153,7 +1092,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7523135609128400258
+--- !u!114 &7960829931569109513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1162,10 +1101,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7117529363011874933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Script: {fileID: 11500000, guid: 498152a16c04aa844b245df5fc55d4be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 2354006414283491069}
+  m_EditorClassIdentifier: Scripts::UISoundPlayer
   sounds:
   - type: 0
     eventReference:
@@ -1357,7 +1295,6 @@ RectTransform:
   - {fileID: 6376229483011506072}
   - {fileID: 7078555522545921756}
   - {fileID: 1506939533003393959}
-  - {fileID: 8234277848260411168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1496,7 +1433,7 @@ GameObject:
   - component: {fileID: 3163880337258802892}
   - component: {fileID: 4265665378156616480}
   - component: {fileID: 8239167658459870941}
-  - component: {fileID: 7145647014748496546}
+  - component: {fileID: 2890859322487052238}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1606,7 +1543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7145647014748496546
+--- !u!114 &2890859322487052238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1615,10 +1552,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8579933530183976395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Script: {fileID: 11500000, guid: 498152a16c04aa844b245df5fc55d4be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 2354006414283491069}
+  m_EditorClassIdentifier: Scripts::UISoundPlayer
   sounds:
   - type: 0
     eventReference:

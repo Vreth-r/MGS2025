@@ -9,19 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c71ba9173a3c8d45be5a242c4b9f4db, type: 3}
-  m_Name: P1SoundEffectsBank
-  m_EditorClassIdentifier: Scripts::SoundEffectsBank
-  soundEffects:
+  m_Script: {fileID: 11500000, guid: 2571f3642c87e8349b9114df6c3a612a, type: 3}
+  m_Name: P1CombatSoundBank
+  m_EditorClassIdentifier: Scripts::CombatSoundBank
+  combatSoundEffects:
   - name: AttackHit_1
-    normal:
-      Guid:
-        Data1: -2120781624
-        Data2: 1314787665
-        Data3: 1991358853
-        Data4: 363117282
-      Path: event:/CombatSoundEffects/DrumHit_1
-    flesh:
+    eventReference:
       Guid:
         Data1: 1096522396
         Data2: 1077952384
@@ -29,14 +22,7 @@ MonoBehaviour:
         Data4: -674264411
       Path: event:/CombatSoundEffects/DrumHit_1 (flesh)
   - name: AttackHit_2
-    normal:
-      Guid:
-        Data1: -2110005770
-        Data2: 1125088056
-        Data3: -429862774
-        Data4: -1245070238
-      Path: event:/CombatSoundEffects/DrumHit_2
-    flesh:
+    eventReference:
       Guid:
         Data1: 2090476685
         Data2: 1129987956
@@ -44,14 +30,7 @@ MonoBehaviour:
         Data4: -1265409305
       Path: event:/CombatSoundEffects/DrumHit_2 (flesh)
   - name: MissHit_1
-    normal:
-      Guid:
-        Data1: 1456885832
-        Data2: 1109889751
-        Data3: -741242200
-        Data4: 1008367817
-      Path: event:/CombatSoundEffects/MissHit_1
-    flesh:
+    eventReference:
       Guid:
         Data1: 1456885832
         Data2: 1109889751
@@ -59,14 +38,7 @@ MonoBehaviour:
         Data4: 1008367817
       Path: event:/CombatSoundEffects/MissHit_1
   - name: DeadNoteHit_1
-    normal:
-      Guid:
-        Data1: -432871611
-        Data2: 1300624693
-        Data3: -1746923585
-        Data4: 780156089
-      Path: event:/CombatSoundEffects/DeadNoteHit_1
-    flesh:
+    eventReference:
       Guid:
         Data1: -432871611
         Data2: 1300624693

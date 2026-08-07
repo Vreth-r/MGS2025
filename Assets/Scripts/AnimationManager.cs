@@ -46,7 +46,7 @@ public class AnimationManager : MonoBehaviour
 
     static List<int> hurtlanes = new List<int>();
 
-    private SoundEffectsPlayer soundEffectsPlayer;
+    private CombatSoundPlayer combatSoundPlayer;
     
     int laneHeldGuitar = -1; //denotes which lane is currently held for the guitar controls
 
@@ -73,9 +73,9 @@ public class AnimationManager : MonoBehaviour
 
         animator = GetComponent<Animator>();
 
-        soundEffectsPlayer = GetComponent<SoundEffectsPlayer>();
+        combatSoundPlayer = GetComponent<CombatSoundPlayer>();
 
-        SoundEffectsEventHelper.OnSuccessfulHit += PlaySoundOnSuccessfulHit;
+        CombatSoundPlayer.OnSuccessfulHit += PlaySoundOnSuccessfulHit;
 
         //Set up general position
         // General positions are bugged due to new pivots, pls adjust
@@ -114,7 +114,7 @@ public class AnimationManager : MonoBehaviour
             InputManager.Instance.OnLaneReleasedGuitar -= LaneReleasedGuitar;  
         }
 
-        SoundEffectsEventHelper.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
+        CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
     private void OnDisable()
@@ -130,7 +130,7 @@ public class AnimationManager : MonoBehaviour
             InputManager.Instance.OnLaneReleasedGuitar -= LaneReleasedGuitar;
         }
 
-        SoundEffectsEventHelper.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
+        CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
     //run every frame
@@ -150,17 +150,17 @@ public class AnimationManager : MonoBehaviour
                 // animator.Play("Bounce2");
                 spriteRenderer.sprite = sprOuch;
 
-                //soundEffectsPlayer.PlaySoundEffect("MissHit_1");
+                //combatSoundPlayer.PlaySoundEffect("MissHit_1");
 
                 if (lastMissedNoteType == "DeadNote")
                 {
-                    soundEffectsPlayer.PlaySoundEffect("DeadNoteHit_1");
+                    combatSoundPlayer.PlaySoundEffect("DeadNoteHit_1");
                     Debug.Log("dead");
                 }
 
                 else
                 {
-                    soundEffectsPlayer.PlaySoundEffect("MissHit_1");
+                    combatSoundPlayer.PlaySoundEffect("MissHit_1");
                     Debug.Log("not dead");
                 }
 
@@ -484,7 +484,7 @@ public class AnimationManager : MonoBehaviour
         if (LaneIdentifier(laneIndex) == true)
         {
             string soundName = GetNextAttackSound();
-            soundEffectsPlayer.PlaySoundEffect(soundName);
+            combatSoundPlayer.PlaySoundEffect(soundName);
         }
     }
 
