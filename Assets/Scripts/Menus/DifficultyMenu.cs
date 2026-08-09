@@ -3,6 +3,7 @@ using System.Collections;
 using FMODUnity;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 // using UnityEngine.UIElements;
 
@@ -148,13 +149,13 @@ public class DifficultyMenu : BaseMenu
         */
 
         var button = buttons[selectedIndex];
-
-        var soundHelper = button.GetComponent<UISoundEffectsEventHelper>();
+        /*
+        var soundHelper = button.GetComponent<UISoundPlayer>();
         if (soundHelper != null)
         {
             soundHelper.PlayOnSubmit();
         }
-
+        */
         button.onClick.Invoke();
     }
 
@@ -177,8 +178,7 @@ public class DifficultyMenu : BaseMenu
 
         if (buttons[index] != null)
         {
-            var sound = buttons[index]?.GetComponent<UISoundEffectsEventHelper>();
-            sound.PlaySound(UISoundEffectsType.Hover);
+            EventSystem.current.SetSelectedGameObject(buttons[index].gameObject);
         }
 
     }

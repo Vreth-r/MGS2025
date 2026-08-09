@@ -44,7 +44,7 @@ public class UltimateSystem : MonoBehaviour
     public GameObject fgvisual;
     public GameObject bgvisual;
 
-    private SoundEffectsPlayer soundEffectsPlayer;
+    private CombatSoundPlayer combatSoundPlayer;
 
     private GameSettings gameSettings;
 
@@ -68,7 +68,7 @@ public class UltimateSystem : MonoBehaviour
 
         ultimateBar.fillAmount = 0;
 
-        soundEffectsPlayer = GetComponent<SoundEffectsPlayer>();
+        combatSoundPlayer = GetComponent<CombatSoundPlayer>();
 
         gameSettings = Resources.Load<GameSettings>("GameSettings");
     }
@@ -100,8 +100,8 @@ public class UltimateSystem : MonoBehaviour
 
                 if (isUltReady == false)
                 {
-                    soundEffectsPlayer.PlaySoundEffect("UltCharged_1");
-                    soundEffectsPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
+                    combatSoundPlayer.PlaySoundEffect("UltCharged_1");
+                    combatSoundPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
 
                     isUltReady = true;
                 }
@@ -131,7 +131,7 @@ public class UltimateSystem : MonoBehaviour
 
         if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
         {
-            soundEffectsPlayer.StopLoopingSoundEffect("UltChargedWaiting_1");
+            combatSoundPlayer.StopLoopingSoundEffect("UltChargedWaiting_1");
 
             if (ultimateReadyBorder != null)
             {
@@ -149,7 +149,7 @@ public class UltimateSystem : MonoBehaviour
 
             ultimateNoteCountProgress = 0; //reset progress
 
-            soundEffectsPlayer.PlaySoundEffect("UltActivate_1");
+            combatSoundPlayer.PlaySoundEffect("UltActivate_1");
             manager.StartFade("UltLayer", 1f, 0.5f);
 
             OnUltimateStarted?.Invoke();  //calls the functions that are subscribed to this event

@@ -13,7 +13,7 @@ public class TapNote : NoteBase
 
         if (judgement != Judgement.Miss)
         {
-            SoundEffectsEventHelper.OnSuccessfulHit?.Invoke(lane.laneIndex, judgement);
+            CombatSoundPlayer.OnSuccessfulHit?.Invoke(lane.laneIndex, judgement);
         }
 
         movement = false;

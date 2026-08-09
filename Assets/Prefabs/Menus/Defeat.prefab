@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 3391967377589074636}
   - component: {fileID: 7595901689807180231}
   - component: {fileID: 4873815271652491333}
-  - component: {fileID: 7850293446081313517}
+  - component: {fileID: 8370252053382336564}
   m_Layer: 5
   m_Name: MainMenuButton1
   m_TagString: Untagged
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7850293446081313517
+--- !u!114 &8370252053382336564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -506,10 +506,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5200203439558905044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Script: {fileID: 11500000, guid: 498152a16c04aa844b245df5fc55d4be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 7991052641854478561}
+  m_EditorClassIdentifier: Scripts::UISoundPlayer
   sounds:
   - type: 0
     eventReference:
@@ -850,7 +849,7 @@ GameObject:
   - component: {fileID: 7453834785274248297}
   - component: {fileID: 8466993659577778760}
   - component: {fileID: 1661126136572761434}
-  - component: {fileID: 5734528588265436282}
+  - component: {fileID: 8687223254964141533}
   m_Layer: 5
   m_Name: PlayAgainButton1
   m_TagString: Untagged
@@ -960,7 +959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5734528588265436282
+--- !u!114 &8687223254964141533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -969,10 +968,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7181841004225416995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
+  m_Script: {fileID: 11500000, guid: 498152a16c04aa844b245df5fc55d4be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 7991052641854478561}
+  m_EditorClassIdentifier: Scripts::UISoundPlayer
   sounds:
   - type: 0
     eventReference:
@@ -1025,7 +1023,6 @@ RectTransform:
   - {fileID: 5606809492013467481}
   - {fileID: 3981918733536188578}
   - {fileID: 2164893387478239729}
-  - {fileID: 8758033942244952824}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1087,73 +1084,6 @@ MonoBehaviour:
   canvas: {fileID: 0}
   restartBTN: {fileID: 1661126136572761434}
   mainMenuBTN: {fileID: 4873815271652491333}
---- !u!1 &7691516981728468776
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8758033942244952824}
-  - component: {fileID: 7991052641854478561}
-  - component: {fileID: 4341587150823142200}
-  m_Layer: 0
-  m_Name: UISoundEffectsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8758033942244952824
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7691516981728468776}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -959.99994, y: -540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4538737888314133127}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7991052641854478561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7691516981728468776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e149ccf1aaab4c48b44a2f7896a3b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsPlayer
---- !u!114 &4341587150823142200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7691516981728468776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6bbcb785dfa545a63d438292d0a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Scripts::UISoundEffectsEventHelper
-  soundEffectsPlayer: {fileID: 7991052641854478561}
-  sounds:
-  - type: 2
-    eventReference:
-      Guid:
-        Data1: 1834775605
-        Data2: 1153945529
-        Data3: -1750715719
-        Data4: -1330455283
-      Path: event:/UISoundEffects/OnLoad_1
 --- !u!1 &7989220419123221980
 GameObject:
   m_ObjectHideFlags: 0

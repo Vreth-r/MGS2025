@@ -59,7 +59,7 @@ public class MainMenu : BaseMenu
     protected override void OnOpen()
     {
         Debug.LogFormat($"Main menu opened");
-        UISoundEffectsEventHelper.surpressFirstHoverSound = true;
+        UISoundPlayer.surpressFirstHoverSound = true;
         StartCoroutine(DelaySelect());
     }
 
@@ -119,13 +119,13 @@ public class MainMenu : BaseMenu
     public override void HandleSubmit()
     {
         var button = buttons[selectedIndex];
-
-        var soundHelper = button.GetComponent<UISoundEffectsEventHelper>();
+        /*
+        var soundHelper = button.GetComponent<UISoundPlayer>();
         if (soundHelper != null)
         {
             soundHelper.PlayOnSubmit();
         }
-
+        */
         button.onClick.Invoke();
 
         //buttons[selectedIndex].onClick.Invoke();

@@ -256,10 +256,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 19662019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: b0d8cd8ee238b0f4f92d851f22db4f0b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
-  soundEffectsBank: {fileID: 11400000, guid: 9f0f76e39b2d5224489a874799c8a92c, type: 2}
+  m_EditorClassIdentifier: Scripts::CombatSoundPlayer
+  combatSoundBank: {fileID: 11400000, guid: b32ce8d29af240440814fb9e8c2709c2, type: 2}
 --- !u!1 &21626026
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,10 +397,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 21626026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: b0d8cd8ee238b0f4f92d851f22db4f0b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
-  soundEffectsBank: {fileID: 11400000, guid: 993826908b2933c4cbc33e4394180418, type: 2}
+  m_EditorClassIdentifier: Scripts::CombatSoundPlayer
+  combatSoundBank: {fileID: 11400000, guid: 39d23e70de3912f408c549e40f3736e0, type: 2}
 --- !u!1 &23565640
 GameObject:
   m_ObjectHideFlags: 0
@@ -13255,10 +13255,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 751757884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: b0d8cd8ee238b0f4f92d851f22db4f0b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
-  soundEffectsBank: {fileID: 11400000, guid: 9a00b16ec002176428e718877aa08607, type: 2}
+  m_EditorClassIdentifier: Scripts::CombatSoundPlayer
+  combatSoundBank: {fileID: 11400000, guid: 4184d28061263904f89c83548b3b1bde, type: 2}
 --- !u!1001 &753328635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26659,10 +26659,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757023862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c216aa03544bcc42a2ae1ab3f426a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: b0d8cd8ee238b0f4f92d851f22db4f0b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts::SoundEffectsPlayer
-  soundEffectsBank: {fileID: 11400000, guid: bed7fd0e773a06a4aa36eb2e945e8c99, type: 2}
+  m_EditorClassIdentifier: Scripts::CombatSoundPlayer
+  combatSoundBank: {fileID: 11400000, guid: 7dade69aeecc71c438ad1fb6183892cc, type: 2}
 --- !u!1 &1779061230
 GameObject:
   m_ObjectHideFlags: 0
