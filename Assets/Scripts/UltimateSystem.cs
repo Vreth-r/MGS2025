@@ -1,7 +1,19 @@
 using System;
 using System.Collections;
+using Event;
 using UnityEngine;
 using UnityEngine.UI;
+
+
+
+/*
+ * [REFACTORING] 
+ *  Refactor this to use a more modular system
+ *  recommend using a generic ability system in case we decide to add other things
+ *  And, this should probably be more strongly coupled to the players
+ *  -TJ
+ * 
+ */
 
 public class UltimateSystem : MonoBehaviour
 {
@@ -31,10 +43,7 @@ public class UltimateSystem : MonoBehaviour
 
     private int usedUltimateCount; //tracks the number of ults used (so we can disable it completely after the max number of uses)
     private bool isUltReady = false;
-
-    //events (calls other components/functions that are subscribed to these events)
-    public event Action OnUltimateStarted;
-    public event Action OnUltimateFinished;
+    
 
     //getter+setters
     public static UltimateSystem Instance { get; private set; }
@@ -43,10 +52,11 @@ public class UltimateSystem : MonoBehaviour
     //visuals
     public GameObject fgvisual;
     public GameObject bgvisual;
-
-    private CombatSoundPlayer combatSoundPlayer;
-
-    private GameSettings gameSettings;
+    //ultimate foreground and background ui (I think)
+    
+    
+    private CombatSoundPlayer _combatSoundPlayer;
+    private GameSettings _gameSettings;
 
     private void Awake()
     {
@@ -65,15 +75,17 @@ public class UltimateSystem : MonoBehaviour
         */
 
         ultimateNoteCountThreshold = totalNoteCount / ultimateDivider;
-
         ultimateBar.fillAmount = 0;
-
-        combatSoundPlayer = GetComponent<CombatSoundPlayer>();
-
-        gameSettings = Resources.Load<GameSettings>("GameSettings");
+        _combatSoundPlayer = GetComponent<CombatSoundPlayer>();
+        _gameSettings = Resources.Load<GameSettings>("GameSettings");
+        
+        if (ultimateReadyBorder == null)
+            throw new InvalidOperationException("UltimateReadyBorder for the Ultimate System game object is null! set the object to a valid reference");
     }
 
     //increments the ult bar and logic numbers
+    
+    //[REFACTORING] this would be a good use case for events to call this function, especially if refactored into using a more modular ability system - TJ
     public void IncrementUltimate(Judgement judgement)
     {
         float multiplier = judgement switch
@@ -85,80 +97,83 @@ public class UltimateSystem : MonoBehaviour
             _ => 0f
         };
 
-        Debug.Log("current judge - " + judgement);
+        //Debug.Log("current judge - " + judgement);
 
-        if (!UltimateActive) //stop incrementing ult bar if ult bar is already currently being used
+        //stop incrementing ult bar if ult bar is already currently being used
+        if (UltimateActive)
+            return;
+
+        ultimateNoteCountProgress += multiplier;
+       // ultimateNoteCountProgress = ultimateNoteCountProgress + (1 * multiplier); //add to the ult count progress
+
+        //updates the visual ult bar to show progress, and if more notes are hit and the ult is already ready, just cap it out
+        ultimateBar.fillAmount = Mathf.Clamp01(ultimateNoteCountProgress / ultimateNoteCountThreshold);  //it's already a float the cast does nothing
+
+
+        if (!(ultimateNoteCountProgress >= ultimateNoteCountThreshold)) 
+            return;
+        
+        
+        ultimateNoteCountProgress = ultimateNoteCountThreshold; //prevents overflow for note count progress
+
+        if (!isUltReady)
         {
-            ultimateNoteCountProgress = ultimateNoteCountProgress + (1 * multiplier); //add to the ult count progress
-
-            //updates the visual ult bar to show progress, and if more notes are hit and the ult is already ready, just cap it out
-            ultimateBar.fillAmount = Mathf.Clamp01(ultimateNoteCountProgress / (float)ultimateNoteCountThreshold);  
-
-            if (ultimateNoteCountProgress >= ultimateNoteCountThreshold)
-            {
-                ultimateNoteCountProgress = ultimateNoteCountThreshold; //prevents overflow for note count progress
-
-                if (isUltReady == false)
-                {
-                    combatSoundPlayer.PlaySoundEffect("UltCharged_1");
-                    combatSoundPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
-
-                    isUltReady = true;
-                }
-
-                if (ultimateReadyBorder != null)
-                {
-                    ultimateReadyBorder.SetActive(true);
-
-                    if (gameSettings.autoUltimate == true)
-                    {
-                        ActivateUltimate();
-                    }
-                }
-            }
+            _combatSoundPlayer.PlaySoundEffect("UltCharged_1");
+            _combatSoundPlayer.PlayLoopingSoundEffect("UltChargedWaiting_1");
+            isUltReady = true;
         }
+
+        if (ultimateReadyBorder != null)
+        {
+            ultimateReadyBorder.SetActive(true);
+            if (_gameSettings.autoUltimate)
+                ActivateUltimate();
+        }
+
     }
 
     //function that activates the ultimate
     public void ActivateUltimate()
     {
-        if (UltimateActive == true)
-        {
+        if (UltimateActive)  //if the ultimate ability is currently active
             return;
-        }
 
+        if (ultimateNoteCountProgress < ultimateNoteCountThreshold)  //if the required amount of notes is hit
+            return;
+        
         isUltReady = false;
-
-        if (ultimateNoteCountProgress >= ultimateNoteCountThreshold) //note count matches the needed threshold for ultimate
+        
+        //todo replace this with a constant value instead of string literal
+        _combatSoundPlayer.StopLoopingSoundEffect("UltChargedWaiting_1");
+        ultimateReadyBorder.SetActive(false);
+        
+        
+        if (fgvisual != null && bgvisual != null)
         {
-            combatSoundPlayer.StopLoopingSoundEffect("UltChargedWaiting_1");
+            //fgvisual.SetActive(true);
+            Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color; //for when the ult happens, visuals pop in
+            bgvisual.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 30f/255f);
 
-            if (ultimateReadyBorder != null)
-            {
-                ultimateReadyBorder.SetActive(false);
-            }
-            if (fgvisual != null && bgvisual != null)
-            {
-                //fgvisual.SetActive(true);
-                Color bgColor = bgvisual.GetComponent<SpriteRenderer>().color; //for when the ult happens, visuals pop in
-                bgvisual.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 30f/255f);
-
-                Color fgColor = fgvisual.GetComponent<Image>().color;
-                fgvisual.GetComponent<Image>().color = new Color(fgColor.r, fgColor.g, fgColor.b, 1f);
-            }
-
-            ultimateNoteCountProgress = 0; //reset progress
-
-            combatSoundPlayer.PlaySoundEffect("UltActivate_1");
-            manager.StartFade("UltLayer", 1f, 0.5f);
-
-            OnUltimateStarted?.Invoke();  //calls the functions that are subscribed to this event
-            UltimateActive = true; //makes boolean true
-
-            Instance.StartCoroutine(UltimateScoreModifier()); //calls the ult score modifier for big funny score multiplier
+            Color fgColor = fgvisual.GetComponent<Image>().color;
+            fgvisual.GetComponent<Image>().color = new Color(fgColor.r, fgColor.g, fgColor.b, 1f);
         }
-    }
 
+        ultimateNoteCountProgress = 0; //reset progress
+
+        _combatSoundPlayer.PlaySoundEffect("UltActivate_1");
+        manager.StartFade("UltLayer", 1f, 0.5f);
+
+        GameplayEvents.UltimateStartEvent.CallEvent(ValueTuple.Create());
+        
+        
+        UltimateActive = true; //makes boolean true
+        Instance.StartCoroutine(UltimateScoreModifier()); //calls the ult score modifier for big funny score multiplier
+        
+    }
+    
+    //It would be probably a better idea to inline this into a ticking function instead of using an IEnumerator....
+    //-TJ
+    
     //for the ult score multiplier and the visual ult bar decreasing over time
     private IEnumerator UltimateScoreModifier()
     {
@@ -199,8 +214,8 @@ public class UltimateSystem : MonoBehaviour
         }
 
         ultimateBar.fillAmount = 0f; //just incase the bar somehow goes a bit over/under, force it to be exact 0
-
-        OnUltimateFinished?.Invoke(); //calls all functions that listen to OnUltimateFinished
+        
+        GameplayEvents.UltimateDepleteEvent.CallEvent(ValueTuple.Create());
         UltimateActive = false;
 
         manager.StartFade("UltLayer", 0f, 0.5f);
@@ -208,6 +223,8 @@ public class UltimateSystem : MonoBehaviour
     }
 
     //calls ultimate
+    //[REFACTORING] The private nature of this function is nullified by the public nature of ActivateUltimate(), rendering this function obsolete -TJ
+    [Obsolete("Directly call ActivateUltimate() instead")]
     private void UseUltimate()
     {
         ActivateUltimate();
@@ -242,7 +259,7 @@ public class UltimateSystem : MonoBehaviour
 
         while (elapsedTime < 0.5f)
         {
-            elapsedTime = elapsedTime + Time.deltaTime;
+            elapsedTime += Time.deltaTime;
 
             float a = elapsedTime / 0.5f;
             float bgAlpha = Mathf.Lerp(bgColor.a, 0f, a); //lerps until alpha goes to 0
