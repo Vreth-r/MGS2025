@@ -5,6 +5,7 @@ using FMOD.Studio;
 using FMODUnity;
 using JetBrains.Annotations;
 using System.Collections;
+using Event;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,7 +56,10 @@ public class GameManager : MonoBehaviour
     private Coroutine fadeCoroutine;
     private void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this) {
+            Destroy(gameObject); return;
+        }
+        
         Instance = this;
 
         
@@ -82,9 +86,11 @@ public class GameManager : MonoBehaviour
         FMODUnity.RuntimeManager.LoadBank("Master.strings", true);
         InputManager.Instance.EnableGameplay();
         StartBeatmapPlayback();
-
-        UltimateSystem.Instance.OnUltimateStarted += ApplyUltimateSaturation;
-        UltimateSystem.Instance.OnUltimateFinished += ResetSaturation;
+        
+        GameplayEvents.UltimateStartEvent.AddEventListener(ApplyUltimateSaturation);
+        GameplayEvents.UltimateDepleteEvent.AddEventListener(ResetSaturation);
+        
+        
     }
 
     private void Update()
@@ -277,16 +283,17 @@ public class GameManager : MonoBehaviour
     {
         StopSongImmediate();
 
-        UltimateSystem.Instance.OnUltimateStarted -= ApplyUltimateSaturation;
-        UltimateSystem.Instance.OnUltimateFinished -= ResetSaturation;
+       // UltimateSystem.Instance.OnUltimateStarted -= ApplyUltimateSaturation;
+        
+        GameplayEvents.UltimateStartEvent.AddEventListener(ApplyUltimateSaturation);
+        GameplayEvents.UltimateDepleteEvent.RemoveEventListener(ResetSaturation);
     }
 
-    private void ApplyUltimateSaturation()
-        => ForEachActiveNoteSprite(r => r.color = ChangeSaturation(r.color, noteSaturation));
+    private void ApplyUltimateSaturation(ValueTuple _) => ForEachActiveNoteSprite(r => r.color = ChangeSaturation(r.color, noteSaturation));
 
-    private void ResetSaturation()
-        => ForEachActiveNoteSprite(r => r.color = ChangeSaturation(r.color, 1f));
+    private void ResetSaturation(ValueTuple _) => ForEachActiveNoteSprite(r => r.color = ChangeSaturation(r.color, 1f));
 
+    
     private void ForEachActiveNoteSprite(Action<SpriteRenderer> act)
     {
         if (lanes == null) return;

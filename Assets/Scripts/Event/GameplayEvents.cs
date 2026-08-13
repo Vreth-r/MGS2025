@@ -27,6 +27,13 @@ namespace Event
         public static readonly EventDispatcher<ValueTuple> PlayersSeparateEvent = new EventDispatcher<ValueTuple>();
         //called when the players separate from the duo lane
         //because of core jank this is currently called every time the duo value is < 2
+        
+        
+        //called when the ultimate ability is activated
+        public static readonly EventDispatcher<ValueTuple> UltimateStartEvent = new EventDispatcher<ValueTuple>();
+        
+        //called when the ultimate ability ends
+        public static readonly EventDispatcher<ValueTuple> UltimateDepleteEvent = new EventDispatcher<ValueTuple>();
     }
     
 }

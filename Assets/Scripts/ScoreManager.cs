@@ -39,8 +39,11 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        UltimateSystem.Instance.OnUltimateStarted += UltOn;
-        UltimateSystem.Instance.OnUltimateFinished += UltOff;
+        // UltimateSystem.Instance.OnUltimateStarted += UltOn;
+        // UltimateSystem.Instance.OnUltimateFinished += UltOff;
+        
+        GameplayEvents.UltimateDepleteEvent.AddEventListener(UltOff);
+        GameplayEvents.UltimateStartEvent.AddEventListener(UltOn);
         
         
         GameplayEvents.PlayersMergeEvent.AddEventListener(this.OnPlayersMerge);
@@ -62,8 +65,8 @@ public class ScoreManager : MonoBehaviour
     }
     
     
-    private void UltOn()  => _activeUltMultiplier = ultimateScoreMultiplier;
-    private void UltOff() => _activeUltMultiplier = 1;
+    private void UltOn(ValueTuple _)  => _activeUltMultiplier = ultimateScoreMultiplier;
+    private void UltOff(ValueTuple _) => _activeUltMultiplier = 1;
     
     
     //---------------------------------------------------------------------------
@@ -176,8 +179,12 @@ public class ScoreManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        UltimateSystem.Instance.OnUltimateStarted -= UltOn;
-        UltimateSystem.Instance.OnUltimateFinished -= UltOff;
+        // UltimateSystem.Instance.OnUltimateStarted -= UltOn;
+        // UltimateSystem.Instance.OnUltimateFinished -= UltOff;
+        
+        GameplayEvents.UltimateDepleteEvent.RemoveEventListener(UltOff);
+        GameplayEvents.UltimateStartEvent.RemoveEventListener(UltOn);
+        
     }
     
 }
