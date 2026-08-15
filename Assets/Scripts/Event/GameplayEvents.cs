@@ -34,6 +34,10 @@ namespace Event
         
         //called when the ultimate ability ends
         public static readonly EventDispatcher<ValueTuple> UltimateDepleteEvent = new EventDispatcher<ValueTuple>();
+        
+        public static readonly EventDispatcher<ValueTuple> GamePulseEvent = new EventDispatcher<ValueTuple>();
+
+        public static readonly EventDispatcher<(int, Judgement)> NoteHitEvent = new EventDispatcher<(int, Judgement)>();
     }
     
 }

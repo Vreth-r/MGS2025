@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     [Header("Pulse")]
     public float bpm;
     public float secondsPerBeat;
-    public event Action OnPulse;
 
     [Header("Ultimate Note Saturation (optional)")]
     public float noteSaturation = 0.5f;
@@ -107,11 +106,11 @@ public class GameManager : MonoBehaviour
 
         _player.Update(songTime);
 
-        if (Time.time >= _nextPulseTime)
-        {
-            _nextPulseTime += secondsPerBeat;
-            OnPulse?.Invoke();
-        }
+        if (Time.time < _nextPulseTime)
+            return;
+
+        _nextPulseTime += secondsPerBeat;
+        GameplayEvents.GamePulseEvent.CallEvent(ValueTuple.Create());
     }
 
     public void PauseSong()
@@ -282,9 +281,6 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         StopSongImmediate();
-
-       // UltimateSystem.Instance.OnUltimateStarted -= ApplyUltimateSaturation;
-        
         GameplayEvents.UltimateStartEvent.AddEventListener(ApplyUltimateSaturation);
         GameplayEvents.UltimateDepleteEvent.RemoveEventListener(ResetSaturation);
     }

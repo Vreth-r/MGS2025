@@ -1,3 +1,5 @@
+using System;
+using Event;
 using UnityEngine;
 
 public class HoldNote : NoteBase
@@ -28,14 +30,13 @@ public class HoldNote : NoteBase
         tail.position = head.position + Vector3.left * noteLength;
         body.SetPosition(0, head.position);
         body.SetPosition(1, tail.position);
-
-        gm = GameManager.Instance;
-        if (gm != null) gm.OnPulse += OnPulse;
+        
+        GameplayEvents.GamePulseEvent.AddEventListener(OnPulse);
     }
 
     private void OnDestroy()
     {
-        if (gm != null) gm.OnPulse -= OnPulse;
+        GameplayEvents.GamePulseEvent.RemoveEventListener(OnPulse);
     }
 
     public override void OnHit(Judgement judgement)
@@ -49,7 +50,7 @@ public class HoldNote : NoteBase
         tail.position -= Vector3.right * dx;
     }
 
-    private void OnPulse()
+    private void OnPulse(ValueTuple _)
     {
         if (state != State.Holding) return;
 
@@ -127,6 +128,6 @@ public class HoldNote : NoteBase
         ScoreManager.Instance.AddScore(1f, lane.laneIndex);
 
         
-        if (gm != null) gm.OnPulse -= OnPulse;
+        GameplayEvents.GamePulseEvent.RemoveEventListener(OnPulse);
     }
 }

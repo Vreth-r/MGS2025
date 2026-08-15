@@ -41,7 +41,7 @@ public class AnimationManager : MonoBehaviour
     static int hurtActive = 0;
 
 
-    int bouncetest = 0;
+    int bouncetest = 0;   //[REFACTORNG] this should probably be done differently -TJ
     int countin = 0;
 
     static List<int> hurtlanes = new List<int>();
@@ -49,6 +49,7 @@ public class AnimationManager : MonoBehaviour
     private CombatSoundPlayer combatSoundPlayer;
     
     int laneHeldGuitar = -1; //denotes which lane is currently held for the guitar controls
+    //[REFACTORNG] this should be tracked by the input manager - TJ
 
     public System.Action OnCharacterReset; //position reseter
 
@@ -65,8 +66,9 @@ public class AnimationManager : MonoBehaviour
         InputManager.Instance.OnGuitarAttackPressed += AttackAnimationGuitar;
 
         // Subscribe to pulse event
-        GameManager.Instance.OnPulse += idleanim;
-
+        GameplayEvents.GamePulseEvent.AddEventListener(idleanim);
+        
+        
         Vector3 baseP1 = GameObject.Find("Lane1").transform.position;
         Vector3 baseP2 = GameObject.Find("Lane3").transform.position;
         Vector3 basePDuo = GameObject.Find("Lane2").transform.position;
@@ -74,8 +76,9 @@ public class AnimationManager : MonoBehaviour
         animator = GetComponent<Animator>();
 
         combatSoundPlayer = GetComponent<CombatSoundPlayer>();
+        GameplayEvents.NoteHitEvent.AddEventListener(PlaySoundOnSuccessfulHit);
 
-        CombatSoundPlayer.OnSuccessfulHit += PlaySoundOnSuccessfulHit;
+       // CombatSoundPlayer.OnSuccessfulHit += PlaySoundOnSuccessfulHit;
 
         //Set up general position
         // General positions are bugged due to new pivots, pls adjust
@@ -113,8 +116,9 @@ public class AnimationManager : MonoBehaviour
             InputManager.Instance.OnLanePressedGuitar -= LanePressedGuitar;
             InputManager.Instance.OnLaneReleasedGuitar -= LaneReleasedGuitar;  
         }
-
-        CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
+        
+        GameplayEvents.NoteHitEvent.RemoveEventListener(PlaySoundOnSuccessfulHit);
+        //CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
     private void OnDisable()
@@ -129,8 +133,9 @@ public class AnimationManager : MonoBehaviour
             InputManager.Instance.OnLanePressedGuitar -= LanePressedGuitar;
             InputManager.Instance.OnLaneReleasedGuitar -= LaneReleasedGuitar;
         }
-
-        CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
+        
+        GameplayEvents.NoteHitEvent.RemoveEventListener(PlaySoundOnSuccessfulHit);
+        //CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
     //run every frame
@@ -292,12 +297,9 @@ public class AnimationManager : MonoBehaviour
             GameplayEvents.PlayersMergeEvent.CallEvent(ValueTuple.Create());
             
             resetcounter = 0;
-            if (isDuo)//show duo, hide solo
-                transform.position = baseGeneral;
-            else
-                transform.position = offscreen;
+            transform.position = isDuo ? offscreen : baseGeneral;
         }
-        else if (lane != 2)
+        else
         {
             if (duoActive > 0 && !isDuo) // If just leaving Duo lane, make sure both charactes are there, and in base states
             {
@@ -318,7 +320,9 @@ public class AnimationManager : MonoBehaviour
                 transform.position = new Vector3(GameObject.Find("Lane" + lane).transform.position.x - 6.2f,
                                                  GameObject.Find("Lane" + lane).transform.position.y - 0.25f,
                                                  GameObject.Find("Lane" + lane).transform.position.z + 0.15f);
-
+            //[REFACTORNG] GameObject.find is a costly function performance-wise because it must search the entire object hierarchy
+            // recommend caching the object once in Awake() or accessing it differently -TJ
+            
         }
     }
     private void AttackAnimationGuitar()
@@ -338,14 +342,7 @@ public class AnimationManager : MonoBehaviour
             transform.position = baseGeneral;
             spriteRenderer.sprite = sprBase;
 
-            if (isDuo)
-            {
-                transform.position = offscreen;
-            }
-            else
-            {
-                transform.position = baseGeneral;
-            }
+            transform.position = isDuo ? offscreen : baseGeneral;
         }
     }
 
@@ -428,7 +425,7 @@ public class AnimationManager : MonoBehaviour
         hurtlanes.Add(lane.laneIndex);
     }
 
-    private void idleanim()
+    private void idleanim(ValueTuple _)
     {
         if (countin == 0 && resetcounter >= resetmax)
         {
@@ -479,15 +476,18 @@ public class AnimationManager : MonoBehaviour
             }
         }
     }
-    private void PlaySoundOnSuccessfulHit(int laneIndex, Judgement judgement)
+    private void PlaySoundOnSuccessfulHit((int laneIndex, Judgement judgement) e)
     {
-        if (LaneIdentifier(laneIndex) == true)
+        if (LaneIdentifier(e.laneIndex))
         {
             string soundName = GetNextAttackSound();
             combatSoundPlayer.PlaySoundEffect(soundName);
         }
     }
 
+    
+    // [REFACTORING] this should be changed; we shouldn't need to filter for players at the end point
+    // it should already be known what player we are referring to
     private bool LaneIdentifier(int lane)
     {
         if (isDuo)

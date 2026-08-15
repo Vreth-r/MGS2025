@@ -1,3 +1,4 @@
+using Event;
 using UnityEngine;
 
 public class TapNote : NoteBase
@@ -13,7 +14,8 @@ public class TapNote : NoteBase
 
         if (judgement != Judgement.Miss)
         {
-            CombatSoundPlayer.OnSuccessfulHit?.Invoke(lane.laneIndex, judgement);
+            GameplayEvents.NoteHitEvent.CallEvent((lane.laneIndex, judgement));
+            //CombatSoundPlayer.OnSuccessfulHit?.Invoke(lane.laneIndex, judgement);
         }
 
         movement = false;
