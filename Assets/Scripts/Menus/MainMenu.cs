@@ -163,7 +163,7 @@ public class MainMenu : BaseMenu
 
         menuManager.CloseMenu();
 
-        SceneManager.LoadScene("Ready");
+        SceneManager.LoadScene("NEW CharSel");
     }
 
     private void OpenSettings()

@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using FMODUnity;
 
+// NOTE: 9/03/2026
+// THIS IS THE OLD CHARACTER SELECT LOGIC, THE NEW LOGIC IS IN "NEW CharSel"
+// THIS MSG AS WELL AS THE REST OF THE FILE SHOULD BE DELETED ONCE FULL MOVEMENT TO NEW SCENE HAS BEEN COMPLETED
+// -LogChiCha
+
+
+
 public class CharacterSelect : MonoBehaviour
 {
     // Keeps track of which character is selected

@@ -8,6 +8,9 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance { get; private set; }
 
     [Header("Menu Prefab References")]
+    [SerializeField] private GameObject mainMenu;
+
+    [Header("Menu Prefab References")]
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject difficultyMenu;
@@ -39,6 +42,11 @@ public class MenuManager : MonoBehaviour
         settingsMenu.GetComponent<BaseMenu>().Close();
         difficultyMenu.GetComponent<BaseMenu>().Close();
 
+    }
+    private void Start()
+    {
+        InputManager.Instance.EnableUI();
+        this.SetCurrentMenu(mainMenu);
     }
 
     private void OnEnable()
