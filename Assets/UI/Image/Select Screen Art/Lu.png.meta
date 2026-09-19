@@ -132,12 +132,12 @@ TextureImporter:
       name: Lu_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 27
-        width: 270
-        height: 297
+        x: 35
+        y: 6
+        width: 604
+        height: 317
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,33 +150,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Lu_1
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 5
-        width: 347
-        height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b74f172d386c0c4f0800000000000000
-      internalID: -810429663452990341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c46e21da9ad3c254080c9b88588db391
     internalID: 0
     vertices: []
     indices: 

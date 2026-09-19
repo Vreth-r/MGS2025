@@ -50,43 +50,62 @@ public class SettingsMenu : BaseMenu
         HighlightElement(selectedIndex);
         musicSlider.value = SettingsManager.musicVolume;
         sfxSlider.value = SettingsManager.sfxVolume;
+        
         grow = true;
-        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
-        //scaleCoroutine = StartCoroutine(scalePanel());
+        scaleCoroutine = StartCoroutine(scalePanel()); //CLOSE MENU
+    }
+    protected override void OnClose()
+    {
+        Debug.LogFormat($"Settings menu closed");
     }
 
+    // scaling logic for shrinking and growing when panels is opened and closed
     IEnumerator scalePanel()
     {
         float time = 0;
-        panel.localScale = Vector3.zero;
 
-        while (time < scaleTime)
+        //grow code
+        if (grow)
         {
-            float scale = scaleCurve.Evaluate(time/scaleTime);
-            scale = grow ? scale : 1 - scale;
-            panel.localScale = new Vector3(scale, scale, scale);
-            time += Time.unscaledDeltaTime;
-            yield return null;   
+            panel.localScale = Vector3.zero;
+
+
+            while (time < scaleTime)
+            {
+                float scale = scaleCurve.Evaluate(time / scaleTime);
+                //Debug.LogFormat($"scale: {scale}");
+                scale = grow ? scale : 1 - scale;
+                panel.localScale = new Vector3(scale, scale, scale);
+                time += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
         }
 
-        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
-
+        //shrink code
         if (!grow)
         {
-            ReturnBack();
+            panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
+
+
+            while (time < scaleTime)
+            {
+                float scale = scaleCurve.Evaluate(time / scaleTime);                
+                //Debug.LogFormat($"scale: {scale}");
+                scale = (!grow) ? scale : 1 - scale;
+                panel.localScale = new Vector3(1-scale, 1-scale, 1-scale);
+                time += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            panel.localScale = Vector3.zero;
+            MenuManager.Instance.CloseMenu();
         }
+
         scaleCoroutine = null;
     }
 
-    protected override void OnClose()
-    {
-        // Save the settings somewhere
-        SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
-        SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
-
-        panel.localScale = Vector3.zero;
-        Debug.LogFormat($"Settings menu closed");
-    }
 
     public override void HandleNavigate(Vector2 direction)
     {
@@ -177,18 +196,16 @@ public class SettingsMenu : BaseMenu
         }
     }
 
-    private void shrinkPanel()
-    {
-        if (scaleCoroutine == null)
-        {
-            grow = false;
-            scaleCoroutine = StartCoroutine(scalePanel());   
-        }
-    }
-
+    // calls the scale shrink routine which then closes the menu
     private void ReturnBack()
     {
+        // Save the settings somewhere
+        SettingsManager.SetMusicVolume(Mathf.Clamp01(musicSlider.value));
+        SettingsManager.SetSFXVolume(Mathf.Clamp01(sfxSlider.value));
+
         Debug.Log("closing");
-        MenuManager.Instance.CloseMenu();
+        grow = false;
+        scaleCoroutine = StartCoroutine(scalePanel());
+        //MenuManager.Instance.CloseMenu();
     }
 }

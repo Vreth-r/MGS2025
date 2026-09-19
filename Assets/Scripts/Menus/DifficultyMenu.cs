@@ -20,13 +20,14 @@ public class DifficultyMenu : BaseMenu
     [SerializeField] private Button nextButton;
     [SerializeField] private Button backButton;
 
+
     [Header("Sprites")]
     public Sprite sprEasy;
     public Sprite sprNormal;
     public Sprite sprHard;
     public Sprite sprNightmare;
     private Sprite[] sprites;
-    private int diffVal = 1;
+    private int diffVal = 1; //used as the save value when in menu, and is then sent to gamesettings once closed
 
     [Header("Display Assets")]
     public GameObject display;
@@ -47,6 +48,7 @@ public class DifficultyMenu : BaseMenu
     [SerializeField] AnimationCurve scaleCurve;
     private bool grow = true;
     private Coroutine scaleCoroutine;
+
 
     private static GameSettings gameSettings;
 
@@ -80,40 +82,66 @@ public class DifficultyMenu : BaseMenu
         Debug.LogFormat($"Difficulty menu opened");
         HighlightElement(selectedIndex);
         grow = true;
-        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
-        //scaleCoroutine = StartCoroutine(scalePanel());
+        scaleCoroutine = StartCoroutine(scalePanel());
     }
 
-    IEnumerator scalePanel()
-    {
-        float time = 0;
-        panel.localScale = Vector3.zero;
-
-        while (time < scaleTime)
-        {
-            float scale = scaleCurve.Evaluate(time / scaleTime);
-            scale = grow ? scale : 1 - scale;
-            panel.localScale = new Vector3(scale, scale, scale);
-            time += Time.unscaledDeltaTime;
-            yield return null;
-        }
-
-        panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
-
-        if (!grow)
-        {
-            ReturnBack();
-        }
-        scaleCoroutine = null;
-    }
 
     protected override void OnClose()
     {
-
-        panel.localScale = Vector3.zero;
         Debug.LogFormat($"Difficulty menu closed");
     }
 
+
+    // scaling logic for shrinking and growing when panels is opened and closed
+    IEnumerator scalePanel()
+    {
+        float time = 0;
+
+        //grow code
+        if (grow)
+        {
+            panel.localScale = Vector3.zero;
+
+
+            while (time < scaleTime)
+            {
+                float scale = scaleCurve.Evaluate(time / scaleTime);
+                //Debug.LogFormat($"scale: {scale}");
+                scale = grow ? scale : 1 - scale;
+                panel.localScale = new Vector3(scale, scale, scale);
+                time += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
+        }
+
+        //shrink code
+        if (!grow)
+        {
+            panel.localScale = new Vector3(maxPanelScale, maxPanelScale, maxPanelScale);
+
+
+            while (time < scaleTime)
+            {
+                float scale = scaleCurve.Evaluate(time / scaleTime);                
+                //Debug.LogFormat($"scale: {scale}");
+                scale = (!grow) ? scale : 1 - scale;
+                panel.localScale = new Vector3(1-scale, 1-scale, 1-scale);
+                time += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            panel.localScale = Vector3.zero;
+            MenuManager.Instance.CloseMenu(); // CLOSE MENU
+        }
+
+        scaleCoroutine = null;
+    }
+
+    /// ***************************
+    /// Interaction/Navigation Logic
+    /// ***************************
     //horiz will move between back and next, and vertical will go to select, and it remembers your last placement
     public override void HandleNavigate(Vector2 direction)
     {
@@ -141,6 +169,8 @@ public class DifficultyMenu : BaseMenu
 
     }
 
+
+    // select function for when using only keyboard (functionally runs a click)
     public override void HandleSubmit()
     {
         /*
@@ -159,6 +189,7 @@ public class DifficultyMenu : BaseMenu
         button.onClick.Invoke();
     }
 
+    // esc key
     public override void HandleCancel()
     {
         ReturnBack();
@@ -182,11 +213,12 @@ public class DifficultyMenu : BaseMenu
         }
 
     }
+    //////////////////////
 
     // *****************************
-    // Difficulty Specific Functions
+    // Difficulty Buttons
     // **************************
-    private void nextDiff()
+    private void nextDiff() // > arrow
     {
 
         diffVal = (diffVal + 1) % (sprites.Length); // +1, or loop if bottom if max
@@ -197,7 +229,7 @@ public class DifficultyMenu : BaseMenu
 
     }
 
-    private void backDiff()
+    private void backDiff() // < arrow
     {
         diffVal = (diffVal - 1 + (sprites.Length)) % (sprites.Length); //-1, or loop to top if 0
         var img = display.GetComponent<Image>();
@@ -206,21 +238,15 @@ public class DifficultyMenu : BaseMenu
         textbox.fontSize = sizes[diffVal];
     }
   
-    //////////////////////////////////
 
-    private void shrinkPanel()
-    {
-        if (scaleCoroutine == null)
-        {
-            grow = false;
-            scaleCoroutine = StartCoroutine(scalePanel());
-        }
-    }
-
-    private void ReturnBack()
+    // calls the scale shrink routine which then closes the menu
+    private void ReturnBack() // return button
     {
         gameSettings.gameMode = diffVal; //sets difficulty value on menu close
-       // Debug.Log("closing with diff "+diffVal);
-        MenuManager.Instance.CloseMenu();
+        grow = false;
+        scaleCoroutine = StartCoroutine(scalePanel());
+        // Debug.Log("closing with diff "+diffVal);
+        // MenuManager.Instance.CloseMenu();
     }
+    //////////////////////////////////
 }
