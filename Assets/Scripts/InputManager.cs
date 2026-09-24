@@ -92,6 +92,13 @@ public class InputManager : MonoBehaviour
         gameplayMap = inputAsset.FindActionMap("Gameplay", throwIfNotFound: true);
         uiMap = inputAsset.FindActionMap("UI", throwIfNotFound: true);
 
+        //if new keybinds exist, load that instead of defaults
+        //the rebind codes can found in RebindButton.cs and RebindControls.cs
+        if (PlayerPrefs.HasKey("NewKeybinds"))
+        {
+            inputAsset.LoadBindingOverridesFromJson(PlayerPrefs.GetString("NewKeybinds"));
+        }
+
         InitializeLaneInputs();
         InitializeGameplayInputs();
         InitializeUIInputs();
@@ -271,6 +278,7 @@ public class InputManager : MonoBehaviour
     /// <summary>
     /// Start a runtime rebind for a specific lane.
     /// </summary>
+    /*
     public void StartRebind(int laneIndex, Action onComplete = null)
     {
         var action = GetLaneAction(laneIndex);
@@ -294,6 +302,7 @@ public class InputManager : MonoBehaviour
 
         rebind.Start();
     }
+    */
 
     // UI Action Accessors
     public bool IsPauseHeld => pauseAction != null && pauseAction.ReadValue<float>() > 0.5f;
