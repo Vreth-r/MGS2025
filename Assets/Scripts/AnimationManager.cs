@@ -118,6 +118,8 @@ public class AnimationManager : MonoBehaviour
         }
         
         GameplayEvents.NoteHitEvent.RemoveEventListener(PlaySoundOnSuccessfulHit);
+        GameplayEvents.GamePulseEvent.RemoveEventListener(idleanim);
+
         //CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
@@ -135,6 +137,8 @@ public class AnimationManager : MonoBehaviour
         }
         
         GameplayEvents.NoteHitEvent.RemoveEventListener(PlaySoundOnSuccessfulHit);
+        GameplayEvents.GamePulseEvent.RemoveEventListener(idleanim);
+
         //CombatSoundPlayer.OnSuccessfulHit -= PlaySoundOnSuccessfulHit;
     }
 
