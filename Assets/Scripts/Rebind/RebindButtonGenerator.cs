@@ -13,23 +13,32 @@ public class RebindButtonGenerator : MonoBehaviour
     public GameObject textPrefab; //the action textbox (ex - Lane 0 attack, Ultimate, etc)
 
     public Button buttonPrefab; //the clickable button for the keybinds (ex - keyboard A, Spacebar, etc)
-    
+
+    //a screen that overlays when you clicked to rebind a control (this prevents you from clicking other buttons)
+    //this is variable that is going to be sending a reference of this rebindScreenPanel to the RebindButton so it has access to it to enable/disable
+    [SerializeField] private GameObject rebindScreenPanel; 
+
     void Start()
     {
-        /*
-        //this is for when i need to delete the keybinds and reset to default. Basically uncomment this and just open the rebind scene to return to default
-        //ill make this a return to default button later
-        PlayerPrefs.DeleteKey("NewKeybinds");
-        PlayerPrefs.Save();
-        inputAsset.RemoveAllBindingOverrides();
-        */
-
         gameplayKeybinds = inputAsset.FindActionMap("Gameplay"); //the specific action map for gameplay
 
         //if a rebinded control scheme exists, it will be called "NewKeybinds". It will then be loaded to be used instead of the defaults
         if (PlayerPrefs.HasKey("NewKeybinds")) 
         {
             inputAsset.LoadBindingOverridesFromJson(PlayerPrefs.GetString("NewKeybinds"));
+        }
+
+        UpdateButtons();
+    }
+
+    public void UpdateButtons()
+    {
+        //delete pre-existing buttons
+        //basically only used for the restore default buttons option, so we can have up to date button texts, cause if we dont, we instantiate more buttons each time, aka duplicating buttons
+        //maybe not the cleanest way, but its easy
+        foreach (Transform buttons in transform)
+        {
+            Destroy(buttons.gameObject);
         }
 
         //loop through each action to sift through the specific keybinded controls of each action
@@ -50,6 +59,7 @@ public class RebindButtonGenerator : MonoBehaviour
                     RebindButton rebindButton = keybindButton.GetComponent<RebindButton>();
                     rebindButton.actionToRebind = InputActionReference.Create(action); //reference to the action (you cannot modify it directly, i think)
                     rebindButton.bindIndex = i; //used in RebindButton.cs to display the correct keybind name
+                    rebindButton.rebindScreenPanel = rebindScreenPanel; //passes the reference of the rebindScreenPanel (to block out the other buttons when a rebind is in progress)
                     TMP_Text keybindText = keybindButton.GetComponentInChildren<TMP_Text>();
                     keybindText.text = action.GetBindingDisplayString(i).ToUpper(); //for the textbox to show the keybind name 
 

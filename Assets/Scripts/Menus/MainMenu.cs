@@ -20,6 +20,7 @@ public class MainMenu : BaseMenu
     [SerializeField] private Toggle godModeToggle;
     [SerializeField] private Toggle fleshSoundVersionsToggle;
     //[SerializeField] private TMP_Dropdown gameModeDropdown;
+    [SerializeField] private Button rebindControlsButton;
 
     [SerializeField] private VideoPlayer creditsVideoPlayer;
     [SerializeField] private RawImage creditsDisplay;
@@ -37,7 +38,7 @@ public class MainMenu : BaseMenu
 
         base.Awake();
 
-        buttons = new[] { playButton, settingsButton, creditsButton, quitButton, difficultyButton };
+        buttons = new[] { playButton, settingsButton, creditsButton, quitButton, difficultyButton, rebindControlsButton };
 
         gameSettings.gameMode = 1; //default is normal for difficulty
 
@@ -46,6 +47,7 @@ public class MainMenu : BaseMenu
         creditsButton.onClick.AddListener(OpenCredits);
         quitButton.onClick.AddListener(OnQuit);
         difficultyButton.onClick.AddListener(OpenDifficulty);
+        rebindControlsButton.onClick.AddListener(SwitchToRebindScene);
     }
 
     protected void Update()
@@ -164,6 +166,20 @@ public class MainMenu : BaseMenu
         menuManager.CloseMenu();
 
         SceneManager.LoadScene("NEW CharSel");
+    }
+
+    private void SwitchToRebindScene()
+    {
+        if (CreditsOpen)
+        {
+            return;
+        }
+
+        var menuManager = MenuManager.Instance;
+
+        menuManager.CloseMenu();
+
+        SceneManager.LoadScene("RebindControls");
     }
 
     private void OpenSettings()

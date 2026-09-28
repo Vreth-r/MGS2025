@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 3421997784600401567}
   - component: {fileID: 310853635602362736}
   m_Layer: 5
-  m_Name: KeybindButton
+  m_Name: RebindButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
