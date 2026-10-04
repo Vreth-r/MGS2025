@@ -32,15 +32,34 @@ public class CharacterSelect : BaseMenu
         InputManager.Instance.EnableUI();
     }
 
+    private void OnEnable()
+    {
+        var input = InputManager.Instance;
+
+        input.OnSubmit += HandleSubmit;
+        input.OnNavigate += HandleNavigate;
+    }
+
+    private void OnDisable()
+    {
+        if (InputManager.Instance == null) return;
+        var input = InputManager.Instance;
+
+        input.OnSubmit -= HandleSubmit;
+        input.OnNavigate -= HandleNavigate;
+    }
+
     public override void HandleNavigate(Vector2 _)
     {
-        _isControlsSwapped = !_isControlsSwapped;
-
         Debug.Log("Character's Swapped!");
+
+        _isControlsSwapped = !_isControlsSwapped;
     }
 
     public override void HandleSubmit()
     {
+        Debug.Log("Character's Selected!");
+
         _gameSettings.isControlsSwapped = _isControlsSwapped;
         Debug.Log(_gameSettings.isControlsSwapped);
 
