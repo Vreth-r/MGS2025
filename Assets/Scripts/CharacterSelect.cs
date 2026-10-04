@@ -1,34 +1,30 @@
-using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using FMODUnity;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CharacterSelect : MonoBehaviour
+public class CharacterSelect : BaseMenu
 {
     // Keeps track of which character is selected
     // If true, P1 is set to Mona and P2 is set to Lu
     private bool _isControlsSwapped = false;
 
-    // USS Class Names for changing P1/P2 Cursor positions
-    private const string LeftCharacterSelectClassName = "leftCharacterSelected";
-    private const string RightCharacterSelectClassName = "rightCharacterSelected";
+    // Sprite References
+    [Header("Game Object References")]
+    [SerializeField] private GameObject _p1Cursor;
+    [SerializeField] private GameObject _p2Cursor;
+    [SerializeField] private GameObject _monaSprite;
+    [SerializeField] private GameObject _luSprite;
 
-    // UXML Elements
-    private VisualElement _root;
-    private VisualElement _p1Cursor;
-    private VisualElement _p2Cursor;
+    public GameSettings _gameSettings;
 
-    public GameSettings gameSettings;
+    public EventReference _characterSelectConfirmedSound;
 
-    public EventReference characterSelectConfirmedSound;
-
-    private void Awake()
+    protected override void Awake()
     {
-        _root = GetComponent<UIDocument>().rootVisualElement;
+        base.Awake();
 
-        _p1Cursor = _root.Q<VisualElement>("P1Selector");
-        _p2Cursor = _root.Q<VisualElement>("P2Selector");
+        Open();
     }
 
     private void Start()
@@ -36,51 +32,26 @@ public class CharacterSelect : MonoBehaviour
         InputManager.Instance.EnableUI();
     }
 
-    private void OnEnable()
+    public override void HandleNavigate(Vector2 _)
     {
-        InputManager.Instance.OnSubmit += ConfirmCharacters;
-        //InputManager.Instance.OnNavigate += SwapCharacters;
-    }
-
-    private void OnDisable()
-    {
-        InputManager.Instance.OnSubmit -= ConfirmCharacters;
-        //InputManager.Instance.OnNavigate -= SwapCharacters;
-    }
-
-    private void SwapCharacters(Vector2 _)
-    {
-        if (_isControlsSwapped)
-        {
-            _p1Cursor.RemoveFromClassList(LeftCharacterSelectClassName);
-            _p2Cursor.RemoveFromClassList(RightCharacterSelectClassName);
-
-            _p1Cursor.AddToClassList(RightCharacterSelectClassName);
-            _p2Cursor.AddToClassList(LeftCharacterSelectClassName);
-        }
-        else
-        {
-            _p1Cursor.AddToClassList(LeftCharacterSelectClassName);
-            _p2Cursor.AddToClassList(RightCharacterSelectClassName);
-
-            _p1Cursor.RemoveFromClassList(RightCharacterSelectClassName);
-            _p2Cursor.RemoveFromClassList(LeftCharacterSelectClassName);
-        }
-
         _isControlsSwapped = !_isControlsSwapped;
+
+        Debug.Log("Character's Swapped!");
     }
 
-    private void ConfirmCharacters()
+    public override void HandleSubmit()
     {
-        gameSettings.isControlsSwapped = _isControlsSwapped;
-        Debug.Log(gameSettings.isControlsSwapped);
+        _gameSettings.isControlsSwapped = _isControlsSwapped;
+        Debug.Log(_gameSettings.isControlsSwapped);
 
-        RuntimeManager.PlayOneShot(characterSelectConfirmedSound);
+        RuntimeManager.PlayOneShot(_characterSelectConfirmedSound);
 
         StartCoroutine(Transition());
 
         SceneManager.LoadScene("Game");
     }
+
+    public override void HandleCancel() {}
 
     /*
      * TODO: Add a nice transition
